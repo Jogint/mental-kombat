@@ -1,0 +1,13 @@
+# ✅ FINALIZADOS
+
+## Guia
+**FEAT:** Inclusão de novidades
+**FIX:** Correção de bugs
+**IMPROVE:** Melhorias e otimizações
+**OTHER:** Parte teórica e visual, não relacionado a código 
+
+
+---
+
+## Setembro
+* FEAT: Adição dos primeiros objetos teste (Lyam - 11/09/25)

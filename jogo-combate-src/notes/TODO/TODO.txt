@@ -1,0 +1,24 @@
+# ✅ TODO
+
+## 🔧 A FAZER
+
+* Controle de turnos
+
+<br>
+
+# 🆕 BUGS ENCONTRADOS
+
+* 
+
+<br>
+
+## 🎨 SPRITES PRA DESENHAR
+
+* Dois primeiros personagens
+* Botões para o combate (só o draw fica feio)
+
+<br>
+
+# ⚙ EM ANDAMENTO
+
+* Criando scripts de definição de personagem
