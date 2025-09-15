@@ -1,0 +1,58 @@
+var tipo = ["sum", "sub", "mult", "divi"];
+
+function scr_gerar_perguntas() { // gera 100 ou 99 perguntas
+    var perguntas = [];
+
+    if (global.dificuldade == 2) {
+        for (var i = 0; i < 33; i++) {
+            var n1 = round(random_range(0, 99));
+            var n2 = round(random_range(0, 99));
+			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, tipo[0]));
+			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), tipo[1]));
+
+            var n3 = round(random_range(1, 9));
+            var n4 = round(random_range(1, 9));
+			array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, tipo[2]));
+			array_push(perguntas, gerar_opcoes(max(n3,n4), min(n3,n4), max(n3,n4) div min(n3,n4), tipo[3]));
+        }
+    } else if (global.dificuldade == 1) {
+        for (var i = 0; i < 33; i++) {
+            var n1 = round(random_range(0, 99));
+            var n2 = round(random_range(0, 99));
+			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, tipo[0]));
+			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), tipo[1]));
+			
+            var n3 = round(random_range(0, 9));
+            var n4 = round(random_range(0, 9));
+            array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, tipo[2]));
+        }
+    } else {
+        for (var i = 0; i < 50; i++) {
+            var n1 = round(random_range(0, 9));
+            var n2 = round(random_range(0, 9));
+			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, tipo[0]));
+			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), tipo[1]));
+        }
+    }
+    return array_shuffle(perguntas);
+}
+
+// Cria as opções erradas da questão
+function gerar_opcoes(num1, num2, certo, tipo) {
+    var alternativas = [certo];
+    while (array_length(alternativas) < 4) {
+        var errado = certo + irandom_range(-10, 10);
+        if (errado >= 0 && errado != certo && scr_valor_unico_array(alternativas, errado)) {
+            array_push(alternativas, errado);
+        }
+    }
+	alternativas = array_shuffle(alternativas);
+
+    return {
+		conta: tipo,
+        n1: num1,
+        n2: num2,
+        correto: certo,
+        opcoes: alternativas
+    };
+}

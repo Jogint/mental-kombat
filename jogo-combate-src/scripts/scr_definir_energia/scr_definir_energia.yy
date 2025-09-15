@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_definir_energia",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Criar personagem",
+    "path":"folders/Scripts/Criar personagem.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
