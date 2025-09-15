@@ -49,6 +49,7 @@
     {"id":{"name":"obj_personagem","path":"objects/obj_personagem/obj_personagem.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"scr_criar_personagem","path":"scripts/scr_criar_personagem/scr_criar_personagem.yy",},},
+    {"id":{"name":"scr_definir_energia_max","path":"scripts/scr_definir_energia_max/scr_definir_energia_max.yy",},},
     {"id":{"name":"scr_definir_energia","path":"scripts/scr_definir_energia/scr_definir_energia.yy",},},
     {"id":{"name":"scr_definir_globais","path":"scripts/scr_definir_globais/scr_definir_globais.yy",},},
     {"id":{"name":"scr_definir_tempo","path":"scripts/scr_definir_tempo/scr_definir_tempo.yy",},},

@@ -1,37 +1,35 @@
-var tipo = ["sum", "sub", "mult", "divi"];
-
-function scr_gerar_perguntas() { // gera 100 ou 99 perguntas
+function scr_gerar_perguntas() { //* gera 100 ou 99 perguntas
     var perguntas = [];
 
     if (global.dificuldade == 2) {
         for (var i = 0; i < 33; i++) {
-            var n1 = round(random_range(0, 99));
-            var n2 = round(random_range(0, 99));
-			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, tipo[0]));
-			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), tipo[1]));
+            var n1 = irandom_range(0, 99);
+            var n2 = irandom_range(0, 99);
+			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.tipo[0]));
+			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.tipo[1]));
 
-            var n3 = round(random_range(1, 9));
-            var n4 = round(random_range(1, 9));
-			array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, tipo[2]));
-			array_push(perguntas, gerar_opcoes(max(n3,n4), min(n3,n4), max(n3,n4) div min(n3,n4), tipo[3]));
+            var n3 = irandom_range(1, 9); //? não pode dividir por zero
+            var n4 = irandom_range(1, 9);
+			array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, global.tipo[2]));
+			array_push(perguntas, gerar_opcoes(n3 * n4, max(n3,n4), min(n3,n4), global.tipo[3]));
         }
     } else if (global.dificuldade == 1) {
         for (var i = 0; i < 33; i++) {
-            var n1 = round(random_range(0, 99));
-            var n2 = round(random_range(0, 99));
-			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, tipo[0]));
-			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), tipo[1]));
+            var n1 = irandom_range(0, 99);
+            var n2 = irandom_range(0, 99);
+			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.tipo[0]));
+			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.tipo[1]));
 			
-            var n3 = round(random_range(0, 9));
-            var n4 = round(random_range(0, 9));
-            array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, tipo[2]));
+            var n3 = irandom_range(0, 9); //? mas pode multiplicar por 0
+            var n4 = irandom_range(0, 9);
+            array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, global.tipo[2]));
         }
     } else {
         for (var i = 0; i < 50; i++) {
-            var n1 = round(random_range(0, 9));
-            var n2 = round(random_range(0, 9));
-			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, tipo[0]));
-			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), tipo[1]));
+            var n1 = irandom_range(0, 9);
+            var n2 = irandom_range(0, 9);
+			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.tipo[0]));
+			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.tipo[1]));
         }
     }
     return array_shuffle(perguntas);
@@ -42,8 +40,12 @@ function gerar_opcoes(num1, num2, certo, tipo) {
     var alternativas = [certo];
     while (array_length(alternativas) < 4) {
         var errado = certo + irandom_range(-10, 10);
-        if (errado >= 0 && errado != certo && scr_valor_unico_array(alternativas, errado)) {
-            array_push(alternativas, errado);
+        if (errado >= 0 && errado <= 188 && errado != certo && scr_valor_unico_array(alternativas, errado)) {
+			if (tipo == global.tipo[3]) { 
+				if errado < 10 array_push(alternativas, errado);
+			} else {
+				array_push(alternativas, errado);
+			}
         }
     }
 	alternativas = array_shuffle(alternativas);

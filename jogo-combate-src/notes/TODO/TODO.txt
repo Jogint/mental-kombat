@@ -4,9 +4,7 @@
 
 ### Jogabilidade básica
 
-* Escrever um gerador de perguntas aleatório
-* Criar um verificador de turno em andamento
-* Criar um verificador de erros
+* Verificar se o jogador cometeu um erro ou acabou o tempo
 * Configurar um if para interromper o turno ao errar ou acabar o tempo
 * Conceber pontos ao finalizar o turno e armazenar numa variável
 * Atribuir valor às habilidades: custo, dano (outro scr? Chance de crit? Buff e debuff?)
@@ -23,4 +21,4 @@
 
 ## ⚙ EM ANDAMENTO
 
-* Criando scripts de definição de personagem
+
