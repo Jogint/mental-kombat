@@ -13,3 +13,4 @@
 * FEAT: Adição dos primeiros objetos teste (Lyam - 11/09/25)
 * FEAT: Criando scripts de definição de personagem (Lyam - 12/09/25)
 * FEAT: Escrever um gerador de perguntas aleatório (Lyam - 15/09/25)
+* OTHER: Realizar testes no gerador de perguntas (Lyam - 16/09/25)
