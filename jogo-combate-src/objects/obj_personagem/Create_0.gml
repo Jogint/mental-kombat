@@ -9,12 +9,6 @@ if (!variable_instance_exists(id, "perguntas_geradas")) {
 		perguntas_geradas = scr_gerar_perguntas();
 
 		var p = perguntas_geradas[0];
-		if (i == 2) {
-			for (var j = 0; j < 99; j++) {
-				p = perguntas_geradas[j];
-				if (p.conta == "divi") break;
-			}
-		}
 
 		show_debug_message("===== TESTE DE PERGUNTA "+ string(i) +" =====");
 		show_debug_message("Conta: " + string(p.conta));
@@ -24,3 +18,11 @@ if (!variable_instance_exists(id, "perguntas_geradas")) {
 	}
 	global.dificuldade = salvar_dif;
 }
+
+
+
+
+
+
+
+scr_criar_personagem(self, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max);

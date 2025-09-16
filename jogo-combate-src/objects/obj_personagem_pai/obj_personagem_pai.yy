@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_personagem_pai",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_personagem_pai",
   "overriddenProperties":[],
@@ -23,7 +25,12 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"aumento_energia","filters":[],"listItems":[],"multiselect":false,"name":"aumento_energia","rangeEnabled":true,"rangeMax":3.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"aumento_tempo","filters":[],"listItems":[],"multiselect":false,"name":"aumento_tempo","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"aumento_vida","filters":[],"listItems":[],"multiselect":false,"name":"aumento_vida","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"aumento_energia_max","filters":[],"listItems":[],"multiselect":false,"name":"aumento_energia_max","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
