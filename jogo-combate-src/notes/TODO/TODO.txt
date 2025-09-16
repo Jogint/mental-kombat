@@ -12,7 +12,7 @@
 
 ## 🆕 BUGS ENCONTRADOS
 
-> Nenhum no momento
+* Algumas raras vezes o código trava na exibição da dificuldade 2
 
 ## 🎨 SPRITES PRA DESENHAR
 

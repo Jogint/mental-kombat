@@ -1,5 +1,8 @@
 function scr_definir_globais(){
 	randomise();
-	global.dificuldade = 0; // 0 = fácil; 1 = médio; 2 = difícil
-	global.tipo = ["sum", "sub", "mult", "divi"];
+	global.operacao = ["sum", "sub", "mult", "divi"];
+	global.jogadores = ["bot", "player"];
+	global.dificuldades = ["facil", "medio", "dificil"];
+	global.dificuldade = global.dificuldades[0];
+	global.jogador_atual = global.jogadores[0];
 }

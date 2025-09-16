@@ -1,0 +1,1 @@
+Colocar o scr_definir_globais em algum objeto da tela inicial
