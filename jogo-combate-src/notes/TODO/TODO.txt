@@ -20,3 +20,5 @@
 * Botões para o combate (só o draw fica feio)
 
 ## ⚙ EM ANDAMENTO
+
+* eventos iniciais dos objetos personagem (Lyam)
