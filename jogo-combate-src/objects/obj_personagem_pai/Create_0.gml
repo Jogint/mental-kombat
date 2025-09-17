@@ -5,8 +5,10 @@ scr_definir_globais();
 // Constantes: hp_total, energia_total, energia_por_acerto e tempo_turno
 // Variáveis: hp_atual, energia_atual
 scr_criar_personagem(self, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max);
-funcao = global.jogadores[1];
-meuTurno = false;
+controlador = global.jogadores[1];
+meu_turno = false;
+errou_resposta = false;
+
 
 
 

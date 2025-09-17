@@ -1,8 +1,8 @@
-function scr_gerar_perguntas() { //* gera 100 ou 99 perguntas
+function scr_gerar_perguntas() { //* gera 100 perguntas nas dificuldades facil e medio, 99 nas dificeis
     var perguntas = [];
 
     if (global.dificuldade == global.dificuldades[2]) {
-        for (var i = 0; i < 33; i++) {
+        for (var i = 0; i < 25; i++) {
             var n1 = irandom_range(0, 99);
             var n2 = irandom_range(0, 99);
 			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.operacao[0])); // soma

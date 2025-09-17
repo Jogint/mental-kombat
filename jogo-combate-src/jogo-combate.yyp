@@ -51,6 +51,7 @@
     {"id":{"name":"scr_criar_personagem","path":"scripts/scr_criar_personagem/scr_criar_personagem.yy",},},
     {"id":{"name":"scr_definir_globais","path":"scripts/scr_definir_globais/scr_definir_globais.yy",},},
     {"id":{"name":"scr_gerar_perguntas","path":"scripts/scr_gerar_perguntas/scr_gerar_perguntas.yy",},},
+    {"id":{"name":"scr_iniciar_timer_turno","path":"scripts/scr_iniciar_timer_turno/scr_iniciar_timer_turno.yy",},},
     {"id":{"name":"scr_trocar_dificuldade","path":"scripts/scr_trocar_dificuldade/scr_trocar_dificuldade.yy",},},
     {"id":{"name":"scr_trocar_turno","path":"scripts/scr_trocar_turno/scr_trocar_turno.yy",},},
     {"id":{"name":"scr_valor_unico_array","path":"scripts/scr_valor_unico_array/scr_valor_unico_array.yy",},},

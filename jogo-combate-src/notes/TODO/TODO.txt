@@ -4,8 +4,6 @@
 
 ### Jogabilidade básica
 
-* Verificar se o jogador cometeu um erro ou acabou o tempo
-* Configurar um if para interromper o turno ao errar ou acabar o tempo
 * Conceber pontos ao finalizar o turno e armazenar numa variável
 * Atribuir valor às habilidades: custo, dano (outro scr? Chance de crit? Buff e debuff?)
 * Atitude dos bots: acertar com base em % (fácil = 50% erro, médio = 25%, difícil = 10%)
@@ -21,4 +19,4 @@
 
 ## ⚙ EM ANDAMENTO
 
-* eventos iniciais dos objetos personagem (Lyam)
+* Configurar o step do personagem, já documentado (Lyam)
