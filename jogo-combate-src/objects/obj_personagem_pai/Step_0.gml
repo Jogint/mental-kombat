@@ -4,15 +4,10 @@ meu_turno = (global.jogador_atual == controlador);
 if (meu_turno) {
 	if (!global.turno_iniciou) {
 		scr_iniciar_timer_turno(tempo_turno); //ignora esse erro, a var é criada por script
+		global.turno_iniciou = true;
 	}
+	
 	global.timer_turno--;
-
-    if (global.timer_turno <= 0) {
-        // mandar para tela de skills antes de trocar turno
-		scr_trocar_turno()
-		global.turno_iniciou = false;
-		show_debug_message("sssssssssssss");
-    }
 	
 	if (controlador != global.jogadores[0]) {
 		// código se for player
@@ -31,7 +26,14 @@ if (meu_turno) {
 	// criar uma função que chama a próxima pergunta sempre que acerta
 	// na fase de testes, as perguntas serão exibidas no draw do obj_controle_rodada
 	
-	if (errou_resposta) {
+	if (global.errou_resposta) {
 		global.timer_turno = 0; // força fim do turno
+		global.errou_resposta = false;
 	}
+	
+	if (global.timer_turno <= 0) {
+        // mandar para tela de skills antes de trocar turno, pra atacar o oponente
+		scr_trocar_turno()
+		global.turno_iniciou = false;
+    }
 }

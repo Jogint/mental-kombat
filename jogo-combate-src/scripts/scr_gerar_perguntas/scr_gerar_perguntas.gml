@@ -38,7 +38,7 @@ function scr_gerar_perguntas() { //* gera 100 perguntas nas dificuldades facil e
 // Cria as opções erradas da questão
 function gerar_opcoes(num1, num2, certo, tipo) {
     var alternativas = [certo];
-    while (array_length(alternativas) < 4) {
+    while (array_length(alternativas) < global.qtd_alternativas) {
         var errado = certo + irandom_range(-10, 10);
         if (errado >= 0 && errado <= 188 && errado != certo && scr_valor_unico_array(alternativas, errado)) {
 			if (tipo == global.operacao[3]) { 

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_trocar_turno",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Em Partida",
+    "path":"folders/Scripts/Em Partida.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

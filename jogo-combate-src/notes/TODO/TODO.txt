@@ -7,6 +7,7 @@
 * Conceber pontos ao finalizar o turno e armazenar numa variável
 * Atribuir valor às habilidades: custo, dano (outro scr? Chance de crit? Buff e debuff?)
 * Atitude dos bots: acertar com base em % (fácil = 50% erro, médio = 25%, difícil = 10%)
+* Colocar underline nas variáveis locais (sem ser global ou criada no evento Create)
 
 ## 🆕 BUGS ENCONTRADOS
 
