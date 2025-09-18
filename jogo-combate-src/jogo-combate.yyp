@@ -50,6 +50,7 @@
     {"id":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},},
     {"id":{"name":"obj_personagem","path":"objects/obj_personagem/obj_personagem.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"scr_acerto_bot","path":"scripts/scr_acerto_bot/scr_acerto_bot.yy",},},
     {"id":{"name":"scr_atribuir_alternativas","path":"scripts/scr_atribuir_alternativas/scr_atribuir_alternativas.yy",},},
     {"id":{"name":"scr_criar_personagem","path":"scripts/scr_criar_personagem/scr_criar_personagem.yy",},},
     {"id":{"name":"scr_definir_globais","path":"scripts/scr_definir_globais/scr_definir_globais.yy",},},

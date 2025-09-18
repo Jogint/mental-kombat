@@ -12,19 +12,27 @@ if (meu_turno) {
 	if (controlador != global.jogadores[0]) {
 		// código se for player
 		
-		// Ele deve ser capaz de selecionar uma opção com mouse ou teclado
-		// As opções podem ser objetos chamados "selecao", com eventos de clique
-		// Se clicar num objeto com a variável "resposta_correta" equivalente a false, acaba
 	} else {
 		// código se for bot
+		// Acerto dos bots: acertar com base em % (fácil = 70% erro, médio = 50%, difícil = 30%)
+		// Tempo de resposta: (fácil = 10 secs, médio = 6 secs, difícil = 3 secs)
+		if (!bot_executou) {
+			bot_executou = true;
+			if (global.dificuldade == global.dificuldades[2]) {
+				alarm[0] = 3 * game_get_speed(gamespeed_fps);
+			} else if (global.dificuldade == global.dificuldades[1]) {
+				alarm[0] = 6 * game_get_speed(gamespeed_fps);
+			} else {
+				alarm[0] = 10 * game_get_speed(gamespeed_fps);
+			}
+		}
+		
+		
 		
 		// O quadro de opções ainda deve ser visível para o player, mas numa cor acinzentada
 		// indicando que ainda não é o turno dele
-		// Acerto dos bots: acertar com base em % (fácil = 40% erro, médio = 20%, difícil = 10%)
-		// Tempo de resposta: (fácil = 10 secs, médio = 6 secs, difícil = 3 secs)
+		
 	}
-	// criar uma função que chama a próxima pergunta sempre que acerta
-	// na fase de testes, as perguntas serão exibidas no draw do obj_controle_rodada
 	
 	if (global.errou_resposta) {
 		global.timer_turno = 0; // força fim do turno
@@ -33,7 +41,10 @@ if (meu_turno) {
 	
 	if (global.timer_turno <= 0) {
         // mandar para tela de skills antes de trocar turno, pra atacar o oponente
-		scr_trocar_turno()
+		bot_executou = false;
+		scr_trocar_turno();
+		scr_proxima_pergunta();
+		show_debug_message("trocou turno para: " + global.jogador_atual);
 		global.turno_iniciou = false;
     }
 }

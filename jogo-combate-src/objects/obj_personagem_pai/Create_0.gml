@@ -7,3 +7,4 @@ scr_definir_globais();
 scr_criar_personagem(self, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max);
 controlador = global.jogadores[1];
 meu_turno = false;
+bot_executou = false;

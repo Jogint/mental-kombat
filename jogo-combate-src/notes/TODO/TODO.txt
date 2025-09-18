@@ -12,6 +12,7 @@
 ## 🆕 BUGS ENCONTRADOS
 
 * Algumas raras vezes o código trava na exibição da dificuldade 2
+* A cor do sprite da resposta correta não muda
 
 ## 🎨 SPRITES PRA DESENHAR
 
