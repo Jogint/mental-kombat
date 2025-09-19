@@ -20,3 +20,5 @@
 * FEAT: Criação de objetos que exibem as alternativas (Lyam - 18/09/25)
 * FEAT: Configuração do sistema de turnos  (Lyam - 18/09/25)
 * FEAT: Atitude dos bots de seleção e dificuldade (Lyam - 18/09/25)
+* FIX: A primeira pergunta precisa ser respondida 2x (Lyam - 19/09/25)
+* FIX: Corrigi o script que recomeça o banco de perguntas ao chegar no final (Lyam - 19/09/25)

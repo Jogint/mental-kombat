@@ -13,6 +13,6 @@ function scr_definir_globais(){
 	global.timer_turno = 0; // quanto tempo o jogador tem para responder
 	global.turno_iniciou = false; // define quando deve chamar o scr_inicia_timer_turno
 	global.perguntas_geradas = scr_gerar_perguntas(); // banco de perguntas a serem respondidas
-	global.pergunta_atual = global.perguntas_geradas[0]; // Pergunta. Alterada em scr_proxima_pergunta
+	global.pergunta_atual = global.perguntas_geradas[0]; // definição inicial para rodar a prox linha
 	global.errou_resposta = false; // Define quando zerar o timer ao errar
 }
