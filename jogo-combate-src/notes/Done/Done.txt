@@ -17,3 +17,6 @@
 * FEAT: Evento create básico do personagem (Lyam - 17/09/25)
 * FEAT: Estrutura base do step do personagem (Lyam - 17/09/25)
 * FIX: Bug no index no scr_trocar_turno (Lyam - 17/09/25)
+* FEAT: Criação de objetos que exibem as alternativas (Lyam - 18/09/25)
+* FEAT: Configuração do sistema de turnos  (Lyam - 18/09/25)
+* FEAT: Atitude dos bots de seleção e dificuldade (Lyam - 18/09/25)

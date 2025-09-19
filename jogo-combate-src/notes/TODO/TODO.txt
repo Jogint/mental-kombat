@@ -6,19 +6,21 @@
 
 * Conceber pontos ao finalizar o turno e armazenar numa variável
 * Atribuir valor às habilidades: custo, dano (outro scr? Chance de crit? Buff e debuff?)
-* Atitude dos bots: acertar com base em % (fácil = 50% erro, médio = 25%, difícil = 10%)
+
+### Melhorias diversas
+
 * Colocar underline nas variáveis locais (sem ser global ou criada no evento Create)
+* Pegar umas fontes legais
 
 ## 🆕 BUGS ENCONTRADOS
 
 * Algumas raras vezes o código trava na exibição da dificuldade 2
-* A cor do sprite da resposta correta não muda
+* O às vezes responde fora da sua vez
+* A primeira pergunta precisa ser respondida 2x
 
 ## 🎨 SPRITES PRA DESENHAR
 
 * Dois primeiros personagens
-* Botões para o combate (só o draw fica feio)
+* Botões para o combate
 
 ## ⚙ EM ANDAMENTO
-
-* Configurar o step do personagem, já documentado (Lyam)
