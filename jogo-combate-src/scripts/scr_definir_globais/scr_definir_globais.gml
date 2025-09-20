@@ -8,7 +8,7 @@ function scr_definir_globais(){
 	global.qtd_alternativas = 4;
 	
 	// USO COMPARTILHADO: variaveis acessadas em diferentes arquivos
-	global.dificuldade = global.dificuldades[1]; // dificuldade das perguntas e tempo de resposta dos bots
+	global.dificuldade = global.dificuldades[2]; // dificuldade das perguntas e tempo de resposta dos bots
 	global.jogador_atual = global.jogadores[1]; // quem pode responder a pergunta naquele turno
 	global.timer_turno = 0; // quanto tempo o jogador tem para responder
 	global.turno_iniciou = false; // define quando deve chamar o scr_inicia_timer_turno

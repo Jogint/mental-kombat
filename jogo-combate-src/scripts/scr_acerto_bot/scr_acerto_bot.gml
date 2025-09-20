@@ -1,18 +1,20 @@
 function scr_acerto_bot(obj, chance, corte){
-	var _secs_por_dificuldade = [3, 6, 10]
-	if (chance <= corte && global.timer_turno >= _secs_por_dificuldade[array_get_index(global.dificuldades, global.dificuldade)] && global.jogador_atual == obj.controlador) {
+	var _secs_por_dificuldade = [10, 6, 3]; // segundos antes de responder
+	var _index_dificuldade = array_get_index(global.dificuldades, global.dificuldade);
+	var _secs_para_resposta = _secs_por_dificuldade[_index_dificuldade];
+	var _secs_restantes = round(global.timer_turno / game_get_speed(gamespeed_fps));
+	
+	if (chance <= corte && // se ele bateu a % de acerto, manda bala
+	global.jogador_atual == obj.controlador) { // se ainda for sua vez
 		scr_proxima_pergunta();
-		with (obj) {
-			if (global.dificuldade == global.dificuldades[2]) {
-				alarm[0] = 3 * game_get_speed(gamespeed_fps);
-			} else if (global.dificuldade == global.dificuldades[1]) {
-				alarm[0] = 6 * game_get_speed(gamespeed_fps);
-			} else {
-			    alarm[0] = 10 * game_get_speed(gamespeed_fps);
+		show_debug_message("tempo restante: " + string(_secs_restantes));
+		if (_secs_restantes > _secs_para_resposta) { // se pode responder mais uma
+			with (obj) {
+				alarm[0] = _secs_para_resposta * game_get_speed(gamespeed_fps);
 			}
 		}
 	} else {
-		obj.alarm[0] = -1;
-		global.errou_resposta = true;
+		obj.alarm[0] = -1; // cancela o alarme
+		global.errou_resposta = true; // encerra o turno
 	}
 }

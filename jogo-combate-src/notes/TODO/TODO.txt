@@ -6,6 +6,8 @@
 
 * Conceber pontos ao finalizar o turno e armazenar numa variável
 * Atribuir valor às habilidades: custo, dano (outro scr? Chance de crit? Buff e debuff?)
+* Iniciar uso das vidas
+* Retorno visual do acerto do bot
 
 ### Melhorias diversas
 
@@ -15,8 +17,6 @@
 ## 🆕 BUGS ENCONTRADOS
 
 * Algumas raras vezes o código trava na exibição da dificuldade 2
-* O bot às vezes responde fora da sua vez
-
 
 ## 🎨 SPRITES PRA DESENHAR
 
@@ -24,3 +24,5 @@
 * Botões para o combate
 
 ## ⚙ EM ANDAMENTO
+
+* O bot às vezes responde fora da sua vez (Lyam) : SUPOSTAMENTE CORRIGIDO
