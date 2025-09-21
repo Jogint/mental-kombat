@@ -1,3 +1,3 @@
-if (global.jogador_atual != global.jogadores[0]) {
+if (global.jogador_atual != global.tipos_jogadores[0]) {
 	sprite_index = spr_teste_opcao_1;
 }

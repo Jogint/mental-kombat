@@ -1,18 +1,26 @@
+/// Esta função é chamada apenas uma vez na Room Creation Code da rm_menu.
 function scr_definir_globais(){
 	randomise();
 	
-	// DICIONÁRIO: globais apenas para evitar erros de escrita e afins
-	global.operacao = ["sum", "sub", "mult", "divi"];
-	global.jogadores = ["bot", "player"];
-	global.dificuldades = ["facil", "medio", "dificil"];
+	/// DEFINIÇÕES DO JOGO: Variáveis fixas para evitar erros de digitação.
+	global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"];
+	global.tipos_jogadores = ["bot", "player"];
+	global.niveis_dificuldade = ["facil", "medio", "dificil"];
+	global.perso_disponiveis = [obj_personagem, obj_personagem_1]; //TODO: Adicionar novos personagens
+	scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
+	global.perso_atuais = [];
 	global.qtd_alternativas = 4;
+	global.qtd_players_partida = 2;
 	
-	// USO COMPARTILHADO: variaveis acessadas em diferentes arquivos
-	global.dificuldade = global.dificuldades[2]; // dificuldade das perguntas e tempo de resposta dos bots
-	global.jogador_atual = global.jogadores[1]; // quem pode responder a pergunta naquele turno
-	global.timer_turno = 0; // quanto tempo o jogador tem para responder
-	global.turno_iniciou = false; // define quando deve chamar o scr_inicia_timer_turno
-	global.perguntas_geradas = scr_gerar_perguntas(); // banco de perguntas a serem respondidas
-	global.pergunta_atual = global.perguntas_geradas[0]; // definição inicial para rodar a prox linha
-	global.errou_resposta = false; // Define quando zerar o timer ao errar
+	/// ESTADO DA PARTIDA: Variáveis que controlam o fluxo do jogo.
+	global.dificuldade_atual = global.niveis_dificuldade[2]; // Define o nível de dificuldade da partida
+	global.jogador_atual = global.tipos_jogadores[1]; // Indica quem pode responder a pergunta
+	global.inst_perso_partida = []; // Array para armazenar os personagens selecionados
+	global.perguntas_geradas = scr_gerar_perguntas(); // Banco de perguntas para a partida
+	global.pergunta_atual = global.perguntas_geradas[0]; // A pergunta que está sendo exibida no momento
+	
+	/// VARIÁVEIS DE CONTROLE DE FLUXO: Variáveis temporárias para lógicas de jogo.
+	global.timer_turno = 0; // Temporizador para o tempo de resposta
+	global.turno_iniciou = false; // Flag para controlar o início do turno
+	global.errou_resposta = false; // Flag para controlar se a resposta foi errada
 }

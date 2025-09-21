@@ -1,0 +1,1 @@
+if (array_length(global.perso_atuais) == 2) room_goto_next();

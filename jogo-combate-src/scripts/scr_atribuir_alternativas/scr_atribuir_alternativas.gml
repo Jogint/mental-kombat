@@ -1,3 +1,4 @@
+/// chamado em obj_opcao_resposta pra exibir as opções
 function scr_atribuir_alternativas(){
 	var alternativas = global.pergunta_atual.opcoes;
 	if (array_length(alternativas) != global.qtd_alternativas) {

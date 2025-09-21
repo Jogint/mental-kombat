@@ -9,7 +9,7 @@ if (meu_turno) {
 	
 	global.timer_turno--;
 	
-	if (controlador != global.jogadores[0]) {
+	if (controlador != global.tipos_jogadores[0]) {
 		// código se for player
 		
 	} else {
@@ -18,9 +18,9 @@ if (meu_turno) {
 		// Tempo de resposta: (fácil = 10 secs, médio = 6 secs, difícil = 3 secs)
 		if (!bot_executou) {
 			bot_executou = true;
-			if (global.dificuldade == global.dificuldades[2]) {
+			if (global.dificuldade_atual == global.niveis_dificuldade[2]) {
 				alarm[0] = 3 * game_get_speed(gamespeed_fps);
-			} else if (global.dificuldade == global.dificuldades[1]) {
+			} else if (global.dificuldade_atual == global.niveis_dificuldade[1]) {
 				alarm[0] = 6 * game_get_speed(gamespeed_fps);
 			} else {
 				alarm[0] = 10 * game_get_speed(gamespeed_fps);

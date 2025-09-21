@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_config_selecao_perso",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_config_selecao_perso",
+  "parent":{
+    "name":"Seleção",
+    "path":"folders/Scripts/Seleção.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,3 +1,4 @@
+/// Chamada por cada um dos personagens ao startar partida
 function scr_criar_personagem(obj, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max) {
     with (obj) {
 		hp_total = definir_vida(aumento_vida);

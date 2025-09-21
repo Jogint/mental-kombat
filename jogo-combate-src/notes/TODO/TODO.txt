@@ -4,25 +4,36 @@
 
 ### Jogabilidade básica
 
-* Conceber pontos ao finalizar o turno e armazenar numa variável
-* Atribuir valor às habilidades: custo, dano (outro scr? Chance de crit? Buff e debuff?)
-* Iniciar uso das vidas
-* Retorno visual do acerto do bot
+* Conceber pontos de energia por acerto
+* Definir habilidades em um array de objetos
+	* habilidade: "nome"
+	* custo: pontos
+	* tipo: dano, cura, buff, debuff
+	* valor: inteiros para dano e cura, % para buff e debuff
+	* imagem: sprite_habilidade
+* Ir para tela de habilidades antes de passar o turno
+* Aplicar efeito das habilidades
+* Criar script de finalizar turno por btn_reset ou vitória de um dos lados
+* Configurar menu inicial
+* Configurar trilha principal
 
 ### Melhorias diversas
 
 * Colocar underline nas variáveis locais (sem ser global ou criada no evento Create)
 * Pegar umas fontes legais
+* Retorno visual do acerto do bot
+* Retorno visual de erros 
+* Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
 
 ## 🆕 BUGS ENCONTRADOS
 
-* Algumas raras vezes o código trava na exibição da dificuldade 2
+* Algumas raras vezes o código trava na exibição da dificuldade 2 : corrigido ??
 
 ## 🎨 SPRITES PRA DESENHAR
 
 * Dois primeiros personagens
 * Botões para o combate
+* Background da seleção
 
 ## ⚙ EM ANDAMENTO
 
-* O bot às vezes responde fora da sua vez (Lyam) : SUPOSTAMENTE CORRIGIDO

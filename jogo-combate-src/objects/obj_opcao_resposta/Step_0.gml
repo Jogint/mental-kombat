@@ -9,7 +9,7 @@ if (global.pergunta_atual != pergunta) {
 //}
 
 // Altera a sprite enquanto selecionado NO TURNO DO PLAYER
-if (global.jogador_atual != global.jogadores[0] && mouse_check_button(mb_left)) {
+if (global.jogador_atual != global.tipos_jogadores[0] && mouse_check_button(mb_left)) {
     if (position_meeting(mouse_x, mouse_y, id)) {
         sprite_index = spr_teste_opcao_1; 
     } else {

@@ -10,8 +10,8 @@
   "name":"obj_personagem_pai",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objetos/Personagens/Player.yy",
+    "name":"Personagens",
+    "path":"folders/Objetos/Personagens.yy",
   },
   "parentObjectId":null,
   "persistent":false,

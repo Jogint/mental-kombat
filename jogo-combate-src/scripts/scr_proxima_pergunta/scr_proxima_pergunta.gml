@@ -1,3 +1,4 @@
+/// chamado em obj_personagem_pai e scr_acerto_bot ao acertar a resposta
 function scr_proxima_pergunta(){
 	static _index_pergunta = 0;
 if (_index_pergunta  >= array_length(global.perguntas_geradas)) {

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_atualizar_arr_sprites",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_atualizar_arr_sprites",
+  "parent":{
+    "name":"Seleção",
+    "path":"folders/Scripts/Seleção.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,6 +1,7 @@
+/// chamado em obj_personagem_pai durante turno de bot
 function scr_acerto_bot(obj, chance, corte){
 	var _secs_por_dificuldade = [10, 6, 3]; // segundos antes de responder
-	var _index_dificuldade = array_get_index(global.dificuldades, global.dificuldade);
+	var _index_dificuldade = array_get_index(global.niveis_dificuldade, global.dificuldade_atual);
 	var _secs_para_resposta = _secs_por_dificuldade[_index_dificuldade];
 	var _secs_restantes = round(global.timer_turno / game_get_speed(gamespeed_fps));
 	
