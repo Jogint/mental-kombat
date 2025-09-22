@@ -20,20 +20,20 @@ function definir_vida(aumento){
         show_error("Valor de 'aumento' inválido em scr_definir_vida: " + string(aumento), true);
     }
 	
-	var energia_padrao = 50;
-	return energia_padrao * aumento;
+	var hp_padrao = 50;
+	return round(hp_padrao * aumento);
 }
 
 function definir_energia_max(aumento){
 	if(is_undefined(aumento)) aumento = 1;
 		
 	if (aumento < 0.5 || aumento > 2) {
-		// mínimo 125 energia, máximo 500 energia
+		// mínimo 50 energia, máximo 200 energia
         show_error("Valor de 'aumento' inválido em scr_definir_energia_max: " + string(aumento), true);
     }
 	
-	var energia_max_padrao = 250;
-	return energia_max_padrao * aumento;
+	var energia_max_padrao = 100;
+	return round(energia_max_padrao * aumento);
 }
 
 function definir_energia(aumento){
@@ -45,7 +45,7 @@ function definir_energia(aumento){
     }
 	
 	var energia_padrao = 2;
-	return energia_padrao * aumento;
+	return round(energia_padrao * aumento);
 }
 
 function definir_tempo(aumento){
@@ -57,5 +57,5 @@ function definir_tempo(aumento){
     }
 	
 	var tempo_padrao = 30;
-	return tempo_padrao * aumento;
+	return round(tempo_padrao * aumento);
 }

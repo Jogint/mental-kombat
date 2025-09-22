@@ -9,6 +9,6 @@
 * A definição de qual vai ser o inimigo está no instanceCreationCode do bot
 TODO: Mudar a definição de qual vai ser o bot ao clicar na fase em rm_mapa_trilha
 
-## Depth de personagens
+## Depths de objetos
 
-> todos estão no padrão até o momento
+* Depth 1 - camada Habilidades, em rm_combate

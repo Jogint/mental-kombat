@@ -4,15 +4,6 @@
 
 ### Jogabilidade básica
 
-* Conceber pontos de energia por acerto
-* Definir habilidades em um array de objetos
-	* habilidade: "nome"
-	* custo: pontos
-	* tipo: dano, cura, buff, debuff
-	* valor: inteiros para dano e cura, % para buff e debuff
-	* imagem: sprite_habilidade
-* Ir para tela de habilidades antes de passar o turno
-* Aplicar efeito das habilidades
 * Criar script de finalizar turno por btn_reset ou vitória de um dos lados
 * Configurar menu inicial
 * Configurar trilha principal
@@ -27,7 +18,10 @@
 
 ## 🆕 BUGS ENCONTRADOS
 
-* Algumas raras vezes o código trava na exibição da dificuldade 2 : corrigido ??
+* Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
+Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 do erro acontecer
+Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
+Extra: Globais são chamadas no roomCreationCode da primeira room, por isso a janela nem abre
 
 ## 🎨 SPRITES PRA DESENHAR
 
@@ -37,3 +31,4 @@
 
 ## ⚙ EM ANDAMENTO
 
+* Configurar scr_fim_partida

@@ -1,7 +1,11 @@
 //Verifica se é vez do personagem
 meu_turno = (global.jogador_atual == controlador);
 
-if (meu_turno) {
+if (global.partida_acabou) {
+	scr_fim_partida();
+}
+
+if (meu_turno && !global.partida_acabou) {
 	if (!global.turno_iniciou) {
 		scr_iniciar_timer_turno(tempo_turno); //ignora esse erro, a var é criada por script
 		global.turno_iniciou = true;
@@ -9,11 +13,8 @@ if (meu_turno) {
 	
 	global.timer_turno--;
 	
-	if (controlador != global.tipos_jogadores[0]) {
-		// código se for player
-		
-	} else {
-		// código se for bot
+	if (controlador == global.tipos_jogadores[0]) {
+		// código DO BOT, o código do player está em obj_opcao_resposta
 		// Acerto dos bots: acertar com base em % (fácil = 70% erro, médio = 50%, difícil = 30%)
 		// Tempo de resposta: (fácil = 10 secs, médio = 6 secs, difícil = 3 secs)
 		if (!bot_executou) {
@@ -26,12 +27,6 @@ if (meu_turno) {
 				alarm[0] = 10 * game_get_speed(gamespeed_fps);
 			}
 		}
-		
-		
-		
-		// O quadro de opções ainda deve ser visível para o player, mas numa cor acinzentada
-		// indicando que ainda não é o turno dele
-		
 	}
 	
 	if (global.errou_resposta) {
@@ -40,11 +35,11 @@ if (meu_turno) {
 	}
 	
 	if (global.timer_turno <= 0) {
-        // mandar para tela de skills antes de trocar turno, pra atacar o oponente
+		global.timer_turno = 0;
+		if (!global.exibir_hab) {
+			scr_toggle_hab(habilidades)
+			if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(self, habilidades);
+		};
 		bot_executou = false;
-		scr_trocar_turno();
-		scr_proxima_pergunta();
-		show_debug_message("trocou turno para: " + global.jogador_atual);
-		global.turno_iniciou = false;
     }
 }

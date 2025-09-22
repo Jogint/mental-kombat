@@ -1,4 +1,4 @@
-/// @description Timer bot
+/// @description Acertos bot
 var _chance_acerto = irandom_range(1, 100);
 
 if (global.dificuldade_atual == global.niveis_dificuldade[2]) {

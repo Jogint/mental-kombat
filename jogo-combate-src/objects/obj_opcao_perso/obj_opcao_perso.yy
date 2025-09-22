@@ -9,8 +9,8 @@
   "name":"obj_opcao_perso",
   "overriddenProperties":[],
   "parent":{
-    "name":"Gerencia",
-    "path":"folders/Objetos/Gerencia.yy",
+    "name":"Botoes",
+    "path":"folders/Objetos/Botoes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,6 +1,7 @@
 # ✅ FINALIZADOS
 
 ## Guia
+
 **FEAT:** Inclusão de novidades
 **FIX:** Correção de bugs
 **IMPROVE:** Melhorias e otimizações
@@ -9,6 +10,7 @@
 ---
 
 ## Setembro
+
 * FEAT: Adição dos primeiros objetos teste (Lyam - 11/09/25)
 * FEAT: Criando scripts de definição de personagem (Lyam - 12/09/25)
 * FEAT: Escrever um gerador de perguntas aleatório (Lyam - 15/09/25)
@@ -26,3 +28,8 @@
 * FEAT: Room de seleção de personagem em funcionamento (Lyam - 21/09/25)
 * IMPROVE: Criação dinâmica de personagens na rm_combate (Lyam - 21/09/25)
 * OTHER: Documentação de scripts e informações úteis (Lyam - 21/09/25)
+* FEAT: Conceber pontos de energia por acerto (Lyam - 22/09/25)
+* FEAT: Definir habilidades em um array de objetos (Lyam - 22/09/25)
+* FEAT: Ir para tela de habilidades antes de passar o turno (Lyam - 22/09/25)
+* IMPROVE: Transferência de código repetitivo para scr_trocar_sprite (Lyam - 22/09/25)
+* FEAT: Habilidades aumentam ou reduzem a vida (Lyam - 22/09/25)

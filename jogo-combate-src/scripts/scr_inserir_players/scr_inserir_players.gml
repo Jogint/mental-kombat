@@ -17,8 +17,7 @@ function scr_inserir_players(){
 		
 			var _largura_desejada = 64 * 5;
 			var _altura_desejada = 64 * 5;
-			image_xscale = _largura_desejada / sprite_get_width(sprite_index);
-			image_yscale = _altura_desejada / sprite_get_height(sprite_index);
+			scr_trocar_sprite(self, _largura_desejada, _altura_desejada, sprite_index);
 		}
 
 	    // Adiciona o ID da nova instância ao array
