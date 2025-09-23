@@ -5,7 +5,7 @@
 **FEAT:** Inclusão de novidades
 **FIX:** Correção de bugs
 **IMPROVE:** Melhorias e otimizações
-**OTHER:** Parte teórica e visual, não relacionado a código 
+**OTHER:** Parte teórica / visual / documentação / não relacionado a código 
 
 ---
 
@@ -33,3 +33,7 @@
 * FEAT: Ir para tela de habilidades antes de passar o turno (Lyam - 22/09/25)
 * IMPROVE: Transferência de código repetitivo para scr_trocar_sprite (Lyam - 22/09/25)
 * FEAT: Habilidades aumentam ou reduzem a vida (Lyam - 22/09/25)
+* FEAT: Sistema de desbloquar personagens (Lyam - 23/09/25)
+* FIX: Globais estavam resetando sempre que ia para o menu (Lyam - 23/09/25)
+* IMPROVE: Colocar underline nas variáveis locais — exceto parâmetros de funções (Lyam - 23/09/25)
+* FIX: Jogo forçava continuar quando bot vencia, resultando em erro (Lyam - 23/09/25)

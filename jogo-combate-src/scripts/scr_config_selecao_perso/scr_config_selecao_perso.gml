@@ -4,7 +4,7 @@ function scr_config_selecao_perso(){
 	
 	if (_vezes_chamado == array_length(global.arr_sprite_perso)) _vezes_chamado = 0;
 	
-	var _return_value = [global.arr_sprite_perso[_vezes_chamado], global.perso_disponiveis[_vezes_chamado]];
+	var _return_value = [global.arr_sprite_perso[_vezes_chamado], global.todos_perso[_vezes_chamado]];
 	
 	_vezes_chamado++;
 	

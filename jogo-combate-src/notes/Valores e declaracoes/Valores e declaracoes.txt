@@ -2,7 +2,7 @@
 
 ## Variáveis e Scripts "escondidos"
 
-* O scr_definir_globais está na roomCreationCode da rm_menu
+* O obj_definir_globais está na rm_menu
 * Os obj_personagem são inseridos no jogo via roomCreationCode da rm_combate
 * Todas as rooms sem uso ATÉ O MOMENTO possuem room_goto_next() em roomCreationCode
 * Se você buscou e não achou onde define a var, olhe na declaração de variável do obj

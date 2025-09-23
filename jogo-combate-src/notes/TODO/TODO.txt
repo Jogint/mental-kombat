@@ -4,24 +4,24 @@
 
 ### Jogabilidade básica
 
-* Criar script de finalizar turno por btn_reset ou vitória de um dos lados
+* Criar um botão para resetar partida
 * Configurar menu inicial
-* Configurar trilha principal
+* Configurar rm_mapa_trilha principal (room onde você precisa derrotar um inimigo para ir pro proximo)
 
 ### Melhorias diversas
 
-* Colocar underline nas variáveis locais (sem ser global ou criada no evento Create)
 * Pegar umas fontes legais
 * Retorno visual do acerto do bot
 * Retorno visual de erros 
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
+* Adicionar review visual de quando um personagem ainda está bloqueado
+* Adicionar uma tela de vitória / derrota com "menu", "trilha", "jogar novamente" (se perder)
 
 ## 🆕 BUGS ENCONTRADOS
 
 * Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
-Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 do erro acontecer
+Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
 Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
-Extra: Globais são chamadas no roomCreationCode da primeira room, por isso a janela nem abre
 
 ## 🎨 SPRITES PRA DESENHAR
 
@@ -31,4 +31,4 @@ Extra: Globais são chamadas no roomCreationCode da primeira room, por isso a ja
 
 ## ⚙ EM ANDAMENTO
 
-* Configurar scr_fim_partida
+> Tudo que foi iniciado também já foi encerrado.

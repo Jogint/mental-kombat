@@ -2,6 +2,13 @@
 meu_turno = (global.jogador_atual == controlador);
 
 if (global.partida_acabou) {
+	if (global.inst_perso_partida[0].hp_atual == 0) {
+		global.quem_venceu = global.tipos_jogadores[1]; // vitoria do player
+	} else if (global.inst_perso_partida[1].hp_atual == 0) {
+		global.quem_venceu = global.tipos_jogadores[0]; // vitoria do bot
+	} else {
+		global.quem_venceu = "noone";
+	}
 	scr_fim_partida();
 }
 

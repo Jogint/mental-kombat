@@ -1,4 +1,4 @@
-/// chamado em scr_definir_globais e scr_proxima_pergunta
+/// chamado em obj_definir_globais e scr_proxima_pergunta
 function scr_gerar_perguntas() { //* gera 100 perguntas nas dificuldades facil e medio, 99 nas dificeis
     var perguntas = [];
 
@@ -38,24 +38,24 @@ function scr_gerar_perguntas() { //* gera 100 perguntas nas dificuldades facil e
 
 // Cria as opções erradas da questão
 function gerar_opcoes(num1, num2, certo, tipo) {
-    var alternativas = [certo];
-    while (array_length(alternativas) < global.qtd_alternativas) {
-        var errado = certo + irandom_range(-10, 10);
-        if (errado >= 0 && errado <= 188 && errado != certo && scr_valor_unico_array(alternativas, errado)) {
+    var _alternativas = [certo];
+    while (array_length(_alternativas) < global.qtd_alternativas) {
+        var _errado = certo + irandom_range(-10, 10);
+        if (_errado >= 0 && _errado <= 188 && _errado != certo && scr_valor_unico_array(_alternativas, _errado)) {
 			if (tipo == global.operacoes[3]) { 
-				if errado < 10 array_push(alternativas, errado);
+				if _errado < 10 array_push(_alternativas, _errado);
 			} else {
-				array_push(alternativas, errado);
+				array_push(_alternativas, _errado);
 			}
         }
     }
-	alternativas = array_shuffle(alternativas);
+	_alternativas = array_shuffle(_alternativas);
 
     return {
 		conta: tipo,
         n1: num1,
         n2: num2,
         correto: certo,
-        opcoes: alternativas
+        opcoes: _alternativas
     };
 }
