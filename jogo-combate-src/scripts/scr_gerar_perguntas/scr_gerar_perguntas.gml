@@ -4,8 +4,8 @@ function scr_gerar_perguntas() { //* gera 100 perguntas nas dificuldades facil e
 
     if (global.dificuldade_atual == global.niveis_dificuldade[2]) {
         for (var i = 0; i < 25; i++) {
-            var n1 = irandom_range(0, 99);
-            var n2 = irandom_range(0, 99);
+            var n1 = irandom_range(0, 50);
+            var n2 = irandom_range(0, 50);
 			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.operacoes[0])); // soma
 			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.operacoes[1])); // sub
 
@@ -16,8 +16,8 @@ function scr_gerar_perguntas() { //* gera 100 perguntas nas dificuldades facil e
         }
     } else if (global.dificuldade_atual == global.niveis_dificuldade[1]) {
         for (var i = 0; i < 33; i++) {
-            var n1 = irandom_range(0, 99);
-            var n2 = irandom_range(0, 99);
+            var n1 = irandom_range(0, 50);
+            var n2 = irandom_range(0, 50);
 			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.operacoes[0]));
 			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.operacoes[1]));
 			

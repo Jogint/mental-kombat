@@ -1,5 +1,6 @@
 function scr_toggle_hab(hab_arr){
 	if (!global.exibir_hab) {
+		layer_set_visible("Opcoes", false);
 		var _camada_alvo = "Habilidades"; 
 
 		for (var i = 0; i < array_length(hab_arr); i++) {
@@ -28,6 +29,7 @@ function scr_toggle_hab(hab_arr){
 		}
 		global.exibir_hab = true;
 	} else {
+		layer_set_visible("Opcoes", true);
 		while (array_length(global.hab_visiveis) > 0) {
 			var _hab_removida = array_pop(global.hab_visiveis);
 			instance_destroy(_hab_removida);
