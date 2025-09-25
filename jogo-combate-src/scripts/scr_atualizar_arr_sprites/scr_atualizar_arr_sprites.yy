@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_atualizar_arr_sprites",
   "parent":{
-    "name":"Seleção",
-    "path":"folders/Scripts/Seleção.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

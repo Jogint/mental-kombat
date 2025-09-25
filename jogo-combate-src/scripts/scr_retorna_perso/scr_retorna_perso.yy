@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_config_selecao_perso",
+  "%Name":"scr_retorna_perso",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_config_selecao_perso",
+  "name":"scr_retorna_perso",
   "parent":{
     "name":"Seleção",
     "path":"folders/Scripts/Seleção.yy",

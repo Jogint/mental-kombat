@@ -10,8 +10,20 @@ global.niveis_dificuldade = ["facil", "medio", "dificil"];
 global.tipos_hab = ["pular", "dano", "cura"];
 global.qtd_alternativas = 4;
 global.qtd_players_partida = 2;
-global.todos_perso = [obj_personagem, obj_personagem_1]; //TODO: Adicionar novos personagens
-global.perso_disponiveis = [obj_personagem]; 
+global.todos_perso = [obj_personagem,
+					obj_personagem_1,
+					obj_personagem_2,
+					obj_personagem_3,
+					obj_personagem_4,
+					obj_personagem_5,
+					obj_personagem_6,
+					obj_personagem_7,
+					obj_personagem_8,
+					obj_personagem_9,
+					obj_personagem_10,
+					obj_personagem_11];
+global.perso_disponiveis = [obj_personagem];
+global.inimigos_disponiveis = [obj_personagem_1];
 scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
 
 /// ESTADO DA PARTIDA: Variáveis que controlam o fluxo do jogo.

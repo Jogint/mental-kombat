@@ -6,7 +6,7 @@ function scr_trocar_turno(){
 		if (_i == array_length(global.tipos_jogadores) - 1) {
 			global.jogador_atual = global.tipos_jogadores[0];
 		} else {
-			global.jogador_atual = global.tipos_jogadores[i + 1];
+			global.jogador_atual = global.tipos_jogadores[_i + 1];
 		}
 	}
 }

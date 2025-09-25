@@ -6,7 +6,6 @@
 
 * Criar um botão para resetar partida
 * Configurar menu inicial
-* Configurar rm_mapa_trilha principal (room onde você precisa derrotar um inimigo para ir pro proximo)
 
 ### Melhorias diversas
 
@@ -14,7 +13,7 @@
 * Retorno visual do acerto do bot
 * Retorno visual de erros 
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
-* Adicionar review visual de quando um personagem ainda está bloqueado
+* Adicionar review visual de quando um personagem inimigo ainda está bloqueado
 * Adicionar uma tela de vitória / derrota com "menu", "trilha", "jogar novamente" (se perder)
 
 ## 🆕 BUGS ENCONTRADOS
