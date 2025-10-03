@@ -40,3 +40,5 @@
 * FIX: Ocultar opções de resposta quando aparecem as habilidades (Lyam - 24/09/25)
 * FEAT: Configurar rm_mapa_trilha principal (Lyam - 25/09/25)
 * FEAT: Ocultar personagens não desbloqueados na seleção (Lyam - 25/09/25)
+* FIX: Jogo crasha no final ao acessar personagem não existente (Lyam - 30/09/25)
+* FIX: Player não perde energia (Lyam - 30/09/25)

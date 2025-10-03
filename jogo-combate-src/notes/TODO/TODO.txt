@@ -4,7 +4,7 @@
 
 ### Jogabilidade básica
 
-* Criar um botão para resetar partida
+
 * Configurar menu inicial
 
 ### Melhorias diversas
@@ -30,4 +30,7 @@ Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração d
 
 ## ⚙ EM ANDAMENTO
 
-> Tudo que foi iniciado também já foi encerrado.
+* Criar um botão para resetar partida
+	* Criar um obj_btn_reset e configurar para mandar pro menu (Lyam - 20/09/2025)
+	* Inserir uma caixa de opção pra realmente confirmar o reset (Lyam - pendente)
+	* ?: usar confirmações em teclado, no modelo s/n (sim ou não). (Lyam - 03/10/2025)

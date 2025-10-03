@@ -48,6 +48,7 @@
     {"id":{"name":"TODO","path":"notes/TODO/TODO.yy",},},
     {"id":{"name":"Valores e declaracoes","path":"notes/Valores e declaracoes/Valores e declaracoes.yy",},},
     {"id":{"name":"obj_btn_avancar","path":"objects/obj_btn_avancar/obj_btn_avancar.yy",},},
+    {"id":{"name":"obj_btn_reset","path":"objects/obj_btn_reset/obj_btn_reset.yy",},},
     {"id":{"name":"obj_controle_rodada","path":"objects/obj_controle_rodada/obj_controle_rodada.yy",},},
     {"id":{"name":"obj_definir_globais","path":"objects/obj_definir_globais/obj_definir_globais.yy",},},
     {"id":{"name":"obj_habilidade","path":"objects/obj_habilidade/obj_habilidade.yy",},},

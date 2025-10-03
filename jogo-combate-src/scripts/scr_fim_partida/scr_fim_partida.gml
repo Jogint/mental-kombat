@@ -9,10 +9,13 @@ function scr_fim_partida(){
 			array_push(global.perso_disponiveis, global.perso_atuais[0]);
 			show_debug_message("player ganha: " + string(global.perso_atuais[0]));
 		}
+
 		var _prox = array_get_index(global.todos_perso, global.perso_atuais[0]) + 1;
-		if (!array_contains(global.inimigos_disponiveis, global.todos_perso[_prox])) {
-			array_push(global.inimigos_disponiveis, global.todos_perso[_prox]);
-			show_debug_message("player luta: " + string(global.todos_perso[_prox]));
+		if (_prox < array_length(global.todos_perso)) {
+			if (!array_contains(global.inimigos_disponiveis, global.todos_perso[_prox])) {
+				array_push(global.inimigos_disponiveis, global.todos_perso[_prox]);
+				show_debug_message("player luta: " + string(global.todos_perso[_prox]));
+			}
 		}
 	}
 	
