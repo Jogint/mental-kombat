@@ -42,3 +42,6 @@
 * FEAT: Ocultar personagens não desbloqueados na seleção (Lyam - 25/09/25)
 * FIX: Jogo crasha no final ao acessar personagem não existente (Lyam - 30/09/25)
 * FIX: Player não perde energia (Lyam - 30/09/25)
+* FEAT: Criar um botão para resetar partida e mandar pro menu (Lyam - 30/09/2025)
+* FEAT: Script reutilizável de criação de pop ups personalizáveis (Lyam - 03/10/2025)
+* FEAT: Configurar menu inicial (Lyam - 03/10/2025)

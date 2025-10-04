@@ -2,14 +2,18 @@
 
 ## 🔧 A FAZER
 
-### Jogabilidade básica
+### Modo Rápido
 
+* Permitir pvp ou pvc
+* Botão de personagem aleatório
+* Botão de confirmar para cada personagem
+* Player escolhe o oponente mesmo no PvC
+* Qualquer um dos jogadores podem responder a pergunta
+* Habilidades podem ser usadas a qualquer momento (tipo Q W E R)
 
-* Configurar menu inicial
+## Melhorias diversas
 
-### Melhorias diversas
-
-* Pegar umas fontes legais
+* Usar fontes diversas
 * Retorno visual do acerto do bot
 * Retorno visual de erros 
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
@@ -29,8 +33,3 @@ Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração d
 * Background da seleção
 
 ## ⚙ EM ANDAMENTO
-
-* Criar um botão para resetar partida
-	* Criar um obj_btn_reset e configurar para mandar pro menu (Lyam - 20/09/2025)
-	* Inserir uma caixa de opção pra realmente confirmar o reset (Lyam - pendente)
-	* ?: usar confirmações em teclado, no modelo s/n (sim ou não). (Lyam - 03/10/2025)

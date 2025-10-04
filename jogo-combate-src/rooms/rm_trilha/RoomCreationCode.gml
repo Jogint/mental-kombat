@@ -1,1 +1,1 @@
-// scr_proxima_room();
+if (global.modo_jogo_atual != global.modos_jogo[0]) room_goto_next();

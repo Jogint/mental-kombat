@@ -1,1 +1,1 @@
-//TODO: Fazer o pop_up
+scr_desenha_pop_up (self, ["Deseja resetar o estado de jogo?","Você perderá todos os dados.", "", "Digite 'S' para 'sim' ou 'N' para 'não'."], ,[c_black, c_red]);
