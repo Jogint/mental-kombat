@@ -2,20 +2,32 @@
 
 ## 🔧 A FAZER
 
+* Configurar para alterar a foto fo inst_player_2 caso não seja modo história
+* Resolver problema na exibição dos personagens ao contrário
+
+### Modo PvP
+
+* Também em turnos, ambos os jogadores no mouse
+* Todos os personagens desbloqueados
+* Botão de confirmar a seleção de cada personagem
+* Sortear quem começa atacando (e mostrar o sorteio visualmente)
+* Sistema de pontuação até que o usuário volte ao menu inicial
+
 ### Modo Rápido
 
-* Permitir pvp ou pvc
-* Botão de personagem aleatório
-* Botão de confirmar para cada personagem
-* Player escolhe o oponente mesmo no PvC
+* Somente PvC com os mesmos personagens que desbloqueou no modo história
+* Seleção de personagens igual o PvP
+* Player escolhe ambos os personagens
 * Qualquer um dos jogadores podem responder a pergunta
-* Habilidades podem ser usadas a qualquer momento (tipo Q W E R)
+* Habilidades podem ser usadas a qualquer momento (tipo clicando 1 2 3 4)
 
-## Melhorias diversas
+## Melhorias
 
 * Usar fontes diversas
+* Botão de personagem aleatório
+* Desativar instancias de resposta ao invés de só ocultar a camada
 * Retorno visual do acerto do bot
-* Retorno visual de erros 
+* Retorno visual de erros (algo antes das habilidades)
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
 * Adicionar review visual de quando um personagem inimigo ainda está bloqueado
 * Adicionar uma tela de vitória / derrota com "menu", "trilha", "jogar novamente" (se perder)
@@ -23,8 +35,8 @@
 ## 🆕 BUGS ENCONTRADOS
 
 * Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
-Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
-Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
+	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
+	* Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
 
 ## 🎨 SPRITES PRA DESENHAR
 
@@ -33,3 +45,5 @@ Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração d
 * Background da seleção
 
 ## ⚙ EM ANDAMENTO
+
+* Configuração da seleção de personagem para diferentes modos (Lyam)

@@ -1,10 +1,11 @@
-switch (global.modo_jogo_atual) {
-	case global.modos_jogo[0]:
-		global.modo_jogo_atual = global.modos_jogo[1];
-		break;
-	case global.modos_jogo[1]:
+var _i = array_get_index(global.modos_jogo, global.modo_jogo_atual);
+
+if (_i >= 0) {
+	if (_i == array_length(global.modos_jogo) - 1) {
 		global.modo_jogo_atual = global.modos_jogo[0];
-		break;
-	default:
-		show_error("Modo de jogo não catalogado. Recebeu: " + string(global.modo_jogo_atual), true);
+	} else {
+		global.modo_jogo_atual = global.modos_jogo[_i + 1];
+	}
+} else {
+	show_error("O modo de jogo atual não é um modo válido em global.modos_jogo. Recebeu: " + global.modo_jogo_atual, true)
 }

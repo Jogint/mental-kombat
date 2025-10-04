@@ -7,7 +7,7 @@ function definir_globais() {
 	global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"];
 	global.tipos_jogadores = ["bot", "player"];
 	global.niveis_dificuldade = ["facil", "medio", "dificil"];
-	global.modos_jogo = ["história", "rápido"];
+	global.modos_jogo = ["2 jogadores", "história", "rápido"];
 	global.tipos_hab = ["pular", "dano", "cura"];
 	global.qtd_alternativas = 4;
 	global.qtd_players_partida = 2;
@@ -25,11 +25,12 @@ function definir_globais() {
 						obj_personagem_11];
 
 	/// ESTADO DA PARTIDA: Variáveis que controlam o fluxo do jogo.
-	global.dificuldade_atual = global.niveis_dificuldade[2]; // Define o nível de dificuldade da partida
-	global.modo_jogo_atual = global.modos_jogo[0];
+	global.dificuldade_atual = global.niveis_dificuldade[0]; // Define o nível de dificuldade da partida
+	global.modo_jogo_atual = global.modos_jogo[1];
 	global.jogador_atual = global.tipos_jogadores[1]; // Indica quem pode responder a pergunta
 	global.perso_atuais = []; // quais objetos de personagem cada instancia vai usar
 	global.inst_perso_partida = []; // intâncias de personagens em jogo
+	global.ultimo_selecionado = ""; // usado durante a seleção de personagens
 	global.perguntas_geradas = scr_gerar_perguntas(); // Banco de perguntas para a partida
 	global.pergunta_atual = global.perguntas_geradas[0]; // A pergunta que está sendo exibida no momento
 	global.partida_acabou = true; // começa sem partidas em andamento

@@ -7,8 +7,9 @@
 * Todas as rooms sem uso ATÉ O MOMENTO possuem room_goto_next() em roomCreationCode
 * Se você buscou e não achou onde define a var, olhe na declaração de variável do obj
 * A definição de qual vai ser o inimigo está no instanceCreationCode do bot
-TODO: Mudar a definição de qual vai ser o bot ao clicar na fase em rm_mapa_trilha
+* Perguntas na dificuldade correta são geradas em obj_btn_avancar após seleção
 
 ## Depths de objetos
 
 * Depth 1 - camada Habilidades, em rm_combate
+
