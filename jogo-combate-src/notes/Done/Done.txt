@@ -50,3 +50,8 @@
 * FEAT: Script de criação de pop ups personalizáveis (Lyam - 03/10/2025)
 * FEAT: Configurar menu inicial (Lyam - 03/10/2025)
 * FIX: Erro ao executar outros modos de jogo (Lyam - 04/10/2025)
+* FEAT: Configurar para alterar a foto do inst_player_2 fora do modo história (Lyam - 08/10/2025)
+* FIX: Resolver problema na exibição dos personagens ao contrário (Lyam - 08/10/2025)
+* FEAT: Player 2 consegue responder e ganhar pontos (Lyam - 08/10/2025)
+* FIX: Jogo quebra se você tentar avançar sem selecionar personagem (Lyam - 08/10/2025)
+* IMPROVE: Mover função de um script para outro (Lyam - 08/10/2025)

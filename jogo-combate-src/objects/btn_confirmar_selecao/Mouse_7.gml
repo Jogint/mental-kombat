@@ -1,1 +1,0 @@
-scr_selecionou_perso(global.ultimo_selecionado);

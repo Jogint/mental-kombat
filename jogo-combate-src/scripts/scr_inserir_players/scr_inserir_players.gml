@@ -4,8 +4,12 @@ function scr_inserir_players(){
 	for (var i = 0; i < array_length(global.perso_atuais); i++) {
 	    var _obj_a_criar = global.perso_atuais[i];
     
-	    // Define a posição para a nova instância. 
-	    var _x = 950 - (i * 850);
+		// Define a posição para a nova instância.
+		var _x = 100 + (i * 850);
+		if (global.modo_jogo_atual == global.modos_jogo[1]) { // bot aparece primeiro na trilha
+			_x = 950 - (i * 850);
+		}
+	    
 	    var _y = 200;
     
 	    // Cria a instância e guarda o ID dela na variável
@@ -13,7 +17,12 @@ function scr_inserir_players(){
 
 		// Define o tamanho do obj
 		with (_nova_instancia) {
-			controlador = global.tipos_jogadores[i];
+			if (global.modo_jogo_atual == global.modos_jogo[0]) {
+				controlador = global.tipos_jogadores[i + 1]; // caso multplayer, ignora o bot
+			} else {
+				controlador = global.tipos_jogadores[i];
+			}
+			
 		
 			var _largura_desejada = 64 * 5;
 			var _altura_desejada = 64 * 5;

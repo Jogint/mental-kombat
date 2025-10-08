@@ -44,7 +44,7 @@ if (meu_turno && !global.partida_acabou) {
 	if (global.timer_turno <= 0) {
 		global.timer_turno = 0;
 		if (!global.exibir_hab) {
-			scr_toggle_hab(habilidades)
+			scr_toggle_hab(habilidades);
 			if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(self, habilidades);
 		};
 		bot_executou = false;

@@ -1,4 +1,4 @@
-/// TODO arrumar a máscara de colisão dos círculos, trocar esse draw circle por um sprite
+// TODO: arrumar a máscara de colisão dos círculos, trocar esse draw circle por um sprite
 //draw_self();
 
 var _raio = 32

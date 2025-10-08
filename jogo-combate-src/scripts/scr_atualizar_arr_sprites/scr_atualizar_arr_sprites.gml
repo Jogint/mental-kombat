@@ -1,4 +1,4 @@
-/// Chamado em obj_definir_globais e; TODO ao terminar uma fase no modo história 
+/// Chamado em obj_definir_globais e
 function scr_atualizar_arr_sprites(){
 	global.arr_sprite_perso = [];
 	

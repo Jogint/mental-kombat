@@ -5,7 +5,7 @@ function definir_globais() {
 
 	/// DEFINIÇÕES DO JOGO: Variáveis fixas para evitar erros de digitação.
 	global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"];
-	global.tipos_jogadores = ["bot", "player"];
+	global.tipos_jogadores = ["bot", "player1", "player2"];
 	global.niveis_dificuldade = ["facil", "medio", "dificil"];
 	global.modos_jogo = ["2 jogadores", "história", "rápido"];
 	global.tipos_hab = ["pular", "dano", "cura"];
