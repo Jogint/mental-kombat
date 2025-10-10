@@ -20,7 +20,7 @@ function scr_fim_partida(){
 	}
 	
 	// resetar globais
-	global.jogador_atual = global.tipos_jogadores[1];
+	global.jogador_atual = "";
 	global.perso_atuais = [];
 	global.inst_perso_partida = [];
 	global.perguntas_geradas = scr_gerar_perguntas();

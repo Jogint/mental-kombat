@@ -39,6 +39,6 @@
 
 ### Modo PvP
 
-* Todos os personagens desbloqueados
+* Todos os personagens desbloqueados FEITO
 * Sortear quem começa atacando (e mostrar o sorteio visualmente)
 * Sistema de pontuação até que o usuário volte ao menu inicial (ex: player 1 venceu 4; player 2 venceu 1)

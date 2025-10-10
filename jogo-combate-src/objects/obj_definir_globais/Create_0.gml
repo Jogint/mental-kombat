@@ -27,7 +27,7 @@ function definir_globais() {
 	/// ESTADO DA PARTIDA: Variáveis que controlam o fluxo do jogo.
 	global.dificuldade_atual = global.niveis_dificuldade[0]; // Define o nível de dificuldade da partida
 	global.modo_jogo_atual = global.modos_jogo[1];
-	global.jogador_atual = global.tipos_jogadores[1]; // Indica quem pode responder a pergunta
+	global.jogador_atual = ""; // Indica quem pode responder a pergunta
 	global.perso_atuais = []; // quais objetos de personagem cada instancia vai usar
 	global.inst_perso_partida = []; // intâncias de personagens em jogo
 	global.ultimo_selecionado = ""; // usado durante a seleção de personagens

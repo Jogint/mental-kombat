@@ -12,7 +12,7 @@ if (global.partida_acabou) {
 	scr_fim_partida();
 }
 
-if (meu_turno && !global.partida_acabou) {
+if (meu_turno && !global.partida_acabou && global.jogador_atual != "") {
 	if (!global.turno_iniciou) {
 		scr_iniciar_timer_turno(tempo_turno); //ignora esse erro, a var é criada por script
 		global.turno_iniciou = true;
