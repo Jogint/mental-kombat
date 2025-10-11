@@ -28,7 +28,13 @@ if (choosing_state == 1 || choosing_state == 2) {
 		draw_text(x, y - 15, "Tempo restante: " + string(round(global.timer_turno / game_get_speed(gamespeed_fps))));
 
 		// vida dos personagens PROVISÓRIO
-		draw_text(1085, 40, "vida: " + string(global.inst_perso_partida[0].hp_atual) + " | energia: " + string(global.inst_perso_partida[0].energia_atual));
-		draw_text(100, 40, "vida: " + string(global.inst_perso_partida[1].hp_atual) + " | energia: " + string(global.inst_perso_partida[1].energia_atual));
+		if (global.modo_jogo_atual == global.modos_jogo[1]) {
+			draw_text(1085, 40, "vida: " + string(global.inst_perso_partida[0].hp_atual) + " | energia: " + string(global.inst_perso_partida[0].energia_atual));
+			draw_text(100, 40, "vida: " + string(global.inst_perso_partida[1].hp_atual) + " | energia: " + string(global.inst_perso_partida[1].energia_atual));
+		} else{
+			draw_text(100, 40, "vida: " + string(global.inst_perso_partida[0].hp_atual) + " | energia: " + string(global.inst_perso_partida[0].energia_atual));
+			draw_text(1085, 40, "vida: " + string(global.inst_perso_partida[1].hp_atual) + " | energia: " + string(global.inst_perso_partida[1].energia_atual));
+		}
+		
 	}
 }

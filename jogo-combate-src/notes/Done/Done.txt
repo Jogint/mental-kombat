@@ -55,3 +55,5 @@
 * FEAT: Player 2 consegue responder e ganhar pontos (Lyam - 08/10/2025)
 * FIX: Jogo quebra se você tentar avançar sem selecionar personagem (Lyam - 08/10/2025)
 * IMPROVE: Mover função de um script para outro (Lyam - 08/10/2025)
+* FEAT: Permitir uso de qualquer personagem no modo pvp (Lyam - 10/10/2025)
+* FEAT: Sortear quem ataca primeiro (Lyam - 10/10/2025)

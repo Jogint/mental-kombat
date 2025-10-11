@@ -25,6 +25,8 @@
 ## 🆕 BUGS ENCONTRADOS
 
 * Toda habilidade usada por um player é do p1 (mesmo no multiplayer)
+* No modo rápido, ele considerada apenas o bot como jogador atual
+* A vida e energia nos modos exceto história está invertida
 * Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
 	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
 	* Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
