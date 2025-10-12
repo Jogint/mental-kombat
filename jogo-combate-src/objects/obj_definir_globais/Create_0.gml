@@ -23,21 +23,22 @@ function definir_globais() {
 						obj_personagem_9,
 						obj_personagem_10,
 						obj_personagem_11];
+	scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
+	global.perso_disponiveis = [obj_personagem]; // personagens jogaveis na trilha + rapido
+	global.inimigos_disponiveis = [obj_personagem_1]; // inimigos derrotaveis na trilha
 
 	/// ESTADO DA PARTIDA: Variáveis que controlam o fluxo do jogo.
 	global.dificuldade_atual = global.niveis_dificuldade[0]; // Define o nível de dificuldade da partida
 	global.modo_jogo_atual = global.modos_jogo[1];
 	global.jogador_atual = ""; // Indica quem pode responder a pergunta
-	global.perso_atuais = []; // quais objetos de personagem cada instancia vai usar
+	global.perso_atuais = [noone, noone]; // quais objetos de personagem cada instancia vai usar
 	global.inst_perso_partida = []; // intâncias de personagens em jogo
 	global.ultimo_selecionado = ""; // usado durante a seleção de personagens
 	global.perguntas_geradas = scr_gerar_perguntas(); // Banco de perguntas para a partida
 	global.pergunta_atual = global.perguntas_geradas[0]; // A pergunta que está sendo exibida no momento
 	global.partida_acabou = true; // começa sem partidas em andamento
 	global.quem_venceu = "noone";
-	global.perso_disponiveis = [obj_personagem];
-	global.inimigos_disponiveis = [obj_personagem_1];
-	scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
+	global.pontuacao_pvp = [0, 0]; // define quantas vezes um player venceu. Reseta no menu
 	global.timer_turno = 0; // Temporizador para o tempo de resposta
 	global.turno_iniciou = false; // Flag para controlar o início do turno
 	global.errou_resposta = false; // Flag para controlar se a resposta foi errada

@@ -10,7 +10,6 @@ function scr_bot_escolhe_hab(obj, arr){
 			}
 		}
 	}
-	show_debug_message("Usando a habilidade: " + arr[_hab_usada].nome)
 	with (obj) {
 		ultima_hab_usada = arr[_hab_usada];
 		alarm[1] = game_get_speed(gamespeed_fps);

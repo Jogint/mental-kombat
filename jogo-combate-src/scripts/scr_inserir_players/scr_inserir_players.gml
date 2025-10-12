@@ -6,10 +6,6 @@ function scr_inserir_players(){
     
 		// Define a posição para a nova instância.
 		var _x = 100 + (i * 850);
-		if (global.modo_jogo_atual == global.modos_jogo[1]) { // bot aparece primeiro na trilha
-			_x = 950 - (i * 850);
-		}
-	    
 	    var _y = 200;
     
 	    // Cria a instância e guarda o ID dela na variável
@@ -23,7 +19,6 @@ function scr_inserir_players(){
 				controlador = global.tipos_jogadores[i];
 			}
 			
-		
 			var _largura_desejada = 64 * 5;
 			var _altura_desejada = 64 * 5;
 			scr_trocar_sprite(self, _largura_desejada, _altura_desejada, sprite_index);

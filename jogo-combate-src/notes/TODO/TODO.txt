@@ -2,15 +2,11 @@
 
 ## 🔧 A FAZER
 
-### Modo Rápido
+### Features
 
-* Somente PvC com os mesmos personagens que desbloqueou no modo história
-* Seleção de personagens igual o PvP
-* Player escolhe ambos os personagens
-* Qualquer um dos jogadores podem responder a pergunta
-* Habilidades podem ser usadas a qualquer momento (tipo clicando 1 2 3 4)
+> Sem pendências
 
-## Melhorias
+### Melhorias
 
 * Usar fontes diversas
 * Botão de personagem aleatório
@@ -19,28 +15,28 @@
 * Retorno visual de erros (algo antes das habilidades)
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
 * Adicionar review visual de quando um personagem inimigo ainda está bloqueado
-* Adicionar uma tela de vitória / derrota com "menu", "trilha", "jogar novamente" (se perder ou pvp)
 * Revisitar todos os TODO
+* Adicionar ///@param para explicar parametros de funções
 
-## 🆕 BUGS ENCONTRADOS
-
-* Toda habilidade usada por um player é do p1 (mesmo no multiplayer)
-* No modo rápido, ele considerada apenas o bot como jogador atual
-* A vida e energia nos modos exceto história está invertida
-* Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
-	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
-	* Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
-
-## 🎨 SPRITES PRA DESENHAR
+### 🎨 SPRITES PRA DESENHAR
 
 * Dois primeiros personagens
 * Botões para o combate
 * Background da seleção
 
+## 🆕 BUGS ENCONTRADOS
+
+* No modo rápido, ele considerada apenas o bot no sorteio
+* Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
+	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
+	* Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
+
 ## ⚙ EM ANDAMENTO
 
-### Modo PvP
+### Modo Rápido
 
-* Todos os personagens desbloqueados FEITO
-* Sortear quem começa atacando (e mostrar o sorteio visualmente)
-* Sistema de pontuação até que o usuário volte ao menu inicial (ex: player 1 venceu 4; player 2 venceu 1)
+* Somente PvC com os mesmos personagens que desbloqueou no modo história FEITO
+* Seleção de personagens igual o PvP FEITO
+* Player escolhe ambos os personagens FEITO
+* Qualquer um dos jogadores podem responder a pergunta
+* Habilidades podem ser usadas a qualquer momento (tipo clicando 1 2 3 4)

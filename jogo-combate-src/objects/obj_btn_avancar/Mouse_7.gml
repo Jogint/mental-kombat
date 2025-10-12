@@ -1,18 +1,22 @@
 switch (room) {
 	case rm_trilha:
-		if (array_length(global.perso_atuais) == 1) room_goto_next();
+		if (global.perso_atuais[1] != noone) room_goto_next();
 	break;
 	case rm_selecao_personagem:
 		// TODO: Review visual caso global.ultimo_selecionado == ""
 		if (global.ultimo_selecionado != "") {
-			if (array_length(global.perso_atuais) == 1) {
-				scr_selecionou_perso(global.ultimo_selecionado);
+			var _players_selecionados = (global.perso_atuais[0] != noone) + (global.perso_atuais[1] != noone);
+
+			if (_players_selecionados < global.qtd_players_partida) {
+			    scr_selecionou_perso(global.ultimo_selecionado);
+			} else {
+			    show_error("Número máximo de jogadores (" + string(global.qtd_players_partida) + ") já foi atingido.", true);
+			}
+			
+			// Inicia se ambos estiverem selecionados
+			if (global.perso_atuais[0] != noone && global.perso_atuais[1] != noone) {
 				global.perguntas_geradas = scr_gerar_perguntas();
 				room_goto_next();
-			} else if (array_length(global.perso_atuais) == 0) {
-				scr_selecionou_perso(global.ultimo_selecionado);
-			} else {
-				show_error("Numero de jogadores excedeu o máximo de " + string(global.qtd_players_partida) + ". Obteve: " + string(array_length(global.perso_atuais)), true);
 			}
 		}
 	break;

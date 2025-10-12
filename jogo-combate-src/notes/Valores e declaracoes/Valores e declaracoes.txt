@@ -1,15 +1,18 @@
 # Dados importantes para a codificação do jogo
 
+## Informações gerais
+
+* O Player 1 SEMPRE SERÁ o índice 0, por se manter a esquerda. Bot e P2 são índice 1
+
 ## Variáveis e Scripts "escondidos"
 
 * O obj_definir_globais está na rm_menu
 * Os obj_personagem são inseridos no jogo via roomCreationCode da rm_combate
 * Todas as rooms sem uso ATÉ O MOMENTO possuem room_goto_next() em roomCreationCode
 * Se você buscou e não achou onde define a var, olhe na declaração de variável do obj
-* A definição de qual vai ser o inimigo está no instanceCreationCode do bot
+* A definição do inimigo na trilha está no instanceCreationCode do bot
 * Perguntas na dificuldade correta são geradas em obj_btn_avancar após seleção
 
 ## Depths de objetos
 
 * Depth 1 - camada Habilidades, em rm_combate
-

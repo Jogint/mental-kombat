@@ -1,17 +1,5 @@
 //Verifica se é vez do personagem
 meu_turno = (global.jogador_atual == controlador);
-
-if (global.partida_acabou) {
-	if (global.inst_perso_partida[0].hp_atual == 0) {
-		global.quem_venceu = global.tipos_jogadores[1]; // vitoria do player
-	} else if (global.inst_perso_partida[1].hp_atual == 0) {
-		global.quem_venceu = global.tipos_jogadores[0]; // vitoria do bot
-	} else {
-		global.quem_venceu = "noone";
-	}
-	scr_fim_partida();
-}
-
 if (meu_turno && !global.partida_acabou && global.jogador_atual != "") {
 	if (!global.turno_iniciou) {
 		scr_iniciar_timer_turno(tempo_turno); //ignora esse erro, a var é criada por script
@@ -44,7 +32,15 @@ if (meu_turno && !global.partida_acabou && global.jogador_atual != "") {
 	if (global.timer_turno <= 0) {
 		global.timer_turno = 0;
 		if (!global.exibir_hab) {
-			scr_toggle_hab(habilidades);
+			// NÃO OUSE TIRAR ESSE BLOCO IF ABAIXO DAQUI
+			// Ain mas pq não scr_toggle_hab(habilidades) direto?
+			// PQ TÁ PEGANDO OS DADOS DO OPONENTE???? NÃO MEXE NO QUE TÁ QUIETO
+			if (controlador == global.tipos_jogadores[1]) {
+				scr_toggle_hab(global.inst_perso_partida[0].habilidades);
+			} else {
+				scr_toggle_hab(global.inst_perso_partida[1].habilidades);
+			}
+			
 			if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(self, habilidades);
 		};
 		bot_executou = false;

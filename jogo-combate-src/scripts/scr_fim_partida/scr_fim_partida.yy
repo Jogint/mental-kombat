@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_fim_partida",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Fim de Jogo",
+    "path":"folders/Scripts/Fim de Jogo.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -7,7 +7,7 @@ function scr_acerto_bot(obj, chance, corte){
 	
 	if (chance <= corte && // se ele bateu a % de acerto, manda bala
 	global.jogador_atual == obj.controlador) { // se ainda for sua vez
-		global.inst_perso_partida[0].aumentar_energia();
+		global.inst_perso_partida[1].aumentar_energia();
 		scr_proxima_pergunta();
 		show_debug_message("tempo restante: " + string(_secs_restantes));
 		if (_secs_restantes > _secs_para_resposta) { // se pode responder mais uma
