@@ -30,8 +30,9 @@ if (choosing_state == 1 || choosing_state == 2) {
 				show_error("Operação matemática não identificada pelo switch, recebeu: " + global.pergunta_atual.conta, true)
 		}
 		_texto_pergunta += string(global.pergunta_atual.n2);
+		var _tempo_restante = round(global.timer_turno / game_get_speed(gamespeed_fps))
 		draw_text(x, y, _texto_pergunta);
-		draw_text(x, y - 15, "Tempo restante: " + string(round(global.timer_turno / game_get_speed(gamespeed_fps))));
+		draw_text(x, y - 20, "Tempo restante: " + string(_tempo_restante));
 
 		// vida dos personagens PROVISÓRIO
 		draw_text(100, 40, "vida: " + string(global.inst_perso_partida[0].hp_atual) + " | energia: " + string(global.inst_perso_partida[0].energia_atual));

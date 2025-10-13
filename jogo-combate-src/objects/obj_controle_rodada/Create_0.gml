@@ -8,3 +8,5 @@ current_selection_name = ""; // nome exibido
 
 // ===== PARA MODO PVP =====
 player_pontuou = false;
+
+pop_ups_abertos = false;

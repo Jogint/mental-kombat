@@ -68,3 +68,6 @@
 * FIX: Selecionar habilidade acima de alternativa marca a opção (Lyam - 11/10/2025)
 * FEAT: Tela final de com "menu" e "jogar novamente" (Lyam - 11/10/2025)
 * FIX: Personagem não desbloqueia na trilha (Lyam - 11/10/2025)
+* IMPROVE: Tempo de resposta do bot varia a depender da pergunta (Lyam - 12/10/2025)
+* FEAT: Timer único do modo rápido (Lyam - 12/10/2025)
+* FEAT: Hab e perguntas abertas simultaneamente modo rápido (Lyam - 12/10/2025)

@@ -1,4 +1,4 @@
-if (global.jogador_atual == "" && choosing_state == 0) {
+if (global.jogador_atual == "" && choosing_state == 0 && global.modo_jogo_atual != global.modos_jogo[2]) {
     choosing_state = 1;
     var _total_flicker_time = 3; // 3 seconds
     var _flicker_rate_steps = 4; // Pisca 4x por segundo
@@ -24,4 +24,17 @@ if (global.partida_acabou) {
 if (global.partida_acabou && global.modo_jogo_atual == global.modos_jogo[0] && !player_pontuou) {
 	scr_pontua_pvp();
 	player_pontuou = true;
+}
+
+// Controle do timer da partida
+if (global.jogador_atual != "") global.timer_turno--;
+
+// Controle modo rápido
+if (global.modo_jogo_atual == global.modos_jogo[2]) {
+	global.jogador_atual = "TODOS!";
+	if (!pop_ups_abertos) {
+		scr_toggle_hab(global.inst_perso_partida[0].habilidades);
+		scr_toggle_hab(global.inst_perso_partida[1].habilidades);
+		pop_ups_abertos = true;
+	}
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_acerto_bot",
   "parent":{
-    "name":"Controle Geral",
-    "path":"folders/Scripts/Em Partida/Controle Geral.yy",
+    "name":"Bot",
+    "path":"folders/Scripts/Em Partida/Bot.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

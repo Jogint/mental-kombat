@@ -16,3 +16,11 @@ function aumentar_energia() {
 	energia_atual += energia_por_acerto;
 	if (energia_atual >= energia_total) energia_atual = energia_total;
 }
+
+function bot_ataca() {
+	if (!bot_executou) {
+		bot_executou = true;
+		var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
+		alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
+	}
+}

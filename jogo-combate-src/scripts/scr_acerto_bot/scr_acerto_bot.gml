@@ -1,18 +1,20 @@
-/// chamado em obj_personagem_pai durante turno de bot
+///@description Chamado em obj_personagem_pai durante turno de bot
+///@param obj: object. Personagem do bot
+///@param chance: int. Valor definido pelo i_random_range
+///@param corte: int. Valor máximo para ser considerado um acerto
 function scr_acerto_bot(obj, chance, corte){
-	var _secs_por_dificuldade = [10, 6, 3]; // segundos antes de responder
-	var _index_dificuldade = array_get_index(global.niveis_dificuldade, global.dificuldade_atual);
-	var _secs_para_resposta = _secs_por_dificuldade[_index_dificuldade];
+	var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
 	var _secs_restantes = round(global.timer_turno / game_get_speed(gamespeed_fps));
 	
 	if (chance <= corte && // se ele bateu a % de acerto, manda bala
-	global.jogador_atual == obj.controlador) { // se ainda for sua vez
-		global.inst_perso_partida[1].aumentar_energia();
+	(global.jogador_atual == obj.controlador || // se ainda for sua vez
+	global.modo_jogo_atual == global.modos_jogo[2])) {
+		global.inst_perso_partida[1].aumentar_energia(); // pontua pelo acerto
 		scr_proxima_pergunta();
 		show_debug_message("tempo restante: " + string(_secs_restantes));
-		if (_secs_restantes > _secs_para_resposta) { // se pode responder mais uma
+		if (_secs_restantes > _tempo_para_responder) { // se pode responder mais uma
 			with (obj) {
-				alarm[0] = _secs_para_resposta * game_get_speed(gamespeed_fps);
+				alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
 			}
 		}
 	} else {

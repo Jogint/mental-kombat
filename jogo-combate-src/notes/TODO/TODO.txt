@@ -16,17 +16,16 @@
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
 * Adicionar review visual de quando um personagem inimigo ainda está bloqueado
 * Revisitar todos os TODO
-* Adicionar ///@param para explicar parametros de funções
+* Adicionar "/// @param nome_param: tipo. descrição" para explicar param de funções
 
 ### 🎨 SPRITES PRA DESENHAR
 
-* Dois primeiros personagens
-* Botões para o combate
-* Background da seleção
+* 12 personagens (player + 11 inimigos)
+* Todos os objetos na pasta /Botões
+* Background para cada room
 
 ## 🆕 BUGS ENCONTRADOS
 
-* No modo rápido, ele considerada apenas o bot no sorteio
 * Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
 	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
 	* Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
@@ -35,8 +34,10 @@
 
 ### Modo Rápido
 
-* Somente PvC com os mesmos personagens que desbloqueou no modo história FEITO
-* Seleção de personagens igual o PvP FEITO
-* Player escolhe ambos os personagens FEITO
-* Qualquer um dos jogadores podem responder a pergunta
-* Habilidades podem ser usadas a qualquer momento (tipo clicando 1 2 3 4)
+* Somente PvC com os mesmos personagens que desbloqueou no modo história: FEITO
+* Seleção de personagens igual o PvP: FEITO
+* Qualquer um dos jogadores podem responder a pergunta: FEITO PORÉM COM BUG
+	* Bot parou de responder quando introduzi as habilidades
+* Habilidades podem ser usadas a qualquer momento: FEITO PORÉM COM BUG
+	* !: Nenhuma das opção são clicaveis pq global.jogador_atual == "TODOS!"
+	* ?: Buscar uma maneira dele reconhecer quais habilidades são de cada player

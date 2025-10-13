@@ -1,10 +1,7 @@
 /// @description Acertos bot
 var _chance_acerto = irandom_range(1, 100);
-
-if (global.dificuldade_atual == global.niveis_dificuldade[2]) {
-	scr_acerto_bot(self, _chance_acerto, 70);
-} else if (global.dificuldade_atual == global.niveis_dificuldade[1]) {
-	scr_acerto_bot(self, _chance_acerto, 50);
-} else {
-	scr_acerto_bot(self, _chance_acerto, 30);
-}
+var _i_dificuldade = array_get_index(global.niveis_dificuldade, global.dificuldade_atual);
+var _acerto_base = 50;
+var _aumento_base = 20;
+var _corte_acerto = clamp(_acerto_base + (_aumento_base * _i_dificuldade), 0, 100);
+scr_acerto_bot(self, _chance_acerto, _corte_acerto);
