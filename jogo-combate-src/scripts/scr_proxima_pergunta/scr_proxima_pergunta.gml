@@ -9,5 +9,5 @@ function scr_proxima_pergunta(){
 	
 	global.pergunta_atual = global.perguntas_geradas[_index_pergunta];
 	_index_pergunta++;
-	show_debug_message(global.pergunta_atual);
+	//show_debug_message(global.pergunta_atual);
 }

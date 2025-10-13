@@ -1,43 +1,47 @@
 # ✅ TODO
 
-## 🔧 A FAZER
+## 🔧 Novas funcionalidades
 
 ### Features
 
-> Sem pendências
+* Criar global.apresentou_tutoriais = [false, false, false];
+	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
+	* ?: Inspirar no tutorial do OSU
 
 ### Melhorias
 
 * Usar fontes diversas
 * Botão de personagem aleatório
-* Desativar instancias de resposta ao invés de só ocultar a camada
+* Desativar instancias de resposta ao invés de ocultar a camada ao exibir habilidades
 * Retorno visual do acerto do bot
-* Retorno visual de erros (algo antes das habilidades)
+* Retorno visual de erros de player e bot (algo antes das habilidades)
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
 * Adicionar review visual de quando um personagem inimigo ainda está bloqueado
 * Revisitar todos os TODO
 * Adicionar "/// @param nome_param: tipo. descrição" para explicar param de funções
+* Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 
 ### 🎨 SPRITES PRA DESENHAR
 
 * 12 personagens (player + 11 inimigos)
 * Todos os objetos na pasta /Botões
 * Background para cada room
+* Tela e botões de fim de jogo
+* Tela e botões de configurações (som, controles, créditos, easter egg)
 
 ## 🆕 BUGS ENCONTRADOS
 
+* Player eventualmente não consegue atacar no modo rápido
+	* ?: Foram criadas mensagens de debug em obj_btn_habilidade. precisa analisar
+* Bot atacando em menos de um segundo no modo rápido
+* Bot usando habilidades em menos de um segundo no modo rápido
+	* Foi inserido um segundo extra no scr_tempo_acerto_bot, não parece ajudar
+	* Checar reset dos alarmes do bot, possivelmente sendo lançados com menos tempo
 * Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
-	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x, chance aprox de 1/25 de acontecer
+	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x
 	* Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
+	* Não tem ocorrido há 2 semanas, mas vale checar
 
 ## ⚙ EM ANDAMENTO
 
-### Modo Rápido
-
-* Somente PvC com os mesmos personagens que desbloqueou no modo história: FEITO
-* Seleção de personagens igual o PvP: FEITO
-* Qualquer um dos jogadores podem responder a pergunta: FEITO PORÉM COM BUG
-	* Bot parou de responder quando introduzi as habilidades
-* Habilidades podem ser usadas a qualquer momento: FEITO PORÉM COM BUG
-	* !: Nenhuma das opção são clicaveis pq global.jogador_atual == "TODOS!"
-	* ?: Buscar uma maneira dele reconhecer quais habilidades são de cada player
+> Correção de bugs do modo rápido (Lyam)

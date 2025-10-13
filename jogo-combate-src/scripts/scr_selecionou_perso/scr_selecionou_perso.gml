@@ -7,7 +7,7 @@ function scr_selecionou_perso(obj){
 		var _next_char = array_get_index(global.perso_atuais, noone)
 		if (_next_char >= 0) {
 			global.perso_atuais[_next_char] = obj;
-			global.ultimo_selecionado = "";
+			global.ultimo_selecionado = noone;
 		}
 	}
 }

@@ -24,3 +24,21 @@ function bot_ataca() {
 		alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
 	}
 }
+
+function revisa_hab(sprite_mudada) {
+	var _inicio_escolha = 0;
+	var _tamanho = [415, 80]
+	
+	if (global.modo_jogo_atual == global.modos_jogo[2]) {
+		_inicio_escolha = 4;
+		_tamanho = [80, 80]
+	}
+	
+	for (var i = _inicio_escolha; i < array_length(global.hab_visiveis); i++) {
+		var _hab_atual = global.hab_visiveis[i]
+		if (_hab_atual.habilidade.nome == ultima_hab_usada.nome) {
+			scr_trocar_sprite(_hab_atual, _tamanho[0], _tamanho[1], sprite_mudada);
+			break;
+		}
+	}
+}

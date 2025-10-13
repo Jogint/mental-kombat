@@ -14,5 +14,5 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			}
 			break;
 	}
-	scr_encerrar_turno();
+	if (global.modo_jogo_atual != global.modos_jogo[2]) scr_encerrar_turno();
 }

@@ -71,3 +71,6 @@
 * IMPROVE: Tempo de resposta do bot varia a depender da pergunta (Lyam - 12/10/2025)
 * FEAT: Timer único do modo rápido (Lyam - 12/10/2025)
 * FEAT: Hab e perguntas abertas simultaneamente modo rápido (Lyam - 12/10/2025)
+* FEAT: Bot escolhe habilidades no Rápido (Lyam - 12/10/2025)
+* FEAT: Ambos os players se atacam simultâneamente no Rápido (Lyam - 12/10/2025)
+* FIX: Bot tenta encerrar o turno após errar uma questão (Lyam - 12/10/2025)

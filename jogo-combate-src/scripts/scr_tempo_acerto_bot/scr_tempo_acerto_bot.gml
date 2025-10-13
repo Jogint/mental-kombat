@@ -11,14 +11,16 @@ function scr_tempo_acerto_bot () {
 		_tipo_pergunta += "_simples";
 	}
 	
-	var _tempo_resposta;
+	var _tempo_resposta = 0;
+	if (global.modo_jogo_atual != global.modos_jogo[2]) _tempo_resposta = 1;
+	
 	switch(_tipo_pergunta) {
-		case "soma_simples": _tempo_resposta = irandom_range(1, 5); break;
-		case "subtracao_simples": _tempo_resposta = irandom_range(1, 6); break; 
-		case "multiplicacao": _tempo_resposta = irandom_range(3, 8); break; 
-		case "divisao": _tempo_resposta = irandom_range(5, 10); break; 
-		case "soma": _tempo_resposta = irandom_range(4, 12); break; 
-		case "subtracao": _tempo_resposta = irandom_range(6, 15); break;
+		case "soma_simples": _tempo_resposta += irandom_range(1, 5); break;
+		case "subtracao_simples": _tempo_resposta += irandom_range(1, 6); break; 
+		case "multiplicacao": _tempo_resposta += irandom_range(3, 8); break; 
+		case "divisao": _tempo_resposta += irandom_range(5, 10); break; 
+		case "soma": _tempo_resposta += irandom_range(4, 12); break; 
+		case "subtracao": _tempo_resposta += irandom_range(6, 15); break;
 	}
 	return _tempo_resposta;
 }

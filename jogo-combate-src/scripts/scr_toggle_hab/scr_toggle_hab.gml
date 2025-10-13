@@ -26,7 +26,7 @@ function scr_toggle_hab(hab_arr){
 					_entradas++;
 				}
 				
-				if (_entradas == 7) _entradas = 0; // 7 equivale a 2 arrays de 0 a 3 índices
+				if (_entradas == 8) _entradas = 0; // 7 equivale a 2 arrays de 0 a 3 índices
 				
 				_largura_desejada = _altura_desejada;
 			}
