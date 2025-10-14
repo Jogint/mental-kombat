@@ -4,4 +4,5 @@ var _i_dificuldade = array_get_index(global.niveis_dificuldade, global.dificulda
 var _acerto_base = 50;
 var _aumento_base = 20;
 var _corte_acerto = clamp(_acerto_base + (_aumento_base * _i_dificuldade), 0, 100);
-scr_acerto_bot(self, _chance_acerto, _corte_acerto);
+// camada extra de verificação pq esse VIADO tá atacando sem poder
+if (controlador == global.tipos_jogadores[0]) scr_acerto_bot(self, _chance_acerto, _corte_acerto);

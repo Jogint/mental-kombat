@@ -7,6 +7,7 @@
 * Criar global.apresentou_tutoriais = [false, false, false];
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
 	* ?: Inspirar no tutorial do OSU
+* Configurar a habilidade de aumento de ganho de energia
 
 ### Melhorias
 
@@ -27,7 +28,7 @@
 * Todos os objetos na pasta /Botões
 * Background para cada room
 * Tela e botões de fim de jogo
-* Tela e botões de configurações (som, controles, créditos, easter egg)
+* Tela e botões de configurações (som, controles, créditos, explicação das hab, easter egg)
 
 ## 🆕 BUGS ENCONTRADOS
 
@@ -44,4 +45,5 @@
 
 ## ⚙ EM ANDAMENTO
 
-> Correção de bugs do modo rápido (Lyam)
+* Correção de bugs do modo rápido (Lyam)
+* Verificar eficácia das novas habilidades (Lyam)

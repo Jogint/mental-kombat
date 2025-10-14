@@ -11,15 +11,18 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			if (obj_inimigo.hp_atual > 0) aumenta_vida(obj, hab.valor_efeito);
 			break;
 		case global.tipos_hab[4]: // prorroga
-			obj.alterou_tempo[0] = global.tipos_hab[4];
-			obj.alterou_tempo[1] = hab.valor_efeito;
+			show_debug_message(hab);
+			show_debug_message(hab.valor_efeito);
+			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O tempo deve aumentar em até 2.0 e maior que 1. Recebeu " + string(hab.valor_efeito), true);
+			obj.alterou_tempo = hab.valor_efeito;
 			break;
 		case global.tipos_hab[5]: // atrasa
-			obj.alterou_tempo[0] = global.tipos_hab[5];
-			obj.alterou_tempo[1] = hab.valor_efeito;
+		if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O tempo inimigo deve reduzir em até 0.5. Recebeu " + string(hab.valor_efeito), true);
+			obj_inimigo.alterou_tempo = hab.valor_efeito;
 			break;
 		case global.tipos_hab[6]: // energetico
-			// codar
+			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O ganho energético deve aumentar em até 2.0. Recebeu " + string(hab.valor_efeito), true);
+			// no próximo turno, o player ganha um aumento de hab.valor_efeito no seu energia_por_acerto
 			break;
 	}
 	if (global.modo_jogo_atual != global.modos_jogo[2]) scr_encerrar_turno();

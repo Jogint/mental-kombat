@@ -74,3 +74,5 @@
 * FEAT: Bot escolhe habilidades no Rápido (Lyam - 12/10/2025)
 * FEAT: Ambos os players se atacam simultâneamente no Rápido (Lyam - 12/10/2025)
 * FIX: Bot tenta encerrar o turno após errar uma questão (Lyam - 12/10/2025)
+* IMPROVE: Alteração nas variáveis de objeto e habilidades dos players (Lyam - 14/10/2025)
+* FEAT: Adição de duas novas habilidades (Lyam - 14/10/2025)

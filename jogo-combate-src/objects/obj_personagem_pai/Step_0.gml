@@ -30,14 +30,17 @@ if (global.turno_iniciou) {
 				} else {
 					scr_toggle_hab(global.inst_perso_partida[1].habilidades);
 				}
-			
-				if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(self, habilidades);
+				 // MESMA COISA ISSO AQUI, NÃO MEXE
+				if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(global.inst_perso_partida[1], global.inst_perso_partida[1].habilidades);
 			};
 			bot_executou = false;
 	    }
 	}
 } else {
-	scr_iniciar_timer_turno(tempo_turno * alterou_tempo);
-	alterou_tempo = 1;
-	global.turno_iniciou = true;
+	if (meu_turno || global.modo_jogo_atual == global.modos_jogo[2]) {
+		show_debug_message("Tempo alterado para " + string(tempo_turno * alterou_tempo));
+		scr_iniciar_timer_turno(tempo_turno * alterou_tempo);
+		alterou_tempo = 1;
+		global.turno_iniciou = true;
+	}
 }

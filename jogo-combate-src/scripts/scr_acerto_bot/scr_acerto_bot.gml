@@ -3,12 +3,15 @@
 ///@param chance: int. Valor definido pelo i_random_range
 ///@param corte: int. Valor máximo para ser considerado um acerto
 function scr_acerto_bot(obj, chance, corte){
-	if (!global.partida_acabou) {
+	if (!global.partida_acabou && global.jogador_atual == obj.controlador) {
 		var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
 		var _secs_restantes = round(global.timer_turno / game_get_speed(gamespeed_fps));
-	
+		
+		show_debug_message("Você tem " + string(_secs_restantes) + " para responder uma pergunta de " + string(_tempo_para_responder) + " segs");
+		show_debug_message("É vez do bot? " + string(global.jogador_atual == obj.controlador));
+		
 		if ((chance <= corte && // se ele bateu a % de acerto, manda bala
-		global.jogador_atual == obj.controlador) || // se ainda for sua vez
+		global.jogador_atual == obj.controlador) || // de novo? SIM DE NOVO PQ ESSA DESGRAÇA TA ATACANDO FORA DA VEZ
 		global.modo_jogo_atual == global.modos_jogo[2]) {
 			global.inst_perso_partida[1].aumentar_energia(); // pontua pelo acerto
 			scr_proxima_pergunta();
