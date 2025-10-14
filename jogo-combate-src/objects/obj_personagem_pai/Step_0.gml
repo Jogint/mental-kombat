@@ -37,6 +37,7 @@ if (global.turno_iniciou) {
 	    }
 	}
 } else {
-	scr_iniciar_timer_turno(tempo_turno);
+	scr_iniciar_timer_turno(tempo_turno * alterou_tempo);
+	alterou_tempo = 1;
 	global.turno_iniciou = true;
 }

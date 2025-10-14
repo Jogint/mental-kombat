@@ -8,6 +8,7 @@ controlador = global.tipos_jogadores[1]; //alterado em scr_inserir_players
 meu_turno = false;
 bot_executou = false;
 definiu_hab = false;
+alterou_tempo = 1;
 habilidades = []; // objetos filho definem as habilidades
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab
 global.partida_acabou = false;
