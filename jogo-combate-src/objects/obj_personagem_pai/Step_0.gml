@@ -38,7 +38,7 @@ if (global.turno_iniciou) {
 	}
 } else {
 	if (meu_turno || global.modo_jogo_atual == global.modos_jogo[2]) {
-		show_debug_message("Tempo alterado para " + string(tempo_turno * alterou_tempo));
+		if (alterou_tempo != 1)show_debug_message("Tempo alterado para " + string(tempo_turno * alterou_tempo));
 		scr_iniciar_timer_turno(tempo_turno * alterou_tempo);
 		alterou_tempo = 1;
 		global.turno_iniciou = true;

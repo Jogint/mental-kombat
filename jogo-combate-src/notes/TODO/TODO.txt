@@ -32,7 +32,6 @@
 
 * Player eventualmente não consegue atacar no modo rápido
 	* ?: Foram criadas mensagens de debug em obj_btn_habilidade. precisa analisar
-* Bot atacando em menos de um segundo no modo rápido
 * Bot usando habilidades em menos de um segundo no modo rápido
 	* Foi inserido um segundo extra no scr_tempo_acerto_bot, não parece ajudar
 	* Checar reset dos alarmes do bot, possivelmente sendo lançados com menos tempo
@@ -44,6 +43,8 @@
 ## ⚙ EM ANDAMENTO
 
 * Correção de bugs do modo rápido (Lyam)
+	* Bot responde só a primeira vez
 * Verificar eficácia das novas habilidades (Lyam)
+	* Efeitos de tempo estão sendo aplicados exatamente no próximo turno
 * Adicionar @function @param @description @return para explicar funções (Lyam)
 * Desenhar os 12 personagens - 6 prontos (Kaue)

@@ -13,7 +13,6 @@ global.partida_acabou = false;
 /// @function aumentar_energia()
 /// @description Aumenta a energia atual do personagem com base em `energia_por_acerto`,
 /// limitando ao máximo `energia_total`.
-/// @return {void}
 function aumentar_energia() {
     energia_atual += energia_por_acerto;
     if (energia_atual >= energia_total) {
@@ -24,11 +23,11 @@ function aumentar_energia() {
 /// @function bot_ataca()
 /// @description Executa o ataque do bot iniciando um alarme que aguarda antes de responder.
 /// Só dispara se `bot_executou` ainda for false.
-/// @return {void}
 function bot_ataca() {
-    if (!bot_executou) {
+    if (!bot_executou && controlador == global.tipos_jogadores[0]) {
         bot_executou = true;
         var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
+		show_debug_message("tempo = " + string(_tempo_para_responder));
         alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
     }
 }
@@ -37,7 +36,6 @@ function bot_ataca() {
 /// @description Muda a sprite da habilidade selecionada dentre `global.hab_visiveis`,
 /// comparando com `ultima_hab_usada` do bot. Tamanho muda no rápido.
 /// @param {Asset.GMSprite} sprite_mudada A sprite que deseja colocar no lugar da atual
-/// @return {void}
 function altera_sprite_hab(sprite_mudada) {
     var _inicio_escolha = 0;
     var _tamanho = [415, 80];
