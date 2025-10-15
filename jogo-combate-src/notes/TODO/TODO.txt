@@ -19,12 +19,10 @@
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
 * Adicionar review visual de quando um personagem inimigo ainda está bloqueado
 * Revisitar todos os TODO
-* Adicionar "/// @param nome_param: tipo. descrição" para explicar param de funções
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 
 ### 🎨 SPRITES PRA DESENHAR
 
-* 12 personagens (player + 11 inimigos)
 * Todos os objetos na pasta /Botões
 * Background para cada room
 * Tela e botões de fim de jogo
@@ -47,3 +45,5 @@
 
 * Correção de bugs do modo rápido (Lyam)
 * Verificar eficácia das novas habilidades (Lyam)
+* Adicionar @function @param @description @return para explicar funções (Lyam)
+* Desenhar os 12 personagens - 6 prontos (Kaue)

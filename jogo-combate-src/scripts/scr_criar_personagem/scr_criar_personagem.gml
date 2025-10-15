@@ -1,4 +1,12 @@
-/// Chamada por cada um dos personagens ao startar partida
+/// @function scr_criar_personagem(obj, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max)
+/// @description Inicializa os atributos principais de um personagem,
+/// definindo vida, energia, tempo de turno e valores atuais.
+/// @param {Instance} obj Instância do personagem (self) que será configurada.
+/// @param {Real} aumento_energia Fator de aumento da energia por acerto.
+/// @param {Real} aumento_tempo Fator de aumento do tempo de turno.
+/// @param {Real} aumento_vida Fator de aumento da vida total.
+/// @param {Real} aumento_energia_max Fator de aumento da energia máxima.
+/// @return {void}
 function scr_criar_personagem(obj, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max) {
     with (obj) {
 		hp_total = definir_vida(aumento_vida);
