@@ -1,4 +1,5 @@
-/// Chamado em obj_definir_globais e
+/// @function scr_atualizar_arr_sprites()
+/// @description Responsável por receber todas as sprites dos objetos em definir_globais
 function scr_atualizar_arr_sprites(){
 	global.arr_sprite_perso = [];
 	
@@ -15,6 +16,5 @@ function scr_atualizar_arr_sprites(){
         }
 		
 		array_push(global.arr_sprite_perso, _sprite_do_objeto);
-		
 	}
 }

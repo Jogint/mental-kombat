@@ -1,4 +1,6 @@
-/// chamado em obj_opcao_resposta pra exibir as opções
+/// @function scr_atribuir_alternativas()
+/// @description Chamado em cada obj_opcao_resposta para atribuir um valor a si
+/// @return {Array<Any>|Undefined} [0] é o número a ser exibido, [1] se ele é a opção correta
 function scr_atribuir_alternativas(){
 	var _alternativas = global.pergunta_atual.opcoes;
 	if (array_length(_alternativas) != global.qtd_alternativas) {
