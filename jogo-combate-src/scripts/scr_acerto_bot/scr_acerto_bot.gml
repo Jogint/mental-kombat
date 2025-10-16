@@ -49,7 +49,7 @@ function bot_processar_acerto(inst_bot) {
 /// @function bot_gerenciar_modo_rapido(inst_bot)
 /// @description Aqui são as coisas únicas a acontecerem no modo rápido
 function bot_gerenciar_modo_rapido(inst_bot) {
-    scr_bot_escolhe_hab(inst_bot, inst_bot.habilidades);
+    scr_bot_escolhe_hab(inst_bot.habilidades);
 }
 
 /// @function bot_encerrar_turno(inst_bot)

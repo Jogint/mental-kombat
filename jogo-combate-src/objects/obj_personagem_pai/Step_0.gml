@@ -31,7 +31,7 @@ if (global.turno_iniciou) {
 					scr_toggle_hab(global.inst_perso_partida[1].habilidades);
 				}
 				 // MESMA COISA ISSO AQUI, NÃO MEXE
-				if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(global.inst_perso_partida[1], global.inst_perso_partida[1].habilidades);
+				if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(global.inst_perso_partida[1].habilidades);
 			};
 			bot_executou = false;
 	    }
