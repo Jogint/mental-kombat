@@ -79,4 +79,7 @@
 * IMPROVE: Alteração nas variáveis de objeto e habilidades dos players (Lyam - 14/10/2025)
 * FEAT: Adição de duas novas habilidades (Lyam - 14/10/2025)
 * OTHER: Arte de + 1 dos personagens pronta (Kaue - 15/10/2025)
+* OTHER: Animação de ataque de 4 personagens do jogo (Kaue - 15/10/2025)
 * IMPROVE: Organização da lógica de obj_acerto_bot (Lyam - 15/10/2025)
+* IMPROVE: Atualização da documentação de funções pt1 (Lyam - 16/10/2025)
+* IMPROVE: Fragmentação de grandes funções pt1 (Lyam - 16/10/2025)

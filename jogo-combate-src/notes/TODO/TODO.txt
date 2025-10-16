@@ -43,8 +43,8 @@
 ## ⚙ EM ANDAMENTO
 
 * Correção de bugs do modo rápido (Lyam)
-	* Bot responde só a primeira vez
 * Verificar eficácia das novas habilidades (Lyam)
 	* Efeitos de tempo estão sendo aplicados exatamente no próximo turno
 * Adicionar @function @param @description @return para explicar funções (Lyam)
 * Desenhar os 12 personagens - 6 prontos (Kaue)
+* Animar personagens - 4/12 (Kaue)
