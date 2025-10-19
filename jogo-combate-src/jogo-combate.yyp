@@ -100,7 +100,6 @@
     {"id":{"name":"scr_retorna_perso","path":"scripts/scr_retorna_perso/scr_retorna_perso.yy",},},
     {"id":{"name":"scr_selecionou_perso","path":"scripts/scr_selecionou_perso/scr_selecionou_perso.yy",},},
     {"id":{"name":"scr_tempo_acerto_bot","path":"scripts/scr_tempo_acerto_bot/scr_tempo_acerto_bot.yy",},},
-    {"id":{"name":"scr_testes","path":"scripts/scr_testes/scr_testes.yy",},},
     {"id":{"name":"scr_toggle_hab","path":"scripts/scr_toggle_hab/scr_toggle_hab.yy",},},
     {"id":{"name":"scr_trocar_sprite","path":"scripts/scr_trocar_sprite/scr_trocar_sprite.yy",},},
     {"id":{"name":"scr_valor_unico_array","path":"scripts/scr_valor_unico_array/scr_valor_unico_array.yy",},},

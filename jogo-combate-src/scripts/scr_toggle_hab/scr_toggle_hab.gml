@@ -1,7 +1,6 @@
 /// @function scr_toggle_hab(hab_arr)
 /// @description Exibe ou deleta as habilidades da tela
 /// @param {Array} hab_arr Array que possui as habilidades a serem exibidas
-
 function scr_toggle_hab(hab_arr){
 	var _is_modo_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 	

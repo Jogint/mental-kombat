@@ -1,14 +1,16 @@
-/// Chamada em obj_controle_rodada ao clicar alguma tecla pre-determinada
-/// @param onde: índice da room que será exibida
-function scr_fim_partida(onde){
+/// @function scr_fim_partida(_onde)
+/// @description Encerra o jogo e redireciona o jogador
+/// @param {Real} _onde Index da próxima room
+function scr_fim_partida(_onde){
 	if (global.quem_venceu == global.tipos_jogadores[1]) {
 		desbloqueou_trilha();
 	}
-	resetar_globais(onde == 0);
-	room_goto(onde);
+	resetar_globais(_onde == 0);
+	room_goto(_onde);
 }
 
-function desbloqueou_trilha () {
+/// @function desbloqueou_trilha()
+function desbloqueou_trilha() {
 	if (global.modo_jogo_atual == global.modos_jogo[1]) {
 		//show_debug_message("p1 venceu");
 		if (!array_contains(global.perso_disponiveis, global.perso_atuais[1])) {
@@ -25,7 +27,9 @@ function desbloqueou_trilha () {
 	}
 }
 
-function resetar_globais(resetar_pontuacao) {
+/// @function resetar_globais(resetar_pontuacao)
+/// @param {bool} _resetar_pontuacao Se vai zerar a pontuação do pvp ou não
+function resetar_globais(_resetar_pontuacao) {
 	global.jogador_atual = "";
 	global.perso_atuais = [noone, noone];
 	global.inst_perso_partida = [];
@@ -39,5 +43,5 @@ function resetar_globais(resetar_pontuacao) {
 	global.hab_visiveis = [];
 	global.ultimo_selecionado = noone;
 	global.quem_venceu = "noone";
-	if (resetar_pontuacao) global.pontuacao_pvp = [0, 0];
+	if (_resetar_pontuacao) global.pontuacao_pvp = [0, 0];
 }

@@ -1,5 +1,7 @@
+/// @function scr_tempo_acerto_bot()
 /// @description define o tempo que o bot leva pra responder
-function scr_tempo_acerto_bot () {
+/// @return {Real}
+function scr_tempo_acerto_bot() {
 	var _tipo_pergunta = global.pergunta_atual.conta;
 	var _n1 = global.pergunta_atual.n1;
 	var _n2 = global.pergunta_atual.n2;

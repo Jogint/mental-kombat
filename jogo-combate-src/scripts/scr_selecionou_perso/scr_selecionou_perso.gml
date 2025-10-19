@@ -1,4 +1,6 @@
-/// Chamado no obj_btn_avancar em rm_selecao
+/// @function scr_selecionou_perso(obj)
+/// @description Define o personagem como selecionado (insere no array global.perso_atuais)
+/// @param {Asset.GMObject|Id.Instance} obj Objeto do personagem que foi selecionado
 function scr_selecionou_perso(obj){
 	// Adiciona o personagem no array
 	if (global.modo_jogo_atual == global.modos_jogo[1]) {

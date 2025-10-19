@@ -1,5 +1,7 @@
-/// chamado em obj_personagem_pai assim que o turno inicia
-function scr_iniciar_timer_turno(secs){
-	global.timer_turno = secs * game_get_speed(gamespeed_fps);
+/// @function scr_iniciar_timer_turno(_secs)
+/// @description Inicia a contagem do tempo do turno
+/// @param {bool} _secs Tempo em segundos do turno atual
+function scr_iniciar_timer_turno(_secs){
+	global.timer_turno = _secs * game_get_speed(gamespeed_fps);
 	global.turno_iniciou = true;
 }

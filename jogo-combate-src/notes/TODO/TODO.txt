@@ -26,27 +26,18 @@
 * Todos os objetos na pasta /Botões
 * Background para cada room
 * Tela e botões de fim de jogo
-* Tela e botões de configurações (som, controles, créditos, explicação das hab, easter egg)
+* Tela e botões de configurações (som, controles, créditos, easter egg)
 
 ## 🆕 BUGS ENCONTRADOS
 
-* Bot não está errando e sua energia aumenta para o oponente
-* Bot não erra no modo história fácil
-* Player eventualmente não consegue atacar no modo rápido
-	* ?: Foram criadas mensagens de debug em obj_btn_habilidade. precisa analisar
 * Bot usando habilidades em menos de um segundo no modo rápido
+	* O código de execução do timer parece estar sendo acionado mais de uma vez
 	* Foi inserido um segundo extra no scr_tempo_acerto_bot, não parece ajudar
-	* Checar reset dos alarmes do bot, possivelmente sendo lançados com menos tempo
-* Algumas raras vezes o código trava na exibição da dificuldade 2 : Não corrigido
-	* Ocorrências: logo antes da janela do gamemaker abrir. Aconteceu 3x
-	* Motivo: nessas ocasiões, provavelmente acontece um loop infinito na geração do banco de perguntas
-	* Não tem ocorrido há 2 semanas, mas vale checar
 
 ## ⚙ EM ANDAMENTO
 
 * Correção de bugs do modo rápido (Lyam)
-* Verificar eficácia das novas habilidades (Lyam)
-	* Efeitos de tempo estão sendo aplicados exatamente no próximo turno
-* Adicionar @function @param @description @return para explicar funções (Lyam)
+	* Player eventualmente não consegue atacar no modo rápido
+		* ?: Foram criadas mensagens de debug em obj_btn_habilidade. precisa analisar
 * Desenhar os 12 personagens - 6 prontos (Kaue)
-* Animação de ataque dos personagens 4/12 (Kaue)
+* Animação de ataque dos personagens 5/12 (Kaue)

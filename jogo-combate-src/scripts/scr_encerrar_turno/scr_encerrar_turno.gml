@@ -1,11 +1,13 @@
+/// @function scr_encerrar_turno()
+/// @description Remove o pop up de habilidades, troca o turno e chama a prox pergunta
 function scr_encerrar_turno(){
 	scr_toggle_hab([]);
 	trocar_turno();
 	scr_proxima_pergunta();
-	//show_debug_message("trocou turno para: " + global.jogador_atual);
 	global.turno_iniciou = false;
 }
 
+/// @function trocar_turno()
 function trocar_turno(){
 	if (!global.partida_acabou) {
 		var _i = array_get_index(global.tipos_jogadores, global.jogador_atual);

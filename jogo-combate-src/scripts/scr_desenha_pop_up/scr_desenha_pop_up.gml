@@ -1,4 +1,13 @@
+// TODO: Permitir alterar o tamanho do pop up
+/// @function scr_desenha_pop_up (obj, textos_arr, cor_fundo, cor_texto_arr, fonte_arr)
+/// @description Cria um draw GUI na centralizado que cobre 75% da tela
+/// @param {Asset.GMObject|Id.Instance} obj Objeto que vai desenhar o GUI
+/// @param {Array<String>} textos_arr Textos que serão exibidos, cada índice sendo uma quebra de linha
+/// @param {Constant.Color} cor_fundo Cor do pop up
+/// @param {Array<Constant.Color>} cor_texto_arr A cor de cada linha de texto
+/// @param {Array<Asset.GMFont>} fonte_arr A fonte (tipografia) de cada linha de texto
 function scr_desenha_pop_up (obj, textos_arr, cor_fundo, cor_texto_arr, fonte_arr) {
+	// TODO: Se livra desse "obj". funciona sem ele
 	if (obj.pop_up_aberto) {
 		// define a cor
 		if (is_undefined(cor_fundo)) cor_fundo = c_ltgray;

@@ -1,3 +1,5 @@
+/// @function atualizar_dados()
+/// @description Altera a opção de resposta quando troca de pergunta
 function atualizar_dados() {
 	pergunta = global.pergunta_atual;
 	valor_botao = scr_atribuir_alternativas();

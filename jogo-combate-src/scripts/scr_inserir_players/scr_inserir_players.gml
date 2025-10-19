@@ -1,3 +1,5 @@
+/// @function scr_inserir_players()
+/// @description Cria as duas instâncias de personagens na rm_combate
 function scr_inserir_players(){
 	var _camada_alvo = "Instances"; 
 
@@ -11,12 +13,19 @@ function scr_inserir_players(){
 	    // Cria a instância e guarda o ID dela na variável
 	    var _nova_instancia = instance_create_layer(_x, _y, _camada_alvo, _obj_a_criar);
 
-		// Define o tamanho do obj
+		// Define quem controla cada instância
+		static _player_seleciona = true;
 		with (_nova_instancia) {
 			if (global.modo_jogo_atual == global.modos_jogo[0]) {
 				controlador = global.tipos_jogadores[i + 1]; // caso multplayer, ignora o bot
 			} else {
-				controlador = global.tipos_jogadores[i];
+				if (_player_seleciona) {
+					controlador = global.tipos_jogadores[1];
+					_player_seleciona = false;
+				} else {
+					controlador = global.tipos_jogadores[0];
+					_player_seleciona = true
+				}
 			}
 			
 			var _largura_desejada = 64 * 5;

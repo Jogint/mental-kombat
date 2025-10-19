@@ -3,7 +3,7 @@
 function definir_globais() {
 	randomise();
 
-	/// DEFINIÇÕES DO JOGO: Variáveis fixas para evitar erros de digitação.
+	/// DEFINIÇÕES DO JOGO: Declarações fixas para evitar erros de digitação.
 	global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"];
 	global.tipos_jogadores = ["bot", "player1", "player2"];
 	global.niveis_dificuldade = ["facil", "medio", "dificil"];
@@ -24,8 +24,8 @@ function definir_globais() {
 						obj_personagem_10,
 						obj_personagem_11];
 	scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
-	global.perso_disponiveis = [obj_personagem]; // personagens jogaveis na trilha + rapido
-	global.inimigos_disponiveis = [obj_personagem_1]; // inimigos derrotaveis na trilha
+	global.perso_disponiveis = [obj_personagem, obj_personagem_1]; // personagens jogaveis na trilha + rapido
+	global.inimigos_disponiveis = [obj_personagem_2]; // inimigos derrotaveis na trilha
 
 	/// ESTADO DA PARTIDA: Variáveis que controlam o fluxo do jogo.
 	global.dificuldade_atual = global.niveis_dificuldade[0]; // Define o nível de dificuldade da partida

@@ -1,5 +1,8 @@
 var _tamanho_quad = 64 * 5;
 
+/// @function muda_img (_tamanho_quad)
+/// @description Muda a sprite da instância de exibição de personagem e salva seu objeto
+/// @param {Real} _tamanho_quad Tamanho da sprite
 function muda_img (_tamanho_quad) {
 	if (global.perso_atuais[0] == noone) {
 		scr_trocar_sprite(inst_perso_selecionado_p1, _tamanho_quad, _tamanho_quad, sprite_index);

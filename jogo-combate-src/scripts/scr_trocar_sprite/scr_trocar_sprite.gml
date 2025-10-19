@@ -5,7 +5,6 @@
 /// @param {Real} altura_desejada Altura que ficará a sprite
 /// @param {Asset.GMSprite} sprite A imagem usada no objeto
 /// @return {bool}
-
 function scr_trocar_sprite(obj, largura_desejada, altura_desejada, sprite){
 	with (obj) {
 		sprite_index = sprite;
