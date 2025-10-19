@@ -90,3 +90,7 @@
 * FIX: Adicionado verificador de loop infinito no gerador de perguntas (Lyam - 18/10/2025)
 * FIX: Problema na definição do controlador em scr_inserir_players (Lyam - 18/10/2025)
 * OTHER: Validação das novas habilidades de aumento e redução do tempo (Lyam - 18/10/2025)
+* OTHER: Design inicial de todos os personagens feito (Kaue - 18/10/2025)
+* FEAT: Adição de alarme para intervalo de animação (Lyam - 19/10/2025)
+* FIX: Player eventualmente não consegue atacar no modo rápido (Lyam - 19/10/2025)
+* FIX: Bot não ataca após usar habilidade no modo rápido (Lyam - 19/10/2025)

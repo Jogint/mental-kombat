@@ -59,6 +59,7 @@ function cria_instancias_hab(_is_rapido, hab_arr) {
 				custo: hab_arr[i].custo,
 				tipo: hab_arr[i].tipo,
 				valor_efeito: hab_arr[i].valor_efeito,
+				animacao: hab_arr[i].animacao,
 			}
 			
 			scr_trocar_sprite(self, _posi_e_tam[2], _posi_e_tam[3], hab_arr[i].sprite);
@@ -67,9 +68,7 @@ function cria_instancias_hab(_is_rapido, hab_arr) {
 }
 
 /// @function ocultar_hab()
-function ocultar_hab() {
-	layer_set_visible("Opcoes", true);
-		
+function ocultar_hab() {	
 	for (var i = 0; i < array_length(global.hab_visiveis); i++) {
 		instance_destroy(global.hab_visiveis[i]);
 	}

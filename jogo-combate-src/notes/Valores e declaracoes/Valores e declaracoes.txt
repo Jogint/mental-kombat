@@ -2,13 +2,15 @@
 
 ## Informações gerais
 
-* O Player 1 SEMPRE SERÁ o índice 0, por se manter a esquerda. Bot e P2 são índice 1
+* O Player 1 SEMPRE SERÁ o índice 0 em arrays de 2 itens, por se manter a esquerda.
+	* Bot e P2 são índice 1
+	* Em global.tipos_jogadores a ordem é [bot, p1, p2]
+* Se adicionar um novo campo em scr_define_habilidades, editar em scr_toggle_hab
 
 ## Variáveis e Scripts "escondidos"
 
 * O obj_definir_globais está na rm_menu
 * Os obj_personagem são inseridos no jogo via roomCreationCode da rm_combate
-* Todas as rooms sem uso ATÉ O MOMENTO possuem room_goto_next() em roomCreationCode
 * Se você buscou e não achou onde define a var, olhe na declaração de variável do obj
 * A definição do inimigo na trilha está no instanceCreationCode do bot
 * Perguntas na dificuldade correta são geradas em obj_btn_avancar após seleção

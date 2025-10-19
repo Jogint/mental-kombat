@@ -20,6 +20,7 @@
 * Adicionar review visual de quando um personagem inimigo ainda está bloqueado
 * Revisitar todos os TODO
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
+* Mover opção pular para um botão a parte
 
 ### 🎨 SPRITES PRA DESENHAR
 
@@ -30,14 +31,11 @@
 
 ## 🆕 BUGS ENCONTRADOS
 
-* Bot usando habilidades em menos de um segundo no modo rápido
-	* O código de execução do timer parece estar sendo acionado mais de uma vez
-	* Foi inserido um segundo extra no scr_tempo_acerto_bot, não parece ajudar
+> Todos os bugs foram corrigidos ou estão sendo trabalhados
 
 ## ⚙ EM ANDAMENTO
 
 * Correção de bugs do modo rápido (Lyam)
-	* Player eventualmente não consegue atacar no modo rápido
-		* ?: Foram criadas mensagens de debug em obj_btn_habilidade. precisa analisar
+	* Bot usando habilidades em menos de um segundo no modo rápido
 * Desenhar os 12 personagens - 6 prontos (Kaue)
 * Animação de ataque dos personagens 5/12 (Kaue)

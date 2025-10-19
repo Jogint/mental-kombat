@@ -1,7 +1,7 @@
 /// @function scr_encerrar_turno()
 /// @description Remove o pop up de habilidades, troca o turno e chama a prox pergunta
 function scr_encerrar_turno(){
-	scr_toggle_hab([]);
+	layer_set_visible("Opcoes", true);
 	trocar_turno();
 	scr_proxima_pergunta();
 	global.turno_iniciou = false;

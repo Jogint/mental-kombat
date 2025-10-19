@@ -60,9 +60,11 @@ function bot_encerrar_turno(inst_bot) {
 
 /// @function bot_agendar_proxima_acao(inst_bot, tempo_em_segundos)
 function bot_agendar_proxima_acao(inst_bot, tempo_em_segundos) {
-	show_debug_message("O bot executará novamente");
+    show_debug_message("O bot executará novamente em " + string(tempo_em_segundos));
     var _frames = tempo_em_segundos * game_get_speed(gamespeed_fps);
-    with (inst_bot) { 
+    with (inst_bot) {
         alarm[0] = _frames;
+        // Verificação crítica: O alarme foi definido? Quem sou eu?
+        show_debug_message("DEBUG CRÍTICO: Instância ID " + string(id) + " ALARM[0] definido para: " + string(alarm[0]));
     }
 }

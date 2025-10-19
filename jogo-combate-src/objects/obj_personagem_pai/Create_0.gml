@@ -8,6 +8,7 @@ definiu_hab = false;
 alterou_tempo = 1;
 habilidades = []; // objetos filho definem as habilidades
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab
+pausa_animacao = true;
 global.partida_acabou = false;
 
 /// @function aumentar_energia()

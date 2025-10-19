@@ -30,7 +30,14 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			// no próximo turno, o player ganha um aumento de hab.valor_efeito no seu energia_por_acerto
 			break;
 	}
-	if (global.modo_jogo_atual != global.modos_jogo[2]) scr_encerrar_turno();
+	if (global.modo_jogo_atual != global.modos_jogo[2]) {
+		scr_toggle_hab([]);
+		if (hab.animacao == 0) {
+			scr_encerrar_turno();
+		} else {
+			obj.alarm[3] = hab.animacao * game_get_speed(gamespeed_fps);
+		}
+	}
 }
 
 /// @function efetua_dano(_inimigo, _valor)
