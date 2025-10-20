@@ -5,7 +5,6 @@ function atualizar_dados() {
 	valor_botao = scr_atribuir_alternativas();
 	numero = valor_botao[0];
 	is_certo = valor_botao[1];
-	sprite_index = spr_teste_opcao;
 }
 
 atualizar_dados();

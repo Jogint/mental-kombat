@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teste_opcao",
-    "path":"sprites/spr_teste_opcao/spr_teste_opcao.yy",
+    "name":"spr_btn_resposta",
+    "path":"sprites/spr_btn_resposta/spr_btn_resposta.yy",
   },
   "spriteMaskId":null,
   "visible":true,

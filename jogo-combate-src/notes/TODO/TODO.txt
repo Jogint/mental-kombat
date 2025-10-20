@@ -31,11 +31,11 @@
 
 ## 🆕 BUGS ENCONTRADOS
 
-> Todos os bugs foram corrigidos ou estão sendo trabalhados
+### Modo rápido
+
+* Sprite de habilidades travando na seta após atacar mais de uma vez
 
 ## ⚙ EM ANDAMENTO
 
-* Correção de bugs do modo rápido (Lyam)
-	* Bot usando habilidades em menos de um segundo no modo rápido
 * Desenhar os 12 personagens - 6 prontos (Kaue)
 * Animação de ataque dos personagens 5/12 (Kaue)

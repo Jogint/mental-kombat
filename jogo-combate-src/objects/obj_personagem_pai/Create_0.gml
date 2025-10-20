@@ -28,7 +28,7 @@ function bot_ataca() {
     if (!bot_executou && controlador == global.tipos_jogadores[0]) {
         bot_executou = true;
         var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
-		show_debug_message("tempo = " + string(_tempo_para_responder));
+		show_debug_message("Bot irá responder em " + string(_tempo_para_responder));
         alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
     }
 }

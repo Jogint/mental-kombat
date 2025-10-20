@@ -9,7 +9,7 @@ if (choosing_state == 1 || choosing_state == 2) {
 		scr_desenha_pop_up(self, ["Fim da partida!", string(global.tipos_jogadores[1]) + ": " + string(global.pontuacao_pvp[0])+ " | " + string(global.tipos_jogadores[2]) + ": " + string(global.pontuacao_pvp[1]), "", "Pressione 'R' para jogar novamente", "Pressione 'M' para voltar ao menu inicial"]);
 	}
 } else {
-	draw_set_color(c_white);
+	draw_set_color(c_black);
 	// Texto da pergunta
 	if (global.jogador_atual != "") {
 		var _texto_pergunta = "Pergunta para " + string(global.jogador_atual) + ": " + string(global.pergunta_atual.n1);
