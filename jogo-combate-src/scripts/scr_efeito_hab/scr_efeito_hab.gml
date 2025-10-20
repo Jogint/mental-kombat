@@ -11,7 +11,7 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 		case global.tipos_hab[2]: // cura
 			aumenta_vida(obj, hab.valor_efeito);
 			break;
-		case global.tipos_hab[3]: // drena
+		case global.tipos_hab[3]: // dreno
 			efetua_dano(obj_inimigo, hab.valor_efeito);
 			if (obj_inimigo.hp_atual > 0) aumenta_vida(obj, hab.valor_efeito);
 			break;
@@ -21,7 +21,7 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O tempo deve aumentar em até 2.0 e maior que 1. Recebeu " + string(hab.valor_efeito), true);
 			obj.alterou_tempo = hab.valor_efeito;
 			break;
-		case global.tipos_hab[5]: // atrasa
+		case global.tipos_hab[5]: // acelera
 		if (hab.valor_efeito >= 1 || hab.valor_efeito < 0.5) show_error("O tempo inimigo deve reduzir em até 0.5 e ser menor que 1. Recebeu " + string(hab.valor_efeito), true);
 			obj_inimigo.alterou_tempo = hab.valor_efeito;
 			break;

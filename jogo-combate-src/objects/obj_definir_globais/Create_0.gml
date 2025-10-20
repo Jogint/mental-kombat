@@ -8,7 +8,7 @@ function definir_globais() {
 	global.tipos_jogadores = ["bot", "player1", "player2"];
 	global.niveis_dificuldade = ["facil", "medio", "dificil"];
 	global.modos_jogo = ["2 jogadores", "história", "rápido"];
-	global.tipos_hab = ["pular", "dano", "cura", "drena", "prorroga", "atrasa", "energetico"];
+	global.tipos_hab = ["pular", "dano", "cura", "dreno", "prorroga", "acelera", "energetico"];
 	global.qtd_alternativas = 4;
 	global.qtd_players_partida = 2;
 	global.todos_perso = [obj_personagem,

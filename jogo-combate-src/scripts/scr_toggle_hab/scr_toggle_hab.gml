@@ -19,10 +19,10 @@ function scr_toggle_hab(hab_arr){
 /// @function define_tamanho_habilidades(_is_rapido, i)
 /// @return {Array<Real>} [x, y, largura, altura]
 function define_tamanho_habilidades(_is_rapido, i) {
-	var _x = 480;
-	var _largura_desejada = 895 - _x;
-	var _altura_desejada = 80;
-	var _y = 200 + (i * (_altura_desejada + 30));
+	var _largura_desejada = 80;
+	var _altura_desejada = _largura_desejada;
+	var _x = 300 + (i * (_largura_desejada + 100));
+	var _y = 200;
 			
 	if (_is_rapido) { // chamado apenas 1x por partida, rodando obrigatóriamente 8 vezes
 		static _entradas = 0;
@@ -37,7 +37,7 @@ function define_tamanho_habilidades(_is_rapido, i) {
 		
 		if (_entradas == 8) _entradas = 0; // Todos os dois arrays foram percorridos
 		
-		_largura_desejada = _altura_desejada;
+		_y = 200 + (i * (_altura_desejada + 30));
 	}
 	
 	return [_x, _y, _largura_desejada, _altura_desejada];
