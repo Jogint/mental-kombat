@@ -44,6 +44,7 @@ function definir_globais() {
 	global.errou_resposta = false; // Flag para controlar se a resposta foi errada
 	global.exibir_hab = false; // flag para abrir o pop up de habilidades
 	global.hab_visiveis = []; // guarda as habilidades do pop up enquanto aberto
+	global.fundo_hab_visiveis = []; // mesma coisa que de cima mas é o fundo
 }
 
 definir_globais();

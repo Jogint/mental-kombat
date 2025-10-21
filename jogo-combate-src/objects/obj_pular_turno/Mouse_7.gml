@@ -1,0 +1,1 @@
+scr_player_usa_hab(true);

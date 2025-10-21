@@ -96,3 +96,8 @@
 * FIX: Impedir seleção de habilidades sem custo/efeito no modo rápido (Lyam - 19/10/2025)
 * FIX: Bot não ataca após usar habilidade modo rápido (Lyam - 19/10/2025)
 * FIX: Bot não consegue atacar após player responder modo rápido (Lyam - 20/10/2025)
+* OTHER: Animação de ataque de +1 personagem (Kaue - 20/10/2025)
+* OTHER: Troca dos placeholders das habilidades por novas sprites (Lyam - 20/10/2025)
+* IMPROVE: Mudança no padrão das habilidades (Lyam - 20/10/2025)
+* IMPROVE: Separação do pular das habilidades dos players (Lyam - 20/10/2025)
+* FEAT: Sprite de habilidade e opacidade mudam caso indisponiveis (Lyam - 20/10/2025)

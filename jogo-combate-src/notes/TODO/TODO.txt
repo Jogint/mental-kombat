@@ -33,9 +33,10 @@
 
 ### Modo rápido
 
-* Sprite de habilidades travando na seta após atacar mais de uma vez
+* Sprite de habilidades travando na seta após atacar mais de uma vez Rápido
+* Confirmação de ataque do bot está no modelo antigo
 
 ## ⚙ EM ANDAMENTO
 
 * Desenhar os 12 personagens - 6 prontos (Kaue)
-* Animação de ataque dos personagens 5/12 (Kaue)
+* Animação de ataque dos personagens 6/12 (Kaue)

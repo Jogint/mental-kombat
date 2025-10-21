@@ -2,8 +2,20 @@
 /// @description Efetua o efeito da habilidade nos personagens
 /// @param {Asset.GMObject|Id.Instance} obj Objeto que está atacando
 /// @param {Asset.GMObject|Id.Instance} obj_inimigo Objeto que está sofrendo o ataque
-/// @param {Struct} hab Qual habilidade foi selecionada
+/// @param {Struct|String} hab Qual habilidade foi selecionada
 function scr_efeito_hab(obj, obj_inimigo, hab){
+	if (is_string(hab)) {
+		scr_toggle_hab([]);
+		scr_encerrar_turno();
+		return;
+	}
+	
+	if (hab.animacao == 0) {
+		scr_toggle_hab([]);
+		scr_encerrar_turno();
+		return;
+	}
+	
 	switch (hab.tipo) {
 		case global.tipos_hab[1]: // dano
 			efetua_dano(obj_inimigo, hab.valor_efeito);
@@ -30,13 +42,10 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			// no próximo turno, o player ganha um aumento de hab.valor_efeito no seu energia_por_acerto
 			break;
 	}
+	
 	if (global.modo_jogo_atual != global.modos_jogo[2]) {
 		scr_toggle_hab([]);
-		if (hab.animacao == 0) {
-			scr_encerrar_turno();
-		} else {
-			obj.alarm[3] = hab.animacao * game_get_speed(gamespeed_fps);
-		}
+		obj.alarm[3] = hab.animacao * game_get_speed(gamespeed_fps);
 	}
 }
 
@@ -51,7 +60,7 @@ function efetua_dano(_inimigo, _valor) {
 	}
 }
 
-/// @function efetua_dano(_inimigo, _valor)
+/// @function aumenta_vida(_obj, _valor)
 /// @param {Asset.GMObject|Id.Instance} _obj Objeto que está recebendo cura
 /// @param {Real} _valor Quanto cura será recebido
 function aumenta_vida(_obj, _valor) {

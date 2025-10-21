@@ -32,10 +32,10 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
-    "name":"spr_teste_opcao_1",
-    "path":"sprites/spr_teste_opcao_1/spr_teste_opcao_1.yy",
+    "name":"spr_btn_resposta",
+    "path":"sprites/spr_btn_resposta/spr_btn_resposta.yy",
   },
   "spriteMaskId":null,
   "visible":true,
