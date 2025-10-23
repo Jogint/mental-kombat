@@ -31,10 +31,13 @@
 
 ## 🆕 BUGS ENCONTRADOS
 
+### Gerais
+
+* Sorteador aparece apenas bot ou apenas p1 se selecionar o mesmo obj 2x
+
 ### Modo rápido
 
 * Sprite de habilidades travando na seta após atacar mais de uma vez Rápido
-* Confirmação de ataque do bot está no modelo antigo
 
 ## ⚙ EM ANDAMENTO
 

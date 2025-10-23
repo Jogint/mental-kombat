@@ -18,7 +18,7 @@ function scr_define_tamanho_hab(i, _is_rapido, _espaco_entre, _largura_desejada,
 	if (_is_rapido) { // chamado apenas 1x por partida, rodando obrigatóriamente 8 vezes
 		static _entradas = 0;
 				
-		if (_entradas < 4) {
+		if (_entradas < 3) {
 			_x = 10;
 			_entradas++;
 		} else {
@@ -26,7 +26,7 @@ function scr_define_tamanho_hab(i, _is_rapido, _espaco_entre, _largura_desejada,
 			_entradas++;
 		}
 		
-		if (_entradas == 8) _entradas = 0; // Todos os dois arrays foram percorridos
+		if (_entradas == 6) _entradas = 0; // Todos os dois arrays foram percorridos
 		
 		_y = 200 + (i * (_altura_desejada + 30));
 	}

@@ -16,6 +16,8 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 		return;
 	}
 	
+	obj.energia_atual -= hab.custo;
+	
 	switch (hab.tipo) {
 		case global.tipos_hab[1]: // dano
 			efetua_dano(obj_inimigo, hab.valor_efeito);

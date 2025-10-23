@@ -101,3 +101,6 @@
 * IMPROVE: Mudança no padrão das habilidades (Lyam - 20/10/2025)
 * IMPROVE: Separação do pular das habilidades dos players (Lyam - 20/10/2025)
 * FEAT: Sprite de habilidade e opacidade mudam caso indisponiveis (Lyam - 20/10/2025)
+* FIX: Confirmação de ataque do bot está no modelo antigo (Lyam - 22/10/2025)
+* IMPROVE: Reduzir energia no final da tela de hab, não no começo (Lyam - 22/10/2025)
+* FIX: Erros no array hab após remover o pular (Lyam - 22/10/2025)

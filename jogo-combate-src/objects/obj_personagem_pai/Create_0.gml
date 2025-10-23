@@ -38,19 +38,31 @@ function bot_ataca() {
 /// comparando com `ultima_hab_usada` do bot. Tamanho muda no rápido.
 /// @param {Asset.GMSprite} sprite_mudada A sprite que deseja colocar no lugar da atual
 function altera_sprite_hab(sprite_mudada) {
-    var _inicio_escolha = 0;
-    var _tamanho = [415, 80];
+    var _inicio_escolha = 0; // valores em scr_toggle_hab
+    var _tamanho = [300, 450];
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
     
-    if (global.modo_jogo_atual == global.modos_jogo[2]) {
-        _inicio_escolha = 4;
-        _tamanho = [80, 80];
+    if (_is_rapido) {
+        _inicio_escolha = 3; //indices bot 3, 4, 5
+        _tamanho = [80, 80]; 
     }
     
     for (var i = _inicio_escolha; i < array_length(global.hab_visiveis); i++) {
         var _hab_atual = global.hab_visiveis[i];
-        if (_hab_atual.habilidade.nome == ultima_hab_usada.nome) {
-            scr_trocar_sprite(_hab_atual, _tamanho[0], _tamanho[1], sprite_mudada);
-            break;
-        }
+		
+		if (!is_string(ultima_hab_usada)) {
+			
+			if (_hab_atual.habilidade.nome == ultima_hab_usada.nome) {
+				
+				if (_is_rapido) {
+					scr_trocar_sprite(_hab_atual, _tamanho[0], _tamanho[1], sprite_mudada);
+				} else {
+					var _fundo_hab_atual = global.fundo_hab_visiveis[i];
+					scr_trocar_sprite(_fundo_hab_atual, _tamanho[0], _tamanho[1], sprite_mudada);
+				}
+				
+				break;
+			}
+		}
     }
 }
