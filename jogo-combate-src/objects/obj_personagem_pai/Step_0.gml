@@ -1,13 +1,9 @@
 //Verifica se é vez do personagem
 meu_turno = (global.jogador_atual == controlador);
-
-//ignora esse erro abaixo, a var é criada por script
-if (global.modo_jogo_atual == global.modos_jogo[2]) {
-	tempo_turno = 120;
-}
+var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 
 if (global.turno_iniciou) {
-	if (global.modo_jogo_atual == global.modos_jogo[2] && !global.partida_acabou) {
+	if (_is_rapido && !global.partida_acabou) {
 		bot_ataca();
 	} else if (meu_turno && global.jogador_atual != "" && !global.partida_acabou ) {
 		if (global.errou_resposta) {
@@ -28,8 +24,13 @@ if (global.turno_iniciou) {
 		}
 	}
 } else {
-	if (meu_turno || global.modo_jogo_atual == global.modos_jogo[2]) {
-		if (alterou_tempo != 1)show_debug_message("Tempo alterado para " + string(tempo_turno * alterou_tempo));
+	//ignora esse erro abaixo, a var é criada por script
+	if (_is_rapido) {
+		tempo_turno = 120;
+	}
+	
+	if (meu_turno || _is_rapido) {
+		if (alterou_tempo != 1) show_debug_message("Tempo alterado para " + string(tempo_turno * alterou_tempo));
 		scr_iniciar_timer_turno(tempo_turno * alterou_tempo);
 		alterou_tempo = 1;
 		

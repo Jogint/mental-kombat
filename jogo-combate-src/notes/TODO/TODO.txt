@@ -8,6 +8,8 @@
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
 	* ?: Inspirar no tutorial do OSU
 * Configurar a habilidade de aumento de ganho de energia
+* Confirgurar para só desbloquear o modo rápido após fim do modo história
+* Criar as barras de vida
 
 ### Melhorias
 
@@ -18,9 +20,10 @@
 * Retorno visual de erros de player e bot (algo antes das habilidades)
 * Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
 * Adicionar review visual de quando um personagem inimigo ainda está bloqueado
-* Revisitar todos os TODO
+* Revisitar todos os TODO espalhados no código
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Mover opção pular para um botão a parte
+* Substituir "aperte x tecla" por um botão
 
 ### 🎨 SPRITES PRA DESENHAR
 
@@ -35,11 +38,6 @@
 
 * Sorteador aparece apenas bot ou apenas p1 se selecionar o mesmo obj 2x
 
-### Modo rápido
-
-* Sprite de habilidades travando na seta após atacar mais de uma vez Rápido
-
 ## ⚙ EM ANDAMENTO
 
-* Desenhar os 12 personagens - 6 prontos (Kaue)
 * Animação de ataque dos personagens 6/12 (Kaue)

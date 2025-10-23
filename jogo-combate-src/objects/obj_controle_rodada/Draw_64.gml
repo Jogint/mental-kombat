@@ -1,3 +1,5 @@
+var _cor_principal = c_dkgray
+
 if (choosing_state == 1 || choosing_state == 2) {
 	pop_up_aberto = true;
 	
@@ -14,10 +16,12 @@ if (choosing_state == 1 || choosing_state == 2) {
 	}
 	
 } else {
-	draw_set_color(c_black);
+	draw_set_color(_cor_principal);
+	
 	// Texto da pergunta
 	if (global.jogador_atual != "") {
 		var _texto_pergunta = "Pergunta para " + string(global.jogador_atual) + ": " + string(global.pergunta_atual.n1);
+		
 		switch (global.pergunta_atual.conta) {
 			case global.operacoes[0]:
 				_texto_pergunta += " + ";
@@ -34,13 +38,19 @@ if (choosing_state == 1 || choosing_state == 2) {
 			default:
 				show_error("Operação matemática não identificada pelo switch, recebeu: " + global.pergunta_atual.conta, true)
 		}
+		
 		_texto_pergunta += string(global.pergunta_atual.n2);
-		var _tempo_restante = round(global.timer_turno / game_get_speed(gamespeed_fps))
 		draw_text(x, y, _texto_pergunta);
+		
+		var _tempo_restante = round(global.timer_turno / game_get_speed(gamespeed_fps))
+		if (_tempo_restante < 10) draw_set_color(c_red); 
 		draw_text(x, y - 20, "Tempo restante: " + string(_tempo_restante));
+		draw_set_color(_cor_principal);
 
 		// vida dos personagens PROVISÓRIO
 		draw_text(100, 40, "vida: " + string(global.inst_perso_partida[0].hp_atual) + " | energia: " + string(global.inst_perso_partida[0].energia_atual));
 		draw_text(1085, 40, "vida: " + string(global.inst_perso_partida[1].hp_atual) + " | energia: " + string(global.inst_perso_partida[1].energia_atual));
 	}
 }
+
+scr_reset_draw();

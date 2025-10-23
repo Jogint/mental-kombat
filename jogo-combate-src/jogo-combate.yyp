@@ -103,7 +103,6 @@
     {"id":{"name":"scr_player_usa_hab","path":"scripts/scr_player_usa_hab/scr_player_usa_hab.yy",},},
     {"id":{"name":"scr_pontua_pvp","path":"scripts/scr_pontua_pvp/scr_pontua_pvp.yy",},},
     {"id":{"name":"scr_proxima_pergunta","path":"scripts/scr_proxima_pergunta/scr_proxima_pergunta.yy",},},
-    {"id":{"name":"scr_proxima_room","path":"scripts/scr_proxima_room/scr_proxima_room.yy",},},
     {"id":{"name":"scr_reset_draw","path":"scripts/scr_reset_draw/scr_reset_draw.yy",},},
     {"id":{"name":"scr_retorna_perso","path":"scripts/scr_retorna_perso/scr_retorna_perso.yy",},},
     {"id":{"name":"scr_selecionou_perso","path":"scripts/scr_selecionou_perso/scr_selecionou_perso.yy",},},

@@ -4,16 +4,23 @@
 /// @param {Asset.GMObject|Id.Instance} obj_inimigo Objeto que está sofrendo o ataque
 /// @param {Struct|String} hab Qual habilidade foi selecionada
 function scr_efeito_hab(obj, obj_inimigo, hab){
-	if (is_string(hab)) {
-		scr_toggle_hab([]);
-		scr_encerrar_turno();
-		return;
-	}
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 	
+	if (is_string(hab)) {
+	    if (!_is_rapido) {
+	        scr_toggle_hab([]);
+	        scr_encerrar_turno();
+	    }
+	    return;
+	}
+
+	// TODO: Verificar se o bloco abaixo pode ser removido sem quebrar o jogo
 	if (hab.animacao == 0) {
-		scr_toggle_hab([]);
-		scr_encerrar_turno();
-		return;
+	    if (!_is_rapido) {
+	        scr_toggle_hab([]);
+	        scr_encerrar_turno();
+	    }
+	    return;
 	}
 	
 	obj.energia_atual -= hab.custo;
@@ -45,7 +52,7 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			break;
 	}
 	
-	if (global.modo_jogo_atual != global.modos_jogo[2]) {
+	if (!_is_rapido) {
 		scr_toggle_hab([]);
 		obj.alarm[3] = hab.animacao * game_get_speed(gamespeed_fps);
 	}
