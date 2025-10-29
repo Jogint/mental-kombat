@@ -5,7 +5,7 @@ controlador = global.tipos_jogadores[1]; //alterado em scr_inserir_players
 meu_turno = false;
 bot_executou = false;
 definiu_hab = false;
-alterou_tempo = 1;
+efeitos = [1, 1]; // acelera/atrasa, energia
 habilidades = []; // objetos filho definem as habilidades
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab
 pausa_animacao = true;
@@ -15,7 +15,9 @@ global.partida_acabou = false;
 /// @description Aumenta a energia atual do personagem com base em `energia_por_acerto`,
 /// limitando ao máximo `energia_total`.
 function aumentar_energia() {
-    energia_atual += energia_por_acerto;
+	show_debug_message(efeitos);
+	show_debug_message(efeitos[1]);
+    energia_atual += round(energia_por_acerto * efeitos[1]);
     if (energia_atual >= energia_total) {
         energia_atual = energia_total;
     }

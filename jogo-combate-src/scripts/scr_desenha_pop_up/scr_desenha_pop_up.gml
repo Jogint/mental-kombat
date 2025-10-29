@@ -6,6 +6,8 @@
 /// @param {Constant.Color} cor_fundo Cor do pop up
 /// @param {Array<Constant.Color>} cor_texto_arr A cor de cada linha de texto
 /// @param {Array<Asset.GMFont>} fonte_arr A fonte (tipografia) de cada linha de texto
+
+// TODO: PERMITIR ALTERAÇÃO DE TAMANHOS
 function scr_desenha_pop_up (obj, textos_arr, cor_fundo, cor_texto_arr, fonte_arr) {
 	// TODO: Se livra desse "obj". funciona sem ele
 	if (obj.pop_up_aberto) {

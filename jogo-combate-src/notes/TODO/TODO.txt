@@ -7,7 +7,6 @@
 * Criar global.apresentou_tutoriais = [false, false, false];
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
 	* ?: Inspirar no tutorial do OSU
-* Configurar a habilidade de aumento de ganho de energia
 * Confirgurar para só desbloquear o modo rápido após fim do modo história
 * Criar as barras de vida
 
@@ -41,3 +40,6 @@
 ## ⚙ EM ANDAMENTO
 
 * Animação de ataque dos personagens 6/12 (Kaue)
+* Configurar a habilidade de aumento de ganho de energia
+	* analisar debug message pq não funciona
+	* desativar após 10 segundos
