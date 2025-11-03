@@ -25,7 +25,7 @@ function scr_bot_escolhe_hab(arr){
 	ultima_hab_usada = arr[_hab_usada];
 	
 	if (global.modo_jogo_atual == global.modos_jogo[2]) {
-		scr_efeito_hab(global.inst_perso_partida[1], global.inst_perso_partida[0], ultima_hab_usada);
+		scr_ativa_animacao(global.inst_perso_partida[1], ultima_hab_usada);
 		return;
 	}
 	

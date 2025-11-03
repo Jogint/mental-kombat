@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_efeito_hab",
+  "%Name":"scr_ativa_animacao",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_efeito_hab",
+  "name":"scr_ativa_animacao",
   "parent":{
     "name":"Habilidades",
     "path":"folders/Scripts/Em Partida/Habilidades.yy",

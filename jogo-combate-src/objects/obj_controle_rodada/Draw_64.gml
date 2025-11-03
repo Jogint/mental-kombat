@@ -1,4 +1,4 @@
-var _cor_principal = c_lime;
+var _cor_principal = c_black;
 
 if (choosing_state == 1 || choosing_state == 2) {
 	pop_up_aberto = true;
@@ -53,10 +53,6 @@ if (choosing_state == 1 || choosing_state == 2) {
 		if (_tempo_restante < 10) draw_set_color(c_red); 
 		draw_text(x, y - 20, "Tempo restante: " + string(_tempo_restante));
 		draw_set_color(_cor_principal);
-
-		// vida dos personagens PROVISÓRIO
-		draw_text(100, 40, "vida: " + string(global.inst_perso_partida[0].hp_atual) + " | energia: " + string(global.inst_perso_partida[0].energia_atual));
-		draw_text(1085, 40, "vida: " + string(global.inst_perso_partida[1].hp_atual) + " | energia: " + string(global.inst_perso_partida[1].energia_atual));
 	}
 }
 

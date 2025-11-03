@@ -33,6 +33,7 @@ function definir_globais() {
 	global.jogador_atual = ""; // Indica quem pode responder a pergunta
 	global.perso_atuais = [noone, noone]; // quais objetos de personagem cada instancia vai usar
 	global.inst_perso_partida = []; // intâncias de personagens em jogo
+	global.inst_hud = [] // instâncias das barras de vida e eneria
 	global.ultimo_selecionado = noone; // usado durante a seleção de personagens
 	global.perguntas_geradas = scr_gerar_perguntas(); // Banco de perguntas para a partida
 	global.pergunta_atual = global.perguntas_geradas[0]; // A pergunta que está sendo exibida no momento

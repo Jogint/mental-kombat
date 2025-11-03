@@ -126,3 +126,5 @@
 * FIX: Sorteador aparece apenas bot ou apenas p1 se selecionar o mesmo obj (Lyam - 02/11/2025)
 * FEAT: Confirgurar para só desbloquear o modo rápido após fim do modo história (Lyam - 02/11/2025)
 * IMPROVE: Deixar botões não selecionáveis com baixa opacidade (Lyam - 02/11/2025)
+* FEAT: Criar as barras de vida e energia funcionais (Lyam - 03/11/2025)
+* IMPROVE: Mudança de dano e cura para pós animação (Lyam - 03/11/2025)

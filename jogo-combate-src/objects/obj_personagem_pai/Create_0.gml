@@ -1,7 +1,7 @@
 /// @description Variáveis
 scr_criar_personagem(self, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max);
 
-controlador = global.tipos_jogadores[1]; //alterado em scr_inserir_players
+controlador = noone; //alterado em scr_inserir_players
 meu_turno = false;
 bot_executou = false;
 definiu_hab = false;
@@ -9,6 +9,7 @@ efeitos = [1, 1, 0]; // acelera/atrasa, energético, coutdown energético
 habilidades = []; // objetos filho definem as habilidades
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab
 pausa_animacao = true;
+animacao_em_uso = noone;
 sprite_padrao = object_get_sprite(object_index);
 global.partida_acabou = false;
 
