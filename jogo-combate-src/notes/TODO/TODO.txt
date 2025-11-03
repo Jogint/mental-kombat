@@ -4,43 +4,42 @@
 
 ### Features
 
-* Criar global.apresentou_tutoriais = [false, false, false];
+* Criar as barras de vida e energia.
+* Adicionar pop up de informações sobre o personagem (vida, ganho, energia total, tempo) na seleção
+	* Editar scr_desenha_pop_up para deslocamento y negativo (subir o pop_up)
+* Criar global.apresentou_tutoriais = [false, false, false]:
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
-* Confirgurar para só desbloquear o modo rápido após fim do modo história
-* Criar as barras de vida
+* Alterar modos de jogo e dificuldade com setas laterais
 
 ### Melhorias
 
-* Usar fontes diversas
-* Botão de personagem aleatório
-* Desativar instancias de resposta ao invés de ocultar a camada ao exibir habilidades
-* Retorno visual do acerto do bot
-* Retorno visual de erros de player e bot (algo antes das habilidades)
-* Deixar botões não selecionáveis cinza ex: seta de seleção antes de escolher
-* Adicionar review visual de quando um personagem inimigo ainda está bloqueado
-* Revisitar todos os TODO espalhados no código
-* Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
-* Mover opção pular para um botão a parte
+* Revisitar todos os TODO espalhados no código.
+* Retorno visual do acerto do bot (trocar cor da resposta dele).
+* Retorno visual de erros de player e bot - 1 seg de botão tremendo antes das habilidades.
+* Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes).
+* Adicionar músicas e efeitos sonoros
 * Substituir "aperte x tecla" por um botão
+* Trocar a sprite (ou cor) do obj_personagem_pai ao confirmar resposta em alarm[1]
+* Desativar instâncias de resposta ao invés de ocultar a camada ao exibir habilidades
+* Botão de personagem aleatório
+* Usar fontes diversas
+* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (array de tamanhos?)
 
-### 🎨 SPRITES PRA DESENHAR
+### 🎨 SPRITES PARA DESENHAR
 
+* Background para cada room: (Mínimo Visual: priorize Menu e Combate).
+* Tela e botões de fim de jogo (atualmente vivendo a base do draw): (Essencial para fechar o ciclo).
+* Miniatura de exibição do personagem na seleção de jogador.
 * Todos os objetos na pasta /Botões
-* Background para cada room
-* Tela e botões de fim de jogo
 * Tela e botões de configurações (som, controles, créditos, easter egg)
-* Imagem de exibição do personagem na seleção
 
 ## 🆕 BUGS ENCONTRADOS
 
 ### Gerais
 
-* Sorteador aparece apenas bot ou apenas p1 se selecionar o mesmo obj 2x
+> Todos os bugs foram solucionados ou estão em investigação
 
 ## ⚙ EM ANDAMENTO
 
 * Animação dos personagens 2/12 (Kaue)
 * Implementação de novas sprites dos personagens e resolução do jogo (Kaue)
-* Configurar a habilidade de aumento de ganho de energia (Lyam)
-	* analisar debug message pq não funciona
-	* desativar após 10 segundos

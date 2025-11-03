@@ -3,7 +3,6 @@ switch (room) {
 		if (global.perso_atuais[1] != noone) room_goto_next();
 	break;
 	case rm_selecao_personagem:
-		// TODO: Review visual caso global.ultimo_selecionado == noone
 		if (global.ultimo_selecionado != noone) {
 			var _players_selecionados = (global.perso_atuais[0] != noone) + (global.perso_atuais[1] != noone);
 

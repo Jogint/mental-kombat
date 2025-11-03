@@ -16,7 +16,9 @@ function scr_bot_escolhe_hab(arr){
 	
 	if (_hab_usada < 0) {
 		ultima_hab_usada = global.tipos_hab[0];
-		alarm[2] = game_get_speed(gamespeed_fps);
+		
+		//2 Segundos mostrando a sprite de confirmação do bot. tbm presente em alarm[1] do perso
+		alarm[2] = 2 * game_get_speed(gamespeed_fps);
 		return;
 	}
 	

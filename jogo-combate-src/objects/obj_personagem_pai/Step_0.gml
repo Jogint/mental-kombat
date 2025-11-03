@@ -13,7 +13,6 @@ if (global.turno_iniciou) {
 	
 		if (global.timer_turno <= 0) {
 			global.timer_turno = 0;
-			efeitos[1] = 1;
 			
 			if (!global.exibir_hab && pausa_animacao) {
 				pausa_animacao = false;
@@ -33,11 +32,8 @@ if (global.turno_iniciou) {
 	}
 	
 	if (meu_turno || _is_rapido) {
-		if (efeitos[0] != 1) show_debug_message("Tempo alterado para " + string(tempo_turno * efeitos[0]));
 		scr_iniciar_timer_turno(tempo_turno * efeitos[0]);
 		efeitos[0] = 1;
-		
-		show_debug_message("Energia do round: " + string(efeitos[1] * energia_por_acerto));
 		
 		bot_ataca();
 		

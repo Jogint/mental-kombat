@@ -3,7 +3,6 @@
 /// @param {bool} _is_logo Define se é o ícone da habilidade, e não o fundo
 // "alterou é uma variável" dentro dos objetos que chamam essa função
 function scr_hab_disponivel(_is_logo) {
-	// TODO: fazer isso também para o modo rápido
 	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 	var _hab_index = array_get_index(global.hab_visiveis, id);
 	
@@ -33,7 +32,6 @@ function scr_hab_disponivel(_is_logo) {
 			// se for fundo, altera a sprite
 			var _i = array_get_index(global.fundo_hab_visiveis, self);
 			var _tam = scr_define_tamanho_hab(_i, false, 80, 300, true); // MESMO DE SCR_TOGGLE_HAB
-			// TODO: Transformar todo numero que repete em global (array de tamanhos?)
 		
 			scr_trocar_sprite(self, _tam[2], _tam[3], spr_hab_disponivel);
 		}

@@ -28,8 +28,6 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			if (obj_inimigo.hp_atual > 0) aumenta_vida(obj, hab.valor_efeito);
 			break;
 		case global.tipos_hab[4]: // prorroga
-			show_debug_message(hab);
-			show_debug_message(hab.valor_efeito);
 			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O tempo deve aumentar em até 2.0 e maior que 1. Recebeu " + string(hab.valor_efeito), true);
 			obj.efeitos[0] = hab.valor_efeito;
 			break;
@@ -43,8 +41,6 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			break;
 	}
 	
-	show_debug_message("Campos da habilidade em scr_efeito_hab: " + string(variable_struct_get_names(hab)));
-	
 	if (!_is_rapido) {
 		scr_toggle_hab([]);
 		obj.sprite_index = hab.sprite;
@@ -56,10 +52,6 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 /// @param {Real} _valor Quanto dano será recebido
 function efetua_dano(_inimigo, _valor) {
 	_inimigo.hp_atual -= _valor;
-	if (_inimigo.hp_atual <= 0) {
-		_inimigo.hp_atual = 0;
-		global.partida_acabou = true;
-	}
 }
 
 /// @function aumenta_vida(_obj, _valor)

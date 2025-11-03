@@ -60,7 +60,7 @@ function bot_encerrar_turno(inst_bot) {
 
 /// @function bot_agendar_proxima_acao(inst_bot, tempo_em_segundos, _is_rapido)
 function bot_agendar_proxima_acao(inst_bot, tempo_em_segundos, _is_rapido) {
-    show_debug_message("O bot executará novamente em " + string(tempo_em_segundos));
+    //show_debug_message("O bot executará novamente em " + string(tempo_em_segundos));
     var _frames = tempo_em_segundos * game_get_speed(gamespeed_fps);
 	if (_is_rapido) _frames += game_get_speed(gamespeed_fps); // 1 segundo extra
 	

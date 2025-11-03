@@ -7,7 +7,7 @@ function definir_globais() {
 	global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"];
 	global.tipos_jogadores = ["bot", "player1", "player2"];
 	global.niveis_dificuldade = ["facil", "medio", "dificil"];
-	global.modos_jogo = ["2 jogadores", "história", "rápido"];
+	global.modos_jogo = ["2 jogadores", "história", ""];
 	global.tipos_hab = ["pular", "dano", "cura", "dreno", "prorroga", "acelera", "energetico"];
 	global.qtd_alternativas = 4;
 	global.qtd_players_partida = 2;

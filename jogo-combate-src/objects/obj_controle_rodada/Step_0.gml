@@ -3,7 +3,7 @@ if (global.jogador_atual == "" && choosing_state == 0 && global.modo_jogo_atual 
     var _total_flicker_time = 3; // 3 seconds
     var _flicker_rate_steps = 4; // Pisca 4x por segundo
     flicker_count = _total_flicker_time * (game_get_speed(gamespeed_fps) / _flicker_rate_steps);
-    current_selection_name = global.perso_atuais[1].controlador; // primeiro nome
+    current_selection_name = global.inst_perso_partida[0].controlador; // primeiro nome
     alarm[0] = _flicker_rate_steps;
 }
 

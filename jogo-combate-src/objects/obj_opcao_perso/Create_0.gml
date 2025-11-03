@@ -9,6 +9,6 @@ if (is_multiplayer) {
 	if (array_contains(global.perso_disponiveis, obj_relacionado)) {
 		scr_trocar_sprite(self, _tamanho, _tamanho, dados[0]);
 	} else {
-		scr_trocar_sprite(self, _tamanho, _tamanho, spr_teste_quest); // TODO: Trocar após mudar de sprite
+		scr_trocar_sprite(self, _tamanho, _tamanho, spr_perso_bloqueado);
 	}
 }

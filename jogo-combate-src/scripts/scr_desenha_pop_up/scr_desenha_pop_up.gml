@@ -4,7 +4,6 @@
 /// @param {Array<String>} textos_arr Textos que serão exibidos, cada índice sendo uma quebra de linha
 /// @param {Struct} opcoes Todos os detalhes de estética: fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real)
 
-// TODO: PERMITIR ALTERAÇÃO DE TAMANHOS
 function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	var _cor_default_texto = c_black;
 	var _fonte_default = asset_get_index("fnt_principal");

@@ -3,10 +3,10 @@ if (choosing_state == 1) {
     flicker_count--;
 
     if (flicker_count > 0) {
-        if (current_selection_name == global.perso_atuais[1].controlador) {
-            current_selection_name = global.perso_atuais[0].controlador;
+        if (current_selection_name == global.inst_perso_partida[1].controlador) {
+            current_selection_name = global.inst_perso_partida[0].controlador;
         } else {
-            current_selection_name = global.perso_atuais[1].controlador;
+            current_selection_name = global.inst_perso_partida[1].controlador;
         }
 
         // --- RESCHEDULE THE ALARM ---
@@ -22,7 +22,7 @@ if (choosing_state == 1) {
     } else {
         choosing_state = 2; // Vai pro resultado
         var _resultado_sorteio = irandom_range(0, 1);
-        current_selection_name = global.perso_atuais[_resultado_sorteio].controlador;
+        current_selection_name = global.inst_perso_partida[_resultado_sorteio].controlador;
         alarm[1] = game_get_speed(gamespeed_fps) * 1; // 1 segundo de resultado
     }
 }

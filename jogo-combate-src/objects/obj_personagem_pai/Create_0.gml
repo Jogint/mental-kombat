@@ -5,7 +5,7 @@ controlador = global.tipos_jogadores[1]; //alterado em scr_inserir_players
 meu_turno = false;
 bot_executou = false;
 definiu_hab = false;
-efeitos = [1, 1]; // acelera/atrasa, energia
+efeitos = [1, 1, 0]; // acelera/atrasa, energia, coutdown energia
 habilidades = []; // objetos filho definem as habilidades
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab
 pausa_animacao = true;
@@ -16,8 +16,20 @@ global.partida_acabou = false;
 /// @description Aumenta a energia atual do personagem com base em `energia_por_acerto`,
 /// limitando ao máximo `energia_total`.
 function aumentar_energia() {
-	show_debug_message(efeitos);
-	show_debug_message(efeitos[1]);
+	// Considerar se existe buff nos proximos 10 segundos
+	if (efeitos[1] > 1) {
+		if (efeitos[2] <= 0) {
+			efeitos[2] += 10 * game_get_speed(gamespeed_fps);
+		} else {
+			efeitos[2]--;
+		}
+		
+		if (efeitos[2] <= 0 ) {
+			efeitos[1] = 1;
+			efeitos[2] = 0;
+		}
+	}
+	
     energia_atual += round(energia_por_acerto * efeitos[1]);
     if (energia_atual >= energia_total) {
         energia_atual = energia_total;
@@ -31,7 +43,7 @@ function bot_ataca() {
     if (!bot_executou && controlador == global.tipos_jogadores[0]) {
         bot_executou = true;
         var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
-		show_debug_message("Bot irá responder em " + string(_tempo_para_responder));
+		//show_debug_message("Bot irá responder em " + string(_tempo_para_responder));
         alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
     }
 }

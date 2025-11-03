@@ -122,3 +122,7 @@
 * FEAT: Pop up aceita alterações de tamanho (Lyam - 02/11/2025)
 * IMPROVE: Melhor atribuição da habilidade para obj_fundo_hab e obj_habilidade (Lyam - 02/11/2025)
 * FEAT: Encerra turno ao fim da animação (Lyam - 02/11/2025)
+* FEAT: * Configurar a habilidade de aumento de ganho de energia (Lyam - 02/11/2025)
+* FIX: Sorteador aparece apenas bot ou apenas p1 se selecionar o mesmo obj (Lyam - 02/11/2025)
+* FEAT: Confirgurar para só desbloquear o modo rápido após fim do modo história (Lyam - 02/11/2025)
+* IMPROVE: Deixar botões não selecionáveis com baixa opacidade (Lyam - 02/11/2025)
