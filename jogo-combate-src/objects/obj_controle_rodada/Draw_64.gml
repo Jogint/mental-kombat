@@ -3,16 +3,22 @@ var _cor_principal = c_dkgray
 if (choosing_state == 1 || choosing_state == 2) {
 	pop_up_aberto = true;
 	
-    scr_desenha_pop_up(self, [current_selection_name]);
+	var _customizacoes = {
+		largura: 200,
+		altura: 200,
+	}
+	scr_valida_estetica_popup(_customizacoes);
+
+	scr_desenha_pop_up ([current_selection_name], _customizacoes);
 	
 } else if (global.partida_acabou) {
 	pop_up_aberto = true;
 	
 	if (global.modo_jogo_atual != global.modos_jogo[0]) {
-		scr_desenha_pop_up(self, ["Fim da partida!", "", "Pressione 'R' para jogar novamente", "Pressione 'M' para voltar ao menu inicial"]);
+		scr_desenha_pop_up(["Fim da partida!", "", "Pressione 'R' para jogar novamente", "Pressione 'M' para voltar ao menu inicial"]);
 	
 	} else {
-		scr_desenha_pop_up(self, ["Fim da partida!", string(global.tipos_jogadores[1]) + ": " + string(global.pontuacao_pvp[0])+ " | " + string(global.tipos_jogadores[2]) + ": " + string(global.pontuacao_pvp[1]), "", "Pressione 'R' para jogar novamente", "Pressione 'M' para voltar ao menu inicial"]);
+		scr_desenha_pop_up(["Fim da partida!", string(global.tipos_jogadores[1]) + ": " + string(global.pontuacao_pvp[0])+ " | " + string(global.tipos_jogadores[2]) + ": " + string(global.pontuacao_pvp[1]), "", "Pressione 'R' para jogar novamente", "Pressione 'M' para voltar ao menu inicial"]);
 	}
 	
 } else {

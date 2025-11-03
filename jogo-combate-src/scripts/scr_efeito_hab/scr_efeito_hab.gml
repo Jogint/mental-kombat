@@ -13,15 +13,6 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 	    }
 	    return;
 	}
-
-	// TODO: Verificar se o bloco abaixo pode ser removido sem quebrar o jogo
-	if (hab.animacao == 0) {
-	    if (!_is_rapido) {
-	        scr_toggle_hab([]);
-	        scr_encerrar_turno();
-	    }
-	    return;
-	}
 	
 	obj.energia_atual -= hab.custo;
 	
@@ -52,9 +43,11 @@ function scr_efeito_hab(obj, obj_inimigo, hab){
 			break;
 	}
 	
+	show_debug_message("Campos da habilidade em scr_efeito_hab: " + string(variable_struct_get_names(hab)));
+	
 	if (!_is_rapido) {
 		scr_toggle_hab([]);
-		obj.alarm[3] = hab.animacao * game_get_speed(gamespeed_fps);
+		obj.sprite_index = hab.sprite;
 	}
 }
 

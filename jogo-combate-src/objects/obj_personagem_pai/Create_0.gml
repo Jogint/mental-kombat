@@ -9,6 +9,7 @@ efeitos = [1, 1]; // acelera/atrasa, energia
 habilidades = []; // objetos filho definem as habilidades
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab
 pausa_animacao = true;
+sprite_padrao = object_get_sprite(object_index);
 global.partida_acabou = false;
 
 /// @function aumentar_energia()

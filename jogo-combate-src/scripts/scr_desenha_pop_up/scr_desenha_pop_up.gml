@@ -1,41 +1,45 @@
 // TODO: Permitir alterar o tamanho do pop up
-/// @function scr_desenha_pop_up (obj, textos_arr, cor_fundo, cor_texto_arr, fonte_arr)
-/// @description Cria um draw GUI na centralizado que cobre 75% da tela
-/// @param {Asset.GMObject|Id.Instance} obj Objeto que vai desenhar o GUI
+/// @function scr_desenha_pop_up (textos_arr, opcoes)
+/// @description Cria um draw GUI na centralizado. Use 'noone' nos campos que não pretende alterar.
 /// @param {Array<String>} textos_arr Textos que serão exibidos, cada índice sendo uma quebra de linha
-/// @param {Constant.Color} cor_fundo Cor do pop up
-/// @param {Array<Constant.Color>} cor_texto_arr A cor de cada linha de texto
-/// @param {Array<Asset.GMFont>} fonte_arr A fonte (tipografia) de cada linha de texto
+/// @param {Struct} opcoes Todos os detalhes de estética: fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real)
 
 // TODO: PERMITIR ALTERAÇÃO DE TAMANHOS
-function scr_desenha_pop_up (obj, textos_arr, cor_fundo, cor_texto_arr, fonte_arr) {
-	// TODO: Se livra desse "obj". funciona sem ele
-	if (obj.pop_up_aberto) {
-		// define a cor
-		if (is_undefined(cor_fundo)) cor_fundo = c_ltgray;
-		if (is_undefined(cor_texto_arr)) cor_texto_arr = [c_black];
-		if (is_undefined(fonte_arr)) fonte_arr = [fnt_principal];
+function scr_desenha_pop_up (textos_arr, opcoes = {}) {
+	var _cor_default_texto = c_black;
+	var _fonte_default = asset_get_index("fnt_principal");
+	
+	if (pop_up_aberto) { // variável do objeto que chama a função
+	    var _estetica = {
+	        fundo_cor: c_ltgray,
+	        texto_cores: [_cor_default_texto],
+	        fontes: [_fonte_default],
+	        largura: room_width / 2,
+			altura: room_height / 2,
+	    };
 		
-		// verifica se está correto
-		if (!is_array(textos_arr)) show_error("pop up precisa dos textos num array.", true);
-		if (!is_array(cor_texto_arr)) {
-			cor_texto_arr = [c_black]
-			show_error("pop up precisa da cor dos textos num array.", false);
-		}
-		if (!is_array(textos_arr)) {
-			fonte_arr = [fnt_principal]
-			show_error("pop up precisa da fonte dos textos num array.", false);
-		}
+	    // Nome de todas personalizações desejadas
+	    var _propriedades = variable_struct_get_names(opcoes);
+    
+	    // Itera sobre as propriedades fornecidas
+	    for (var i = 0; i < array_length(_propriedades); i++) {
+	        var _nome = _propriedades[i];
+	        var _valor = variable_struct_get(opcoes, _nome);
+	        variable_struct_set(_estetica, _nome, _valor);
+	    }
+		
+		scr_valida_estetica_popup(_estetica);
+		verifica_dados_struct(_estetica, textos_arr);
 	
 		// tamanho pop-up
-		var pop_up_width = room_width / 2;
-		var pop_up_height = room_height / 2;
+		var pop_up_width = _estetica.largura;
+		var pop_up_height = _estetica.altura;
 		var pop_up_x = room_width / 2 - pop_up_width / 2;
 		var pop_up_y = room_height / 2 - pop_up_height / 2;
 		var espacamento = 30;
 	
 		// cria pop-up
-		draw_set_color(cor_fundo);
+		draw_set_color(_estetica.fundo_cor);
 		draw_rectangle(pop_up_x, pop_up_y, pop_up_x + pop_up_width, pop_up_y + pop_up_height, false);
 		
 		// cálculo da altura do texto
@@ -54,16 +58,18 @@ function scr_desenha_pop_up (obj, textos_arr, cor_fundo, cor_texto_arr, fonte_ar
 		
 		for (var i = 0; i < array_length(textos_arr); i++) {
 			// caracteristicas do texto
-			if (i < array_length(cor_texto_arr)) {
-				draw_set_color(cor_texto_arr[i]);
+			if (i < array_length(_estetica.texto_cores)) {
+				draw_set_color(_estetica.texto_cores[i]);
 			} else {
-				draw_set_color(cor_texto_arr[0])
+				draw_set_color(_cor_default_texto);
 			}
-			if (i < array_length(fonte_arr)) {
-				draw_set_font(fonte_arr[i]);
+			
+			if (i < array_length(_estetica.fontes)) {
+				draw_set_font(_estetica.fontes[i]);
 			} else {
-				draw_set_font(fonte_arr[0])
+				draw_set_font(_fonte_default)
 			}
+			
 			draw_set_halign(fa_center);
 			
 			//escrita
@@ -74,4 +80,55 @@ function scr_desenha_pop_up (obj, textos_arr, cor_fundo, cor_texto_arr, fonte_ar
 	}
 	// volta pro padrão no fim da execução
 	scr_reset_draw();
+}
+
+/// @function verifica_dados_struct (estetica, textos)
+/// @description Verifica a validade e o formato dos dados para o pop-up.
+/// @param {Struct} _estetica Struct contendo fundo_cor, texto_cores, fontes, etc.
+/// @param {Array<String>} _textos Array de textos.
+function verifica_dados_struct(_estetica, _textos) {
+    // ===================================
+    // 1. VERIFICAÇÃO DO TIPO DE DADO PRINCIPAL (Array/Numeric)
+    // ===================================
+	
+    if (!is_array(_textos)) show_error("pop up: textos_arr precisa ser um array.", true);
+    if (!is_array(_estetica.texto_cores)) show_error("pop up: texto_cores precisa ser um array.", true);
+    if (!is_array(_estetica.fontes)) show_error("pop up: fontes precisa ser um array.", true);
+    if (!is_numeric(_estetica.fundo_cor)) show_error("pop up: fundo_cor precisa ser Constant.color ou número.", true);
+    
+    // ===================================
+    // 2. VERIFICAÇÃO DE VAZIO E TAMANHO
+    // ===================================
+    
+    var _tam_textos = array_length(_textos);
+    var _tam_cores = array_length(_estetica.texto_cores);
+    var _tam_fontes = array_length(_estetica.fontes);
+    
+    if (_tam_textos == 0) show_error("pop up: Array de textos para pop up está vazio.", true);
+    if (_tam_cores == 0) show_error("pop up: Array de cores de textos para pop up está vazio.", true);
+    if (_tam_fontes == 0) show_error("pop up: Array de fontes para pop up está vazio.", true);
+    
+    // ===================================
+    // 3. VERIFICAÇÃO DO CONTEÚDO (Código por IA, eu não tenho ideia de como funcionam esses mod)
+    // ===================================
+    for (var i = 0; i < _tam_textos; i++) {
+        
+        if (!is_string(_textos[i])) {
+            show_error("pop up: Índice " + string(i) + " do texto é inválido. Precisa ser string, mas é " + typeof(_textos[i]) + ".", true);
+        }
+        
+        var _cor_indice = i % _tam_cores;
+        var _cor_valor = _estetica.texto_cores[_cor_indice];
+        
+        if (!is_numeric(_cor_valor) || _cor_valor < 0) {
+            show_error("pop up: Cor inválida no índice " + string(_cor_indice) + " do array 'texto_cores'. Precisa ser Constant.color ou número inteiro não negativo.", true);
+        }
+        
+        var _fonte_indice = i % _tam_fontes;
+        var _fonte_valor = _estetica.fontes[_fonte_indice];
+
+        if (asset_get_index(_fonte_valor) < 0) {
+			show_error("pop up: Fonte inválida no índice " + string(_fonte_indice) + " do array 'fontes'. Asset '" + string(_fonte_valor) + "' não encontrado.", true);
+        }
+    }
 }

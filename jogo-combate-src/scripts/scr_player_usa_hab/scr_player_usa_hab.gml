@@ -1,6 +1,7 @@
 /// @function scr_player_usa_hab(_player_index)
 /// @description Gerencia tentativa de usar uma habilidade
 /// @param {bool} _is_pulo Se o player vai pular a vez
+/// habilidade é uma variavel do objeto que a chama, atribuida via scr_toggle_hab
 function scr_player_usa_hab(_is_pulo) {
 	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 	var _player_index = array_get_index(global.tipos_jogadores, global.jogador_atual) - 1; // bot é o index 0 (vira -1), o player não pode atacar

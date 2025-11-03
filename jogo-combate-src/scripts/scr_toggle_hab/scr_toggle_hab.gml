@@ -14,9 +14,9 @@ function scr_toggle_hab(hab_arr){
 				var _camada_alvo = "Habilidades";
 				var _obj_a_criar = obj_pular_turno;
 				var _nova_instancia = instance_create_layer(600, 630, _camada_alvo, _obj_a_criar);
-				
 			}
 		}
+		
 		cria_instancias_hab(_is_rapido, hab_arr);
 	} else {
 		ocultar_hab();	
@@ -35,15 +35,8 @@ function cria_instancias_hab(_is_rapido, hab_arr) {
 		array_push(global.hab_visiveis, _nova_instancia);
 		
 		with (_nova_instancia) { // Atribui os efeitos ao novo objeto
-			habilidade = {
-				nome: hab_arr[i].nome,
-				custo: hab_arr[i].custo,
-				tipo: hab_arr[i].tipo,
-				valor_efeito: hab_arr[i].valor_efeito,
-				animacao: hab_arr[i].animacao,
-			}
-			
-			scr_trocar_sprite(self, _posi_e_tam[2], _posi_e_tam[3], hab_arr[i].sprite);
+			habilidade = hab_arr[i];
+			scr_trocar_sprite(self, _posi_e_tam[2], _posi_e_tam[3], atribui_sprite_hab(hab_arr[i].tipo));
 		}
 		
 		if (!_is_rapido) {
@@ -56,16 +49,33 @@ function cria_instancias_hab(_is_rapido, hab_arr) {
 			array_push(global.fundo_hab_visiveis, _nova_instancia);
 		
 			with (_nova_instancia) { // Atribui os efeitos ao novo objeto
-				habilidade = {
-					nome: hab_arr[i].nome,
-					custo: hab_arr[i].custo,
-					tipo: hab_arr[i].tipo,
-					valor_efeito: hab_arr[i].valor_efeito,
-					animacao: hab_arr[i].animacao,
-				}
+				habilidade = hab_arr[i];
 				scr_trocar_sprite(self, _posi_e_tam[2], _posi_e_tam[3], spr_hab_indisponivel);
 			}
 		}
+	}
+}
+
+/// @function atribui_sprite_hab(tipo)
+/// @description Acessa a sprite da categoria da habilidade
+/// @param {String} tipo A categoria da habilidade em global.tipos_hab
+/// @return {Asset.GMSprite}
+function atribui_sprite_hab(tipo) {
+	switch (tipo) {
+		case global.tipos_hab[0]: // pular
+			return spr_teste_opcao;
+		case global.tipos_hab[1]: // dano
+			return spr_hab_dano;
+		case global.tipos_hab[2]: // cura
+			return spr_hab_cura;
+		case global.tipos_hab[3]: // dreno
+			return spr_hab_dreno;
+		case global.tipos_hab[4]: // prorroga
+			return spr_hab_prorroga;
+		case global.tipos_hab[5]: // acelera
+			return spr_hab_acelera;
+		case global.tipos_hab[6]: // energetico
+			return spr_hab_energetico;
 	}
 }
 

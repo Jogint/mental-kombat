@@ -1,5 +1,7 @@
 # ✅ FINALIZADOS
 
+> Objetivo: jogo pronto até 19/11 para a Gamejam Fatec 2025.2
+
 ## Guia
 
 **FEAT:** Inclusão de novidades
@@ -112,3 +114,11 @@
 * FEAT: Reduz opacidade do obj_opcao_perso se bloqueado (Lyam - 23/10/2025)
 * IMPROVE: Redução do texto das habilidades no modo rápido (Lyam - 23/10/2025)
 * FIX: Correção de ataque do bot no modo rápido (Lyam - 23/10/2025)
+* OTHER: Desenho das sprites de barra de vida e energia (Kaue - 28/10/2025)
+
+## Novembro
+
+* IMPROVE: Configurações de pop up realizadas por um struct (Lyam - 02/11/2025)
+* FEAT: Pop up aceita alterações de tamanho (Lyam - 02/11/2025)
+* IMPROVE: Melhor atribuição da habilidade para obj_fundo_hab e obj_habilidade (Lyam - 02/11/2025)
+* FEAT: Encerra turno ao fim da animação (Lyam - 02/11/2025)
