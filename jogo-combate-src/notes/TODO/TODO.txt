@@ -7,6 +7,7 @@
 * Criar as barras de vida e energia.
 * Adicionar pop up de informações sobre o personagem (vida, ganho, energia total, tempo) na seleção
 	* Editar scr_desenha_pop_up para deslocamento y negativo (subir o pop_up)
+* Adicionar a descrição das habilidades nos cards em obj_habilidade
 * Criar global.apresentou_tutoriais = [false, false, false]:
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
 * Alterar modos de jogo e dificuldade com setas laterais

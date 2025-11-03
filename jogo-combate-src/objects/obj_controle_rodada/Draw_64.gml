@@ -1,15 +1,16 @@
-var _cor_principal = c_dkgray
+var _cor_principal = c_lime;
 
 if (choosing_state == 1 || choosing_state == 2) {
 	pop_up_aberto = true;
 	
 	var _customizacoes = {
-		largura: 200,
-		altura: 200,
+		largura: 400,
+		altura: 100,
+		espaco_linhas: 10,
 	}
-	scr_valida_estetica_popup(_customizacoes);
+	valida_estetica_popup(_customizacoes);
 
-	scr_desenha_pop_up ([current_selection_name], _customizacoes);
+	scr_desenha_pop_up (["Escolhendo jogador a iniciar...", current_selection_name], _customizacoes);
 	
 } else if (global.partida_acabou) {
 	pop_up_aberto = true;

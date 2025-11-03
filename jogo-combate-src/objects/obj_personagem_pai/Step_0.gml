@@ -40,3 +40,17 @@ if (global.turno_iniciou) {
 		global.turno_iniciou = true;
 	}
 }
+
+// Considerar se habilidade "energético" está em ativação
+if (meu_turno && efeitos[1] > 1) {
+	if (efeitos[2] <= 0) {
+		efeitos[2] += 10 * game_get_speed(gamespeed_fps);
+	} else {
+		efeitos[2]--;
+	}
+	
+	if (efeitos[2] <= 0 ) {
+		efeitos[1] = 1;
+		efeitos[2] = 0;
+	}
+}

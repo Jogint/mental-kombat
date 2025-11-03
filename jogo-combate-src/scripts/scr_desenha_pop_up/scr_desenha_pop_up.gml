@@ -1,4 +1,3 @@
-// TODO: Permitir alterar o tamanho do pop up
 /// @function scr_desenha_pop_up (textos_arr, opcoes)
 /// @description Cria um draw GUI na centralizado. Use 'noone' nos campos que não pretende alterar.
 /// @param {Array<String>} textos_arr Textos que serão exibidos, cada índice sendo uma quebra de linha
@@ -15,6 +14,7 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	        fontes: [_fonte_default],
 	        largura: room_width / 2,
 			altura: room_height / 2,
+			espaco_linhas: 30,
 	    };
 		
 	    // Nome de todas personalizações desejadas
@@ -27,7 +27,7 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	        variable_struct_set(_estetica, _nome, _valor);
 	    }
 		
-		scr_valida_estetica_popup(_estetica);
+		valida_estetica_popup(_estetica);
 		verifica_dados_struct(_estetica, textos_arr);
 	
 		// tamanho pop-up
@@ -35,7 +35,6 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 		var pop_up_height = _estetica.altura;
 		var pop_up_x = room_width / 2 - pop_up_width / 2;
 		var pop_up_y = room_height / 2 - pop_up_height / 2;
-		var espacamento = 30;
 	
 		// cria pop-up
 		draw_set_color(_estetica.fundo_cor);
@@ -44,10 +43,10 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 		// cálculo da altura do texto
 		var altura_total_texto = 0;
 		for (var i = 0; i < array_length(textos_arr); i++) {
-			altura_total_texto += string_height_ext(textos_arr[i], espacamento, pop_up_width);
+			altura_total_texto += string_height_ext(textos_arr[i], _estetica.espaco_linhas, pop_up_width);
 		
 			if (i < array_length(textos_arr) - 1) {
-				altura_total_texto += espacamento; // Adiciona um espaçamento extra entre as linhas, exceto para a última
+				altura_total_texto += _estetica.espaco_linhas; // Adiciona um espaçamento extra entre as linhas, exceto para a última
 			}
 		}
 		
@@ -72,8 +71,8 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 			draw_set_halign(fa_center);
 			
 			//escrita
-			draw_text_ext(x_texto, y_texto, textos_arr[i], espacamento, pop_up_width);
-			y_texto += string_height_ext(textos_arr[i], espacamento, pop_up_width) + espacamento;
+			draw_text_ext(x_texto, y_texto, textos_arr[i], _estetica.espaco_linhas, pop_up_width);
+			y_texto += string_height_ext(textos_arr[i], _estetica.espaco_linhas, pop_up_width) + _estetica.espaco_linhas;
 		}
 		
 	}
@@ -94,6 +93,7 @@ function verifica_dados_struct(_estetica, _textos) {
     if (!is_array(_estetica.texto_cores)) show_error("pop up: texto_cores precisa ser um array.", true);
     if (!is_array(_estetica.fontes)) show_error("pop up: fontes precisa ser um array.", true);
     if (!is_numeric(_estetica.fundo_cor)) show_error("pop up: fundo_cor precisa ser Constant.color ou número.", true);
+	if (!is_numeric(_estetica.espaco_linhas)) show_error("pop up: espaco_linhas precisa ser um número.", true);
     
     // ===================================
     // 2. VERIFICAÇÃO DE VAZIO E TAMANHO
@@ -128,6 +128,31 @@ function verifica_dados_struct(_estetica, _textos) {
 
         if (asset_get_index(_fonte_valor) < 0) {
 			show_error("pop up: Fonte inválida no índice " + string(_fonte_indice) + " do array 'fontes'. Asset '" + string(_fonte_valor) + "' não encontrado.", true);
+        }
+    }
+}
+
+/// @function valida_estetica_popup(estetica_struct)
+/// @description Verifica se o struct de estética contém apenas as propriedades esperadas.
+/// Aceita fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real), espaco_linhas (Real).
+/// @param {Struct} _struct O struct de estética opcional (options) passado para a função principal.
+function valida_estetica_popup(_struct) {
+    var _mapa_validos = {
+        fundo_cor: true, 
+        texto_cores: true, 
+        fontes: true, 
+        largura: true, 
+        altura: true,
+		espaco_linhas: true,
+    };
+    
+    var _propriedades = variable_struct_get_names(_struct);
+    
+    for (var i = 0; i < array_length(_propriedades); i++) {
+        var _nome = _propriedades[i];
+       
+        if (!variable_struct_exists(_mapa_validos, _nome)) {
+             show_error("Propriedade de estética '" + _nome + "' não é válida. O struct de opções deve conter apenas chaves de estilo válidas.", true);
         }
     }
 }

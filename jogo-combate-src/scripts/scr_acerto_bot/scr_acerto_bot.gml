@@ -43,7 +43,7 @@ function scr_acerto_bot(inst_bot, chance, corte) {
 /// @function bot_processar_acerto(inst_bot)
 function bot_processar_acerto(inst_bot) {
     inst_bot.aumentar_energia();
-	scr_proxima_pergunta(); // TODO: mover isso pra um lugar pós escolha de habilidade
+	scr_proxima_pergunta();
 }
 
 /// @function bot_gerenciar_modo_rapido(inst_bot)
