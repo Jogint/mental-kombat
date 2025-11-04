@@ -1,6 +1,5 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
-if (!inverteu && (id == inst_perso_selecionado_p2)) {
+/// @description Placeholder personagens
+/// NÃO DELETA ESSA BOMBA!! Ele é alterado dinâmicamente na rm_selecao
+if (id == inst_perso_selecionado_p2 && image_xscale) {
 	image_xscale = -(image_xscale);
-	inverteu = true;
 }

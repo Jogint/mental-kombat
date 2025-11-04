@@ -7,6 +7,13 @@
 	* Em global.tipos_jogadores a ordem é [bot, p1, p2]
 * obj_jbl é nossa caixa de som
 
+## DICIONÁRIO DE ABREVIAÇÕES
+
+São palavras resumidas bastante usadas no jogo para fins de facilitar a escrita
+
+* perso = personagem
+* hab = habilidade
+* dif = dificuldade
 
 ## Variáveis e Scripts "escondidos"
 
@@ -14,7 +21,7 @@
 * Os obj_personagem são inseridos no jogo via roomCreationCode da rm_combate
 * Se você buscou e não achou onde define a var, olhe na declaração de variável do obj
 * A definição do inimigo na trilha está no instanceCreationCode do bot
-* Perguntas na dificuldade correta são geradas em obj_btn_avancar após seleção
+* Perguntas na dif correta são geradas em obj_btn_avancar após seleção
 
 ## Depths de objetos
 

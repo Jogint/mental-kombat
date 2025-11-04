@@ -33,14 +33,14 @@ switch (room) {
 		        global.modo_jogo_atual = scr_ciclo_iterar_array(global.modos_jogo, global.modo_jogo_atual, 1);
 		    break;
         
-		    // Troca Dificuldade Esquerda
+		    // Troca dif Esquerda
 		    case _inst_botoes[2]:
-		        global.dificuldade_atual = scr_ciclo_iterar_array(global.niveis_dificuldade, global.dificuldade_atual, -1);
+		        global.dif_atual = scr_ciclo_iterar_array(global.niveis_dif, global.dif_atual, -1);
 		    break;
         
-		    // Troca Dificuldade Direita
+		    // Troca dif Direita
 		    case _inst_botoes[3]:
-		        global.dificuldade_atual = scr_ciclo_iterar_array(global.niveis_dificuldade, global.dificuldade_atual, 1);
+		        global.dif_atual = scr_ciclo_iterar_array(global.niveis_dif, global.dif_atual, 1);
 		    break;
 		}
 	break;

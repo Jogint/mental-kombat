@@ -1,26 +1,26 @@
 /// @function scr_gerar_perguntas()
-/// @description Cria 100 perguntas nas dificuldades facil e medio, 99 nas dificeis
+/// @description Cria 100 perguntas nas difs facil e medio, 99 nas dificeis
 function scr_gerar_perguntas() {
     var _perguntas = [];
 	var _novas_perguntas = [];
 	var _nums;
 	
-	switch (global.dificuldade_atual) {
-		case global.niveis_dificuldade[2]:
+	switch (global.dif_atual) {
+		case global.niveis_dif[2]:
 			for (var i = 0; i < 25; i++) {
 			    _nums = escolhe_4_nums(50, false);
 				_novas_perguntas = gera_pergunta_por_operacao(_nums, true, true);
 				_perguntas = array_concat(_perguntas, _novas_perguntas);
 		    }
 			break;
-		case global.niveis_dificuldade[1]:
+		case global.niveis_dif[1]:
 			for (var i = 0; i < 33; i++) {
 				_nums = escolhe_4_nums(50, true);
 				_novas_perguntas = gera_pergunta_por_operacao(_nums, true, false);
 				_perguntas = array_concat(_perguntas, _novas_perguntas);
 			}
 			break;
-		case global.niveis_dificuldade[0]:
+		case global.niveis_dif[0]:
 			for (var i = 0; i < 50; i++) {
 				_nums = escolhe_4_nums(9, true);
 				_novas_perguntas = gera_pergunta_por_operacao(_nums, false, false);
@@ -28,7 +28,7 @@ function scr_gerar_perguntas() {
 			}
 			break;
 		default:
-			show_error("O modo de jogo atual não está dentre os válidos no switch. Recebeu " + global.dificuldade_atual, true);
+			show_error("O modo de jogo atual não está dentre os válidos no switch. Recebeu " + global.dif_atual, true);
 			break;
 	}
     return array_shuffle(_perguntas);

@@ -1,7 +1,7 @@
 {
   "$GMNotes":"v1",
-  "%Name":"Valores e declaracoes",
-  "name":"Valores e declaracoes",
+  "%Name":"Importante",
+  "name":"Importante",
   "parent":{
     "name":"Anotações",
     "path":"folders/Anotações.yy",

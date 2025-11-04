@@ -1,34 +1,59 @@
-// perso = personagem
-// hab = habilidade
-function definir_globais() {
-	randomise();
-	/// DEFINIÇÕES DO JOGO: Declarações fixas para evitar erros de digitação.
-	global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"];
-	global.tipos_jogadores = ["bot", "player1", "player2"];
-	global.niveis_dificuldade = ["facil", "medio", "dificil"];
-	global.modos_jogo = ["2 jogadores", "história", ""];
-	global.tipos_hab = ["pular", "dano", "cura", "dreno", "prorroga", "acelera", "energetico"];
-	global.qtd_alternativas = 4;
-	global.qtd_players_partida = 2;
-	global.todos_perso = [obj_personagem,
-						obj_personagem_1,
-						obj_personagem_2,
-						obj_personagem_3,
-						obj_personagem_4,
-						obj_personagem_5,
-						obj_personagem_6,
-						obj_personagem_7,
-						obj_personagem_8,
-						obj_personagem_9,
-						obj_personagem_10,
-						obj_personagem_11];
-	scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
-	global.perso_disponiveis = [obj_personagem, obj_personagem_1]; // personagens jogaveis na trilha + rapido
-	global.inimigos_disponiveis = [obj_personagem_2]; // inimigos derrotaveis na trilha
-	global.dificuldade_atual = global.niveis_dificuldade[0]; // Define o nível de dificuldade da partida
-	global.modo_jogo_atual = global.modos_jogo[1];
-	
-	scr_definir_globais_var(true);
-}
+// ==================================================
+// DICIONÁRIO DE ABREVIAÇÕES EM NOTES/Importante.txt
+// ==================================================
 
-definir_globais();
+randomise();
+
+// ==================================================
+// GLOBAIS NUMÉRICAS
+// ==================================================
+global.qtd_alternativas = 4; // número de alternativas por questão
+global.qtd_players_partida = 2; // número de jogadores por rodada
+
+// ==================================================
+// GLOBAIS STRING
+// ==================================================
+global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"]; // tipos de operações válidas
+global.tipos_jogadores = ["bot", "player1", "player2"]; // tipos de jogadores válidos
+global.niveis_dif = ["facil", "medio", "dificil"]; // difs existentes no jogo
+global.modos_jogo = ["2 jogadores", "história", "rápido"]; // modos de jogo disponíveis
+global.tipos_hab = [ // nomes das diferentes habilidades a serem usados pelos personagens
+	"Pular", 
+	"Ataque", 
+	"Cura", 
+	"Drenar vida", 
+	"Prorroga tempo", 
+	"Acelera", 
+	"Energético",
+];
+global.dif_atual = global.niveis_dif[0]; // define o nível de dif da partida
+global.modo_jogo_atual = global.modos_jogo[1]; // define o modo de jogo da partida
+
+// ==================================================
+// GLOBAIS INSTANCIAS/OBJETOS
+// ==================================================
+global.todos_perso = [ // referência de todos os objetos de personagem jogáveis
+	obj_personagem,
+	obj_personagem_1,
+	obj_personagem_2,
+	obj_personagem_3,
+	obj_personagem_4,
+	obj_personagem_5,
+	obj_personagem_6,
+	obj_personagem_7,
+	obj_personagem_8,
+	obj_personagem_9,
+	obj_personagem_10,
+	obj_personagem_11,
+];
+
+// TODO: Tirar esse script e alterar as imagens na mão quando chegarem as artes de exibição
+scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
+
+global.perso_disponiveis = [obj_personagem, obj_personagem_1]; // personagens jogaveis na trilha ou rapido
+global.inimigos_disponiveis = [obj_personagem_2]; // inimigos derrotaveis na trilha
+
+// ==================================================
+// INICIALIZAÇÃO DE VARIÁVEIS DE PARTIDA
+// ==================================================
+scr_definir_globais_var(true);

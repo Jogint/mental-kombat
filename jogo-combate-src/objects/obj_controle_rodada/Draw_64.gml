@@ -48,11 +48,6 @@ if (choosing_state == 1 || choosing_state == 2) {
 		
 		_texto_pergunta += string(global.pergunta_atual.n2);
 		draw_text(x, y, _texto_pergunta);
-		
-		var _tempo_restante = round(global.timer_turno / game_get_speed(gamespeed_fps))
-		if (_tempo_restante < 10) draw_set_color(c_red); 
-		draw_text(x, y - 20, "Tempo restante: " + string(_tempo_restante));
-		draw_set_color(_cor_principal);
 	}
 }
 
