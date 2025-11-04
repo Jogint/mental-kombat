@@ -9,7 +9,12 @@ var _altura = sprite_get_height(sprite_index) - 1;
 var _porcentagem_atual = personagem_gerenciado.energia_atual / personagem_gerenciado.energia_total;
 
 draw_set_color(c_yellow);
-draw_rectangle(x, y, x + (_largura * _porcentagem_atual), y + _altura, false);
+
+if ((index_vida - 2) == 0) { // jogador à esquerda
+	draw_rectangle(x, y, x + (_largura * _porcentagem_atual), y + _altura, false);
+} else { // jogador à direita
+	draw_rectangle(x + _largura, y, x + _largura - (_largura * _porcentagem_atual), y + _altura, false);
+}
 
 draw_self();
 

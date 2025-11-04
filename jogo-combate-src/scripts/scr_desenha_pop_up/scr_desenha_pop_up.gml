@@ -8,6 +8,8 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	var _fonte_default = asset_get_index("fnt_principal");
 	
 	if (pop_up_aberto) { // variável do objeto que chama a função
+		valida_estetica_popup(opcoes);
+		
 	    var _estetica = {
 	        fundo_cor: c_ltgray,
 	        texto_cores: [_cor_default_texto],
@@ -15,6 +17,8 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	        largura: room_width / 2,
 			altura: room_height / 2,
 			espaco_linhas: 30,
+			deslocamento_x: 0,
+			deslocamento_y: 0,
 	    };
 		
 	    // Nome de todas personalizações desejadas
@@ -33,8 +37,8 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 		// tamanho pop-up
 		var pop_up_width = _estetica.largura;
 		var pop_up_height = _estetica.altura;
-		var pop_up_x = room_width / 2 - pop_up_width / 2;
-		var pop_up_y = room_height / 2 - pop_up_height / 2;
+		var pop_up_x = room_width / 2 - pop_up_width / 2 + _estetica.deslocamento_x;
+		var pop_up_y = room_height / 2 - pop_up_height / 2 + _estetica.deslocamento_y;
 	
 		// cria pop-up
 		draw_set_color(_estetica.fundo_cor);
@@ -94,6 +98,8 @@ function verifica_dados_struct(_estetica, _textos) {
     if (!is_array(_estetica.fontes)) show_error("pop up: fontes precisa ser um array.", true);
     if (!is_numeric(_estetica.fundo_cor)) show_error("pop up: fundo_cor precisa ser Constant.color ou número.", true);
 	if (!is_numeric(_estetica.espaco_linhas)) show_error("pop up: espaco_linhas precisa ser um número.", true);
+	if (!is_numeric(_estetica.deslocamento_x)) show_error("pop up: deslocamento_x precisa ser um número.", true);
+	if (!is_numeric(_estetica.deslocamento_y)) show_error("pop up: deslocamento_y precisa ser um número.", true);
     
     // ===================================
     // 2. VERIFICAÇÃO DE VAZIO E TAMANHO
@@ -134,9 +140,13 @@ function verifica_dados_struct(_estetica, _textos) {
 
 /// @function valida_estetica_popup(estetica_struct)
 /// @description Verifica se o struct de estética contém apenas as propriedades esperadas.
-/// Aceita fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real), espaco_linhas (Real).
+/// Aceita: fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real), espaco_linhas (Real), deslocamento_x (Real), deslocamento_y (Real).
 /// @param {Struct} _struct O struct de estética opcional (options) passado para a função principal.
 function valida_estetica_popup(_struct) {
+	var _propriedades = variable_struct_get_names(_struct);
+	
+	if (!array_length(_propriedades)) return;
+	
     var _mapa_validos = {
         fundo_cor: true, 
         texto_cores: true, 
@@ -144,9 +154,9 @@ function valida_estetica_popup(_struct) {
         largura: true, 
         altura: true,
 		espaco_linhas: true,
+		deslocamento_x: true,
+		deslocamento_y: true,
     };
-    
-    var _propriedades = variable_struct_get_names(_struct);
     
     for (var i = 0; i < array_length(_propriedades); i++) {
         var _nome = _propriedades[i];

@@ -1,3 +1,5 @@
+if (room == rm_selecao_personagem) exit;
+
 //Verifica se é vez do personagem
 meu_turno = (global.jogador_atual == controlador);
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];

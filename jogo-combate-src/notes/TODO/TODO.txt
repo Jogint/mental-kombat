@@ -29,7 +29,7 @@
 
 ### 🎨 SPRITES PARA DESENHAR
 
-* Background para cada room: (Mínimo Visual: priorize Menu e Combate)
+* Background para cada room
 * Tela e botões de fim de jogo (atualmente vivendo a base do draw)
 * Miniatura de exibição do personagem na seleção de jogador
 * Todos os objetos na pasta /Botões

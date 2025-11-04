@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teste_btn",
-    "path":"sprites/spr_teste_btn/spr_teste_btn.yy",
+    "name":"spr_avanco",
+    "path":"sprites/spr_avanco/spr_avanco.yy",
   },
   "spriteMaskId":null,
   "visible":true,

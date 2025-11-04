@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_criar_personagem",
   "parent":{
-    "name":"Em Partida",
-    "path":"folders/Scripts/Em Partida.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

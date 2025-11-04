@@ -1,6 +1,8 @@
 /// @description Variáveis
 scr_criar_personagem(self, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max);
 
+if (room == rm_selecao_personagem) exit;
+
 controlador = noone; //alterado em scr_inserir_players
 meu_turno = false;
 bot_executou = false;
