@@ -5,7 +5,8 @@ function scr_fim_partida(_onde){
 	if (global.quem_venceu == global.tipos_jogadores[1]) {
 		desbloqueou_trilha();
 	}
-	resetar_globais(_onde == 0);
+	
+	scr_definir_globais_var(_onde == 0);
 	room_goto(_onde);
 }
 
@@ -25,23 +26,4 @@ function desbloqueou_trilha() {
 			}
 		}
 	}
-}
-
-/// @function resetar_globais(resetar_pontuacao)
-/// @param {bool} _resetar_pontuacao Se vai zerar a pontuação do pvp ou não
-function resetar_globais(_resetar_pontuacao) {
-	global.jogador_atual = "";
-	global.perso_atuais = [noone, noone];
-	global.inst_perso_partida = [];
-	global.perguntas_geradas = scr_gerar_perguntas();
-	global.pergunta_atual = global.perguntas_geradas[0];
-	global.partida_acabou = true;
-	global.timer_turno = 0;
-	global.turno_iniciou = false;
-	global.errou_resposta = false;
-	global.exibir_hab = false;
-	global.hab_visiveis = [];
-	global.ultimo_selecionado = noone;
-	global.quem_venceu = "noone";
-	if (_resetar_pontuacao) global.pontuacao_pvp = [0, 0];
 }

@@ -7,7 +7,18 @@ sprite_index == habilidades[1].sprite ||
 sprite_index == habilidades[2].sprite) {
 	
 	var _oponente = 0;
+	
 	if (array_get_index(global.inst_perso_partida, id) == 0) _oponente = 1;
+	
+	if (array_length(global.inst_perso_partida) < 2) { // Sai do script se alguma dos 2 jogadores não existe
+	    show_debug_message("AVISO: Efeito de habilidade cancelado. Algum dos jogadores não existe");
+	    exit; 
+	}
+	
+	if (animacao_em_uso == noone) { // Sai do script se não há animação
+	    show_debug_message("AVISO: Efeito de habilidade cancelado. Não há animação sendo executada (possivelmente vc colocou a sprite idle nas habilidades).");
+	    exit;  
+	}
 	
 	efeito_hab(self, global.inst_perso_partida[_oponente], animacao_em_uso);
 	
@@ -35,6 +46,11 @@ sprite_index == habilidades[2].sprite) {
 /// @param {Asset.GMObject|Id.Instance} obj_inimigo Objeto que está sofrendo o ataque
 /// @param {Struct|String} hab Qual habilidade foi selecionada
 function efeito_hab(obj, obj_inimigo, hab){
+	if (!is_struct(hab)) {
+	    show_debug_message("AVISO: Efeito de habilidade cancelado. Hab não é um struct.");
+	    exit;
+	}
+	
 	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 	
 	if (is_string(hab)) {

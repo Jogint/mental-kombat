@@ -5,7 +5,8 @@
 * O Player 1 SEMPRE SERÁ o índice 0 em arrays de 2 itens, por se manter a esquerda.
 	* Bot e P2 são índice 1
 	* Em global.tipos_jogadores a ordem é [bot, p1, p2]
-* Se adicionar um novo campo em scr_define_habilidades, editar em scr_toggle_hab
+* obj_jbl é nossa caixa de som
+
 
 ## Variáveis e Scripts "escondidos"
 

@@ -1,7 +1,8 @@
 event_inherited(); // mantém o criar do obj pai
 
 habilidades = [
-	scr_definir_hab("Recompor", (round(energia_total * 0.25)), global.tipos_hab[2], 15,spr_chuu_1hab), // Cura (Mais Barato)
-	scr_definir_hab("Ataque Equil.", (round(energia_total * 0.5)), global.tipos_hab[1], 20, spr_chuu_1hab), // Dano
-	scr_definir_hab("Foco Total", 1, global.tipos_hab[6], 1.5, spr_chuu_1hab), // Prorroga (Custo Máx)
+	scr_definir_hab("Recompor", (round(energia_total * 0.25)), global.tipos_hab[2], 15,spr_lily_1hab), // Cura (Mais Barato)
+	// TODO: Editar a habilidade de teste abaixo
+	scr_definir_hab("Ataque Equil.", (round(energia_total * 0.1)), global.tipos_hab[1], 200, spr_lily_1hab), // Dano
+	scr_definir_hab("Foco Total", 1, global.tipos_hab[6], 1.5, spr_lily_1hab), // Prorroga (Custo Máx)
 ]

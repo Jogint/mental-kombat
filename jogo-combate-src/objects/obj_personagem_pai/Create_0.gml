@@ -7,6 +7,7 @@ controlador = noone; //alterado em scr_inserir_players
 meu_turno = false;
 bot_executou = false;
 definiu_hab = false;
+inverteu_sprite = false;
 efeitos = [1, 1, 0]; // acelera/atrasa, energético, coutdown energético
 habilidades = []; // objetos filho definem as habilidades
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab

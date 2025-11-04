@@ -7,8 +7,8 @@ function scr_inserir_players(){
 	    var _obj_a_criar = global.perso_atuais[i];
     
 		// Define a posição para a nova instância.
-		var _x = 100 + (i * 850);
-	    var _y = 300;
+		var _x = 260 + (i * 512);
+	    var _y = 460;
     
 	    // Cria a instância e guarda o ID dela na variável
 	    var _nova_instancia = instance_create_layer(_x, _y, _camada_alvo, _obj_a_criar);

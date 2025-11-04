@@ -1,5 +1,11 @@
 if (room == rm_selecao_personagem) exit;
 
+if (!inverteu_sprite && id == global.inst_perso_partida[1]) {
+	image_xscale = -(image_xscale);
+	x += 64 * 5; // TAMANHO * 5 DEFINIDO EM SCR_INSERIR_PLAYERS TODO: padronixar o valor numa global
+	inverteu_sprite = true;
+}
+
 //Verifica se é vez do personagem
 meu_turno = (global.jogador_atual == controlador);
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];

@@ -4,16 +4,12 @@
 
 ### Features
 
-* Adicionar pop up de informações sobre o personagem (vida, ganho, energia total, tempo) na seleção
-	* Editar scr_desenha_pop_up para deslocamento y negativo (subir o pop_up)
 * Adicionar a descrição das habilidades nos cards em obj_habilidade
 * Criar global.apresentou_tutoriais = [false, false, false]:
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
-* Alterar modos de jogo e dificuldade com setas laterais
 
 ### Melhorias
 
-* Inverter sprites do player a direita
 * Revisitar todos os TODO espalhados no código
 * Retorno visual do acerto do bot (trocar cor da resposta dele)
 * Retorno visual de erros de player e bot - 1 seg de botão tremendo antes das habilidades
@@ -21,7 +17,7 @@
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Adicionar músicas e efeitos sonoros
 * Substituir "aperte x tecla" por um botão
-* Trocar a sprite (ou cor) do obj_personagem_pai ao confirmar resposta em alarm[1]
+* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta
 * Desativar instâncias de resposta ao invés de ocultar a camada ao exibir habilidades
 * Botão de personagem aleatório
 * Usar fontes diversas
@@ -39,10 +35,11 @@
 
 ### Gerais
 
-> Todos os bugs foram solucionados ou estão em investigação
+* modo de jogo rápido não desbloqueou no final
+	* manter ele no array comum, mas deixar o "jogar!" cinza e não clicável enquanto estiver selecionado
+	* adicionar mensagens de debug para saber por que "todos_perso" não era igual "perso_disponiveis"
 
 ## ⚙ EM ANDAMENTO
 
 * Animação dos personagens 2/12 (Kaue)
 * Implementação de novas sprites dos personagens e resolução do jogo (Kaue)
-* Fazer o menu inicial definitivo (Lyam)

@@ -2,7 +2,6 @@
   "$GMObject":"",
   "%Name":"obj_btn_trocar_modo",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teste_opcao_2",
-    "path":"sprites/spr_teste_opcao_2/spr_teste_opcao_2.yy",
+    "name":"spr_btn_menu",
+    "path":"sprites/spr_btn_menu/spr_btn_menu.yy",
   },
   "spriteMaskId":null,
   "visible":true,

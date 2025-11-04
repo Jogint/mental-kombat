@@ -19,4 +19,29 @@ switch (room) {
 			}
 		}
 	break;
+	case rm_menu:
+		var _inst_botoes = [inst_troca_modo_e, inst_troca_modo_d, inst_troca_dif_e, inst_troca_dif_d];
+
+		switch (id) {
+		    // Troca Modo Esquerda
+		    case _inst_botoes[0]:
+		        global.modo_jogo_atual = scr_ciclo_iterar_array(global.modos_jogo, global.modo_jogo_atual, -1);
+		    break;
+        
+		    // Troca Modo Direita
+		    case _inst_botoes[1]:
+		        global.modo_jogo_atual = scr_ciclo_iterar_array(global.modos_jogo, global.modo_jogo_atual, 1);
+		    break;
+        
+		    // Troca Dificuldade Esquerda
+		    case _inst_botoes[2]:
+		        global.dificuldade_atual = scr_ciclo_iterar_array(global.niveis_dificuldade, global.dificuldade_atual, -1);
+		    break;
+        
+		    // Troca Dificuldade Direita
+		    case _inst_botoes[3]:
+		        global.dificuldade_atual = scr_ciclo_iterar_array(global.niveis_dificuldade, global.dificuldade_atual, 1);
+		    break;
+		}
+	break;
 }

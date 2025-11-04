@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chuu_idle",
-    "path":"sprites/spr_chuu_idle/spr_chuu_idle.yy",
+    "name":"spr_lily_idle",
+    "path":"sprites/spr_lily_idle/spr_lily_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
