@@ -1,4 +1,5 @@
 scr_proxima_pergunta();
+global.partida_acabou = false; // define o início da partida
 
 // ===== POP UP SORTEIO DE PRIMEIRO JOGADOR =====
 pop_up_aberto = false; // ? Também usado para o fim de jogo

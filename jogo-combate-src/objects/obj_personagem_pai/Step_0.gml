@@ -1,44 +1,80 @@
-if (room == rm_selecao_personagem) exit;
+if (room == rm_selecao_personagem) exit; // Obj criado apenas para acessar variáveis
 
-if (!inverteu_sprite && id == global.inst_perso_partida[1]) {
-	image_xscale = -(image_xscale);
-	x += 64 * 5; // TAMANHO * 5 DEFINIDO EM SCR_INSERIR_PLAYERS TODO: padronixar o valor numa global
-	inverteu_sprite = true;
+// ==================================================
+// VARIAVEIS GERAIS DO CÓDIGO
+// ==================================================
+var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+var _fator_escala;
+meu_turno = (global.jogador_atual == controlador);
+
+// ==================================================
+// ALTERAÇÃO NA ESCALA DA SPRITE
+// ==================================================
+// ---------- DETERMINA MULTIPLICADOR ----------
+if (meu_turno) {
+	_fator_escala = 1.1;
+	} else {
+	_fator_escala = 0.9;
 }
 
-//Verifica se é vez do personagem
-meu_turno = (global.jogador_atual == controlador);
-var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+// ---------- REALIZA INVERSÃO BOT ----------
+if (id == global.inst_perso_partida[1] && !inverteu_sprite) {
+	inverteu_sprite = true;
+    inversao_sinal = -1; 
+    x += 64 * 5;
+	image_xscale = escala_padrao[0] * _fator_escala * inversao_sinal;
+	image_yscale = escala_padrao[0] * _fator_escala;
+}
+
+// ---------- ALTERNA TAMANHOS POR TURNO ----------
+if (!alterou_tamanho && global.turno_iniciou) {
+// ENTRA 1X POR TURNO	
+	image_xscale = escala_padrao[0] * _fator_escala * inversao_sinal;
+	image_yscale = escala_padrao[1] * _fator_escala; // Y não precisa de inversão
+	alterou_tamanho = true;
+}
+
 
 if (global.turno_iniciou) {
-	if (_is_rapido && !global.partida_acabou) {
-		bot_ataca();
-	} else if (meu_turno && global.jogador_atual != "" && !global.partida_acabou ) {
+	// ==================================================
+	// GESTÃO DE TURNO EM ANDAMENTO
+	// ==================================================
+	if (meu_turno &&
+	global.jogador_atual != noone &&
+	!global.partida_acabou ) {
+		
+		// ---------- VERIFICA RESPOSTA ERRADA ----------
 		if (global.errou_resposta) {
 			global.timer_turno = 0; // força fim do turno
 			global.errou_resposta = false;
 		}
 	
+		// ---------- AÇÕES DE FIM DE TURNO ----------
 		if (global.timer_turno <= 0) {
-			global.timer_turno = 0;
+			global.timer_turno = 0; // não exibir menos que 0
 			
-			if (!global.exibir_hab && pausa_animacao) {
-				pausa_animacao = false;
+			// ---------- EXIBE AS HABILIDADES ----------
+			if (!global.exibir_hab && pos_turno) {
+				pos_turno = false;
 				scr_toggle_hab(habilidades);
 				if (controlador == global.tipos_jogadores[0]) scr_bot_escolhe_hab(habilidades);
 			};
 			
-			bot_executou = false;
+			bot_executou = false; // permite ataque inicial no próximo turno
 	    } else {
-			pausa_animacao = true;
+			pos_turno = true;
 		}
 	}
 } else {
-	//ignora esse erro abaixo, a var é criada por script
+	// ==================================================
+	// STARTERS DO TURNO
+	// ==================================================
+	// ---------- ALTERA TIMER MODO RÁPIDO ----------
 	if (_is_rapido) {
 		tempo_turno = 120;
 	}
 	
+	// ---------- INICIA TIMER ----------
 	if (meu_turno || _is_rapido) {
 		scr_iniciar_timer_turno(tempo_turno * efeitos[0]);
 		efeitos[0] = 1;
@@ -49,16 +85,27 @@ if (global.turno_iniciou) {
 	}
 }
 
-// Considerar se habilidade "energético" está em ativação
+// ==================================================
+// CONTADOR DA HABILIDADE ENERGÉTICO
+// ==================================================
+// efeitos[1]: mult_energetico
+// efeitos[2]: contador_energetico
+var _segs_efeito = 10;
+
 if (meu_turno && efeitos[1] > 1) {
+    // O efeito NÃO está ativo
 	if (efeitos[2] <= 0) {
-		efeitos[2] += 10 * game_get_speed(gamespeed_fps);
+		efeitos[2] = _segs_efeito * game_get_speed(gamespeed_fps);
 	} else {
+        // 2. O efeito ESTÁ ativo
 		efeitos[2]--;
 	}
 	
-	if (efeitos[2] <= 0 ) {
+    // Verificação de Término
+	if (efeitos[2] <= 0) {
+        // Zera o multiplicador
 		efeitos[1] = 1;
+        // Garante que o contador fique zerado
 		efeitos[2] = 0;
 	}
 }

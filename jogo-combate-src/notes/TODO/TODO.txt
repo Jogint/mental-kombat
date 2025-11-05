@@ -45,6 +45,7 @@
 * efeito do energético é mantido se acaba o turno
 	* zerar exatamente ao fim do turno (dentro de if (meu_turno))
 * confirmação de habilidade não aparece no modo rápido
+* timer não para no fim de partida
 	
 ### 🎨 SPRITES PARA DESENHAR
 

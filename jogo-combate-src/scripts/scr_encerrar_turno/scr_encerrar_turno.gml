@@ -4,6 +4,12 @@ function scr_encerrar_turno(){
 	layer_set_visible("Opcoes", true);
 	trocar_turno();
 	scr_proxima_pergunta();
+	
+	var _p1 = global.inst_perso_partida[0];
+	var _p2 = global.inst_perso_partida[1];
+	_p1.alterou_tamanho = false;
+	_p2.alterou_tamanho = false;
+	
 	global.turno_iniciou = false;
 }
 

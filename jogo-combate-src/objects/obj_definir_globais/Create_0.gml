@@ -13,6 +13,7 @@ global.qtd_players_partida = 2; // número de jogadores por rodada
 // ==================================================
 // GLOBAIS STRING
 // ==================================================
+
 global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"]; // tipos de operações válidas
 global.tipos_jogadores = ["bot", "player1", "player2"]; // tipos de jogadores válidos
 global.niveis_dif = ["facil", "medio", "dificil"]; // difs existentes no jogo

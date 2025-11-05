@@ -19,6 +19,7 @@ São palavras resumidas bastante usadas no jogo para fins de facilitar a escrita
 * perso = personagem
 * hab = habilidade
 * dif = dificuldade
+* segs = segundos
 
 ## Variáveis e Scripts "escondidos"
 

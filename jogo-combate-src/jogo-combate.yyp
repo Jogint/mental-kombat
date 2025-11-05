@@ -102,6 +102,7 @@
     {"id":{"name":"scr_bot_escolhe_hab","path":"scripts/scr_bot_escolhe_hab/scr_bot_escolhe_hab.yy",},},
     {"id":{"name":"scr_ciclo_iterar_array","path":"scripts/scr_ciclo_iterar_array/scr_ciclo_iterar_array.yy",},},
     {"id":{"name":"scr_controle_hud","path":"scripts/scr_controle_hud/scr_controle_hud.yy",},},
+    {"id":{"name":"scr_cria_enum","path":"scripts/scr_cria_enum/scr_cria_enum.yy",},},
     {"id":{"name":"scr_criar_personagem","path":"scripts/scr_criar_personagem/scr_criar_personagem.yy",},},
     {"id":{"name":"scr_define_tamanho_hab","path":"scripts/scr_define_tamanho_hab/scr_define_tamanho_hab.yy",},},
     {"id":{"name":"scr_definir_globais_var","path":"scripts/scr_definir_globais_var/scr_definir_globais_var.yy",},},
