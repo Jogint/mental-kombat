@@ -1,40 +1,83 @@
-if (global.jogador_atual == "" && choosing_state == 0 && global.modo_jogo_atual != global.modos_jogo[2]) {
-    choosing_state = 1;
-    var _total_flicker_time = 3; // 3 seconds
-    var _flicker_rate_steps = 4; // Pisca 4x por segundo
-    flicker_count = _total_flicker_time * (game_get_speed(gamespeed_fps) / _flicker_rate_steps);
-    current_selection_name = global.inst_perso_partida[0].controlador; // primeiro nome
-    alarm[0] = _flicker_rate_steps;
+var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+var _is_pvp = global.modo_jogo_atual == global.modos_jogo[0];
+
+// ==================================================
+// EXECUTA O SORTEADOR DE QUEM COMEÇA ATACANDO
+// ==================================================
+if (global.jogador_atual == noone &&
+estado_sorteio == 0 &&
+!_is_rapido) {
+    estado_sorteio = 1;
+    var _tempo_piscando = 3; // 3 seconds
+    var _frames_por_nome = 4; // Exibição do nome dura 4 frames
+    qtd_frames_piscando = _tempo_piscando * (game_get_speed(gamespeed_fps) / _frames_por_nome);
+    nome_sorteado_atual = global.inst_perso_partida[0].controlador; // primeiro nome
+    alarm[0] = _frames_por_nome;
 }
 
+// ==================================================
+// DEFINE O VENCEDOR DA RODADA
+// ==================================================
 if (global.partida_acabou) {
-	if (global.inst_perso_partida[1].hp_atual == 0) {
-		global.quem_venceu = global.tipos_jogadores[1]; // vitoria do player1
-	} else if (global.inst_perso_partida[0].hp_atual == 0) {
-		if (global.modo_jogo_atual == global.modos_jogo[0]) {
-			global.quem_venceu = global.tipos_jogadores[2]; // vitoria do player2
-		} else {
-			global.quem_venceu = global.tipos_jogadores[0]; // vitoria do bot
-		}
-	} else {
-		show_error("Ninguém venceu. Hp de p1: " + string(global.inst_perso_partida[0].hp_atual) + " | Hp de p2: " + string(global.inst_perso_partida[1].hp_atual), true);
-	}
+    var _perso_p1    = global.inst_perso_partida[1]; // Posição fixa do P1 no array da partida
+    var _perso_outro = global.inst_perso_partida[0]; // Posição do adversário (Bot/P2)
+	var _id_vencedor_bot = global.tipos_jogadores[0]; // O índice [0] no array de tipos é Bot
+    var _id_vencedor_p1 = global.tipos_jogadores[1]; // O índice [1] no array de tipos é P1
+    var _id_vencedor_p2  = global.tipos_jogadores[2]; // O índice [2] no array de tipos é P2
+
+    if (_perso_p1.hp_atual <= 0) {
+        
+        // Determina quem é o adversário pelo modo de jogo:
+        if (global.modo_jogo_atual == global.modos_jogo[0]) { // Se Modo PvP/Rápido, o adversário é o P2.
+            global.quem_venceu = _id_vencedor_p2;
+        } else { // Se Modo História ([1]), o adversário é o Bot.
+			global.quem_venceu = _id_vencedor_bot; 
+        }
+
+    } else if (_perso_outro.hp_atual <= 0) {
+        global.quem_venceu = _id_vencedor_p1;
+    } else {
+        show_error("Ninguém venceu. HP de P1: " + string(_perso_p1.hp_atual) + " | HP do Adversário: " + string(_perso_outro.hp_atual), true);
+    }
+    
+    quem_iniciou = ""; 
 }
 
-if (global.partida_acabou && global.modo_jogo_atual == global.modos_jogo[0] && !player_pontuou) {
+// ==================================================
+// ATRIBUI PONTO AO PLACAR PVP
+// ==================================================
+if (global.partida_acabou && _is_pvp && !player_pontuou) {
 	scr_pontua_pvp();
 	player_pontuou = true;
 }
 
-// Controle do timer da partida
-if (global.jogador_atual != "") global.timer_turno--;
+// ==================================================
+// CONTROLA O TIMER DO TURNO
+// ==================================================
+if (global.jogador_atual != noone) global.timer_turno--;
 
-// Controle modo rápido
-if (global.modo_jogo_atual == global.modos_jogo[2]) {
+// ==================================================
+// PERMITE O ATAQUE SIMULTÂNEO NO MODO RÁPIDO
+// ==================================================
+if (_is_rapido) {
 	global.jogador_atual = "TODOS!";
 	if (!pop_ups_abertos) {
 		scr_toggle_hab(global.inst_perso_partida[0].habilidades);
 		scr_toggle_hab(global.inst_perso_partida[1].habilidades);
 		pop_ups_abertos = true;
 	}
+}
+
+if (_is_rapido) exit; // ALERTA: NÃO COLOCAR CÓDIGO DO MODO RÁPIDO ABAIXO DISSO
+
+// ==================================================
+// CONTAGEM DE TURNOS DA PARTIDA
+// ==================================================
+if (quem_iniciou == global.jogador_atual) {
+	if (!passou_turno) {
+		global.qtd_turnos++;
+		passou_turno = true;
+	}
+} else {
+	passou_turno = false;
 }

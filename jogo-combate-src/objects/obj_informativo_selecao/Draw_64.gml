@@ -1,4 +1,4 @@
-/// @description Inserir descrição aqui
+/// @description Informações sobre o personagem
 
 if (global.ultimo_selecionado != noone) {
 	

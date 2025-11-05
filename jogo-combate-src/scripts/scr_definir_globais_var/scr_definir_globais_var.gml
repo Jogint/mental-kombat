@@ -8,7 +8,8 @@ function scr_definir_globais_var(_reseta_pontuacao_pvp) {
 	// GLOBAIS NUMÉRICAS
 	// ==================================================
 	global.timer_turno = 0; // contador do tempo de turno em andamento
-	if (_reseta_pontuacao_pvp) {global.pontuacao_pvp = [0, 0];} // quantas vezes um player venceu. Reseta no menu
+	global.qtd_turnos = 0; // quantos turnos foram jogados nesta partida
+	if (_reseta_pontuacao_pvp) global.pontuacao_pvp = [0, 0]; // quantas vezes um player venceu. Reseta no menu
 	
 	// ==================================================
 	// GLOBAIS STRING

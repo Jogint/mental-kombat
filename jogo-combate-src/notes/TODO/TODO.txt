@@ -10,6 +10,8 @@
 
 ### Melhorias
 
+* Trocar mensagem de fim de jogo do modo história para R = volta para trilha
+* Zerar o efeito do energético no fim do turno
 * Retorno visual do acerto do bot (trocar cor da resposta dele)
 * Retorno visual de erros de player e bot - 1 seg de botão tremendo antes das habilidades
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
@@ -19,9 +21,18 @@
 * Desativar instâncias de resposta ao invés de ocultar a camada ao exibir habilidades
 * Botão de personagem aleatório
 * Usar fontes diversas
+* Trocar nomes do sorteador e tela final pvp para o nome do personagem
 * Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (array de tamanhos?)
+	* global.UI_TAMANHOS = {
+	    popup_largo_w: 400,
+	    popup_largo_h: 250,
+	    hab_card_w: 80,
+		hab_card_h: 80,
+		// ... adicione todos os tamanhos aqui
+	};
 * Revisitar todos os TODO espalhados no código (mudanças pequenas)
 * Padronizar inicialização de arrays, pré alocando os índices com "noone"
+* Usar enum ao invés de índices diretos (Ex: enum Modos { Historia, Rapido, PVP })
 
 ### 🎨 SPRITES PARA DESENHAR
 
@@ -42,6 +53,8 @@
 
 ## ⚙ EM ANDAMENTO
 
-* Animação dos personagens 2/12 (Kaue)
-* Implementação de novas sprites dos personagens e resolução do jogo (Kaue)
-* Adicionar uma contagem de turnos
+* Todas as animações dos personagens - prontos 2/12 (Kaue)
+	* idle: 7/12
+	* hab1: 8/12
+	* hab2: 3/12
+	* ult: 2/12

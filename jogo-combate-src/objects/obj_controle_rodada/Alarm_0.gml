@@ -1,28 +1,38 @@
 /// @description Nome piscando
-if (choosing_state == 1) {
-    flicker_count--;
+if (estado_sorteio == 1) {
+	
+    qtd_frames_piscando--;
 
-    if (flicker_count > 0) {
-        if (current_selection_name == global.inst_perso_partida[1].controlador) {
-            current_selection_name = global.inst_perso_partida[0].controlador;
-        } else {
-            current_selection_name = global.inst_perso_partida[1].controlador;
+	// ==================================================
+	// EXECUTA ENQUANDO TIVER TEMPO
+	// ==================================================
+    if (qtd_frames_piscando > 0) {
+		var _nome_p1 = global.inst_perso_partida[0].controlador;
+		var _nome_p2 = global.inst_perso_partida[1].controlador;
+
+		if (nome_sorteado_atual == _nome_p2) {
+		    nome_sorteado_atual = _nome_p1;
+		} else {
+		    nome_sorteado_atual = _nome_p2;
+		}
+
+        // ==================================================
+		// DESACELERA O CONTADOR NOS ULTIMOS SEGUNDOS
+		// ==================================================
+        var _frames_por_nome = 4;
+        if (qtd_frames_piscando < 30) {
+            _frames_por_nome = 8;
         }
 
-        // --- RESCHEDULE THE ALARM ---
-        // Optional: Slow down the rate towards the end for a cooler effect
-        var _flicker_rate_steps = 4; // Start rate
-        if (flicker_count < 30) { // If less than 30 flickers left, slow down
-            _flicker_rate_steps = 8;
-        }
-
-        // Set the alarm to run again
-        alarm[0] = _flicker_rate_steps;
+        alarm[0] = _frames_por_nome; // exibe o próximo nome
 
     } else {
-        choosing_state = 2; // Vai pro resultado
+		// ==================================================
+		// EXIBE O RESULTADO APÓS ACABAR O TEMPO
+		// ==================================================
+        estado_sorteio = 2;
         var _resultado_sorteio = irandom_range(0, 1);
-        current_selection_name = global.inst_perso_partida[_resultado_sorteio].controlador;
+        nome_sorteado_atual = global.inst_perso_partida[_resultado_sorteio].controlador;
         alarm[1] = game_get_speed(gamespeed_fps) * 1; // 1 segundo de resultado
     }
 }

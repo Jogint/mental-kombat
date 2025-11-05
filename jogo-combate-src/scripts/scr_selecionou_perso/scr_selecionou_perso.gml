@@ -6,9 +6,9 @@ function scr_selecionou_perso(obj){
 	if (global.modo_jogo_atual == global.modos_jogo[1]) {
 		global.perso_atuais[0] = obj;
 	} else {
-		var _next_char = array_get_index(global.perso_atuais, noone)
-		if (_next_char >= 0) {
-			global.perso_atuais[_next_char] = obj;
+		var _prox_perso = array_get_index(global.perso_atuais, noone)
+		if (_prox_perso >= 0) {
+			global.perso_atuais[_prox_perso] = obj;
 			global.ultimo_selecionado = noone;
 		}
 	}

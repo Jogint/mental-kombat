@@ -1,7 +1,8 @@
 /// @function scr_desenha_pop_up (textos_arr, opcoes)
 /// @description Cria um draw GUI na centralizado. Use 'noone' nos campos que não pretende alterar.
 /// @param {Array<String>} textos_arr Textos que serão exibidos, cada índice sendo uma quebra de linha
-/// @param {Struct} opcoes Todos os detalhes de estética: fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real)
+/// @param {Struct} opcoes Todos os detalhes de estética: 
+/// fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real), espaco_linhas (Real), deslocamento_x (Real), deslocamento_y (Real).
 
 function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	var _cor_default_texto = c_black;
@@ -140,7 +141,6 @@ function verifica_dados_struct(_estetica, _textos) {
 
 /// @function valida_estetica_popup(estetica_struct)
 /// @description Verifica se o struct de estética contém apenas as propriedades esperadas.
-/// Aceita: fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real), espaco_linhas (Real), deslocamento_x (Real), deslocamento_y (Real).
 /// @param {Struct} _struct O struct de estética opcional (options) passado para a função principal.
 function valida_estetica_popup(_struct) {
 	var _propriedades = variable_struct_get_names(_struct);

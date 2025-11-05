@@ -1,7 +1,8 @@
 /// @description Exibe escolha
-if (choosing_state == 2) {
-    global.jogador_atual = current_selection_name;
-    choosing_state = 0;
-    current_selection_name = "";
+if (estado_sorteio == 2) {
+    global.jogador_atual = nome_sorteado_atual;
+    estado_sorteio = 0;
+	quem_iniciou = nome_sorteado_atual;
+    nome_sorteado_atual = "";
 	pop_up_aberto = false;
 }
