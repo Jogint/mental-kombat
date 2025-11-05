@@ -1,5 +1,5 @@
-var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
-var _is_pvp = global.modo_jogo_atual == global.modos_jogo[0];
+var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
+var _is_pvp = global.modo_jogo_atual == global.modos_jogo[MODO.PVP];
 
 if (_is_rapido) layer_set_visible("Opcoes", true);
 
@@ -23,14 +23,14 @@ estado_sorteio == 0 &&
 if (global.partida_acabou) {
     var _perso_p1    = global.inst_perso_partida[1]; // Posição fixa do P1 no array da partida
     var _perso_outro = global.inst_perso_partida[0]; // Posição do adversário (Bot/P2)
-	var _id_vencedor_bot = global.tipos_jogadores[0]; // O índice [0] no array de tipos é Bot
-    var _id_vencedor_p1 = global.tipos_jogadores[1]; // O índice [1] no array de tipos é P1
-    var _id_vencedor_p2  = global.tipos_jogadores[2]; // O índice [2] no array de tipos é P2
+	var _id_vencedor_bot = global.tipos_jogadores[JOGADOR.BOT]; // O índice [0] no array de tipos é Bot
+    var _id_vencedor_p1 = global.tipos_jogadores[JOGADOR.P1]; // O índice [1] no array de tipos é P1
+    var _id_vencedor_p2  = global.tipos_jogadores[JOGADOR.P2]; // O índice [2] no array de tipos é P2
 
     if (_perso_p1.hp_atual <= 0) {
         
         // Determina quem é o adversário pelo modo de jogo:
-        if (global.modo_jogo_atual == global.modos_jogo[0]) { // Se Modo PvP/Rápido, o adversário é o P2.
+        if (global.modo_jogo_atual == global.modos_jogo[MODO.PVP]) { // Se Modo PvP/Rápido, o adversário é o P2.
             global.quem_venceu = _id_vencedor_p2;
         } else { // Se Modo História ([1]), o adversário é o Bot.
 			global.quem_venceu = _id_vencedor_bot; 

@@ -2,7 +2,7 @@
 /// @description Encerra o jogo e redireciona o jogador
 /// @param {Real} _onde Index da próxima room
 function scr_fim_partida(_onde){
-	if (global.quem_venceu == global.tipos_jogadores[1]) {
+	if (global.quem_venceu == global.tipos_jogadores[JOGADOR.P1]) {
 		desbloqueou_trilha();
 	}
 	
@@ -12,7 +12,7 @@ function scr_fim_partida(_onde){
 
 /// @function desbloqueou_trilha()
 function desbloqueou_trilha() {
-	if (global.modo_jogo_atual == global.modos_jogo[1]) {
+	if (global.modo_jogo_atual == global.modos_jogo[MODO.HIST]) {
 		//show_debug_message("p1 venceu");
 		if (!array_contains(global.perso_disponiveis, global.perso_atuais[1])) {
 			array_push(global.perso_disponiveis, global.perso_atuais[1]);

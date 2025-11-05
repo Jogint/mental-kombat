@@ -3,7 +3,7 @@
 
 if (global.partida_acabou) {
 	var _room_desejada = -1;
-	if (global.modo_jogo_atual == global.modos_jogo[1]) {
+	if (global.modo_jogo_atual == global.modos_jogo[MODO.HIST]) {
 		_room_desejada = 1;
 	} else {
 		_room_desejada = 2;

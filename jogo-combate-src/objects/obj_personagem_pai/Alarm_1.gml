@@ -1,7 +1,7 @@
 /// @description Exibir escolha bot
 
 
-//var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+//var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 
 //if (_is_rapido) {
 

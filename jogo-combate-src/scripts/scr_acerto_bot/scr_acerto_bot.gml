@@ -8,7 +8,7 @@ function scr_acerto_bot(inst_bot, chance, corte) {
         return;
     }
 
-    var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+    var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
     var _e_turno_bot = global.jogador_atual == inst_bot.controlador;
     var _bot_acertou_chance = (chance <= corte);
 

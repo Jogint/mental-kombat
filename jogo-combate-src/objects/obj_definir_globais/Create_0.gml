@@ -1,7 +1,4 @@
-// ==================================================
 // DICIONÁRIO DE ABREVIAÇÕES EM NOTES/Importante.txt
-// ==================================================
-
 randomise();
 
 // ==================================================
@@ -13,7 +10,6 @@ global.qtd_players_partida = 2; // número de jogadores por rodada
 // ==================================================
 // GLOBAIS STRING
 // ==================================================
-
 global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"]; // tipos de operações válidas
 global.tipos_jogadores = ["bot", "player1", "player2"]; // tipos de jogadores válidos
 global.niveis_dif = ["facil", "medio", "dificil"]; // difs existentes no jogo
@@ -27,8 +23,8 @@ global.tipos_hab = [ // nomes das diferentes habilidades a serem usados pelos pe
 	"Acelera", 
 	"Energético",
 ];
-global.dif_atual = global.niveis_dif[0]; // define o nível de dif da partida
-global.modo_jogo_atual = global.modos_jogo[1]; // define o modo de jogo da partida
+global.dif_atual = global.niveis_dif[DIF.FACIL]; // define o nível de dif da partida
+global.modo_jogo_atual = global.modos_jogo[MODO.HIST]; // define o modo de jogo da partida
 
 // ==================================================
 // GLOBAIS INSTANCIAS/OBJETOS
@@ -47,14 +43,13 @@ global.todos_perso = [ // referência de todos os objetos de personagem jogávei
 	obj_personagem_10,
 	obj_personagem_11,
 ];
-
-// TODO: Tirar esse script e alterar as imagens na mão quando chegarem as artes de exibição
-scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso
-
 global.perso_disponiveis = [obj_personagem, obj_personagem_1]; // personagens jogaveis na trilha ou rapido
 global.inimigos_disponiveis = [obj_personagem_2]; // inimigos derrotaveis na trilha
 
 // ==================================================
-// INICIALIZAÇÃO DE VARIÁVEIS DE PARTIDA
+// SCRIPTS INICIAIS
 // ==================================================
 scr_definir_globais_var(true);
+scr_cria_enum(); // OBS: TODA ALTERAÇÃO NOS ARRAYS DE STRING DEVE SER FEITA TAMBÉM AQUI
+// TODO: Tirar esse script ABAIXO e alterar as imagens na mão quando chegarem as artes de exibição
+scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso {Array<GMSprite>}

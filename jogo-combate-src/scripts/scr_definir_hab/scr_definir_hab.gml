@@ -16,9 +16,9 @@ function scr_definir_hab(_nome_hab, _custo_hab, _tipo_hab, _valor_hab, _sprite_h
 	if (!sprite_exists(_sprite_hab)) show_error("Sprite não foi reconhecida, obteve " + typeof(_sprite_hab), true);
 	
 	switch (_tipo_hab) {
-		case global.tipos_hab[4]:
-		case global.tipos_hab[5]:
-		case global.tipos_hab[6]:
+		case global.tipos_hab[HABS.PRORROGA]:
+		case global.tipos_hab[HABS.ACELERA]:
+		case global.tipos_hab[HABS.ENERGETICO]:
 			_valor_habilidade = _valor_hab;
 			break;
 		default:

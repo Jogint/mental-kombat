@@ -2,7 +2,7 @@
 /// @description Exibe ou deleta as habilidades da tela
 /// @param {Array} hab_arr Array que possui as habilidades a serem exibidas
 function scr_toggle_hab(hab_arr){
-	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 	var _player_index = array_get_index(global.tipos_jogadores, global.jogador_atual) - 1;
 	
 	if (!global.exibir_hab) {
@@ -62,19 +62,19 @@ function cria_instancias_hab(_is_rapido, hab_arr) {
 /// @return {Asset.GMSprite}
 function atribui_sprite_hab(tipo) {
 	switch (tipo) {
-		case global.tipos_hab[0]: // pular
+		case global.tipos_hab[HABS.PULAR]: // pular
 			return spr_teste_opcao;
-		case global.tipos_hab[1]: // dano
+		case global.tipos_hab[HABS.ATAQUE]: // dano
 			return spr_hab_dano;
-		case global.tipos_hab[2]: // cura
+		case global.tipos_hab[HABS.CURA]: // cura
 			return spr_hab_cura;
-		case global.tipos_hab[3]: // dreno
+		case global.tipos_hab[HABS.DRENA]: // dreno
 			return spr_hab_dreno;
-		case global.tipos_hab[4]: // prorroga
+		case global.tipos_hab[HABS.PRORROGA]: // prorroga
 			return spr_hab_prorroga;
-		case global.tipos_hab[5]: // acelera
+		case global.tipos_hab[HABS.ACELERA]: // acelera
 			return spr_hab_acelera;
-		case global.tipos_hab[6]: // energetico
+		case global.tipos_hab[HABS.ENERGETICO]: // energetico
 			return spr_hab_energetico;
 	}
 }

@@ -5,7 +5,7 @@ if (global.jogador_atual != "") {
 	
 	var _raio = 32;
 	
-	if (global.jogador_atual != global.tipos_jogadores[0] &&
+	if (global.jogador_atual != global.tipos_jogadores[JOGADOR.BOT] &&
 	mouse_check_button(mb_left) &&
 	position_meeting(mouse_x, mouse_y, id)) {
 		draw_set_color(c_red);

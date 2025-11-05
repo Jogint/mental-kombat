@@ -9,14 +9,13 @@
 
 ### Melhorias
 
-* Aumentar a escala do personagem que está atacando (reduzir o oponente tbm)
 * Retorno visual do acerto do bot (trocar cor da resposta dele)
 * Retorno visual de erros de player e bot - 1 seg de botão tremendo antes das habilidades
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Adicionar músicas e efeitos sonoros
 * Substituir "aperte x tecla" por um botão
-* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta
-* Desativar instâncias de resposta ao invés de ocultar a camada ao exibir habilidades
+* Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
+	* INFO: Mesmo assim, mantenha oculdada para o bem do código
 * Botão de personagem aleatório
 * Usar fontes diversas
 * Trocar nomes do sorteador e tela final pvp para o nome do personagem
@@ -26,11 +25,11 @@
 	    popup_largo_h: 250,
 	    hab_card_w: 80,
 		hab_card_h: 80,
-		// ... adicione todos os tamanhos aqui
+		// ...
 	};
 * Revisitar todos os TODO espalhados no código (mudanças pequenas)
-* Padronizar inicialização de arrays, pré alocando os índices com "noone"
-* Usar enum ao invés de índices diretos (Ex: enum Modos { Historia, Rapido, PVP })
+* Padronizar inicialização de arrays, pré alocando os índices com noone
+
 
 ## 🆕 BUGS ENCONTRADOS
 
@@ -45,7 +44,8 @@
 * efeito do energético é mantido se acaba o turno
 	* zerar exatamente ao fim do turno (dentro de if (meu_turno))
 * confirmação de habilidade não aparece no modo rápido
-* timer não para no fim de partida
+* pop ups da rm_selecao e rm_combate ficam sobre a transição
+	* Ocultar pop_up no create do obj_transição e alterar o 1° estado do sorteador por este objeto
 	
 ### 🎨 SPRITES PARA DESENHAR
 
@@ -62,3 +62,5 @@
 	* hab1: 8/12
 	* hab2: 3/12
 	* ult: 2/12
+* Criação de máquina de estados (Lyam)
+* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)

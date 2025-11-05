@@ -51,7 +51,7 @@ function efeito_hab(obj, obj_inimigo, hab){
 	    exit;
 	}
 	
-	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 	
 	if (is_string(hab)) {
 	    if (!_is_rapido) {
@@ -62,27 +62,27 @@ function efeito_hab(obj, obj_inimigo, hab){
 	}
 	
 	switch (hab.tipo) {
-		case global.tipos_hab[1]: // dano
+		case global.tipos_hab[HABS.ATAQUE]: // dano
 			efetua_dano(obj_inimigo, hab.valor_efeito);
 			break;
-		case global.tipos_hab[2]: // cura
+		case global.tipos_hab[HABS.CURA]: // cura
 			aumenta_vida(obj, hab.valor_efeito);
 			break;
-		case global.tipos_hab[3]: // dreno
+		case global.tipos_hab[HABS.DRENA]: // dreno
 			efetua_dano(obj_inimigo, hab.valor_efeito);
 			if (obj_inimigo.hp_atual > 0) aumenta_vida(obj, hab.valor_efeito);
 			break;
-		case global.tipos_hab[4]: // prorroga
+		case global.tipos_hab[HABS.PRORROGA]: // prorroga
 			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O tempo deve aumentar em até 2.0 e maior que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj.efeitos[0] = hab.valor_efeito;
+			obj.efeitos.mult_tempo = hab.valor_efeito;
 			break;
-		case global.tipos_hab[5]: // acelera
+		case global.tipos_hab[HABS.ACELERA]: // acelera
 		if (hab.valor_efeito >= 1 || hab.valor_efeito < 0.5) show_error("O tempo inimigo deve reduzir em até 0.5 e ser menor que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj_inimigo.efeitos[0] = hab.valor_efeito;
+			obj_inimigo.efeitos.mult_tempo = hab.valor_efeito;
 			break;
-		case global.tipos_hab[6]: // energetico
+		case global.tipos_hab[HABS.ENERGETICO]: // energetico
 			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O ganho energético deve aumentar em até 2.0 e ser maior que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj.efeitos[1] = hab.valor_efeito;
+			obj.efeitos.mult_energia = hab.valor_efeito;
 			break;
 	}
 }

@@ -1,6 +1,6 @@
 dados = scr_retorna_perso();
 obj_relacionado = dados[1];
-is_multiplayer = global.modo_jogo_atual == global.modos_jogo[0];
+is_multiplayer = global.modo_jogo_atual == global.modos_jogo[MODO.PVP];
 var _tamanho = 64;
 
 if (is_multiplayer) {

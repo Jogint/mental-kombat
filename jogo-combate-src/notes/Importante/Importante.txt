@@ -7,10 +7,6 @@
 	* Em global.tipos_jogadores a ordem é [bot, p1, p2]
 * obj_jbl é nossa caixa de som
 * Se você estiver em dúvida do que uma global faz, olhe obj_define_globais e scr_define_globais_var
-* Explicação por índice da variável efeitos, em obj_personagem_pai:
-	* 0 - acelera/atrasa: representa a porcentagem da alteração do tempo.
-	* 1 - energético: representa a porcentagem de alteração da energia.
-	* 2 - coutdown energético: conta 10 segundos (ou até acabar o turno) para aplicação do energético.
 
 ## DICIONÁRIO DE ABREVIAÇÕES
 

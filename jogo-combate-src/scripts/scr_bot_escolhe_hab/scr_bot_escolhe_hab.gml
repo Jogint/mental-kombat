@@ -15,7 +15,7 @@ function scr_bot_escolhe_hab(arr){
 	}
 	
 	if (_hab_usada < 0) {
-		ultima_hab_usada = global.tipos_hab[0];
+		ultima_hab_usada = global.tipos_hab[HABS.PULAR];
 		
 		//2 Segundos mostrando a sprite de confirmação do bot. tbm presente em alarm[1] do perso
 		alarm[2] = 2 * game_get_speed(gamespeed_fps);
@@ -24,7 +24,7 @@ function scr_bot_escolhe_hab(arr){
 	
 	ultima_hab_usada = arr[_hab_usada];
 	
-	if (global.modo_jogo_atual == global.modos_jogo[2]) {
+	if (global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO]) {
 		scr_ativa_animacao(global.inst_perso_partida[1], ultima_hab_usada);
 		return;
 	}

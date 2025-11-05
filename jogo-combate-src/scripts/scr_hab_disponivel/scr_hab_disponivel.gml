@@ -3,7 +3,7 @@
 /// @param {bool} _is_logo Define se é o ícone da habilidade, e não o fundo
 // "alterou é uma variável" dentro dos objetos que chamam essa função
 function scr_hab_disponivel(_is_logo) {
-	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 	var _hab_index = array_get_index(global.hab_visiveis, id);
 	
 	if (!alterou) {

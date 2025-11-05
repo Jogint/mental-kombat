@@ -1,4 +1,4 @@
-var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 var _cor_principal = c_black;
 pop_up_aberto = true;
 
@@ -22,11 +22,11 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 // ==================================================
 	var _textos_fim = [];
 	
-	if (global.modo_jogo_atual == global.modos_jogo[0]) { // pvp
+	if (global.modo_jogo_atual == global.modos_jogo[MODO.PVP]) { // pvp
 		
 		// esse monstro abaixo é o placar do pvp
-		var _resultado_partida = string(global.tipos_jogadores[1]) + ": " + string(global.pontuacao_pvp[0]) + 
-        " | " + string(global.tipos_jogadores[2]) + ": " + string(global.pontuacao_pvp[1]);
+		var _resultado_partida = string(global.tipos_jogadores[JOGADOR.P1]) + ": " + string(global.pontuacao_pvp[0]) + 
+        " | " + string(global.tipos_jogadores[JOGADOR.P2]) + ": " + string(global.pontuacao_pvp[1]);
 
 		_textos_fim = [
 		    _resultado_partida,
@@ -34,7 +34,7 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 		    "Pressione 'R' para jogar novamente"
 		];
 		
-	} else if (global.modo_jogo_atual == global.modos_jogo[1]) { // historia
+	} else if (global.modo_jogo_atual == global.modos_jogo[MODO.HIST]) { // historia
 		
 		_textos_fim = [
 			"", 
@@ -66,16 +66,16 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 		var _texto_pergunta = "Pergunta: " + string(global.pergunta_atual.n1);
 		
 		switch (global.pergunta_atual.conta) {
-			case global.operacoes[0]:
+			case global.operacoes[OPERACOES.SOMA]:
 				_texto_pergunta += " + ";
 				break;
-			case global.operacoes[1]:
+			case global.operacoes[OPERACOES.SUB]:
 				_texto_pergunta += " - ";
 				break;
-			case global.operacoes[2]:
+			case global.operacoes[OPERACOES.MULT]:
 				_texto_pergunta += " * ";
 				break;
-			case global.operacoes[3]:
+			case global.operacoes[OPERACOES.DIVI]:
 				_texto_pergunta += " / ";
 				break;
 			default:

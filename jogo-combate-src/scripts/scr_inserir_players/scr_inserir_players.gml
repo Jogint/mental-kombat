@@ -16,14 +16,14 @@ function scr_inserir_players(){
 		// Define quem controla cada instância
 		static _player_seleciona = true;
 		with (_nova_instancia) {
-			if (global.modo_jogo_atual == global.modos_jogo[0]) {
+			if (global.modo_jogo_atual == global.modos_jogo[MODO.PVP]) {
 				controlador = global.tipos_jogadores[i + 1]; // caso multplayer, ignora o bot
 			} else {
 				if (_player_seleciona) {
-					controlador = global.tipos_jogadores[1];
+					controlador = global.tipos_jogadores[JOGADOR.P1];
 					_player_seleciona = false;
 				} else {
-					controlador = global.tipos_jogadores[0];
+					controlador = global.tipos_jogadores[JOGADOR.BOT];
 					_player_seleciona = true
 				}
 			}

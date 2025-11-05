@@ -3,7 +3,7 @@
 /// @param {Asset.GMObject|Id.Instance} obj Objeto do personagem que foi selecionado
 function scr_selecionou_perso(obj){
 	// Adiciona o personagem no array
-	if (global.modo_jogo_atual == global.modos_jogo[1]) {
+	if (global.modo_jogo_atual == global.modos_jogo[MODO.HIST]) {
 		global.perso_atuais[0] = obj;
 	} else {
 		var _prox_perso = array_get_index(global.perso_atuais, noone)

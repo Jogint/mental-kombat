@@ -1,4 +1,4 @@
-if (global.modo_jogo_atual != global.modos_jogo[2]) {
+if (global.modo_jogo_atual != global.modos_jogo[MODO.RAPIDO]) {
 	draw_set_color(c_black);
 	draw_set_font(fnt_principal);
 	

@@ -3,7 +3,7 @@
 /// @param {Asset.GMObject|Id.Instance} obj Objeto que está atacando
 /// @param {Struct|String} hab Qual habilidade foi selecionada
 function scr_ativa_animacao(obj, hab){
-	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 	
 	if (is_string(hab)) {
 	    if (!_is_rapido) {

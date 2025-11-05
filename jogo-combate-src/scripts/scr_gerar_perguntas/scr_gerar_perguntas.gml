@@ -6,21 +6,21 @@ function scr_gerar_perguntas() {
 	var _nums;
 	
 	switch (global.dif_atual) {
-		case global.niveis_dif[2]:
+		case global.niveis_dif[DIF.DIFICIL]:
 			for (var i = 0; i < 25; i++) {
 			    _nums = escolhe_4_nums(50, false);
 				_novas_perguntas = gera_pergunta_por_operacao(_nums, true, true);
 				_perguntas = array_concat(_perguntas, _novas_perguntas);
 		    }
 			break;
-		case global.niveis_dif[1]:
+		case global.niveis_dif[DIF.MEDIO]:
 			for (var i = 0; i < 33; i++) {
 				_nums = escolhe_4_nums(50, true);
 				_novas_perguntas = gera_pergunta_por_operacao(_nums, true, false);
 				_perguntas = array_concat(_perguntas, _novas_perguntas);
 			}
 			break;
-		case global.niveis_dif[0]:
+		case global.niveis_dif[DIF.FACIL]:
 			for (var i = 0; i < 50; i++) {
 				_nums = escolhe_4_nums(9, true);
 				_novas_perguntas = gera_pergunta_por_operacao(_nums, false, false);
@@ -60,15 +60,15 @@ function escolhe_4_nums(_limite_basicos, _apenas_mult){
 function gera_pergunta_por_operacao(_nums, _tem_mult, _tem_div) {
 	var _perguntas = [];
 	
-	array_push(_perguntas, gerar_opcoes(_nums[0], _nums[1], _nums[0] + _nums[1], global.operacoes[0])); // soma
-	array_push(_perguntas, gerar_opcoes(max(_nums[0], _nums[1]), min(_nums[0], _nums[1]), abs(_nums[0] - _nums[1]), global.operacoes[1])); // sub
+	array_push(_perguntas, gerar_opcoes(_nums[0], _nums[1], _nums[0] + _nums[1], global.operacoes[OPERACOES.SOMA])); // soma
+	array_push(_perguntas, gerar_opcoes(max(_nums[0], _nums[1]), min(_nums[0], _nums[1]), abs(_nums[0] - _nums[1]), global.operacoes[OPERACOES.SUB])); // sub
 	
 	if (_tem_mult) {
-		array_push(_perguntas, gerar_opcoes(_nums[2], _nums[3], _nums[2] * _nums[3], global.operacoes[2]));  // mult
+		array_push(_perguntas, gerar_opcoes(_nums[2], _nums[3], _nums[2] * _nums[3], global.operacoes[OPERACOES.MULT]));  // mult
 	}
 	
 	if (_tem_div) {
-		array_push(_perguntas, gerar_opcoes(_nums[2] * _nums[3], _nums[2], _nums[3], global.operacoes[3]));  // div
+		array_push(_perguntas, gerar_opcoes(_nums[2] * _nums[3], _nums[2], _nums[3], global.operacoes[OPERACOES.DIVI]));  // div
 	}
 	
 	return _perguntas;
@@ -84,7 +84,7 @@ function gera_pergunta_por_operacao(_nums, _tem_mult, _tem_div) {
 function gerar_opcoes(num1, num2, certo, tipo) {
     var _alternativas = [certo];
 	var _resultado_maximo_possivel = 100; // resultado de 50 + 50
-	if (tipo == global.operacoes[3]) { 
+	if (tipo == global.operacoes[OPERACOES.DIVI]) { 
 		_resultado_maximo_possivel = 9; // resultado da divisão sempre menor que 10
 	}
 	var _vezes_executado = 0;

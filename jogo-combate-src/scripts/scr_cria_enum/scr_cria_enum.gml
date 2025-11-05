@@ -2,22 +2,22 @@ function scr_cria_enum(){
 	// 1. Tipos de Operações
 	enum OPERACOES {
 	    SOMA,
-	    SUBTRACAO,
-	    MULTIPLICACAO,
-	    DIVISAO,
+	    SUB,
+	    MULT,
+	    DIVI,
 	    COUNT
 	}
 
 	// 2. Tipos de Jogadores
-	enum TIPO_JOGADOR {
+	enum JOGADOR {
 	    BOT,
-	    PLAYER1,
-	    PLAYER2,
+	    P1,
+	    P2,
 	    COUNT
 	}
 
 	// 3. Níveis de Dificuldade
-	enum DIFICULDADE {
+	enum DIF {
 	    FACIL,
 	    MEDIO,
 	    DIFICIL,
@@ -25,20 +25,20 @@ function scr_cria_enum(){
 	}
 
 	// 4. Modos de Jogo
-	enum MODO_JOGO {
-	    DOIS_JOGADORES,
-	    HISTORIA,
+	enum MODO {
+	    PVP,
+	    HIST,
 	    RAPIDO,
 	    COUNT
 	}
 
 	// 5. Tipos de Habilidades
-	enum HABILIDADES {
+	enum HABS {
 	    PULAR,
 	    ATAQUE,
 	    CURA,
-	    DRENAR_VIDA,
-	    PRORROGA_TEMPO,
+	    DRENA,
+	    PRORROGA,
 	    ACELERA,
 	    ENERGETICO,
 	    COUNT

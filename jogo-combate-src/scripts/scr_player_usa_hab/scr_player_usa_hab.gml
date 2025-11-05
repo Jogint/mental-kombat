@@ -3,13 +3,13 @@
 /// @param {bool} _is_pulo Se o player vai pular a vez
 /// habilidade é uma variavel do objeto que a chama, atribuida via scr_toggle_hab
 function scr_player_usa_hab(_is_pulo) {
-	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 	var _player_index = array_get_index(global.tipos_jogadores, global.jogador_atual) - 1; // bot é o index 0 (vira -1), o player não pode atacar
 	if (_is_rapido) _player_index = 0;
 	var _hab_index = array_get_index(global.hab_visiveis, id);
 	
 	if (_is_pulo) {
-		scr_ativa_animacao(global.inst_perso_partida[_player_index], global.tipos_hab[0]);
+		scr_ativa_animacao(global.inst_perso_partida[_player_index], global.tipos_hab[HABS.PULAR]);
 		return;
 	}
 	
