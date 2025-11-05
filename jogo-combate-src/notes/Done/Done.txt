@@ -143,3 +143,5 @@
 * IMPROVE: Perguntas e turno exibem em pop up (Lyam - 04/11/2025)
 * FIX: Trocar mensagem de fim de jogo do modo história (Lyam - 04/11/2025)
 * FEAT: Adicionar uma transição entre rm_combate e rm_selecao (Lyam - 04/11/2025)
+* FEAT: Remover relógio e opções de resposta durante sorteador/hab/animacao (Lyam - 05/11/2025)
+* OTHER: 2 novas animações de personagns (Kaue - 04/11/2025)

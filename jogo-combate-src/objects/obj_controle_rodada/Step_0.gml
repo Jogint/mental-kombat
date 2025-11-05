@@ -1,6 +1,8 @@
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 var _is_pvp = global.modo_jogo_atual == global.modos_jogo[0];
 
+if (_is_rapido) layer_set_visible("Opcoes", true);
+
 // ==================================================
 // EXECUTA O SORTEADOR DE QUEM COMEÇA ATACANDO
 // ==================================================

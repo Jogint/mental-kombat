@@ -20,7 +20,6 @@
 * Botão de personagem aleatório
 * Usar fontes diversas
 * Trocar nomes do sorteador e tela final pvp para o nome do personagem
-* Remover relógio e opções de resposta durante sorteador
 * Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (array de tamanhos?)
 	* global.UI_TAMANHOS = {
 	    popup_largo_w: 400,
@@ -45,6 +44,7 @@
 	* usar room_get_width - _margem - sprite_get_width(sprite_index)
 * efeito do energético é mantido se acaba o turno
 	* zerar exatamente ao fim do turno (dentro de if (meu_turno))
+* confirmação de habilidade não aparece no modo rápido
 	
 ### 🎨 SPRITES PARA DESENHAR
 
@@ -57,7 +57,7 @@
 ## ⚙ EM ANDAMENTO
 
 * Todas as animações dos personagens - prontos 2/12 (Kaue)
-	* idle: 7/12
+	* idle: 9/12
 	* hab1: 8/12
 	* hab2: 3/12
 	* ult: 2/12

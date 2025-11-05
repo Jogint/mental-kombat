@@ -1,3 +1,4 @@
+var _is_rapido = global.modo_jogo_atual == global.modos_jogo[2];
 var _cor_principal = c_black;
 pop_up_aberto = true;
 
@@ -55,6 +56,10 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 // ==================================================
 // EXIBIÇÃO DAS PERGUNTAS E QUEM JOGA
 // ==================================================
+	if (!_is_rapido && global.exibir_hab || !layer_get_visible("Opcoes")) {
+		exit; // sai se não tiver pergunta em exibição
+	}
+
 	// Texto da pergunta
 	if (global.jogador_atual != "") {
 		var _texto_turno = "Turno " + string(global.qtd_turnos) + " - " + string(global.jogador_atual);

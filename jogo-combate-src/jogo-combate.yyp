@@ -142,6 +142,7 @@
     {"id":{"name":"spr_hab_energetico","path":"sprites/spr_hab_energetico/spr_hab_energetico.yy",},},
     {"id":{"name":"spr_hab_indisponivel","path":"sprites/spr_hab_indisponivel/spr_hab_indisponivel.yy",},},
     {"id":{"name":"spr_hab_prorroga","path":"sprites/spr_hab_prorroga/spr_hab_prorroga.yy",},},
+    {"id":{"name":"spr_hab_selecionada","path":"sprites/spr_hab_selecionada/spr_hab_selecionada.yy",},},
     {"id":{"name":"spr_lily_1hab","path":"sprites/spr_lily_1hab/spr_lily_1hab.yy",},},
     {"id":{"name":"spr_lily_idle","path":"sprites/spr_lily_idle/spr_lily_idle.yy",},},
     {"id":{"name":"spr_logo_jogo","path":"sprites/spr_logo_jogo/spr_logo_jogo.yy",},},
