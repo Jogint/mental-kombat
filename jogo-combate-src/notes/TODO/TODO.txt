@@ -6,12 +6,10 @@
 
 * Criar global.apresentou_tutoriais = [false, false, false]:
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
-* Adicionar uma transição entre rm_combate e rm_selecao
 
 ### Melhorias
 
-* Trocar mensagem de fim de jogo do modo história para R = volta para trilha
-* Zerar o efeito do energético no fim do turno
+* Aumentar a escala do personagem que está atacando (reduzir o oponente tbm)
 * Retorno visual do acerto do bot (trocar cor da resposta dele)
 * Retorno visual de erros de player e bot - 1 seg de botão tremendo antes das habilidades
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
@@ -22,6 +20,7 @@
 * Botão de personagem aleatório
 * Usar fontes diversas
 * Trocar nomes do sorteador e tela final pvp para o nome do personagem
+* Remover relógio e opções de resposta durante sorteador
 * Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (array de tamanhos?)
 	* global.UI_TAMANHOS = {
 	    popup_largo_w: 400,
@@ -34,14 +33,6 @@
 * Padronizar inicialização de arrays, pré alocando os índices com "noone"
 * Usar enum ao invés de índices diretos (Ex: enum Modos { Historia, Rapido, PVP })
 
-### 🎨 SPRITES PARA DESENHAR
-
-* Background para cada room
-* Tela e botões de fim de jogo (atualmente vivendo a base do draw)
-* Miniatura de exibição do personagem na seleção de jogador
-* Todos os objetos na pasta /Botões
-* Tela e botões de configurações (som, controles, créditos, easter egg)
-
 ## 🆕 BUGS ENCONTRADOS
 
 ### Gerais
@@ -50,6 +41,18 @@
 	* manter ele no array comum, mas deixar o "jogar!" cinza e não clicável enquanto estiver selecionado
 	* adicionar mensagens de debug para saber por que "todos_perso" não era igual "perso_disponiveis"
 	* Trocar o texto "Jogar!" por "Termine modo história"
+* habilidades do p2 no modo rápido spawnando no lugar errado
+	* usar room_get_width - _margem - sprite_get_width(sprite_index)
+* efeito do energético é mantido se acaba o turno
+	* zerar exatamente ao fim do turno (dentro de if (meu_turno))
+	
+### 🎨 SPRITES PARA DESENHAR
+
+* Background para cada room
+* Tela e botões de fim de jogo (atualmente vivendo a base do draw)
+* Miniatura de exibição do personagem na seleção de jogador
+* Todos os objetos na pasta /Botões
+* Tela e botões de configurações (som, controles, créditos, easter egg)
 
 ## ⚙ EM ANDAMENTO
 

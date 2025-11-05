@@ -141,3 +141,5 @@
 * FEAT: Adicionar uma contagem de turnos (Lyam - 04/11/2025)
 * FEAT: Inserir placeholder de backgrounds da partida (Lyam - 04/11/2025)
 * IMPROVE: Perguntas e turno exibem em pop up (Lyam - 04/11/2025)
+* FIX: Trocar mensagem de fim de jogo do modo história (Lyam - 04/11/2025)
+* FEAT: Adicionar uma transição entre rm_combate e rm_selecao (Lyam - 04/11/2025)
