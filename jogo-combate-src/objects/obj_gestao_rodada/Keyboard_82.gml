@@ -1,7 +1,7 @@
 /// @description Vai para seleção
 // Você pode escrever seu código neste editor
 
-if (global.partida_acabou) {
+if (obj_gestao_rodada.partida_acabou) {
 	var _room_desejada = -1;
 	if (global.modo_jogo_atual == global.modos_jogo[MODO.HIST]) {
 		_room_desejada = 1;

@@ -14,7 +14,6 @@ switch (room) {
 			
 			// Inicia se ambos estiverem selecionados
 			if (global.perso_atuais[0] != noone && global.perso_atuais[1] != noone) {
-				global.perguntas_geradas = scr_gerar_perguntas();
 				instance_create_layer(x-1350, y-1100, "Transicao", obj_transicao);
 			}
 		}

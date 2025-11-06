@@ -43,4 +43,14 @@ function scr_cria_enum(){
 	    ENERGETICO,
 	    COUNT
 	}
+	
+	enum ESTADOS_TURNO {
+		SETUP,
+		AGUARDANDO,
+		INICIANDO,
+		JOGANDO,
+		ESCOLHA_HAB,
+		EXIBINDO_HAB,
+		FINALIZANDO,
+	}
 }

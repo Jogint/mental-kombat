@@ -16,7 +16,7 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 
 	scr_desenha_pop_up (["Escolhendo jogador a iniciar...", nome_sorteado_atual], _customizacoes);
 	
-} else if (global.partida_acabou) {
+} else if (obj_gestao_rodada.partida_acabou) {
 // ==================================================
 // EXIBE A TELA DE FIM DE JOGO
 // ==================================================
@@ -56,16 +56,16 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 // ==================================================
 // EXIBIÇÃO DAS PERGUNTAS E QUEM JOGA
 // ==================================================
-	if (!_is_rapido && global.exibir_hab || !layer_get_visible("Opcoes")) {
+	if (!_is_rapido && obj_gestao_rodada.exibir_hab || !layer_get_visible("Opcoes")) {
 		exit; // sai se não tiver pergunta em exibição
 	}
 
 	// Texto da pergunta
-	if (global.jogador_atual != "") {
-		var _texto_turno = "Turno " + string(global.qtd_turnos) + " - " + string(global.jogador_atual);
-		var _texto_pergunta = "Pergunta: " + string(global.pergunta_atual.n1);
+	if (obj_gestao_rodada.jogador_atual != "") {
+		var _texto_turno = "Turno " + string(obj_gestao_rodada.qtd_turnos) + " - " + string(obj_gestao_rodada.jogador_atual);
+		var _texto_pergunta = "Pergunta: " + string(obj_gestao_rodada.pergunta_atual.n1);
 		
-		switch (global.pergunta_atual.conta) {
+		switch (obj_gestao_rodada.pergunta_atual.conta) {
 			case global.operacoes[OPERACOES.SOMA]:
 				_texto_pergunta += " + ";
 				break;
@@ -79,10 +79,10 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 				_texto_pergunta += " / ";
 				break;
 			default:
-				show_error("Operação matemática não identificada pelo switch, recebeu: " + global.pergunta_atual.conta, true)
+				show_error("Operação matemática não identificada pelo switch, recebeu: " + obj_gestao_rodada.pergunta_atual.conta, true)
 		}
 		
-		_texto_pergunta += string(global.pergunta_atual.n2);
+		_texto_pergunta += string(obj_gestao_rodada.pergunta_atual.n2);
 		
 		var _personalizacao = {
 			fundo_cor: c_dkgray,

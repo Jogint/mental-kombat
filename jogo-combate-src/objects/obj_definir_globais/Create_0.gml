@@ -11,7 +11,11 @@ global.tem_modo_rapido = false; // flag que libera o modo após zerar o jogo
 // ==================================================
 global.qtd_alternativas = 4; // número de alternativas por questão
 global.qtd_players_partida = 2; // número de jogadores por rodada
-
+global.tamanhos = { // x e y
+	personagem: 64 * 5,
+	fundo_hab: [300, 80],
+	logo_hab: 80,
+}
 // ==================================================
 // GLOBAIS STRING
 // ==================================================

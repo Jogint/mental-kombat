@@ -1,6 +1,6 @@
 draw_self();
 
-if (global.jogador_atual != "") {
+if (obj_gestao_rodada.jogador_atual != "") {
 	draw_set_font(fnt_principal);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
@@ -36,7 +36,7 @@ if (global.jogador_atual != "") {
 /// @description Ativa o desenho do círculo de feedback e o timer (se for do bot).
 /// @param {boolean} _exibe_bot Se o usuário acertou (feedback do jogo) ou se é seleção do jogador.
 function opcao_selecionada(_exibe_bot = false, _acertou = true) {
-    var _is_bot = (global.jogador_atual == global.tipos_jogadores[JOGADOR.BOT]);
+    var _is_bot = (obj_gestao_rodada.jogador_atual == global.tipos_jogadores[JOGADOR.BOT]);
     
     // Feedback do Jogador (Mouse)
     if (!_is_bot && mouse_check_button(mb_left) && position_meeting(mouse_x, mouse_y, id)) {

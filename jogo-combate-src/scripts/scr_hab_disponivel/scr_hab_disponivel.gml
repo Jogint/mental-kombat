@@ -16,7 +16,7 @@ function scr_hab_disponivel(_is_logo) {
 		
 		// definição de jogador dos outros modos
 		if (!_is_rapido) {
-			var _player_index = abs(array_get_index(global.tipos_jogadores, global.jogador_atual) - 1);
+			var _player_index = abs(array_get_index(global.tipos_jogadores, obj_gestao_rodada.jogador_atual) - 1);
 			_player_atual = global.inst_perso_partida[_player_index];
 			alterou = true; // depois da alteração, a instancia é deletada, exceto rapido
 			// no modo rapido, ele precisa estar frequentemente alterando o objeto

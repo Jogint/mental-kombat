@@ -2,9 +2,9 @@
 /// @description define o tempo que o bot leva pra responder
 /// @return {Real}
 function scr_tempo_acerto_bot() {
-	var _tipo_pergunta = global.pergunta_atual.conta;
-	var _n1 = global.pergunta_atual.n1;
-	var _n2 = global.pergunta_atual.n2;
+	var _tipo_pergunta = obj_gestao_rodada.pergunta_atual.conta;
+	var _n1 = obj_gestao_rodada.pergunta_atual.n1;
+	var _n2 = obj_gestao_rodada.pergunta_atual.n2;
 
 	var _is_soma_ou_sub = (_tipo_pergunta == global.operacoes[OPERACOES.SOMA]) || (_tipo_pergunta == global.operacoes[OPERACOES.SUB]);
 	var _possui_1_digito = (_n1 < 10) || (_n2 < 10);

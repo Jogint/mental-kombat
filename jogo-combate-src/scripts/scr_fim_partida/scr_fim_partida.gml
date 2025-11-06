@@ -4,7 +4,7 @@
 
 // TODO: Limpar esse código inteiro
 function scr_fim_partida(_onde){
-	if (global.quem_venceu == global.tipos_jogadores[JOGADOR.P1]) {
+	if (obj_gestao_rodada.quem_venceu == global.tipos_jogadores[JOGADOR.P1]) {
 		desbloqueou_trilha();
 	}
 	

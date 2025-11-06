@@ -28,8 +28,8 @@ function scr_inserir_players(){
 				}
 			}
 			
-			var _largura_desejada = 64 * 5;
-			var _altura_desejada = 64 * 5;
+			var _largura_desejada = global.tamanhos.personagem;
+			var _altura_desejada = global.tamanhos.personagem;
 			scr_trocar_sprite(self, _largura_desejada, _altura_desejada, sprite_index);
 		}
 

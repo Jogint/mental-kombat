@@ -9,6 +9,11 @@
 
 ### Melhorias
 
+* Modo 2 personagens: review visual de que o personagem foi selecionado
+* Reduzir tempo de resposta da subtração de 2 dígitos caso a unidade de n1 seja maior que a unidade de n2
+* Filtro no personagem que não está atacando
+* Melhorar opção de escolha de habilidade do bot (chance maior de gastar energia se puder atacar)
+* Mudar taxa de erro do bot para algo semelhante ao tempo de resposta
 * Passar questão apenas após bot parar de mostrar a confirmação de escolha
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Adicionar músicas e efeitos sonoros
@@ -18,6 +23,7 @@
 * Botão de personagem aleatório
 * Usar fontes diversas
 * Trocar nomes do sorteador e tela final pvp para o nome do personagem
+* Exibir quanto de energia vc tem em números
 * Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (array de tamanhos?)
 	* global.UI_TAMANHOS = {
 	    popup_largo_w: 400,
@@ -56,3 +62,4 @@
 	* ult: 2/12
 * Criação de máquina de estados (Lyam)
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
+* Instruções para selecionar o oponente (Lyam)

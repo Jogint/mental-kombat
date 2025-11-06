@@ -4,12 +4,12 @@
 /// @param {Real} chance Valor aleatório gerado
 /// @param {Real} corte Valor máximo para ser considerado um acerto
 function scr_acerto_bot(inst_bot, chance, corte) {
-    if (global.partida_acabou) {
+    if (obj_gestao_rodada.partida_acabou) {
         return;
     }
 
     var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
-    var _e_turno_bot = global.jogador_atual == inst_bot.controlador;
+    var _e_turno_bot = obj_gestao_rodada.jogador_atual == inst_bot.controlador;
     var _bot_acertou_chance = (chance <= corte);
 
     // O bot só age se for o turno dele OU se estiver no modo rápido
@@ -18,7 +18,7 @@ function scr_acerto_bot(inst_bot, chance, corte) {
     }
 
     var _tempo_resp = scr_tempo_acerto_bot();
-    var _secs_restantes = round(global.timer_turno / game_get_speed(gamespeed_fps));
+    var _secs_restantes = round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps));
     
     // DECISÃO: O bot AVANÇA?
     if (_bot_acertou_chance || _is_rapido) {
@@ -84,7 +84,7 @@ function bot_gerenciar_modo_rapido(inst_bot) {
 /// @function bot_encerrar_turno(inst_bot)
 function bot_encerrar_turno(inst_bot) {
     inst_bot.alarm[0] = -1;
-    global.errou_resposta = true;
+    obj_gestao_rodada.errou_resposta = true;
 }
 
 /// @function bot_agendar_proxima_acao(inst_bot, tempo_em_segundos, _is_rapido)

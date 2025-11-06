@@ -8,8 +8,9 @@ function scr_ativa_animacao(obj, hab){
 	if (is_string(hab)) {
 	    if (!_is_rapido) {
 	        scr_toggle_hab([]);
-	        scr_encerrar_turno();
 	    }
+		
+		obj.estado_turno = ESTADOS_TURNO.FINALIZANDO;
 	    return;
 	}
 	
@@ -21,4 +22,5 @@ function scr_ativa_animacao(obj, hab){
 	
 	obj.sprite_index = hab.sprite;
 	obj.animacao_em_uso = hab;
+	obj.estado_turno = ESTADOS_TURNO.EXIBINDO_HAB
 }

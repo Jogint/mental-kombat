@@ -1,4 +1,4 @@
-var _tamanho_quad = 64 * 5;
+var _tamanho_quad = global.tamanhos.personagem;
 
 /// @function muda_img (_tamanho_quad)
 /// @description Muda a sprite da instância de exibição de personagem e salva seu objeto

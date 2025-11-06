@@ -1,5 +1,5 @@
 // TODO: LIMPAR ESTE CÓDIGO
-if (global.jogador_atual != global.tipos_jogadores[JOGADOR.BOT]) { // verifica se n é bot
+if (obj_gestao_rodada.jogador_atual != global.tipos_jogadores[JOGADOR.BOT]) { // verifica se n é bot
 	if (is_certo) {
 		if (global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO]) {
 			global.inst_perso_partida[0].aumentar_energia();
@@ -11,6 +11,6 @@ if (global.jogador_atual != global.tipos_jogadores[JOGADOR.BOT]) { // verifica s
 		scr_proxima_pergunta();
 	} else {
 		treme_opcao();
-		global.errou_resposta = true;
+		obj_gestao_rodada.errou_resposta = true;
 	}
 }
