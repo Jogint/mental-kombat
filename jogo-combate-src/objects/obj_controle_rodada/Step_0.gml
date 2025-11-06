@@ -8,6 +8,7 @@ if (_is_rapido) layer_set_visible("Opcoes", true);
 // ==================================================
 if (global.jogador_atual == noone &&
 estado_sorteio == 0 &&
+!instance_exists(obj_transicao) &&
 !_is_rapido) {
     estado_sorteio = 1;
     var _tempo_piscando = 3; // 3 seconds

@@ -35,7 +35,7 @@ if (global.jogador_atual != "") {
 /// @function opcao_selecionada(_exibe_bot = false)
 /// @description Ativa o desenho do círculo de feedback e o timer (se for do bot).
 /// @param {boolean} _exibe_bot Se o usuário acertou (feedback do jogo) ou se é seleção do jogador.
-function opcao_selecionada(_exibe_bot = false) {
+function opcao_selecionada(_exibe_bot = false, _acertou = true) {
     var _is_bot = (global.jogador_atual == global.tipos_jogadores[JOGADOR.BOT]);
     
     // Feedback do Jogador (Mouse)
@@ -49,4 +49,6 @@ function opcao_selecionada(_exibe_bot = false) {
         desenhar_circulo = true;
         tempo_feedback_bot = game_get_speed(gamespeed_fps); 
     }
+	
+	if (!_acertou) treme_opcao();
 }

@@ -1,6 +1,6 @@
 /// @description Informações sobre o personagem
 
-if (global.ultimo_selecionado != noone) {
+if (global.ultimo_selecionado != noone && !instance_exists(obj_transicao)) {
 	
 	if (global.ultimo_selecionado != temp_instance) {
 		instance_destroy(temp_instance);

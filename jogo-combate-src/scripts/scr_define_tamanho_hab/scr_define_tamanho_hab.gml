@@ -12,7 +12,7 @@ function scr_define_tamanho_hab(i, _is_rapido, _espaco_entre, _largura_desejada,
 	var _total_instancias = 3;
 	var _y = 200; if (_is_bg) _y = 170;
 	var _largura_total_conjunto = (_largura_desejada * _total_instancias) + (_espaco_entre * (_total_instancias - 1));
-	var _x_inicial = (window_get_width() / 2) - (_largura_total_conjunto / 2) + 40;
+	var _x_inicial = (window_get_width() / 2) - (_largura_total_conjunto / 2);
     var _x = _x_inicial + (i * (_largura_desejada + _espaco_entre));
 			
 	if (_is_rapido) { // chamado apenas 1x por partida, rodando obrigatóriamente 8 vezes
@@ -22,7 +22,7 @@ function scr_define_tamanho_hab(i, _is_rapido, _espaco_entre, _largura_desejada,
 			_x = 10;
 			_entradas++;
 		} else {
-			_x = 1276;
+			_x = 1240;
 			_entradas++;
 		}
 		

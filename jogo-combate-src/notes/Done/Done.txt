@@ -149,3 +149,10 @@
 * FIX: Impedir tempo de resetar turno ao final da partida (Lyam - 05/11/2025)
 * FIX: Textos não aparecem na compilação html5 - culpa de string_height/width (Lyam - 05/11/2025)
 * IMPROVE: Retorno visual do acerto do bot (trocar cor da resposta dele) (Lyam - 05/11/2025)
+* FIX: Personagens do modo história não eram desbloqueados (Lyam - 05/11/2025)
+* FIX: pop ups da rm_selecao e rm_combate ficam sobre a transição (Lyam - 05/11/2025)
+* FEAT: Modo rápido é uma feature para quem zera o modo história (Lyam - 05/11/2025)
+* FIX: Centralizar as habilidades na tela - estavam tortas (Lyam - 05/11/2025)
+* Retorno visual de erros de player e bot - botão tremendo (Lyam - 05/11/2025)
+
+> 06/11 Lançamento de versão alpha para avaliação entre participantes da gamejam

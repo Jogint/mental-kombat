@@ -13,7 +13,7 @@ function scr_toggle_hab(hab_arr){
 			if (_player_index >= 0){
 				var _camada_alvo = "Habilidades";
 				var _obj_a_criar = obj_pular_turno;
-				var _nova_instancia = instance_create_layer(600, 630, _camada_alvo, _obj_a_criar);
+				var _nova_instancia = instance_create_layer(580, 630, _camada_alvo, _obj_a_criar);
 			}
 		}
 		

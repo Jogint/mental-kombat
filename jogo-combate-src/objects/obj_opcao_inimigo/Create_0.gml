@@ -4,5 +4,5 @@ var _tamanho = 96;
 scr_trocar_sprite(self, _tamanho, _tamanho, dados[0]);
 
 if (!array_contains(global.inimigos_disponiveis, obj_relacionado)) {
-	image_alpha = 0.5;
+	image_alpha = 0.3;
 }

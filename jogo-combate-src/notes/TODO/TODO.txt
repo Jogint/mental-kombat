@@ -10,13 +10,11 @@
 ### Melhorias
 
 * Passar questão apenas após bot parar de mostrar a confirmação de escolha
-* Centralizar as habilidades na tela (e corrigir do p2 no rápido)
-* Retorno visual de erros de player e bot - 1 seg de botão tremendo antes das habilidades
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Adicionar músicas e efeitos sonoros
 * Substituir "aperte x tecla" por um botão
 * Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
-	* INFO: Mesmo assim, mantenha oculdada para o bem do código
+	* INFO: Mesmo assim, mantenha camada oculdada para o bem do código
 * Botão de personagem aleatório
 * Usar fontes diversas
 * Trocar nomes do sorteador e tela final pvp para o nome do personagem
@@ -36,17 +34,10 @@
 
 ### Gerais
 
-* modo de jogo rápido não desbloqueou no final
-	* manter ele no array comum, mas deixar o "jogar!" cinza e não clicável enquanto estiver selecionado
-	* adicionar mensagens de debug para saber por que "todos_perso" não era igual "perso_disponiveis"
-	* Trocar o texto "Jogar!" por "Termine modo história"
-* habilidades do p2 no modo rápido spawnando no lugar errado
-	* usar room_get_width - _margem - sprite_get_width(sprite_index)
 * efeito do energético é mantido se acaba o turno
-	* zerar exatamente ao fim do turno (dentro de if (meu_turno))
+	* POSSIVELMENTE CORRIGIDO mas faltam testes
 * confirmação de habilidade não aparece no modo rápido
-* pop ups da rm_selecao e rm_combate ficam sobre a transição
-	* Ocultar pop_up no create do obj_transição e alterar o 1° estado do sorteador por este objeto
+
 	
 ### 🎨 SPRITES PARA DESENHAR
 

@@ -2,6 +2,11 @@
 randomise();
 
 // ==================================================
+// GLOBAIS BOOLEANAS
+// ==================================================
+global.tem_modo_rapido = false; // flag que libera o modo após zerar o jogo
+
+// ==================================================
 // GLOBAIS NUMÉRICAS
 // ==================================================
 global.qtd_alternativas = 4; // número de alternativas por questão

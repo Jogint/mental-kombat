@@ -56,7 +56,7 @@ function apresenta_feedback(_acertou) {
 		for (var i = 0; i < array_length(_respostas_array); ++i) {
 		    if (_respostas_array[i].is_certo) {
 				show_debug_message("acertou: " + string(_respostas_array[i].numero));
-				_respostas_array[i].opcao_selecionada(true);
+				_respostas_array[i].opcao_selecionada(true, _acertou);
 			}
 		}
 		return;
@@ -65,7 +65,7 @@ function apresenta_feedback(_acertou) {
 	var _opcao_aleatoria = _respostas_array[0];
 	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
 	show_debug_message("errou: " + string(_opcao_aleatoria.numero));
-	_opcao_aleatoria.opcao_selecionada(true);
+	_opcao_aleatoria.opcao_selecionada(true, _acertou);
 }
 
 /// @function bot_processar_acerto(inst_bot)

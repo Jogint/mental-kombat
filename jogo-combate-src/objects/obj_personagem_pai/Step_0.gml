@@ -55,7 +55,7 @@ if (global.turno_iniciou) {
 		}
 	
 		// ---------- AÇÕES DE FIM DE TURNO ----------
-		if (global.timer_turno <= 0) {
+		if (global.timer_turno <= 0 && !retornou_erro) {
 			global.timer_turno = 0; // não exibir menos que 0
 			
 			// ---------- EXIBE AS HABILIDADES ----------

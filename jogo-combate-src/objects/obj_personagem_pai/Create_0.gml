@@ -15,9 +15,10 @@ if (room == rm_selecao_personagem) exit; // nessa rm é criada uma instancia par
 controlador = noone; // alterado em scr_inserir_players. É bot, p1 ou p2 (global.tipos_jogadores)
 meu_turno = false; // flag que define se o step pode ser executado
 bot_executou = false; // flag para a primeira chamada de alarm[0] do bot
+retornou_erro = false;
 // ---------- ESCALA DE SPRITE ----------
 inverteu_sprite = false; // flag para inverter p2 no inicio da partida
-escala_padrao = calcular_escala_padrao_sprite();; // guarda para voltar ao normal fora do seu turno
+escala_padrao = calcular_escala_padrao_sprite(); // guarda para voltar ao normal fora do seu turno
 alterou_tamanho = false; // flag para aumentar ou diminuir o tamanho do objeto no seu turno
 inversao_sinal = 1;
 // ---------- GESTÃO DE HABILIDADES ----------
