@@ -9,7 +9,8 @@
 
 ### Melhorias
 
-* Retorno visual do acerto do bot (trocar cor da resposta dele)
+* Passar questão apenas após bot parar de mostrar a confirmação de escolha
+* Centralizar as habilidades na tela (e corrigir do p2 no rápido)
 * Retorno visual de erros de player e bot - 1 seg de botão tremendo antes das habilidades
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Adicionar músicas e efeitos sonoros

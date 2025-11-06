@@ -23,6 +23,7 @@ function scr_acerto_bot(inst_bot, chance, corte) {
     // DECISÃO: O bot AVANÇA?
     if (_bot_acertou_chance || _is_rapido) {
         bot_processar_acerto(inst_bot);
+		apresenta_feedback(true);
         
         if (_is_rapido) {
             bot_gerenciar_modo_rapido(inst_bot);
@@ -34,13 +35,41 @@ function scr_acerto_bot(inst_bot, chance, corte) {
         }
         
     } else { // Erro do bot
+		apresenta_feedback(false);
         if (!_is_rapido) {
             bot_encerrar_turno(inst_bot);
         }
     }
 }
 
+/// @function apresenta_feedback(_acertou)
+/// @description chama função de exibir um circulo na seleção
+function apresenta_feedback(_acertou) {
+	var _respostas_array = []; 
+	with (obj_opcao_resposta) {
+	    array_push(_respostas_array, id);
+	}
+	
+	array_shuffle(_respostas_array);
+
+	if (_acertou) {
+		for (var i = 0; i < array_length(_respostas_array); ++i) {
+		    if (_respostas_array[i].is_certo) {
+				show_debug_message("acertou: " + string(_respostas_array[i].numero));
+				_respostas_array[i].opcao_selecionada(true);
+			}
+		}
+		return;
+	}
+	
+	var _opcao_aleatoria = _respostas_array[0];
+	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
+	show_debug_message("errou: " + string(_opcao_aleatoria.numero));
+	_opcao_aleatoria.opcao_selecionada(true);
+}
+
 /// @function bot_processar_acerto(inst_bot)
+/// @description aumenta energia da instancia e passa a pergunta
 function bot_processar_acerto(inst_bot) {
     inst_bot.aumentar_energia();
 	scr_proxima_pergunta();

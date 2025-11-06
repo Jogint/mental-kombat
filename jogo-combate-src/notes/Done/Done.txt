@@ -147,3 +147,5 @@
 * FEAT: Aumentar a escala do personagem que está atacando e reduzir o oponente (Lyam - 05/11/2025)
 * IMPROVE: Usar enum ao invés de índices diretos (Lyam - 05/11/2025)
 * FIX: Impedir tempo de resetar turno ao final da partida (Lyam - 05/11/2025)
+* FIX: Textos não aparecem na compilação html5 - culpa de string_height/width (Lyam - 05/11/2025)
+* IMPROVE: Retorno visual do acerto do bot (trocar cor da resposta dele) (Lyam - 05/11/2025)

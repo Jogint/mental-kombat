@@ -21,11 +21,11 @@ estado_sorteio == 0 &&
 // DEFINE O VENCEDOR DA RODADA
 // ==================================================
 if (global.partida_acabou) {
-    var _perso_p1    = global.inst_perso_partida[1]; // Posição fixa do P1 no array da partida
-    var _perso_outro = global.inst_perso_partida[0]; // Posição do adversário (Bot/P2)
-	var _id_vencedor_bot = global.tipos_jogadores[JOGADOR.BOT]; // O índice [0] no array de tipos é Bot
-    var _id_vencedor_p1 = global.tipos_jogadores[JOGADOR.P1]; // O índice [1] no array de tipos é P1
-    var _id_vencedor_p2  = global.tipos_jogadores[JOGADOR.P2]; // O índice [2] no array de tipos é P2
+    var _perso_p1    = global.inst_perso_partida[0]; // Posição fixa do P1 no array da partida
+    var _perso_outro = global.inst_perso_partida[1]; // Posição do adversário (Bot/P2)
+	var _id_vencedor_bot = global.tipos_jogadores[JOGADOR.BOT];
+    var _id_vencedor_p1 = global.tipos_jogadores[JOGADOR.P1];
+    var _id_vencedor_p2  = global.tipos_jogadores[JOGADOR.P2];
 
     if (_perso_p1.hp_atual <= 0) {
         
