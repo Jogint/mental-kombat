@@ -1,7 +1,13 @@
+/// @description Inserir texto
 draw_self();
-
 draw_set_color(c_black);
-
+draw_set_font(fnt_principal);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+	
+var _x = x;
+var _y = y;
+	
 var _tempo_restante = string(round(global.timer_turno / game_get_speed(gamespeed_fps)));
 
 if (_tempo_restante < 0) {
@@ -9,11 +15,6 @@ if (_tempo_restante < 0) {
 	exit;
 }
 
-if (_tempo_restante < 10) draw_set_color(c_red); 
-
-var _largura = string_width(_tempo_restante);
-var _altura = string_height(_tempo_restante);
+draw_text(_x, _y, _tempo_restante);
 	
-draw_text(x - _largura / 2, y - _altura / 2, _tempo_restante);
-
 scr_reset_draw();

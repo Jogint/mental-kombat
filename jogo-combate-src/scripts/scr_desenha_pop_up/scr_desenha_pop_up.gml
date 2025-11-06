@@ -6,7 +6,7 @@
 
 function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	var _cor_default_texto = c_black;
-	var _fonte_default = asset_get_index("fnt_principal");
+	var _fonte_default = fnt_principal;
 	
 	if (pop_up_aberto) { // variável do objeto que chama a função
 		valida_estetica_popup(opcoes);
@@ -130,12 +130,12 @@ function verifica_dados_struct(_estetica, _textos) {
             show_error("pop up: Cor inválida no índice " + string(_cor_indice) + " do array 'texto_cores'. Precisa ser Constant.color ou número inteiro não negativo.", true);
         }
         
-        var _fonte_indice = i % _tam_fontes;
-        var _fonte_valor = _estetica.fontes[_fonte_indice];
+        //var _fonte_indice = i % _tam_fontes;
+        //var _fonte_valor = _estetica.fontes[_fonte_indice];
 
-        if (asset_get_index(_fonte_valor) < 0) {
-			show_error("pop up: Fonte inválida no índice " + string(_fonte_indice) + " do array 'fontes'. Asset '" + string(_fonte_valor) + "' não encontrado.", true);
-        }
+        //if (asset_get_index(_fonte_valor) < 0) {
+		//	show_error("pop up: Fonte inválida no índice " + string(_fonte_indice) + " do array 'fontes'. Asset '" + string(_fonte_valor) + "' não encontrado.", true);
+        //}
     }
 }
 

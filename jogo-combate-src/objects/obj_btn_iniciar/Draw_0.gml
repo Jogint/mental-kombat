@@ -1,11 +1,14 @@
-/// @description Inserir texto
 draw_self();
-
 draw_set_color(c_black);
-
-// TODO: Transformar esse bloco em script (usado em opcao_resposta e outros do menu)
-var _texto = "Jogar!";
-var _largura = string_width(_texto);
-var _altura = string_height(_texto);
+draw_set_font(fnt_principal);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
 	
-draw_text(x - _largura / 2, y - _altura / 2, _texto);
+var _x = x;
+var _y = y;
+	
+var _textos = "Jogar!";
+
+draw_text(_x, _y, _textos);
+	
+scr_reset_draw();
