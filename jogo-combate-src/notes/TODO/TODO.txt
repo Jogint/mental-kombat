@@ -9,32 +9,23 @@
 
 ### Melhorias
 
-* Modo 2 personagens: review visual de que o personagem foi selecionado
-* Reduzir tempo de resposta da subtração de 2 dígitos caso a unidade de n1 seja maior que a unidade de n2
-* Filtro no personagem que não está atacando
-* Melhorar opção de escolha de habilidade do bot (chance maior de gastar energia se puder atacar)
+* Reduzir tempo de resposta da subtração de 2 dígitos caso a unidade de n1 seja maior que n2
+* Melhorar opção de escolha de habilidade do bot
+	* chance maior de gastar energia se puder atacar
+	* não curar com vida cheia
 * Mudar taxa de erro do bot para algo semelhante ao tempo de resposta
-* Passar questão apenas após bot parar de mostrar a confirmação de escolha
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
+* Passar questão apenas após bot parar de mostrar a confirmação de escolha
 * Adicionar músicas e efeitos sonoros
-* Substituir "aperte x tecla" por um botão
-* Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
-	* INFO: Mesmo assim, mantenha camada oculdada para o bem do código
-* Botão de personagem aleatório
-* Usar fontes diversas
-* Trocar nomes do sorteador e tela final pvp para o nome do personagem
 * Exibir quanto de energia vc tem em números
-* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (array de tamanhos?)
-	* global.UI_TAMANHOS = {
-	    popup_largo_w: 400,
-	    popup_largo_h: 250,
-	    hab_card_w: 80,
-		hab_card_h: 80,
-		// ...
-	};
-* Revisitar todos os TODO espalhados no código (mudanças pequenas)
+* Filtro no personagem que não está atacando
+* Modo 2 personagens: review visual de que o personagem foi selecionado
+* Substituir "aperte x tecla" por um botão para clicar com mouse
+* Botão de personagem aleatório
+* Trocar nomes do sorteador e tela final pvp para o nome do personagem
+* Usar fontes diversas
 * Padronizar inicialização de arrays, pré alocando os índices com noone
-
+* Revisitar todos os TODO espalhados no código (mudanças pequenas)
 
 ## 🆕 BUGS ENCONTRADOS
 
@@ -43,6 +34,9 @@
 * efeito do energético é mantido se acaba o turno
 	* POSSIVELMENTE CORRIGIDO mas faltam testes
 * confirmação de habilidade não aparece no modo rápido
+* Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
+	* Apertar essas opcoes, mesmo que invisivel, quebra o código das habilidades
+	* INFO: Mesmo assim, mantenha camada oculdada para o bem do código
 
 	
 ### 🎨 SPRITES PARA DESENHAR
@@ -60,6 +54,5 @@
 	* hab1: 8/12
 	* hab2: 3/12
 	* ult: 2/12
-* Criação de máquina de estados (Lyam)
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
-* Instruções para selecionar o oponente (Lyam)
+* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global

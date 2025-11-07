@@ -61,7 +61,7 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 	}
 
 	// Texto da pergunta
-	if (obj_gestao_rodada.jogador_atual != "") {
+	if (obj_gestao_rodada.jogador_atual != noone) {
 		var _texto_turno = "Turno " + string(obj_gestao_rodada.qtd_turnos) + " - " + string(obj_gestao_rodada.jogador_atual);
 		var _texto_pergunta = "Pergunta: " + string(obj_gestao_rodada.pergunta_atual.n1);
 		

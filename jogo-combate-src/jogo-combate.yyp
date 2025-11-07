@@ -68,7 +68,7 @@
     {"id":{"name":"obj_fundo_hab","path":"objects/obj_fundo_hab/obj_fundo_hab.yy",},},
     {"id":{"name":"obj_gestao_rodada","path":"objects/obj_gestao_rodada/obj_gestao_rodada.yy",},},
     {"id":{"name":"obj_habilidade","path":"objects/obj_habilidade/obj_habilidade.yy",},},
-    {"id":{"name":"obj_informativo_selecao","path":"objects/obj_informativo_selecao/obj_informativo_selecao.yy",},},
+    {"id":{"name":"obj_informativos","path":"objects/obj_informativos/obj_informativos.yy",},},
     {"id":{"name":"obj_jbl","path":"objects/obj_jbl/obj_jbl.yy",},},
     {"id":{"name":"obj_logo","path":"objects/obj_logo/obj_logo.yy",},},
     {"id":{"name":"obj_opcao_inimigo","path":"objects/obj_opcao_inimigo/obj_opcao_inimigo.yy",},},

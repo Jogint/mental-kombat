@@ -156,3 +156,6 @@
 * Retorno visual de erros de player e bot - botão tremendo (Lyam - 05/11/2025)
 
 > 06/11 Lançamento de versão alpha para avaliação entre participantes da gamejam
+
+* IMPROVE: Troca do sistema de turno para máquina de estados (Lyam - 06/11/2025)
+* FEAT: Instruções na rm_trilha para selecionar o oponente (Lyam - 06/11/2025)
