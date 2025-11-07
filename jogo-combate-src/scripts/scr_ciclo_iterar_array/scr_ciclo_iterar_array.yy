@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_ciclo_iterar_array",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ciclo_iterar_array",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/Scripts/Utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

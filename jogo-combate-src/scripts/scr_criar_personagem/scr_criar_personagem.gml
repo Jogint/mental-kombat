@@ -1,3 +1,11 @@
+/// @function scr_criar_personagem(obj, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max)
+/// @description Inicializa os atributos principais de um personagem,
+/// definindo vida, energia, tempo de turno e valores atuais.
+/// @param {Id.Instance} obj Instância do personagem (self) que será configurada.
+/// @param {Real} aumento_energia Fator de aumento da energia por acerto.
+/// @param {Real} aumento_tempo Fator de aumento do tempo de turno.
+/// @param {Real} aumento_vida Fator de aumento da vida total.
+/// @param {Real} aumento_energia_max Fator de aumento da energia máxima.
 function scr_criar_personagem(obj, aumento_energia, aumento_tempo, aumento_vida, aumento_energia_max) {
     with (obj) {
 		hp_total = definir_vida(aumento_vida);
@@ -19,32 +27,32 @@ function definir_vida(aumento){
         show_error("Valor de 'aumento' inválido em scr_definir_vida: " + string(aumento), true);
     }
 	
-	var energia_padrao = 50;
-	return energia_padrao * aumento;
+	var hp_padrao = 50;
+	return round(hp_padrao * aumento);
 }
 
 function definir_energia_max(aumento){
 	if(is_undefined(aumento)) aumento = 1;
 		
 	if (aumento < 0.5 || aumento > 2) {
-		// mínimo 125 energia, máximo 500 energia
+		// mínimo 50 energia, máximo 200 energia
         show_error("Valor de 'aumento' inválido em scr_definir_energia_max: " + string(aumento), true);
     }
 	
-	var energia_max_padrao = 250;
-	return energia_max_padrao * aumento;
+	var energia_max_padrao = 100;
+	return round(energia_max_padrao * aumento);
 }
 
 function definir_energia(aumento){
 	if(is_undefined(aumento)) aumento = 1;
 		
 	if (aumento < 0.5 || aumento > 3) {
-		// mínimo 1 ponto, máximo 6 pontos
+		// mínimo 2 ponto, máximo 12 pontos
         show_error("Valor de 'aumento' inválido em scr_definir_energia: " + string(aumento), true);
     }
 	
-	var energia_padrao = 2;
-	return energia_padrao * aumento;
+	var energia_padrao = 4;
+	return round(energia_padrao * aumento);
 }
 
 function definir_tempo(aumento){
@@ -56,5 +64,5 @@ function definir_tempo(aumento){
     }
 	
 	var tempo_padrao = 30;
-	return tempo_padrao * aumento;
+	return round(tempo_padrao * aumento);
 }

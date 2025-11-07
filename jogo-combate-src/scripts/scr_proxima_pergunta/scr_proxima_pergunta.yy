@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_proxima_pergunta",
   "parent":{
-    "name":"Em Partida",
-    "path":"folders/Scripts/Em Partida.yy",
+    "name":"Controle Geral",
+    "path":"folders/Scripts/Em Partida/Controle Geral.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

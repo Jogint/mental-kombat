@@ -1,60 +1,118 @@
-function scr_gerar_perguntas() { //* gera 100 perguntas nas dificuldades facil e medio, 99 nas dificeis
-    var perguntas = [];
-
-    if (global.dificuldade == global.dificuldades[2]) {
-        for (var i = 0; i < 25; i++) {
-            var n1 = irandom_range(0, 99);
-            var n2 = irandom_range(0, 99);
-			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.operacao[0])); // soma
-			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.operacao[1])); // sub
-
-            var n3 = irandom_range(1, 9); //? não pode dividir por zero
-            var n4 = irandom_range(1, 9);
-			array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, global.operacao[2]));  // mult
-			array_push(perguntas, gerar_opcoes(n3 * n4, n3, n4, global.operacao[3]));  // div
-        }
-    } else if (global.dificuldade == global.dificuldades[1]) {
-        for (var i = 0; i < 33; i++) {
-            var n1 = irandom_range(0, 99);
-            var n2 = irandom_range(0, 99);
-			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.operacao[0]));
-			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.operacao[1]));
-			
-            var n3 = irandom_range(0, 9); //? mas pode multiplicar por 0
-            var n4 = irandom_range(0, 9);
-            array_push(perguntas, gerar_opcoes(n3, n4, n3 * n4, global.operacao[2]));
-        }
-    } else {
-        for (var i = 0; i < 50; i++) {
-            var n1 = irandom_range(0, 9);
-            var n2 = irandom_range(0, 9);
-			array_push(perguntas, gerar_opcoes(n1, n2, n1 + n2, global.operacao[0]));
-			array_push(perguntas, gerar_opcoes(max(n1,n2), min(n1,n2), abs(n1-n2), global.operacao[1]));
-        }
-    }
-    return array_shuffle(perguntas);
+/// @function scr_gerar_perguntas()
+/// @description Cria 100 perguntas nas difs facil e medio, 99 nas dificeis
+function scr_gerar_perguntas() {
+    var _perguntas = [];
+	var _novas_perguntas = [];
+	var _nums;
+	
+	switch (global.dif_atual) {
+		case global.niveis_dif[DIF.DIFICIL]:
+			for (var i = 0; i < 25; i++) {
+			    _nums = escolhe_4_nums(50, false);
+				_novas_perguntas = gera_pergunta_por_operacao(_nums, true, true);
+				_perguntas = array_concat(_perguntas, _novas_perguntas);
+		    }
+			break;
+		case global.niveis_dif[DIF.MEDIO]:
+			for (var i = 0; i < 33; i++) {
+				_nums = escolhe_4_nums(50, true);
+				_novas_perguntas = gera_pergunta_por_operacao(_nums, true, false);
+				_perguntas = array_concat(_perguntas, _novas_perguntas);
+			}
+			break;
+		case global.niveis_dif[DIF.FACIL]:
+			for (var i = 0; i < 50; i++) {
+				_nums = escolhe_4_nums(9, true);
+				_novas_perguntas = gera_pergunta_por_operacao(_nums, false, false);
+				_perguntas = array_concat(_perguntas, _novas_perguntas);
+			}
+			break;
+		default:
+			show_error("O modo de jogo atual não está dentre os válidos no switch. Recebeu " + global.dif_atual, true);
+			break;
+	}
+    return array_shuffle(_perguntas);
 }
 
-// Cria as opções erradas da questão
+/// @function escolhe_4_nums(_limite_basicos, _apenas_mult)
+/// @description Define os valores de n1, n2, n3, e n4
+/// @param {Real} _limite_basicos Valor máximo da soma e subtração
+/// @param {bool} _apenas_mult Se n3 e n4 serão usados apenas para multiplicação (pode zero)
+/// ou também para divisão (não pode zero)
+/// @return {Array<Real>} [n1, n2, n3, n4]
+function escolhe_4_nums(_limite_basicos, _apenas_mult){
+	var _valor_inicial_n3_e_n4 = 1;
+	if (_apenas_mult) _valor_inicial_n3_e_n4 = 0;
+	return [
+		irandom_range(0, _limite_basicos),
+		irandom_range(0, _limite_basicos),
+		irandom_range(_valor_inicial_n3_e_n4, 9),
+		irandom_range(_valor_inicial_n3_e_n4, 9)
+	];
+}
+
+/// @function gera_pergunta_por_operacao(_nums, _tem_mult, _tem_div)
+/// @description Cria um struct para cada tipo de operação matemática
+/// @param {Array<Real>} _nums Valores de n1 a n4
+/// @param {bool} _tem_mult Se será gerado multiplicação
+/// @param {bool} _tem_div Se será gerado divisão
+/// @return {Array<Struct>}
+function gera_pergunta_por_operacao(_nums, _tem_mult, _tem_div) {
+	var _perguntas = [];
+	
+	array_push(_perguntas, gerar_opcoes(_nums[0], _nums[1], _nums[0] + _nums[1], global.operacoes[OPERACOES.SOMA])); // soma
+	array_push(_perguntas, gerar_opcoes(max(_nums[0], _nums[1]), min(_nums[0], _nums[1]), abs(_nums[0] - _nums[1]), global.operacoes[OPERACOES.SUB])); // sub
+	
+	if (_tem_mult) {
+		array_push(_perguntas, gerar_opcoes(_nums[2], _nums[3], _nums[2] * _nums[3], global.operacoes[OPERACOES.MULT]));  // mult
+	}
+	
+	if (_tem_div) {
+		array_push(_perguntas, gerar_opcoes(_nums[2] * _nums[3], _nums[2], _nums[3], global.operacoes[OPERACOES.DIVI]));  // div
+	}
+	
+	return _perguntas;
+}
+
+/// @function gerar_opcoes(num1, num2, certo, tipo)
+/// @description Cria as opções erradas da questão
+/// @param {Real} num1 Primeiro numero na equação
+/// @param {Real} num2 Segundo numero na equação
+/// @param {Real} certo Resposta da operação
+/// @param {String} tipo Qual a operação realizada
+/// @return {Struct}
 function gerar_opcoes(num1, num2, certo, tipo) {
-    var alternativas = [certo];
-    while (array_length(alternativas) < global.qtd_alternativas) {
-        var errado = certo + irandom_range(-10, 10);
-        if (errado >= 0 && errado <= 188 && errado != certo && scr_valor_unico_array(alternativas, errado)) {
-			if (tipo == global.operacao[3]) { 
-				if errado < 10 array_push(alternativas, errado);
-			} else {
-				array_push(alternativas, errado);
-			}
+    var _alternativas = [certo];
+	var _resultado_maximo_possivel = 100; // resultado de 50 + 50
+	if (tipo == global.operacoes[OPERACOES.DIVI]) { 
+		_resultado_maximo_possivel = 9; // resultado da divisão sempre menor que 10
+	}
+	var _vezes_executado = 0;
+	
+    while (array_length(_alternativas) < global.qtd_alternativas) {
+        var _errado = certo + irandom_range(-10, 10);
+		
+        if (_errado >= 0 &&
+			_errado <= _resultado_maximo_possivel &&
+			_errado != certo &&
+			scr_valor_unico_array(_alternativas, _errado)) {
+			array_push(_alternativas, _errado);
         }
+		
+		if (_vezes_executado > 50) { // Repetições máximas observadas: 25. Duplicado para margem de erro.
+			show_error("Execução interrompida por risco de loop infinito. Dados de debug: tipo da conta - " + tipo + "; Resposta - " + string(certo), true);
+			break;
+		}
+		
+		_vezes_executado++
     }
-	alternativas = array_shuffle(alternativas);
+	_alternativas = array_shuffle(_alternativas);
 
     return {
 		conta: tipo,
         n1: num1,
         n2: num2,
         correto: certo,
-        opcoes: alternativas
+        opcoes: _alternativas
     };
 }

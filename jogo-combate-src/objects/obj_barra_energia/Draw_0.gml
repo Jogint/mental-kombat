@@ -1,0 +1,1 @@
+scr_controle_hud(index_vida - 2, c_yellow, false);

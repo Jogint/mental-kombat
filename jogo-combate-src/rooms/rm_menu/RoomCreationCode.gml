@@ -1,0 +1,1 @@
+//scr_proxima_room();

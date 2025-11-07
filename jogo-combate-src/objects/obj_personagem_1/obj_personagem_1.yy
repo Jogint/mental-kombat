@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
   "%Name":"obj_personagem_1",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_personagem_1",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.4",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_tempo","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.2",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_vida","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.8",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia_max","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.5",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_tempo","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.9",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_vida","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia_max","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.1",},
   ],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objetos/Personagens/Player.yy",
+    "name":"Personagens",
+    "path":"folders/Objetos/Personagens.yy",
   },
   "parentObjectId":{
     "name":"obj_personagem_pai",
@@ -36,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teste_player_1",
-    "path":"sprites/spr_teste_player_1/spr_teste_player_1.yy",
+    "name":"spr_player_idle_1",
+    "path":"sprites/spr_player_idle_1/spr_player_idle_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

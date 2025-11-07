@@ -1,23 +1,62 @@
 # ✅ TODO
 
-## 🔧 A FAZER
+## 🔧 Novas funcionalidades
 
-### Jogabilidade básica
+### Features
 
-* Conceber pontos ao finalizar o turno e armazenar numa variável
-* Atribuir valor às habilidades: custo, dano (outro scr? Chance de crit? Buff e debuff?)
-* Atitude dos bots: acertar com base em % (fácil = 50% erro, médio = 25%, difícil = 10%)
-* Colocar underline nas variáveis locais (sem ser global ou criada no evento Create)
+* Criar global.apresentou_tutoriais = [false, false, false]:
+	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
+* Menu (pause) para voltar para tela inicial
+
+### Melhorias
+
+* Reduzir tempo de resposta da subtração de 2 dígitos caso a unidade de n1 seja maior que n2
+* Melhorar opção de escolha de habilidade do bot
+	* chance maior de gastar energia se puder atacar
+	* não curar com vida cheia
+* Mudar taxa de erro do bot para algo semelhante ao tempo de resposta
+* Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
+* Passar questão apenas após bot parar de mostrar a confirmação de escolha
+* Adicionar músicas e efeitos sonoros
+* Exibir quanto de energia vc tem em números
+* Filtro no personagem que não está atacando
+* Modo 2 personagens: review visual de que o personagem foi selecionado
+* Substituir "aperte x tecla" por um botão para clicar com mouse
+* Botão de personagem aleatório
+* Trocar nomes do sorteador e tela final pvp para o nome do personagem
+* Usar fontes diversas
+* Padronizar inicialização de arrays, pré alocando os índices com noone
+* Revisitar todos os TODO espalhados no código (mudanças pequenas)
+* Remover dependencia de obj_gestao_rodada
+	* ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
+* Separar o obj_btn_avancar em diferentes objetos por room
 
 ## 🆕 BUGS ENCONTRADOS
 
-* Algumas raras vezes o código trava na exibição da dificuldade 2
+### Gerais
 
-## 🎨 SPRITES PRA DESENHAR
+* efeito do energético é mantido se acaba o turno
+	* POSSIVELMENTE CORRIGIDO mas faltam testes
+* confirmação de habilidade não aparece no modo rápido
+* Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
+	* Apertar essas opcoes, mesmo que invisivel, quebra o código das habilidades
+	* INFO: Mesmo assim, mantenha camada oculdada para o bem do código
 
-* Dois primeiros personagens
-* Botões para o combate (só o draw fica feio)
+	
+### 🎨 SPRITES PARA DESENHAR
+
+* Background para cada room
+* Tela e botões de fim de jogo (atualmente vivendo a base do draw)
+* Miniatura de exibição do personagem na seleção de jogador
+* Todos os objetos na pasta /Botões
+* Tela e botões de configurações (som, controles, créditos, easter egg)
 
 ## ⚙ EM ANDAMENTO
 
-* Configurar o step do personagem, já documentado (Lyam)
+* Todas as animações dos personagens - prontos 2/12 (Kaue)
+	* idle: 9/12
+	* hab1: 8/12
+	* hab2: 3/12
+	* ult: 2/12
+* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
+* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (Lyam)

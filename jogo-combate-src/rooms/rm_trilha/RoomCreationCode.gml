@@ -1,0 +1,1 @@
+if (global.modo_jogo_atual != global.modos_jogo[MODO.HIST]) room_goto_next();

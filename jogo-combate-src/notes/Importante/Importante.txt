@@ -1,1 +1,32 @@
-Colocar o scr_definir_globais em algum objeto da tela inicial
+# Dados importantes para a codificação do jogo
+
+## Informações gerais
+
+* O Player 1 SEMPRE SERÁ o índice 0 em arrays de 2 itens, por se manter a esquerda.
+	* Bot e P2 são índice 1
+	* Em global.tipos_jogadores a ordem é [bot, p1, p2]
+* obj_jbl é nossa caixa de som
+* Se você estiver em dúvida do que uma global faz, olhe obj_define_globais e scr_define_globais_var
+
+## DICIONÁRIO DE ABREVIAÇÕES
+
+São palavras resumidas bastante usadas no jogo para fins de facilitar a escrita
+
+* perso = personagem
+* hab = habilidade
+* dif = dificuldade
+* segs = segundos
+
+## Variáveis e Scripts "escondidos"
+
+* O obj_definir_globais está na rm_menu
+* Os obj_personagem são inseridos no jogo via roomCreationCode da rm_combate
+* Se você buscou e não achou onde define a var, olhe na declaração de variável do obj
+* A definição do inimigo na trilha está no instanceCreationCode do bot
+* Perguntas na dif correta são geradas em obj_btn_avancar após seleção
+* O obj_gestao_rodada.jogador_atual é definido como "TODOS!" no modo rápido pelo obj_gestao_rodada
+
+## Depths de objetos/habilidades
+
+* Depth 1 - camada Habilidades, em rm_combate
+
