@@ -1,4 +1,7 @@
-/// @description Inserir texto
+// ==================================================
+/// @description Desenha texto do botão
+// ==================================================
+
 draw_self();
 draw_set_color(c_black);
 draw_set_font(fnt_principal);

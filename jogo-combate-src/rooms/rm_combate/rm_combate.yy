@@ -10,7 +10,6 @@
     {"name":"inst_34A40033","path":"rooms/rm_combate/rm_combate.yy",},
     {"name":"inst_759A2B08","path":"rooms/rm_combate/rm_combate.yy",},
     {"name":"inst_16DD9509","path":"rooms/rm_combate/rm_combate.yy",},
-    {"name":"inst_6E46D111","path":"rooms/rm_combate/rm_combate.yy",},
     {"name":"inst_9E420AF","path":"rooms/rm_combate/rm_combate.yy",},
     {"name":"inst_62AA453","path":"rooms/rm_combate/rm_combate.yy",},
     {"name":"inst_C163D1C","path":"rooms/rm_combate/rm_combate.yy",},
@@ -21,7 +20,6 @@
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"GUI","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_6E46D111","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6E46D111","objectId":{"name":"obj_btn_reset","path":"objects/obj_btn_reset/obj_btn_reset.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":1280.0,"y":704.0,},
         {"$GMRInstance":"v4","%Name":"inst_9E420AF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_9E420AF","objectId":{"name":"obj_barra_vida","path":"objects/obj_barra_vida/obj_barra_vida.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":272.0,"y":48.0,},
         {"$GMRInstance":"v4","%Name":"inst_62AA453","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_62AA453","objectId":{"name":"obj_barra_vida","path":"objects/obj_barra_vida/obj_barra_vida.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1072.0,"y":48.0,},
         {"$GMRInstance":"v4","%Name":"inst_C163D1C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C163D1C","objectId":{"name":"obj_barra_energia","path":"objects/obj_barra_energia/obj_barra_energia.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":80.0,},

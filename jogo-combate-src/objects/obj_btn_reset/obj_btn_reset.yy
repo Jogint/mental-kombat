@@ -16,7 +16,7 @@
     "path":"folders/Objetos/Botoes.yy",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -32,7 +32,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"spr_btn_resposta",
     "path":"sprites/spr_btn_resposta/spr_btn_resposta.yy",

@@ -1,2 +1,5 @@
-/// @description Altera a transparencia
+// ==================================================
+/// @description Veridica disponibilidade
+// ==================================================
+
 scr_hab_disponivel(true);

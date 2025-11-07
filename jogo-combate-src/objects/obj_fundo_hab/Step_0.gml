@@ -1,2 +1,5 @@
-/// @description Altera a sprite
+// ==================================================
+/// @description Verifica disponibilidade
+// ==================================================
+
 scr_hab_disponivel(false);

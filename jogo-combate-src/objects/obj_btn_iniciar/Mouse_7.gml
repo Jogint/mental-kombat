@@ -1,3 +1,8 @@
+// ==================================================
+/// @description Passa de room
+// ==================================================
+
+// ---------- Verifica se desbloqueou rápido ----------
 if (global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO]) {
 	if (!global.tem_modo_rapido) exit;
 }

@@ -1,6 +1,14 @@
+// ==================================================
+/// @description Vars e Funções
+// ==================================================
+// ----------  ----------
 alterou = false;
 image_alpha = 0.5;
 
+/// @function gera_descricao
+/// @description Apresenta um pequeno texto do que a habilidade faz
+/// @param {struct} _hab Qual a habilidade que precisa da descrição
+/// @return {String}
 function gera_descricao(_hab) {
 	switch (_hab.tipo) {
 		case global.tipos_hab[HABS.ATAQUE]:

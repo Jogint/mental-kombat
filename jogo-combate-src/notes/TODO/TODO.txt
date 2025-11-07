@@ -6,6 +6,7 @@
 
 * Criar global.apresentou_tutoriais = [false, false, false]:
 	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
+* Menu (pause) para voltar para tela inicial
 
 ### Melhorias
 
@@ -26,6 +27,9 @@
 * Usar fontes diversas
 * Padronizar inicialização de arrays, pré alocando os índices com noone
 * Revisitar todos os TODO espalhados no código (mudanças pequenas)
+* Remover dependencia de obj_gestao_rodada
+	* ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
+* Separar o obj_btn_avancar em diferentes objetos por room
 
 ## 🆕 BUGS ENCONTRADOS
 
@@ -55,4 +59,4 @@
 	* hab2: 3/12
 	* ult: 2/12
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
-* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global
+* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (Lyam)

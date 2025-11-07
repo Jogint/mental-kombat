@@ -1,3 +1,7 @@
+// ==================================================
+/// @description Inclui habilidades e descrição
+// ==================================================
+// ---------- Não há descrição no modo rápido ----------
 if (global.modo_jogo_atual != global.modos_jogo[MODO.RAPIDO]) {
 	draw_set_color(c_black);
 	draw_set_font(fnt_principal);
@@ -6,8 +10,7 @@ if (global.modo_jogo_atual != global.modos_jogo[MODO.RAPIDO]) {
 	var _y = y + 90;
 	var _espacamento_linhas = 30;
 	var _margem_x = 10;
-	var _fundo_largura = 300 - (_margem_x * 2); // tamanho do obj_fundo_hab em scr_toggle_hab
-	
+	var _fundo_largura = global.tamanhos.fundo_hab[0] - (_margem_x * 2); // tamanho do obj_fundo_hab em scr_toggle_hab
 	var _textos = [
 		string(habilidade.nome), 
 		"Custo: " + string(habilidade.custo), 
