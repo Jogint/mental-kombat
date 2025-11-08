@@ -1,5 +1,9 @@
 // ==================================================
-// VARIÁVEIS DE USO GERAL DA PARTIDA
+/// @description Controladores de partida
+// ==================================================
+
+// ==================================================
+/// @description VARIÁVEIS DE USO GERAL DA PARTIDA
 // ==================================================
 
 // ---------- VARIAVEIS NUMÉRICAS ----------

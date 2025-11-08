@@ -1,1 +1,5 @@
-scr_controle_hud(index_vida - 2, c_yellow, false);
+// ==================================================
+/// @description Altera o tamanho da barra
+// ==================================================
+
+scr_controle_hud(index_energia - 2, c_yellow, false);

@@ -1,4 +1,7 @@
+// ==================================================
 /// @description Encerra o turno
+// ==================================================
+
 if (room == rm_selecao_personagem) exit;
 
 // CASO A ANIMAÇÃO SEJA UMA DAS HABILIDADES

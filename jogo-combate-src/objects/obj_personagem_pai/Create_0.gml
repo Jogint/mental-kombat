@@ -47,7 +47,7 @@ sprite_padrao = object_get_sprite(object_index); // sprite idle do personagem pa
 /// @function calcular_escala_padrao_sprite()
 /// @description Padroniza o tamanho das sprites in game para efeitos de aumentar / diminuir
 function calcular_escala_padrao_sprite() {
-    // TODO: ADICIONA ESSE CARALHO DE global.tamanhos.personagem NUMA GLOBAL
+    // TODO: ADICIONA ESSE CARALHO DE global.tamanhos.perso_maior NUMA GLOBAL
     var _target_width = 65 * 5;
     var _target_height = 65 * 5;
 

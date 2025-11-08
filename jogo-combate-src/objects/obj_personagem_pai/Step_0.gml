@@ -1,9 +1,12 @@
-// --- Evento Step ---
-
 // ==================================================
 // ENCERRA A EXECUÇÃO
 // ==================================================
 if (room == rm_selecao_personagem || obj_gestao_rodada.partida_acabou) exit;
+
+// ==================================================
+/// @description 
+// ==================================================
+// ----------  ----------
 
 // ==================================================
 // VARIAVEIS GERAIS
@@ -22,7 +25,7 @@ switch (estado_turno) {
 		if (id == global.inst_perso_partida[1] && !inverteu_sprite) {
 			inverteu_sprite = true;
 			inversao_sinal = -1; 
-		    x += global.tamanhos.personagem;
+		    x += global.tamanhos.perso_maior;
 		}
 		
 		// ---------- ALTERA A ESCALA ----------
@@ -75,8 +78,8 @@ switch (estado_turno) {
 	case ESTADOS_TURNO.JOGANDO:
 		// ---------- VERIFICA RESPOSTA ERRADA ----------
 		if (obj_gestao_rodada.errou_resposta) {
-			obj_gestao_rodada.timer_turno = 0; // força fim do turno
-			obj_gestao_rodada.errou_resposta = false;
+			obj_gestao_rodada.timer_turno = 0; // força fim do turno // REMOVE: atribuição indevida
+			obj_gestao_rodada.errou_resposta = false; // REMOVE: atribuição indevida
 			// Zera o multiplicador energético
 			efeitos.mult_energia = 1;
 			efeitos.timer_energia = 0;
@@ -103,7 +106,7 @@ switch (estado_turno) {
 		if (obj_gestao_rodada.timer_turno <= 0 && !retornou_erro) {
 			// retornou erro é alterada como verdadeira ou falsa em scr_acerto_bot e obj_opcao_resposta
 			// e é responsável por animação tremendo ao errar a resposta
-			obj_gestao_rodada.timer_turno = 0; // Trava em 0
+			obj_gestao_rodada.timer_turno = 0; // Trava em 0 // REMOVE: atribuição indevida
 			estado_turno = ESTADOS_TURNO.ESCOLHA_HAB;
 		}
 	break;

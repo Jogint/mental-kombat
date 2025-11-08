@@ -1,3 +1,7 @@
+// ==================================================
+/// @description Eventos recorrentes da partida
+// ==================================================
+
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 var _is_pvp = global.modo_jogo_atual == global.modos_jogo[MODO.PVP];
 if (_is_rapido) layer_set_visible("Opcoes", true);
@@ -29,7 +33,7 @@ if (obj_gestao_rodada.partida_acabou) {
 
     if (_perso_p1.hp_atual <= 0) {
         
-        // Determina quem é o adversário pelo modo de jogo:
+        // ---------- Determina quem é o adversário pelo modo de jogo ----------
         if (global.modo_jogo_atual == global.modos_jogo[MODO.PVP]) { // Se Modo PvP/Rápido, o adversário é o P2.
             obj_gestao_rodada.quem_venceu = _id_vencedor_p2;
         } else { // Se Modo História ([1]), o adversário é o Bot.
@@ -42,7 +46,7 @@ if (obj_gestao_rodada.partida_acabou) {
         show_error("Ninguém venceu. HP de P1: " + string(_perso_p1.hp_atual) + " | HP do Adversário: " + string(_perso_outro.hp_atual), true);
     }
     
-    quem_iniciou = ""; 
+    quem_iniciou = noone; 
 }
 
 // ==================================================

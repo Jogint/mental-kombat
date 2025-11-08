@@ -35,6 +35,7 @@
 
 ### Gerais
 
+* Impedir cliques durante animação de tremida
 * efeito do energético é mantido se acaba o turno
 	* POSSIVELMENTE CORRIGIDO mas faltam testes
 * confirmação de habilidade não aparece no modo rápido

@@ -29,7 +29,7 @@ function cria_instancias_hab(_is_rapido, hab_arr) {
 		// ================ IMAGEM DAS HABILIDADES ================
 		var _camada_alvo = "Habilidades";
 		var _obj_a_criar = obj_habilidade;
-		var _posi_e_tam = scr_define_tamanho_hab(i, _is_rapido, global.tamanhos.fundo_hab[0], global.tamanhos.fundo_hab[1], false); // 300 de espaçamento e 80 largura
+		var _posi_e_tam = scr_define_tamanho_hab(i, _is_rapido, global.tamanhos.dimensao_hab[0], global.tamanhos.dimensao_hab[1], false); // 300 de espaçamento e 80 largura
 		var _nova_instancia = instance_create_layer(_posi_e_tam[0], _posi_e_tam[1], _camada_alvo, _obj_a_criar);
 		
 		array_push(global.hab_visiveis, _nova_instancia);
@@ -43,7 +43,7 @@ function cria_instancias_hab(_is_rapido, hab_arr) {
 			// ================ FUNDO DAS HABILIDADES ================
 			_camada_alvo = "FundoHabilidades";
 			_obj_a_criar = obj_fundo_hab;
-			_posi_e_tam = scr_define_tamanho_hab(i, false, global.tamanhos.fundo_hab[1], global.tamanhos.fundo_hab[0], true);
+			_posi_e_tam = scr_define_tamanho_hab(i, false, global.tamanhos.dimensao_hab[1], global.tamanhos.dimensao_hab[0], true);
 			_nova_instancia = instance_create_layer(_posi_e_tam[0], _posi_e_tam[1], _camada_alvo, _obj_a_criar);
 		
 			array_push(global.fundo_hab_visiveis, _nova_instancia);
