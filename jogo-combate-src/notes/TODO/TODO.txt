@@ -10,8 +10,6 @@
 
 ### Melhorias
 
-	* chance maior de gastar energia se puder atacar
-	* não curar com vida cheia
 * Mudar taxa de erro do bot para algo semelhante ao tempo de resposta
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Passar questão apenas após bot parar de mostrar a confirmação de escolha
@@ -28,6 +26,10 @@
 * Remover dependencia de obj_gestao_rodada
 	* ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
 * Separar o obj_btn_avancar em diferentes objetos por room
+* Mover todas as habilidades dos players para um script
+	* elimitar o evento create dos personagens exceto pai
+	* adicinar variavel de objeto "indice_hab" para acessar no script
+	* adicionar habilidades ao personagem no create do obj pai
 
 ## 🆕 BUGS ENCONTRADOS
 
@@ -36,11 +38,15 @@
 * Impedir cliques durante animação de tremida
 * efeito do energético é mantido se acaba o turno
 	* POSSIVELMENTE CORRIGIDO mas faltam testes
-* confirmação de habilidade não aparece no modo rápido
 * Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
 	* Apertar essas opcoes, mesmo que invisivel, quebra o código das habilidades
 	* INFO: Mesmo assim, mantenha camada oculdada para o bem do código
 
+### Rapido
+
+* confirmação de habilidade não aparece
+* resetar alarme após o bot errar
+	* SOMENTE PARA ESSE MODO
 	
 ### 🎨 SPRITES PARA DESENHAR
 
@@ -58,4 +64,4 @@
 	* hab2: 3/12
 	* ult: 2/12
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
-* Melhorar opção de escolha de habilidade do bot
+
