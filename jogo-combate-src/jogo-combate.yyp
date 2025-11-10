@@ -107,7 +107,6 @@
     {"id":{"name":"scr_definir_globais_var","path":"scripts/scr_definir_globais_var/scr_definir_globais_var.yy",},},
     {"id":{"name":"scr_definir_hab","path":"scripts/scr_definir_hab/scr_definir_hab.yy",},},
     {"id":{"name":"scr_desenha_pop_up","path":"scripts/scr_desenha_pop_up/scr_desenha_pop_up.yy",},},
-    {"id":{"name":"scr_encerrar_turno","path":"scripts/scr_encerrar_turno/scr_encerrar_turno.yy",},},
     {"id":{"name":"scr_fim_partida","path":"scripts/scr_fim_partida/scr_fim_partida.yy",},},
     {"id":{"name":"scr_gerar_perguntas","path":"scripts/scr_gerar_perguntas/scr_gerar_perguntas.yy",},},
     {"id":{"name":"scr_hab_disponivel","path":"scripts/scr_hab_disponivel/scr_hab_disponivel.yy",},},

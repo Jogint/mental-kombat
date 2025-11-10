@@ -10,7 +10,8 @@ if (qtd_frames_tremendo > 0) {
 	alarm[0] = frames_por_mexida; // exibe o próximo nome
 } else {
 	with (player_atual) {
-		retornou_erro = false;
+		treme_resposta_errada = false;
 	}
+	
 	x = x_base;
 }

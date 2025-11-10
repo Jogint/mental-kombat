@@ -1,7 +1,7 @@
 /// @function scr_bot_escolhe_hab
 /// @description Decide se o bot vai usar uma habilidade e qual delas
-/// @param {GMObject|Instance.Id} _bot Instancia do bot
-/// @param {GMObject|Instance.Id} _oponente Instancia do player
+/// @param {Asset.GMObject|Id.Instance} _bot Instancia do bot
+/// @param {Asset.GMObject|Id.Instance} _oponente Instancia do player
 function scr_bot_escolhe_hab(_bot, _oponente){
 	var _habs = _bot.habilidades;
 	var _habs_indisponiveis = [];
@@ -9,12 +9,17 @@ function scr_bot_escolhe_hab(_bot, _oponente){
 	var _hab_atual = {};
 	var _score_atual;
 	
+	// ==================================================
+	// AVALIA AS HABILIDADES DISPONÍVEIS
+	// ==================================================
 	for (var i = 0; i < array_length(_habs); i++) {
 		_hab_atual = _habs[i];
 		
+		// ---------- VERIFICA USABILIDADE ----------
 		if (_bot.energia_atual >= _hab_atual.custo) {
 			_score_atual = score_hab(_hab_atual, _bot, _oponente);
 			
+			// ---------- ADICIONA COMO MELHOR POSSIBILIDADE ----------
 			if (_score_atual > _maior_score[0]) {
 				_maior_score[0] = _score_atual;
 				_maior_score[1] = _hab_atual;
@@ -25,17 +30,39 @@ function scr_bot_escolhe_hab(_bot, _oponente){
 		}
 	}
 	
+	// ==================================================
+	// AVALIA AS HABILIDADES INDISPONÍVEIS
+	// ==================================================
 	if (array_length(_habs_indisponiveis) > 0) {
 		
-		var _energia_proxima = _bot.energia_atual + _bot.energia_total * 0.25
+		// ---------- CALCULA ENERGIA DO PROX TURNO ----------
+		var _energia_proxima = _bot.energia_atual;
 		
+		switch (global.dif_atual) {
+			case global.niveis_dif[DIF.FACIL]:
+				_energia_proxima += _bot.energia_total * 0.15;
+			break;
+			
+			case global.niveis_dif[DIF.MEDIO]:
+				_energia_proxima += _bot.energia_total * 0.225;
+			break;
+			
+			case global.niveis_dif[DIF.DIFICIL]:
+				_energia_proxima += _bot.energia_total * 0.30;
+			break;
+		}
+		
+		_energia_proxima = round(_energia_proxima);
+		
+		// ---------- VERIFICA SE PULAR É VANTAJOSO ----------
 		for (var i = 0; i < array_length(_habs_indisponiveis); i++) {
 			_hab_atual = _habs_indisponiveis[i];
 			
 			if (_energia_proxima >= _hab_atual.custo) {
 				_score_atual = score_hab(_hab_atual, _bot, _oponente);
 			
-				if (_score_atual > _maior_score[0]) {
+				// ---------- DECIDE PULAR ----------
+				if (_score_atual >= _maior_score[0]) {
 					_maior_score[0] = _score_atual;
 					_maior_score[1] = global.tipos_hab[HABS.PULAR];
 				}
@@ -43,18 +70,15 @@ function scr_bot_escolhe_hab(_bot, _oponente){
 		}
 	}
 	
-	ultima_hab_usada = _maior_score[1]; // TODO: justificar essa var aqui
-	
-	if (ultima_hab_usada == global.tipos_hab[HABS.PULAR]) return;
-	
-	if (global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO]) {
-		scr_ativa_animacao(global.inst_perso_partida[1], ultima_hab_usada);
-		return;
-	}
-	
-	alarm[1] = game_get_speed(gamespeed_fps);
+	return _maior_score[1];
 }
 
+/// @function score_hab
+/// @description Atribui uma avaliação à habilidade
+/// @param {struct} _hab_atual Qual a habilidade que será avaliada
+/// @param {Asset.GMObject|Id.Instance} _bot Instância do bot
+/// @param {Asset.GMObject|Id.Instance} _bot Instância do player
+/// @return {struct}
 function score_hab(_hab_atual, _bot, _oponente) {
 	var _score_atual = 0;
 	
@@ -98,9 +122,9 @@ function score_hab(_hab_atual, _bot, _oponente) {
 			if (_bot.energia_atual <= _bot.energia_total * 0.5) _score_atual += 2;
 					
 			if (global.dif_atual == global.niveis_dif[DIF.MEDIO]) {
-				_score_atual += 2;
+				_score_atual += 1;
 			} else if (global.dif_atual == global.niveis_dif[DIF.DIFICIL]) {
-				_score_atual += 3;
+				_score_atual += 2;
 			}
 			
 			if (_bot.energia_atual == _bot.energia_total) _score_atual = -1;

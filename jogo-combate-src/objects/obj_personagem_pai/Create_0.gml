@@ -15,8 +15,7 @@ estado_turno = ESTADOS_TURNO.SETUP;
 controlador = noone; // alterado em scr_inserir_players. É bot, p1 ou p2 (global.tipos_jogadores)
 oponente = noone; // instancia do oponente
 meu_turno = false; // flag que define se o step pode ser executado
-bot_executou = false; // flag para a primeira chamada de alarm[0] do bot
-retornou_erro = false; // interrompe execução enquanto treme a opcao com erro
+treme_resposta_errada = false; // interrompe execução enquanto treme a opcao com erro
 tempo_rapido = 120; // 2 minutos de execução
 
 // ---------- ESCALA DE SPRITE ----------
@@ -37,7 +36,7 @@ efeitos = { // controla os efeitos de longa duração das hab
 segs_por_habilidade = 10; // duração máxima dos buffs persistentes
 habilidades = []; // objetos filho definem as habilidades nos seus objetos
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab para exibir seleção
-animacao_em_uso = noone; // guarda a habilidade que será usada ao fim da animação
+hab_em_uso = noone; // guarda a habilidade que será usada ao fim da animação
 sprite_padrao = object_get_sprite(object_index); // sprite idle do personagem para pós animação
 
 // ==================================================
@@ -77,7 +76,7 @@ function altera_sprite_hab(sprite_mudada) {
     for (var i = _inicio_escolha; i < array_length(global.hab_visiveis); i++) {
         var _hab_atual = global.hab_visiveis[i];
 		
-		if (!is_string(ultima_hab_usada)) { // ignora se for pulo
+		if (is_struct(ultima_hab_usada)) { // ignora se for pulo
 			
 			if (_hab_atual.habilidade.nome == ultima_hab_usada.nome) {
 				// busca qual foi a habilidade que o bot escolheu
@@ -118,43 +117,56 @@ function aumentar_energia() {
     }
 }
 
-/// @function efeito_hab(obj, obj_inimigo, hab)
-/// @description Efetua o efeito da habilidade nos personagens
-/// @param {Asset.GMObject|Id.Instance} obj Objeto que está atacando
-/// @param {Asset.GMObject|Id.Instance} obj_inimigo Objeto que está sofrendo o ataque
-/// @param {Struct|String} hab Qual habilidade foi selecionada
-function efeito_hab(obj, obj_inimigo, hab){
-	animacao_em_uso = noone;
-	
-	if (!is_struct(hab)) {
-	    //show_debug_message("AVISO: Efeito de habilidade cancelado. Hab não é um struct." + string(hab));
-	    exit;
+// ---------- FUNCOES DO BOT ----------
+// ------------------------------------
+
+/// @function bot_marcou_opcao
+/// @description chama função de exibir um circulo na seleção
+function bot_marcou_opcao(_acertou) {
+	var _respostas_array = []; 
+	with (obj_opcao_resposta) {
+	    array_push(_respostas_array, id);
 	}
 	
-	switch (hab.tipo) {
-		case global.tipos_hab[HABS.ATAQUE]: // dano
-			efetua_dano(obj_inimigo, hab.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.CURA]: // cura
-			aumenta_vida(obj, hab.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.DRENA]: // dreno
-			efetua_dano(obj_inimigo, hab.valor_efeito);
-			if (obj_inimigo.hp_atual > 0) aumenta_vida(obj, hab.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.PRORROGA]: // prorroga
-			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O tempo deve aumentar em até 2.0 e maior que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj.efeitos.mult_tempo = hab.valor_efeito;
-			break;
-		case global.tipos_hab[HABS.ACELERA]: // acelera
-		if (hab.valor_efeito >= 1 || hab.valor_efeito < 0.5) show_error("O tempo inimigo deve reduzir em até 0.5 e ser menor que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj_inimigo.efeitos.mult_tempo = hab.valor_efeito;
-			break;
-		case global.tipos_hab[HABS.ENERGETICO]: // energetico
-			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O ganho energético deve aumentar em até 2.0 e ser maior que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj.efeitos.mult_energia = hab.valor_efeito;
-			break;
+	array_shuffle(_respostas_array);
+
+	if (_acertou) {
+		for (var i = 0; i < array_length(_respostas_array); ++i) {
+			
+		    if (_respostas_array[i].is_certo) {
+				show_debug_message("acertou: " + string(_respostas_array[i].numero));
+				_respostas_array[i].opcao_selecionada(true, _acertou);
+				
+				break;
+			}
+		}
+		
+		return;
 	}
+	
+	var _opcao_aleatoria = _respostas_array[0];
+	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
+	show_debug_message("errou: " + string(_opcao_aleatoria.numero));
+	_opcao_aleatoria.opcao_selecionada(true, _acertou);
+}
+
+function set_bot_responde(_obj) {
+	show_debug_message(_obj.controlador);
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
+	
+	if (_obj.controlador == global.tipos_jogadores[JOGADOR.BOT] || _is_rapido) {
+			
+		// ---------- VERIFICA SE PODE RESPONDER MAIS UMA ----------
+		var _secs_restantes = round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps));
+		var _tempo_resp = scr_tempo_acerto_bot();
+		
+		if (_secs_restantes > _tempo_resp) {
+		    show_debug_message("O bot executará novamente em " + string(_tempo_resp));
+		    var _frames = _tempo_resp * game_get_speed(gamespeed_fps);
+			if (_is_rapido) _frames += game_get_speed(gamespeed_fps); // 1 segundo extra
+		    alarm[0] = _frames;
+		}
+    }
 }
 
 /// @function efetua_dano(_inimigo, _valor)
@@ -176,120 +188,8 @@ function aumenta_vida(_obj, _valor) {
 	if (_obj.hp_atual > _obj.hp_total) _obj.hp_atual = _obj.hp_total;
 }
 
-// ---------- FUNCOES DO BOT ----------
-// ------------------------------------
-
-/// @function bot_ataca()
-/// @description Executa o ataque do bot iniciando um alarme que aguarda antes de responder.
-/// Só dispara se `bot_executou` ainda for false.
-function bot_ataca() {
-    if (!bot_executou &&
-	(controlador == global.tipos_jogadores[JOGADOR.BOT] ||
-	global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO])) {
-        bot_executou = true;
-        var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
-		//show_debug_message("Bot irá responder em " + string(_tempo_para_responder));
-        alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
-    }
-}
-
-/// @function acerto_bot
-/// @description Determina se o bot acerta/age e executa a lógica correspondente.
-/// @param {Id.Instance} _bot Instância do personagem do bot
-/// @param {Id.Instance} _oponente Instância do oponente
-/// @param {Real} _chance Valor aleatório gerado
-/// @param {Real} _corte Valor máximo para ser considerado um acerto
-function acerto_bot(_bot, _oponente, _chance, _corte) {
-    if (obj_gestao_rodada.partida_acabou) {
-        return;
-    }
-
-    var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
-    var _e_turno_bot = obj_gestao_rodada.jogador_atual == _bot.controlador;
-    var _bot_acertou__chance = (_chance <= _corte);
-
-    // O bot só age se for o turno dele OU se estiver no modo rápido
-    if (!_is_rapido && !_e_turno_bot) {
-        return;
-    }
-
-    var _tempo_resp = scr_tempo_acerto_bot();
-    var _secs_restantes = round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps));
-    
-    // DECISÃO: O bot AVANÇA?
-    if (_bot_acertou__chance || _is_rapido) {
-        bot_processar_acerto(_bot);
-		apresenta_feedback(true);
-        
-        if (_is_rapido) {
-            bot_gerenciar_modo_rapido(_bot);
-        }
-        
-        // Condição para agendar o próximo ataque
-        if (_secs_restantes > _tempo_resp || _is_rapido) {
-            bot_agendar_proxima_acao(_bot, _tempo_resp, _is_rapido);
-        }
-        
-    } else { // Erro do bot
-		apresenta_feedback(false);
-        if (!_is_rapido) {
-            bot_encerrar_turno(_bot);
-        }
-    }
-}
-
-/// @function apresenta_feedback(_acertou)
-/// @description chama função de exibir um circulo na seleção
-function apresenta_feedback(_acertou) {
-	var _respostas_array = []; 
-	with (obj_opcao_resposta) {
-	    array_push(_respostas_array, id);
-	}
-	
-	array_shuffle(_respostas_array);
-
-	if (_acertou) {
-		for (var i = 0; i < array_length(_respostas_array); ++i) {
-		    if (_respostas_array[i].is_certo) {
-				show_debug_message("acertou: " + string(_respostas_array[i].numero));
-				_respostas_array[i].opcao_selecionada(true, _acertou);
-			}
-		}
-		return;
-	}
-	
-	var _opcao_aleatoria = _respostas_array[0];
-	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
-	show_debug_message("errou: " + string(_opcao_aleatoria.numero));
-	_opcao_aleatoria.opcao_selecionada(true, _acertou);
-}
-
-/// @function bot_processar_acerto(_bot)
-/// @description aumenta energia da instancia e passa a pergunta
-function bot_processar_acerto(_bot) {
-    _bot.aumentar_energia();
-	scr_proxima_pergunta();
-}
-
-/// @function bot_gerenciar_modo_rapido(_bot)
-/// @description Aqui são as coisas únicas a acontecerem no modo rápido
-function bot_gerenciar_modo_rapido(_bot) {
-    scr_bot_escolhe_hab(_bot.habilidades);
-}
-
 /// @function bot_encerrar_turno(_bot)
 function bot_encerrar_turno(_bot) {
     _bot.alarm[0] = -1;
     obj_gestao_rodada.errou_resposta = true;
-}
-
-/// @function bot_agendar_proxima_acao(_bot, tempo_em_segundos, _is_rapido)
-function bot_agendar_proxima_acao(_bot, tempo_em_segundos, _is_rapido) {
-    //show_debug_message("O bot executará novamente em " + string(tempo_em_segundos));
-    var _frames = tempo_em_segundos * game_get_speed(gamespeed_fps);
-	if (_is_rapido) _frames += game_get_speed(gamespeed_fps); // 1 segundo extra
-	
-    with (_bot) {
-        alarm[0] = _frames;
-    }
 }

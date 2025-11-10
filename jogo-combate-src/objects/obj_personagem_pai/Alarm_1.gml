@@ -1,4 +1,4 @@
-/// @description Exibir escolha bot
+/// @description Exibir escolha hab bot
 
 
 //var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];

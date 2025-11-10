@@ -26,6 +26,14 @@ opcao_selecionada();
 if (tempo_feedback_bot > 0) {
     tempo_feedback_bot--;
     if (tempo_feedback_bot <= 0) {
+		
+		if (bot_acertou) {
+			scr_proxima_pergunta();
+			player_atual.set_bot_responde(player_atual);
+		} else {
+			bot_acertou = true;
+		}
+		
         desenhar_circulo = false;
     }
 }

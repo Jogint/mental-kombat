@@ -7,6 +7,7 @@ desenhar_circulo = false; // Variável para controlar o estado do desenho
 tempo_feedback_bot = 0; // Tempo de desenho do círculo
 pergunta = noone; // Qual a pergunta atual sendo exibida
 player_atual = noone; // Qual instância está jogando
+bot_acertou = true;
 
 // ---------- Controle do review de erro (tremida) ----------
 qtd_frames_tremendo = 0; // Tempo de exibição de cada movimento
@@ -29,8 +30,8 @@ function atualizar_dados() {
 /// @function treme_opcao
 /// @description Treme a opção clicada num período de 1 segundo
 function treme_opcao() {
-	player_atual.retornou_erro = true;
-	var _tempo_tremendo = 1; // em segs
+	player_atual.treme_resposta_errada = true;
+	var _tempo_tremendo = 0.5; // em segs
     qtd_frames_tremendo = _tempo_tremendo * (game_get_speed(gamespeed_fps) / frames_por_mexida);
     alarm[0] = frames_por_mexida;
 }
@@ -42,7 +43,10 @@ function opcao_selecionada(_exibe_bot = false, _acertou = true) {
     var _is_bot = (obj_gestao_rodada.jogador_atual == global.tipos_jogadores[JOGADOR.BOT]);
     
     // ---------- Feedback do Jogador ----------
-    if (!_is_bot && mouse_check_button(mb_left) && position_meeting(mouse_x, mouse_y, id)) {
+    if (!_is_bot &&
+	mouse_check_button(mb_left) &&
+	position_meeting(mouse_x, mouse_y, id) &&
+	qtd_frames_tremendo <= 0) {
         desenhar_circulo = true;
         return;
     } else {desenhar_circulo = false;}
@@ -53,5 +57,5 @@ function opcao_selecionada(_exibe_bot = false, _acertou = true) {
         tempo_feedback_bot = game_get_speed(gamespeed_fps); 
     }
 	
-	if (!_acertou) treme_opcao(); // apenas caso o bot erre TODO: Mover pois não faz parte dessa função
+	if (!_acertou) {bot_acertou = false; treme_opcao();} // apenas caso o bot erre TODO: Mover pois não faz parte dessa função
 }

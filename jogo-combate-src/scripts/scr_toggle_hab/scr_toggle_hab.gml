@@ -1,7 +1,7 @@
 /// @function scr_toggle_hab(hab_arr)
 /// @description Exibe ou deleta as habilidades da tela
 /// @param {Array} hab_arr Array que possui as habilidades a serem exibidas
-function scr_toggle_hab(hab_arr){
+function scr_toggle_hab(hab_arr = []){
 	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 	var _player_index = array_get_index(global.tipos_jogadores, obj_gestao_rodada.jogador_atual) - 1;
 	
@@ -90,6 +90,6 @@ function ocultar_hab() {
 	
 	global.hab_visiveis = [];
 	global.fundo_hab_visiveis = [];
-	obj_gestao_rodada.exibir_hab = false;
 	if (instance_exists(obj_pular_turno)) instance_destroy(obj_pular_turno);
+	obj_gestao_rodada.exibir_hab = false;
 }

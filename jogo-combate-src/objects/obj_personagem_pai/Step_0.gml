@@ -4,11 +4,6 @@
 if (room == rm_selecao_personagem || obj_gestao_rodada.partida_acabou) exit;
 
 // ==================================================
-/// @description 
-// ==================================================
-// ----------  ----------
-
-// ==================================================
 // VARIAVEIS GERAIS
 // ==================================================
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
@@ -63,11 +58,9 @@ switch (estado_turno) {
 		
 		scr_iniciar_timer_turno(tempo_turno * efeitos.mult_tempo);
 		efeitos.mult_tempo = 1;
-		
-		bot_ataca();
-		
-		// Limpa flags do turno anterior
-		bot_executou = false; 
+		scr_proxima_pergunta();
+	
+		set_bot_responde(id);
 
 		estado_turno = ESTADOS_TURNO.JOGANDO;
 	break;
@@ -80,6 +73,7 @@ switch (estado_turno) {
 		if (obj_gestao_rodada.errou_resposta) {
 			obj_gestao_rodada.timer_turno = 0; // força fim do turno // REMOVE: atribuição indevida
 			obj_gestao_rodada.errou_resposta = false; // REMOVE: atribuição indevida
+			
 			// Zera o multiplicador energético
 			efeitos.mult_energia = 1;
 			efeitos.timer_energia = 0;
@@ -103,10 +97,8 @@ switch (estado_turno) {
 		}
 
 		// ---------- VERIFICA FIM DO TIMER DO TURNO ----------
-		if (obj_gestao_rodada.timer_turno <= 0 && !retornou_erro) {
-			// retornou erro é alterada como verdadeira ou falsa em acerto_bot e obj_opcao_resposta
-			// e é responsável por animação tremendo ao errar a resposta
-			obj_gestao_rodada.timer_turno = 0; // Trava em 0 // REMOVE: atribuição indevida
+		if (obj_gestao_rodada.timer_turno <= 0 && !treme_resposta_errada) {
+			obj_gestao_rodada.timer_turno = 0; // REMOVE: atribuição indevida
 			estado_turno = ESTADOS_TURNO.ESCOLHA_HAB;
 		}
 	break;
@@ -119,8 +111,10 @@ switch (estado_turno) {
 		// ---------- EXIBE AS HABILIDADES ----------
 		if (!obj_gestao_rodada.exibir_hab) { 
 			scr_toggle_hab(habilidades);
+			
 			if (controlador == global.tipos_jogadores[JOGADOR.BOT]) {
-				scr_bot_escolhe_hab(habilidades);
+				ultima_hab_usada = scr_bot_escolhe_hab(id, oponente);
+				alarm[1] = game_get_speed(gamespeed_fps);
 			}
 		}
 		
@@ -131,30 +125,29 @@ switch (estado_turno) {
 	// ==================================================
 	case ESTADOS_TURNO.EXIBINDO_HAB:
 		
-		// ---------- OCULTA AS HABILIDADES ----------
-		if (obj_gestao_rodada.exibir_hab) { 
-			scr_toggle_hab([]);
-		}
+		if (instance_exists(obj_pular_turno)) instance_destroy(obj_pular_turno);
 		
-		// ---------- VERIFICA ANIMAÇÃO HABILIDADES ----------
-		// INFO: este NÃO É o método principaL pra passar o estado, só verificador para não interromper a execução do jogo
-		if (animacao_em_uso == noone) {
-		    show_debug_message("AVISO: Não há animação sendo executada."); // TODO: Alterar animações por personagem assim que terminar de desenhá-las
-		    estado_turno = ESTADOS_TURNO.FINALIZANDO;
-		}
-		
-		// Estado alterado no evento animation end ou scr_ativa_animacao (em caso de pulo)
 	break;
 
 	// ==================================================
 	// ESTADO 6: LÓGICA DE FIM DE TURNO
 	// ==================================================
 	case ESTADOS_TURNO.FINALIZANDO:
-		efeito_hab(self, oponente, animacao_em_uso);
+		// ---------- OCULTA AS HABILIDADES ----------
+		if (obj_gestao_rodada.exibir_hab) { 
+			scr_toggle_hab([]);
+		}
+		
+		ultima_hab_usada = {};
+		hab_em_uso = noone;
 		
 		altera_escala_sprite(dados_escala.menor);
 		
-		scr_encerrar_turno()
+		layer_set_visible("Opcoes", true);
+		obj_gestao_rodada.jogador_atual = oponente.controlador;
+		scr_proxima_pergunta();
+	
+		global.turno_iniciou = false;
 		
 		estado_turno = ESTADOS_TURNO.AGUARDANDO;
 	break;
