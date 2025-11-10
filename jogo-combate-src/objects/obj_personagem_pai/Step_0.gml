@@ -104,7 +104,7 @@ switch (estado_turno) {
 
 		// ---------- VERIFICA FIM DO TIMER DO TURNO ----------
 		if (obj_gestao_rodada.timer_turno <= 0 && !retornou_erro) {
-			// retornou erro é alterada como verdadeira ou falsa em scr_acerto_bot e obj_opcao_resposta
+			// retornou erro é alterada como verdadeira ou falsa em acerto_bot e obj_opcao_resposta
 			// e é responsável por animação tremendo ao errar a resposta
 			obj_gestao_rodada.timer_turno = 0; // Trava em 0 // REMOVE: atribuição indevida
 			estado_turno = ESTADOS_TURNO.ESCOLHA_HAB;

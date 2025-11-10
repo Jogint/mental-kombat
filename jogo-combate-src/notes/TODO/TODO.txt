@@ -10,8 +10,6 @@
 
 ### Melhorias
 
-* Reduzir tempo de resposta da subtração de 2 dígitos caso a unidade de n1 seja maior que n2
-* Melhorar opção de escolha de habilidade do bot
 	* chance maior de gastar energia se puder atacar
 	* não curar com vida cheia
 * Mudar taxa de erro do bot para algo semelhante ao tempo de resposta
@@ -60,4 +58,4 @@
 	* hab2: 3/12
 	* ult: 2/12
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
-* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (Lyam)
+* Melhorar opção de escolha de habilidade do bot

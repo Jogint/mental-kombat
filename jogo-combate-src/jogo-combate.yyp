@@ -95,7 +95,6 @@
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_selecao_personagem","path":"rooms/rm_selecao_personagem/rm_selecao_personagem.yy",},},
     {"id":{"name":"rm_trilha","path":"rooms/rm_trilha/rm_trilha.yy",},},
-    {"id":{"name":"scr_acerto_bot","path":"scripts/scr_acerto_bot/scr_acerto_bot.yy",},},
     {"id":{"name":"scr_ativa_animacao","path":"scripts/scr_ativa_animacao/scr_ativa_animacao.yy",},},
     {"id":{"name":"scr_atribuir_alternativas","path":"scripts/scr_atribuir_alternativas/scr_atribuir_alternativas.yy",},},
     {"id":{"name":"scr_atualizar_arr_sprites","path":"scripts/scr_atualizar_arr_sprites/scr_atualizar_arr_sprites.yy",},},

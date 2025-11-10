@@ -8,5 +8,5 @@ var _corte_acerto = clamp(_acerto_base + (_aumento_base * _i_dif), 0, 100);
 // camada extra de verificação pq esse VIADO tá atacando sem poder
 if (controlador == global.tipos_jogadores[JOGADOR.BOT] ||
 	global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO]) {
-	scr_acerto_bot(global.inst_perso_partida[1], _chance_acerto, _corte_acerto);
+	acerto_bot(global.inst_perso_partida[1], _chance_acerto, _corte_acerto);
 }

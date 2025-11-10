@@ -41,8 +41,11 @@ animacao_em_uso = noone; // guarda a habilidade que será usada ao fim da anima�
 sprite_padrao = object_get_sprite(object_index); // sprite idle do personagem para pós animação
 
 // ==================================================
-// FUNÇÕES CHAMADAS NO STEP DURANTE O TURNO
+// FUNÇÕES DE USO INTERNO
 // ==================================================
+
+// ---------- GESTÃO DE SPRITES ----------
+// ---------------------------------------
 
 /// @function calcular_escala_padrao_sprite()
 /// @description Padroniza o tamanho das sprites in game para efeitos de aumentar / diminuir
@@ -56,30 +59,6 @@ function calcular_escala_padrao_sprite() {
     var _sprite_height = sprite_get_height(sprite_index);
 
     return [_target_width / _sprite_width, _target_height / _sprite_height];
-}
-
-/// @function aumentar_energia()
-/// @description Aumenta a energia atual do personagem com base em `energia_por_acerto`,
-/// limitando ao máximo `energia_total`.
-function aumentar_energia() {
-    energia_atual += round(energia_por_acerto * efeitos.mult_energia);
-    if (energia_atual >= energia_total) {
-        energia_atual = energia_total;
-    }
-}
-
-/// @function bot_ataca()
-/// @description Executa o ataque do bot iniciando um alarme que aguarda antes de responder.
-/// Só dispara se `bot_executou` ainda for false.
-function bot_ataca() {
-    if (!bot_executou &&
-	(controlador == global.tipos_jogadores[JOGADOR.BOT] ||
-	global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO])) {
-        bot_executou = true;
-        var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
-		//show_debug_message("Bot irá responder em " + string(_tempo_para_responder));
-        alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
-    }
 }
 
 /// @function altera_sprite_hab(sprite_mudada)
@@ -124,6 +103,19 @@ function altera_sprite_hab(sprite_mudada) {
 function altera_escala_sprite(_fator_escala) {
 	image_xscale = escala_padrao[0] * _fator_escala * inversao_sinal;
 	image_yscale = escala_padrao[1] * _fator_escala;
+}
+
+// ---------- ENERGIA E HABILIDADES ----------
+// -------------------------------------------
+
+/// @function aumentar_energia()
+/// @description Aumenta a energia atual do personagem com base em `energia_por_acerto`,
+/// limitando ao máximo `energia_total`.
+function aumentar_energia() {
+    energia_atual += round(energia_por_acerto * efeitos.mult_energia);
+    if (energia_atual >= energia_total) {
+        energia_atual = energia_total;
+    }
 }
 
 /// @function efeito_hab(obj, obj_inimigo, hab)
@@ -182,4 +174,122 @@ function efetua_dano(_inimigo, _valor) {
 function aumenta_vida(_obj, _valor) {
 	_obj.hp_atual += _valor;
 	if (_obj.hp_atual > _obj.hp_total) _obj.hp_atual = _obj.hp_total;
+}
+
+// ---------- FUNCOES DO BOT ----------
+// ------------------------------------
+
+/// @function bot_ataca()
+/// @description Executa o ataque do bot iniciando um alarme que aguarda antes de responder.
+/// Só dispara se `bot_executou` ainda for false.
+function bot_ataca() {
+    if (!bot_executou &&
+	(controlador == global.tipos_jogadores[JOGADOR.BOT] ||
+	global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO])) {
+        bot_executou = true;
+        var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
+		//show_debug_message("Bot irá responder em " + string(_tempo_para_responder));
+        alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
+    }
+}
+
+/// @function acerto_bot
+/// @description Determina se o bot acerta/age e executa a lógica correspondente.
+/// @param {Id.Instance} _bot Instância do personagem do bot
+/// @param {Id.Instance} _oponente Instância do oponente
+/// @param {Real} _chance Valor aleatório gerado
+/// @param {Real} _corte Valor máximo para ser considerado um acerto
+function acerto_bot(_bot, _oponente, _chance, _corte) {
+    if (obj_gestao_rodada.partida_acabou) {
+        return;
+    }
+
+    var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
+    var _e_turno_bot = obj_gestao_rodada.jogador_atual == _bot.controlador;
+    var _bot_acertou__chance = (_chance <= _corte);
+
+    // O bot só age se for o turno dele OU se estiver no modo rápido
+    if (!_is_rapido && !_e_turno_bot) {
+        return;
+    }
+
+    var _tempo_resp = scr_tempo_acerto_bot();
+    var _secs_restantes = round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps));
+    
+    // DECISÃO: O bot AVANÇA?
+    if (_bot_acertou__chance || _is_rapido) {
+        bot_processar_acerto(_bot);
+		apresenta_feedback(true);
+        
+        if (_is_rapido) {
+            bot_gerenciar_modo_rapido(_bot);
+        }
+        
+        // Condição para agendar o próximo ataque
+        if (_secs_restantes > _tempo_resp || _is_rapido) {
+            bot_agendar_proxima_acao(_bot, _tempo_resp, _is_rapido);
+        }
+        
+    } else { // Erro do bot
+		apresenta_feedback(false);
+        if (!_is_rapido) {
+            bot_encerrar_turno(_bot);
+        }
+    }
+}
+
+/// @function apresenta_feedback(_acertou)
+/// @description chama função de exibir um circulo na seleção
+function apresenta_feedback(_acertou) {
+	var _respostas_array = []; 
+	with (obj_opcao_resposta) {
+	    array_push(_respostas_array, id);
+	}
+	
+	array_shuffle(_respostas_array);
+
+	if (_acertou) {
+		for (var i = 0; i < array_length(_respostas_array); ++i) {
+		    if (_respostas_array[i].is_certo) {
+				show_debug_message("acertou: " + string(_respostas_array[i].numero));
+				_respostas_array[i].opcao_selecionada(true, _acertou);
+			}
+		}
+		return;
+	}
+	
+	var _opcao_aleatoria = _respostas_array[0];
+	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
+	show_debug_message("errou: " + string(_opcao_aleatoria.numero));
+	_opcao_aleatoria.opcao_selecionada(true, _acertou);
+}
+
+/// @function bot_processar_acerto(_bot)
+/// @description aumenta energia da instancia e passa a pergunta
+function bot_processar_acerto(_bot) {
+    _bot.aumentar_energia();
+	scr_proxima_pergunta();
+}
+
+/// @function bot_gerenciar_modo_rapido(_bot)
+/// @description Aqui são as coisas únicas a acontecerem no modo rápido
+function bot_gerenciar_modo_rapido(_bot) {
+    scr_bot_escolhe_hab(_bot.habilidades);
+}
+
+/// @function bot_encerrar_turno(_bot)
+function bot_encerrar_turno(_bot) {
+    _bot.alarm[0] = -1;
+    obj_gestao_rodada.errou_resposta = true;
+}
+
+/// @function bot_agendar_proxima_acao(_bot, tempo_em_segundos, _is_rapido)
+function bot_agendar_proxima_acao(_bot, tempo_em_segundos, _is_rapido) {
+    //show_debug_message("O bot executará novamente em " + string(tempo_em_segundos));
+    var _frames = tempo_em_segundos * game_get_speed(gamespeed_fps);
+	if (_is_rapido) _frames += game_get_speed(gamespeed_fps); // 1 segundo extra
+	
+    with (_bot) {
+        alarm[0] = _frames;
+    }
 }
