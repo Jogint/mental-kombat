@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_criar_personagem",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Seleção",
+    "path":"folders/Scripts/Seleção.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

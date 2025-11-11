@@ -167,3 +167,8 @@
 * IMPROVE: Adição de tempos de pensamento mais específicos por questão (Lyam - 08/11/2025)
 * IMPROVE: Bot avalia melhor habilidade no momento antes de selecionar (Lyam - 09/11/2025)
 * IMPROVE: Refazer a lógica toda do bot, reduzindo código irrelevante (Lyam - 10/11/2025)
+* FIX: Passar questão apenas após mostrar a confirmação de escolha (Lyam - 10/11/2025)
+* FEAT: Exibir quanto de energia e vida vc tem em números (Lyam - 10/11/2025)
+* FEAT: Mudar taxa de erro do bot para algo semelhante ao tempo de resposta (Lyam - 10/11/2025)
+* FIX: efeito do energético é mantido se acaba o turno (Lyam - 10/11/2025)
+* OTHER: 8 novas animações de personagens (Kaue - 05 a 10/11/2025)

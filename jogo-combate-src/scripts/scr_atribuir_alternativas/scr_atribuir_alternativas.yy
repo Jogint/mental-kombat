@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_atribuir_alternativas",
   "parent":{
-    "name":"Controle Geral",
-    "path":"folders/Scripts/Em Partida/Controle Geral.yy",
+    "name":"Em Partida",
+    "path":"folders/Scripts/Em Partida.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

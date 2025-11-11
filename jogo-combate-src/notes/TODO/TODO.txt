@@ -5,18 +5,15 @@
 ### Features
 
 * Criar global.apresentou_tutoriais = [false, false, false]:
-	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
+  * uma tela de tutorial para cada modo de jogo. Deve ser interativa
 * Menu (pause) para voltar para tela inicial
 
 ### Melhorias
 
-* Mudar taxa de erro do bot para algo semelhante ao tempo de resposta
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
-* Passar questão apenas após bot parar de mostrar a confirmação de escolha
 * Adicionar músicas e efeitos sonoros
-* Exibir quanto de energia vc tem em números
 * Filtro no personagem que não está atacando
-* Modo 2 personagens: review visual de que o personagem foi selecionado
+* Modos 2 personagens: review visual de que o personagem foi selecionado
 * Substituir "aperte x tecla" por um botão para clicar com mouse
 * Botão de personagem aleatório
 * Trocar nomes do sorteador e tela final pvp para o nome do personagem
@@ -24,30 +21,26 @@
 * Padronizar inicialização de arrays, pré alocando os índices com noone
 * Revisitar todos os TODO espalhados no código (mudanças pequenas)
 * Remover dependencia de obj_gestao_rodada
-	* ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
+  * ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
 * Separar o obj_btn_avancar em diferentes objetos por room
-* Mover todas as habilidades dos players para um script
-	* elimitar o evento create dos personagens exceto pai
-	* adicinar variavel de objeto "indice_hab" para acessar no script
-	* adicionar habilidades ao personagem no create do obj pai
+* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
 
 ## 🆕 BUGS ENCONTRADOS
 
 ### Gerais
 
 * Impedir cliques durante animação de tremida
-* efeito do energético é mantido se acaba o turno
-	* POSSIVELMENTE CORRIGIDO mas faltam testes
 * Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
-	* Apertar essas opcoes, mesmo que invisivel, quebra o código das habilidades
-	* INFO: Mesmo assim, mantenha camada oculdada para o bem do código
+  * Apertar essas opcoes, mesmo que invisivel, quebra o código das habilidades
+  * INFO: Mesmo assim, mantenha camada oculdada para o bem do código
+* concentrar o fechamento do pop up habilidades em um único lugar
+* tremida no botão não aparece quando o bot erra
 
 ### Rapido
 
 * confirmação de habilidade não aparece
-* resetar alarme após o bot errar
-	* SOMENTE PARA ESSE MODO
-	
+* configutat para resetar alarme após o bot errar SOMENTE PARA ESSE MODO
+
 ### 🎨 SPRITES PARA DESENHAR
 
 * Background para cada room
@@ -58,10 +51,8 @@
 
 ## ⚙ EM ANDAMENTO
 
-* Todas as animações dos personagens - prontos 2/12 (Kaue)
-	* idle: 9/12
-	* hab1: 8/12
-	* hab2: 3/12
-	* ult: 2/12
-* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
-
+* Todas as animações dos personagens - prontos 3/12 (Kaue)
+  * idle: 12/12 
+  * hab1: 9/12
+  * hab2: 6/12
+  * ult: 3/12

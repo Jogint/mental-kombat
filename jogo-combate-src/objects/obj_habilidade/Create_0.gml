@@ -22,7 +22,7 @@ function gera_descricao(_hab) {
 		case global.tipos_hab[HABS.ACELERA]:
 			return "Impeça seu oponente de encher a energia! Reduza o tempo de resposta dele";
 		case global.tipos_hab[HABS.ENERGETICO]:
-			return "Aumente a quantidade de energia ganha por acerto durante 10 segundos";
+			return "Aumente a quantidade de energia ganha por acerto durante um turno";
 		default:
 			return "A habilidade de tipo " + string(_hab.tipo) + " não tem uma descrição configurada.";
 	}

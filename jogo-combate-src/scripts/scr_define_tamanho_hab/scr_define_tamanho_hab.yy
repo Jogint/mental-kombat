@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_define_tamanho_hab",
   "parent":{
-    "name":"Habilidades",
-    "path":"folders/Scripts/Em Partida/Habilidades.yy",
+    "name":"Em Partida",
+    "path":"folders/Scripts/Em Partida.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

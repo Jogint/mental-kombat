@@ -39,7 +39,23 @@ function scr_controle_hud(_index, _cor, _is_hp){
 	}
 
 	draw_rectangle(_x1, _y_topo, _x2, _y_base, false);
+	
+	draw_set_color(c_black);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	
+	if (_is_hp) {
+		var _hp_total = string(personagem_gerenciado.hp_total);
+		var _hp_atual = string(personagem_gerenciado.hp_atual);
 
+		draw_text(x, y, _hp_atual + " / " + _hp_total);
+	} else {
+		var _energia_total = string(personagem_gerenciado.energia_total);
+		var _energia_atual = string(personagem_gerenciado.energia_atual);
+
+		draw_text(x, y, _energia_atual + " / " + _energia_total);
+	}
+	
 	draw_self();
 
 	scr_reset_draw();	
