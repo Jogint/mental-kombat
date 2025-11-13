@@ -17,6 +17,7 @@ oponente = noone; // instancia do oponente
 meu_turno = false; // flag que define se o step pode ser executado
 treme_resposta_errada = false; // interrompe execução enquanto treme a opcao com erro
 tempo_rapido = 120; // 2 minutos de execução
+is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 
 // ---------- ESCALA DE SPRITE ----------
 inverteu_sprite = false; // flag para inverter p2 no inicio da partida
@@ -63,7 +64,7 @@ function calcular_escala_padrao_sprite() {
 /// @function altera_sprite_hab(sprite_mudada)
 /// @description Altera a sprite da habilidade que o bot escolheu (padrão > confirmação > padrão)
 /// @param {Asset.GMSprite} sprite_mudada A sprite que deseja colocar no lugar da atual
-function altera_sprite_hab(sprite_mudada) {
+function altera_sprite_hab(sprite_mudada = spr_hab_indisponivel) {
     var _inicio_escolha = 0; // começa em 0 pois vai percorrer todo o array
     var _tamanho = [300, 450]; // tamanho do obj_fundo_hab, definido em scr_toggle_hab
 	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
@@ -80,6 +81,8 @@ function altera_sprite_hab(sprite_mudada) {
 			
 			if (_hab_atual.habilidade.nome == ultima_hab_usada.nome) {
 				// busca qual foi a habilidade que o bot escolheu
+				
+				if (sprite_mudada == spr_hab_indisponivel) sprite_mudada = _hab_atual.sprite_padrao;
 				
 				if (_is_rapido) { // confirma via obj_habilidade
 					scr_trocar_sprite(_hab_atual, _tamanho[0], _tamanho[1], sprite_mudada);
@@ -134,7 +137,7 @@ function bot_marcou_opcao(_acertou) {
 		for (var i = 0; i < array_length(_respostas_array); ++i) {
 			
 		    if (_respostas_array[i].is_certo) {
-				show_debug_message("acertou: " + string(_respostas_array[i].numero));
+				// show_debug_message("acertou: " + string(_respostas_array[i].numero));
 				_respostas_array[i].opcao_selecionada(true, _acertou);
 				
 				break;
@@ -146,27 +149,32 @@ function bot_marcou_opcao(_acertou) {
 	
 	var _opcao_aleatoria = _respostas_array[0];
 	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
-	show_debug_message("errou: " + string(_opcao_aleatoria.numero));
+	// show_debug_message("errou: " + string(_opcao_aleatoria.numero));
 	_opcao_aleatoria.opcao_selecionada(true, _acertou);
 }
 
 function set_bot_responde(_obj) {
-	show_debug_message(_obj.controlador);
 	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 	
-	if (_obj.controlador == global.tipos_jogadores[JOGADOR.BOT] || _is_rapido) {
-			
-		// ---------- VERIFICA SE PODE RESPONDER MAIS UMA ----------
-		var _secs_restantes = round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps));
-		var _tempo_resp = scr_tempo_acerto_bot();
+	if (_obj.controlador != global.tipos_jogadores[JOGADOR.BOT]) return;
+	
+	// ---------- VERIFICA SE PODE RESPONDER MAIS UMA ----------
+	var _secs_restantes = round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps));
+	var _tempo_resp = scr_tempo_acerto_bot();
+	if (_is_rapido) _tempo_resp += 1; // 1 segundo extra pra evitar o spam absurdo
 		
-		if (_secs_restantes > _tempo_resp) {
-		    show_debug_message("O bot executará novamente em " + string(_tempo_resp));
-		    var _frames = _tempo_resp * game_get_speed(gamespeed_fps);
-			if (_is_rapido) _frames += game_get_speed(gamespeed_fps); // 1 segundo extra
-		    alarm[0] = _frames;
-		}
-    }
+	if (_secs_restantes > _tempo_resp && _obj.alarm[0] <= 0) {
+	    // show_debug_message("O bot executará novamente em " + string(_tempo_resp));
+	    var _frames = _tempo_resp * game_get_speed(gamespeed_fps);
+	    _obj.alarm[0] = _frames;
+	}
+	
+	show_debug_message(string(_obj.controlador) + ": " + string(_obj.alarm[3]));
+	
+	if (_is_rapido && _obj.alarm[3] <= 0) {
+		var _segundos_para_atacar = 10;
+		_obj.alarm[3] = _segundos_para_atacar * game_get_speed(gamespeed_fps);
+	}
 }
 
 /// @function efetua_dano(_inimigo, _valor)

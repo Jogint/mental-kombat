@@ -6,7 +6,6 @@ if (room == rm_selecao_personagem || obj_gestao_rodada.partida_acabou) exit;
 // ==================================================
 // VARIAVEIS GERAIS
 // ==================================================
-var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 meu_turno = (obj_gestao_rodada.jogador_atual == controlador);
 
 // ---------- MÁQUINA DE ESTADOS ----------
@@ -42,7 +41,7 @@ switch (estado_turno) {
 	case ESTADOS_TURNO.AGUARDANDO:
 		altera_escala_sprite(dados_escala.menor);
 		
-		if (meu_turno) {
+		if (meu_turno || is_rapido) {
 			altera_escala_sprite(dados_escala.maior);
 			estado_turno = ESTADOS_TURNO.INICIANDO;
 		}
@@ -52,13 +51,13 @@ switch (estado_turno) {
 	// ESTADO 2: SETUP DE INÍCIO DE TURNO
 	// ==================================================
 	case ESTADOS_TURNO.INICIANDO:
-		if (_is_rapido) {
+		if (is_rapido) {
 			tempo_turno = tempo_rapido;
 		}
 		
 		scr_iniciar_timer_turno(tempo_turno * efeitos.mult_tempo);
 		efeitos.mult_tempo = 1;
-		scr_proxima_pergunta();
+		scr_proxima_pergunta(); // TODO: tirar isso
 	
 		set_bot_responde(id);
 
@@ -70,7 +69,7 @@ switch (estado_turno) {
 	// ==================================================
 	case ESTADOS_TURNO.JOGANDO:
 		// ---------- VERIFICA RESPOSTA ERRADA ----------
-		if (obj_gestao_rodada.errou_resposta) {
+		if (obj_gestao_rodada.errou_resposta && !is_rapido) {
 			obj_gestao_rodada.timer_turno = 0; // força fim do turno // REMOVE: atribuição indevida
 			obj_gestao_rodada.errou_resposta = false; // REMOVE: atribuição indevida
 			
@@ -111,10 +110,10 @@ switch (estado_turno) {
 	// ==================================================
 	case ESTADOS_TURNO.EXIBINDO_HAB:
 		
-		if (!_is_rapido) {
+		if (!is_rapido) {
 			
 			// ---------- OCULTA AS HABILIDADES ----------
-			if (obj_gestao_rodada.exibir_hab && !_is_rapido) {
+			if (obj_gestao_rodada.exibir_hab && !is_rapido) {
 				scr_toggle_hab();
 			}
 		
@@ -124,6 +123,8 @@ switch (estado_turno) {
 				estado_turno = ESTADOS_TURNO.FINALIZANDO;
 			}
 			
+		} else {
+			estado_turno = ESTADOS_TURNO.JOGANDO;
 		}
 		
 	break;

@@ -2,7 +2,10 @@
 /// @description Vars e Funções
 // ==================================================
 // ----------  ----------
+habilidade = {} // alterado no scr_toggle_hab
 alterou = false;
+trocou_padrao = false;
+sprite_padrao = object_get_sprite(object_index);
 image_alpha = 0.5;
 
 /// @function gera_descricao

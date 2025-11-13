@@ -10,7 +10,6 @@
 //} else {
 
 	// TODO: Criar uma sprite de confirmação para o obj_fundo_hab
-	// ?: Usar o sprite_get_height/width dela para definir o fundo na global de tamanhos
 	
 //}
 

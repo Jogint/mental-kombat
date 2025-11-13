@@ -34,5 +34,10 @@ sprite_index == habilidades[2].sprite) {
 			break;
 	}
 
-	estado_turno = ESTADOS_TURNO.FINALIZANDO;
+	if (is_rapido) {
+		estado_turno = ESTADOS_TURNO.JOGANDO;
+	} else {
+		estado_turno = ESTADOS_TURNO.FINALIZANDO;
+	}
+	
 }

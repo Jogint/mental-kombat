@@ -177,3 +177,4 @@
 * FIX: Concentrar o fechamento do pop up habilidades em um único lugar (Lyam - 12/11/2025)
 * FIX: Impedir cliques durante animação de tremida (Lyam - 12/11/2025)
 * FIX: Desativar instâncias de resposta ao invés de ocultar a camada (Lyam - 12/11/2025)
+* FIX: Correção de diversos bugs que impediam o funcionamento do modo rápido (Lyam - 12/11/2025)

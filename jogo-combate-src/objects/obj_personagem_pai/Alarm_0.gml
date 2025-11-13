@@ -5,7 +5,7 @@
 // ==================================================
 if (!obj_gestao_rodada.partida_acabou &&
 (controlador == global.tipos_jogadores[JOGADOR.BOT] ||
-global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO])) {
+is_rapido)) {
 
 	// ---------- CALCULAM A CHANCE DE ACERTO ----------
 	var _chance = irandom_range(0, 100); // deve ser um valor entre 0 e 100
@@ -82,11 +82,10 @@ global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO])) {
 	_bonus -= clamp(((_reducao_base * 2) / (_i_dif + 1)), 0, 100);
 	_chance = clamp((_chance + _bonus), 0, 100);
 	var _corte = clamp(_min_para_acerto - (_reducao_base * _i_dif), 0, 100);
-    var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
     var _bot_acertou_chance = (_chance >= _corte);
 
 	// ---------- BOT ACERTOU ----------
-    if (_bot_acertou_chance || _is_rapido) {
+    if (_bot_acertou_chance || is_rapido) {
         aumentar_energia();
 		bot_marcou_opcao(true);
         

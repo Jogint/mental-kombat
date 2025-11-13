@@ -31,12 +31,12 @@
 
 ### Gerais
 
-> Todos os bugs gerais foram solucionados
+* Música só toca após reset do jogo
+* Se clicar rápido na opção de resposta após executar a animação, você pula o turno do inimigo
 
 ### Rapido
 
-* confirmação de habilidade não aparece
-* configurar para resetar alarme após o bot errar SOMENTE PARA ESSE MODO
+> Nenhum bug relacionado a este modo de jogo
 
 ### 🎨 SPRITES PARA DESENHAR
 
