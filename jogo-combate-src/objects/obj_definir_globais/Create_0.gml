@@ -18,6 +18,8 @@ global.tamanhos = { // apenas um número para quadrados
 	logo_hab: 80,
 	inimigo_trilha: 96, // botao de seleção do personagem
 }
+global.tempo_para_erro = []; // USADO PARA TESTES, REMOVER DPS
+
 // ==================================================
 // GLOBAIS STRING
 // ==================================================
@@ -40,7 +42,7 @@ global.modo_jogo_atual = global.modos_jogo[MODO.HIST]; // define o modo de jogo 
 // ==================================================
 // GLOBAIS INSTANCIAS/OBJETOS
 // ==================================================
-global.todos_perso = [ // referência de todos os objetos de personagem jogáveis
+global.todos_perso = [ 
 	obj_personagem,
 	obj_personagem_1,
 	obj_personagem_2,
@@ -53,9 +55,14 @@ global.todos_perso = [ // referência de todos os objetos de personagem jogávei
 	obj_personagem_9,
 	obj_personagem_10,
 	obj_personagem_11,
-];
-global.perso_disponiveis = [obj_personagem, obj_personagem_1]; // personagens jogaveis na trilha ou rapido
-global.inimigos_disponiveis = [obj_personagem_2]; // inimigos derrotaveis na trilha
+]; // referência de todos os objetos de personagem jogáveis
+global.perso_disponiveis = [
+	obj_personagem,
+	obj_personagem_1,
+]; // personagens jogaveis na trilha ou rapido
+global.inimigos_disponiveis = [
+	obj_personagem_2,
+]; // inimigos derrotaveis na trilha
 
 // ==================================================
 // SCRIPTS INICIAIS

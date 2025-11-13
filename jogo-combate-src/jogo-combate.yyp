@@ -125,7 +125,6 @@
     {"id":{"name":"spr_avanco","path":"sprites/spr_avanco/spr_avanco.yy",},},
     {"id":{"name":"spr_barra_energia","path":"sprites/spr_barra_energia/spr_barra_energia.yy",},},
     {"id":{"name":"spr_barra_vida","path":"sprites/spr_barra_vida/spr_barra_vida.yy",},},
-    {"id":{"name":"spr_btn_menu_bloqueado","path":"sprites/spr_btn_menu_bloqueado/spr_btn_menu_bloqueado.yy",},},
     {"id":{"name":"spr_btn_menu","path":"sprites/spr_btn_menu/spr_btn_menu.yy",},},
     {"id":{"name":"spr_btn_pular","path":"sprites/spr_btn_pular/spr_btn_pular.yy",},},
     {"id":{"name":"spr_btn_resposta","path":"sprites/spr_btn_resposta/spr_btn_resposta.yy",},},

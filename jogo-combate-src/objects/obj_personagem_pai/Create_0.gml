@@ -147,6 +147,16 @@ function bot_marcou_opcao(_acertou) {
 		return;
 	}
 	
+	array_push(global.tempo_para_erro, (global.inst_perso_partida[1].tempo_turno - round((obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps)))));
+	//show_debug_message(global.tempo_para_erro);
+	var _soma = 0;
+	for (var i = 0; i < array_length(global.tempo_para_erro); i++) {
+		_soma += global.tempo_para_erro[i];
+		if (i == array_length(global.tempo_para_erro) - 1) {
+			show_debug_message("Média do erro: " + string(_soma / array_length(global.tempo_para_erro)));
+		}
+	}
+	
 	var _opcao_aleatoria = _respostas_array[0];
 	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
 	// show_debug_message("errou: " + string(_opcao_aleatoria.numero));
@@ -168,8 +178,6 @@ function set_bot_responde(_obj) {
 	    var _frames = _tempo_resp * game_get_speed(gamespeed_fps);
 	    _obj.alarm[0] = _frames;
 	}
-	
-	show_debug_message(string(_obj.controlador) + ": " + string(_obj.alarm[3]));
 	
 	if (_is_rapido && _obj.alarm[3] <= 0) {
 		var _segundos_para_atacar = 10;

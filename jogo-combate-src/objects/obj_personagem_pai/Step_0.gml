@@ -51,6 +51,10 @@ switch (estado_turno) {
 	// ESTADO 2: SETUP DE INÍCIO DE TURNO
 	// ==================================================
 	case ESTADOS_TURNO.INICIANDO:
+		// FALLBACK: REMOVER APÓS ACHAR A CAUSA
+		if (obj_gestao_rodada.exibir_hab) {
+				scr_toggle_hab();
+			}
 		if (is_rapido) {
 			tempo_turno = tempo_rapido;
 		}
@@ -113,7 +117,7 @@ switch (estado_turno) {
 		if (!is_rapido) {
 			
 			// ---------- OCULTA AS HABILIDADES ----------
-			if (obj_gestao_rodada.exibir_hab && !is_rapido) {
+			if (obj_gestao_rodada.exibir_hab) {
 				scr_toggle_hab();
 			}
 		
