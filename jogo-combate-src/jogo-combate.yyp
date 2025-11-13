@@ -120,6 +120,7 @@
     {"id":{"name":"scr_toggle_hab","path":"scripts/scr_toggle_hab/scr_toggle_hab.yy",},},
     {"id":{"name":"scr_trocar_sprite","path":"scripts/scr_trocar_sprite/scr_trocar_sprite.yy",},},
     {"id":{"name":"scr_valor_unico_array","path":"scripts/scr_valor_unico_array/scr_valor_unico_array.yy",},},
+    {"id":{"name":"shd_grayscale","path":"shaders/shd_grayscale/shd_grayscale.yy",},},
     {"id":{"name":"snd_xdh_spoiler_inst","path":"sounds/snd_xdh_spoiler_inst/snd_xdh_spoiler_inst.yy",},},
     {"id":{"name":"spr_avanco","path":"sprites/spr_avanco/spr_avanco.yy",},},
     {"id":{"name":"spr_barra_energia","path":"sprites/spr_barra_energia/spr_barra_energia.yy",},},
