@@ -172,3 +172,8 @@
 * FEAT: Mudar taxa de erro do bot para algo semelhante ao tempo de resposta (Lyam - 10/11/2025)
 * FIX: efeito do energético é mantido se acaba o turno (Lyam - 10/11/2025)
 * OTHER: 8 novas animações de personagens (Kaue - 05 a 10/11/2025)
+* OTHER: 4 novas animações de personagens (Kaue - 11 e 12/11/2025)
+* FIX: Tremida no botão não aparece quando o bot erra (Lyam - 12/11/2025)
+* FIX: Concentrar o fechamento do pop up habilidades em um único lugar (Lyam - 12/11/2025)
+* FIX: Impedir cliques durante animação de tremida (Lyam - 12/11/2025)
+* FIX: Desativar instâncias de resposta ao invés de ocultar a camada (Lyam - 12/11/2025)

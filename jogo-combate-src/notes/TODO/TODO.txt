@@ -24,22 +24,19 @@
   * ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
 * Separar o obj_btn_avancar em diferentes objetos por room
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
+* reduzir os estado_turno = ESTADOS_TURNO.FINALIZANDO; espalhados pelo código
+* trocar var "jogador_atual" do controlador para instancia
 
 ## 🆕 BUGS ENCONTRADOS
 
 ### Gerais
 
-* Impedir cliques durante animação de tremida
-* Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
-  * Apertar essas opcoes, mesmo que invisivel, quebra o código das habilidades
-  * INFO: Mesmo assim, mantenha camada oculdada para o bem do código
-* concentrar o fechamento do pop up habilidades em um único lugar
-* tremida no botão não aparece quando o bot erra
+> Todos os bugs gerais foram solucionados
 
 ### Rapido
 
 * confirmação de habilidade não aparece
-* configutat para resetar alarme após o bot errar SOMENTE PARA ESSE MODO
+* configurar para resetar alarme após o bot errar SOMENTE PARA ESSE MODO
 
 ### 🎨 SPRITES PARA DESENHAR
 
@@ -51,8 +48,8 @@
 
 ## ⚙ EM ANDAMENTO
 
-* Todas as animações dos personagens - prontos 3/12 (Kaue)
-  * idle: 12/12 
+* Todas as animações dos personagens - prontos 4/12 (Kaue)
+  * idle: 12/12
   * hab1: 9/12
   * hab2: 6/12
   * ult: 3/12

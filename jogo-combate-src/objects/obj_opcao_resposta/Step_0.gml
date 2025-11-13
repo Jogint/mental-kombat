@@ -37,7 +37,3 @@ if (tempo_feedback_bot > 0) {
         desenhar_circulo = false;
     }
 }
-
-//if (obj_gestao_rodada.errou_resposta) {
-//	instance_deactivate();
-//}

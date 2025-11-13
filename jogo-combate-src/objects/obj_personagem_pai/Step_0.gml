@@ -74,28 +74,11 @@ switch (estado_turno) {
 			obj_gestao_rodada.timer_turno = 0; // força fim do turno // REMOVE: atribuição indevida
 			obj_gestao_rodada.errou_resposta = false; // REMOVE: atribuição indevida
 			
-			// Zera o multiplicador energético
-			show_debug_message("mult energia " + string(efeitos.mult_energia));
+			// ---------- Zera o multiplicador energético ----------
+			//show_debug_message("mult energia " + string(efeitos.mult_energia));
 			efeitos.mult_energia = 1;
 			efeitos.timer_energia = 0;
 		}
-		
-		// ---------- GESTÃO DO EFEITO ENERGÉTICO ----------
-		//if (efeitos.mult_energia > 1) {
-		//	// O efeito NÃO está ativo
-		//	if (efeitos.timer_energia <= 0) {
-		//		efeitos.timer_energia = segs_por_habilidade * game_get_speed(gamespeed_fps);
-		//	} else {
-		//		// O efeito ESTÁ ativo
-		//		efeitos.timer_energia--;
-		//	}
-			
-		//	// Verificação de Término
-		//	if (efeitos.timer_energia <= 0) {
-		//		efeitos.mult_energia = 1;
-		//		efeitos.timer_energia = 0;
-		//	}
-		//}
 
 		// ---------- VERIFICA FIM DO TIMER DO TURNO ----------
 		if (obj_gestao_rodada.timer_turno <= 0 && !treme_resposta_errada) {
@@ -108,6 +91,8 @@ switch (estado_turno) {
 	// ESTADO 4: ESCOLHA DE HABILIDADE
 	// ==================================================
 	case ESTADOS_TURNO.ESCOLHA_HAB:
+	
+		if (instance_exists(obj_opcao_resposta)) instance_deactivate_object(obj_opcao_resposta);
 		
 		// ---------- EXIBE AS HABILIDADES ----------
 		if (!obj_gestao_rodada.exibir_hab) { 
@@ -126,17 +111,20 @@ switch (estado_turno) {
 	// ==================================================
 	case ESTADOS_TURNO.EXIBINDO_HAB:
 		
-		// ---------- OCULTA AS HABILIDADES ----------
-		if (obj_gestao_rodada.exibir_hab) { 
-			scr_toggle_hab();
+		if (!_is_rapido) {
+			
+			// ---------- OCULTA AS HABILIDADES ----------
+			if (obj_gestao_rodada.exibir_hab && !_is_rapido) {
+				scr_toggle_hab();
+			}
+		
+			if (instance_exists(obj_pular_turno)) instance_destroy(obj_pular_turno);
+		
+			if (is_string(ultima_hab_usada) || hab_em_uso == noone) {
+				estado_turno = ESTADOS_TURNO.FINALIZANDO;
+			}
+			
 		}
-		
-		if (instance_exists(obj_pular_turno)) instance_destroy(obj_pular_turno);
-		
-		if (is_string(ultima_hab_usada)) estado_turno = ESTADOS_TURNO.FINALIZANDO;
-		
-		var _chaves = variable_struct_get_names(ultima_hab_usada);
-		if (array_length(_chaves) == 0) estado_turno = ESTADOS_TURNO.FINALIZANDO; // struct vazio = pulo
 		
 	break;
 
@@ -155,6 +143,8 @@ switch (estado_turno) {
 		scr_proxima_pergunta();
 	
 		global.turno_iniciou = false;
+		
+		instance_activate_object(obj_opcao_resposta);
 		
 		estado_turno = ESTADOS_TURNO.AGUARDANDO;
 	break;

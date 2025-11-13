@@ -93,8 +93,6 @@ global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO])) {
 	// ---------- BOT ERROU ----------
     } else {
 		bot_marcou_opcao(false);
-        if (!_is_rapido) {
-            estado_turno = ESTADOS_TURNO.ESCOLHA_HAB;
-        }
+        
     }
 }

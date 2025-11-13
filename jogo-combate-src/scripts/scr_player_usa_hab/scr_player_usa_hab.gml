@@ -9,13 +9,8 @@ function scr_player_usa_hab(_is_pulo) {
 	
 	var _hab_index = array_get_index(global.hab_visiveis, id);
 	
-	if (!_is_rapido) {
-		scr_toggle_hab([]);
-	}
-	
 	if (_is_pulo) {
-		global.inst_perso_partida[_player_index].ultima_hab_usada = {};
-		global.inst_perso_partida[_player_index].estado_turno = ESTADOS_TURNO.FINALIZANDO;
+		global.inst_perso_partida[_player_index].estado_turno = ESTADOS_TURNO.EXIBINDO_HAB;
 		return;
 	}
 	

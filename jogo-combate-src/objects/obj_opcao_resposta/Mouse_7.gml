@@ -21,7 +21,7 @@ if (obj_gestao_rodada.jogador_atual != global.tipos_jogadores[JOGADOR.BOT] && //
 		scr_proxima_pergunta();
 		
 	// ---------- Se o player errou a resposta ----------
-	} else {
+	} else if (qtd_frames_tremendo <= 0) {
 		treme_opcao();
 		obj_gestao_rodada.errou_resposta = true; // REMOVE: atribuição indevida
 	}
