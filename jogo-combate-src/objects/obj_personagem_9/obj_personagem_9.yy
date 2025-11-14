@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_9",
-    "path":"sprites/spr_player_idle_9/spr_player_idle_9.yy",
+    "name":"spr_emilio_idle",
+    "path":"sprites/spr_emilio_idle/spr_emilio_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

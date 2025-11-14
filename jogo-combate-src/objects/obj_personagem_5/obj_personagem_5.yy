@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_5",
-    "path":"sprites/spr_player_idle_5/spr_player_idle_5.yy",
+    "name":"spr_latte_idle",
+    "path":"sprites/spr_latte_idle/spr_latte_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

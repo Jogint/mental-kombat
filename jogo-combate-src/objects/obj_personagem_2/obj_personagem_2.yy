@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_2",
-    "path":"sprites/spr_player_idle_2/spr_player_idle_2.yy",
+    "name":"spr_acerola_idle",
+    "path":"sprites/spr_acerola_idle/spr_acerola_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

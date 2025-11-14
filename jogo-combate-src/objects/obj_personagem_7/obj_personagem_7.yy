@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_7",
-    "path":"sprites/spr_player_idle_7/spr_player_idle_7.yy",
+    "name":"spr_grumpy_idle",
+    "path":"sprites/spr_grumpy_idle/spr_grumpy_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

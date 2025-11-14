@@ -131,7 +131,7 @@ function bot_marcou_opcao(_acertou) {
 	    array_push(_respostas_array, id);
 	}
 	
-	array_shuffle(_respostas_array);
+	_respostas_array = array_shuffle(_respostas_array);
 
 	if (_acertou) {
 		for (var i = 0; i < array_length(_respostas_array); ++i) {
@@ -189,6 +189,8 @@ function set_bot_responde(_obj) {
 /// @param {Asset.GMObject|Id.Instance} _inimigo Objeto que está sofrendo o ataque
 /// @param {Real} _valor Quanto dano será recebido
 function efetua_dano(_inimigo, _valor) {
+	//var crit = irandom_range(0, 100) >= 90;
+	//_inimigo.hp_atual -= (_valor + (_valor * 0.2));
 	_inimigo.hp_atual -= _valor;
 	if (_inimigo.hp_atual <= 0) {
 		_inimigo.hp_atual = 0;

@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_10",
-    "path":"sprites/spr_player_idle_10/spr_player_idle_10.yy",
+    "name":"spr_sr_kenzo_idle",
+    "path":"sprites/spr_sr_kenzo_idle/spr_sr_kenzo_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

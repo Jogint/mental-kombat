@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_11",
-    "path":"sprites/spr_player_idle_11/spr_player_idle_11.yy",
+    "name":"spr_umbros_idle",
+    "path":"sprites/spr_umbros_idle/spr_umbros_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

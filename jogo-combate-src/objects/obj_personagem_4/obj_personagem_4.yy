@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_4",
-    "path":"sprites/spr_player_idle_4/spr_player_idle_4.yy",
+    "name":"spr_atomizer_idle",
+    "path":"sprites/spr_atomizer_idle/spr_atomizer_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

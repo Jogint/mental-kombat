@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_8",
-    "path":"sprites/spr_player_idle_8/spr_player_idle_8.yy",
+    "name":"spr_kiki_idle",
+    "path":"sprites/spr_kiki_idle/spr_kiki_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
