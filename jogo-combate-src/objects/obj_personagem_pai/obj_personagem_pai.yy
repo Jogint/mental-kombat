@@ -33,10 +33,10 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"aumento_energia","filters":[],"listItems":[],"multiselect":false,"name":"aumento_energia","rangeEnabled":true,"rangeMax":3.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"aumento_energia","filters":[],"listItems":[],"multiselect":false,"name":"aumento_energia","rangeEnabled":true,"rangeMax":1.5,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"aumento_tempo","filters":[],"listItems":[],"multiselect":false,"name":"aumento_tempo","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"aumento_vida","filters":[],"listItems":[],"multiselect":false,"name":"aumento_vida","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"aumento_energia_max","filters":[],"listItems":[],"multiselect":false,"name":"aumento_energia_max","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"aumento_vida","filters":[],"listItems":[],"multiselect":false,"name":"aumento_vida","rangeEnabled":true,"rangeMax":1.5,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"aumento_energia_max","filters":[],"listItems":[],"multiselect":false,"name":"aumento_energia_max","rangeEnabled":true,"rangeMax":1.5,"rangeMin":0.5,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"nome_personagem","filters":[],"listItems":[],"multiselect":false,"name":"nome_personagem","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"nome_base","varType":2,},
   ],
   "resourceType":"GMObject",

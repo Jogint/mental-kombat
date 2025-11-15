@@ -7,10 +7,11 @@
   "managed":true,
   "name":"obj_personagem_3",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_tempo","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.1",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_vida","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.2",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia_max","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.9",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.5",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_tempo","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_vida","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.8",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia_max","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"nome_personagem","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Larry",},
   ],
   "parent":{
     "name":"Personagens",
@@ -38,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_3",
-    "path":"sprites/spr_player_idle_3/spr_player_idle_3.yy",
+    "name":"spr_larry_idle",
+    "path":"sprites/spr_larry_idle/spr_larry_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
