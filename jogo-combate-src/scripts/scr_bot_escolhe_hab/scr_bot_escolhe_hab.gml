@@ -88,7 +88,7 @@ function score_hab(_hab_atual, _bot, _oponente) {
 		case global.tipos_hab[HABS.ATAQUE]:
 			_score_atual = 10;
 			
-			if (_hab_atual.valor >= _oponente.hp_atual) _score_atual += 1000;
+			if (_hab_atual.valor_efeito >= _oponente.hp_atual) _score_atual += 1000;
 		break;
 				
 		case global.tipos_hab[HABS.CURA]:
@@ -101,6 +101,7 @@ function score_hab(_hab_atual, _bot, _oponente) {
 		case global.tipos_hab[HABS.DRENA]:
 			_score_atual = 6;
 					
+			if (_hab_atual.valor_efeito >= _oponente.hp_atual) _score_atual += 1000;
 			if (_bot.hp_atual <= _bot.hp_total * 0.5) _score_atual += 5;
 		break;
 		

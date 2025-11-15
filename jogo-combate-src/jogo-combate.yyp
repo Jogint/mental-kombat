@@ -2,7 +2,7 @@
   "$GMProject":"v1",
   "%Name":"jogo-combate",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -42,7 +42,6 @@
     {"$GMFolder":"","%Name":"Acerola","folderPath":"folders/Sprites/Personagens/Acerola.yy","name":"Acerola","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Atomizer","folderPath":"folders/Sprites/Personagens/Atomizer.yy","name":"Atomizer","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Emilio","folderPath":"folders/Sprites/Personagens/Emilio.yy","name":"Emilio","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Umbros","folderPath":"folders/Sprites/Personagens/Umbros.yy","name":"Umbros","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Grumpy","folderPath":"folders/Sprites/Personagens/Grumpy.yy","name":"Grumpy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Kiki","folderPath":"folders/Sprites/Personagens/Kiki.yy","name":"Kiki","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Larry","folderPath":"folders/Sprites/Personagens/Larry.yy","name":"Larry","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -51,14 +50,14 @@
     {"$GMFolder":"","%Name":"Niara","folderPath":"folders/Sprites/Personagens/Niara.yy","name":"Niara","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sr Kenzo","folderPath":"folders/Sprites/Personagens/Sr Kenzo.yy","name":"Sr Kenzo","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Toya","folderPath":"folders/Sprites/Personagens/Toya.yy","name":"Toya","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Testes","folderPath":"folders/Sprites/Testes.yy","name":"Testes","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Umbros","folderPath":"folders/Sprites/Personagens/Umbros.yy","name":"Umbros","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.0.207",
   },
   "name":"jogo-combate",
   "resources":[

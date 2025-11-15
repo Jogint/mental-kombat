@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_umbros_idle",
   "bboxMode":0,
   "bbox_bottom":664,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9e3493cd-0aa4-4698-8eca-20210407090c","name":"9e3493cd-0aa4-4698-8eca-20210407090c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9e3493cd-0aa4-4698-8eca-20210407090c","name":"9e3493cd-0aa4-4698-8eca-20210407090c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Personagens",
-    "path":"folders/Sprites/Personagens.yy",
+    "name":"Umbros",
+    "path":"folders/Sprites/Personagens/Umbros.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
