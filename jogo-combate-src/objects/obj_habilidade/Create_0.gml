@@ -21,7 +21,7 @@ function gera_descricao(_hab) {
 		case global.tipos_hab[HABS.DRENA]:
 			return "Atinja seu oponente ao mesmo tempo que recebe cura equivalente ao dano";
 		case global.tipos_hab[HABS.PRORROGA]:
-			return "Torne seu relógio mais lento e tenha mais tempo para juntar mais energia";
+			return "Tenha mais tempo para juntar energia enquanto atinge " + string(round(global.numeros_gerais.dano_p_mult * _hab.valor_efeito)) + " de dano";
 		case global.tipos_hab[HABS.ACELERA]:
 			return "Impeça seu oponente de encher a energia! Reduza o tempo de resposta dele";
 		case global.tipos_hab[HABS.ENERGETICO]:

@@ -13,25 +13,32 @@ sprite_index == habilidades[2].sprite) {
     image_speed = 1;
 	
 	switch (hab_em_uso.tipo) {
-		case global.tipos_hab[HABS.ATAQUE]: // dano
+		
+		case global.tipos_hab[HABS.ATAQUE]:
 			efetua_dano(oponente, hab_em_uso.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.CURA]: // cura
+		break;
+		
+		case global.tipos_hab[HABS.CURA]:
 			aumenta_vida(id, hab_em_uso.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.DRENA]: // dreno
+		break;
+		
+		case global.tipos_hab[HABS.DRENA]:
 			efetua_dano(oponente, hab_em_uso.valor_efeito);
 			if (oponente.hp_atual > 0) aumenta_vida(id, hab_em_uso.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.PRORROGA]: // prorroga
+		break;
+		
+		case global.tipos_hab[HABS.PRORROGA]:
+			efetua_dano(oponente, round(global.numeros_gerais.dano_p_mult * hab_em_uso.valor_efeito));
 			id.efeitos.mult_tempo = hab_em_uso.valor_efeito;
-			break;
-		case global.tipos_hab[HABS.ACELERA]: // acelerA
+		
+		break;
+		case global.tipos_hab[HABS.ACELERA]:
 			oponente.efeitos.mult_tempo = hab_em_uso.valor_efeito;
-			break;
-		case global.tipos_hab[HABS.ENERGETICO]: // energetico
+		break;
+		
+		case global.tipos_hab[HABS.ENERGETICO]:
 			id.efeitos.mult_energia = hab_em_uso.valor_efeito;
-			break;
+		break;
 	}
 
 	if (is_rapido) {

@@ -18,6 +18,9 @@ global.tamanhos = { // apenas um número para quadrados
 	logo_hab: 80,
 	inimigo_trilha: 96, // botao de seleção do personagem
 }
+global.numeros_gerais = {
+	dano_p_mult: 20, // valor usado para dar dano com base na % do efeito (tempo/energia)
+}
 global.tempo_para_erro = []; // USADO PARA TESTES, REMOVER DPS
 
 // ==================================================
