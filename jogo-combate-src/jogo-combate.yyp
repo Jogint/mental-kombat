@@ -139,6 +139,7 @@
     {"id":{"name":"snd_musica_padrao","path":"sounds/snd_musica_padrao/snd_musica_padrao.yy",},},
     {"id":{"name":"snd_vitoria","path":"sounds/snd_vitoria/snd_vitoria.yy",},},
     {"id":{"name":"spr_acerola_idle","path":"sprites/spr_acerola_idle/spr_acerola_idle.yy",},},
+    {"id":{"name":"spr_anim_teste","path":"sprites/spr_anim_teste/spr_anim_teste.yy",},},
     {"id":{"name":"spr_atomizer_idle","path":"sprites/spr_atomizer_idle/spr_atomizer_idle.yy",},},
     {"id":{"name":"spr_avanco","path":"sprites/spr_avanco/spr_avanco.yy",},},
     {"id":{"name":"spr_barra_energia","path":"sprites/spr_barra_energia/spr_barra_energia.yy",},},

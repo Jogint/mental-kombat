@@ -1,6 +1,6 @@
 # ✅ TODO
 
-## 🔧 Novas funcionalidades
+## 🔧 A ser criado/alterado
 
 ### Features
 
@@ -11,45 +11,47 @@
 ### Melhorias
 
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
-* Adicionar músicas e efeitos sonoros
-* Filtro no personagem que não está atacando
 * Modos 2 personagens: review visual de que o personagem foi selecionado
 * Substituir "aperte x tecla" por um botão para clicar com mouse
 * Botão de personagem aleatório
-* Trocar nomes do sorteador e tela final pvp para o nome do personagem
-* Usar fontes diversas
+* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta
+* Aviso de "aguarde seu turno" ao tentar responder no turno do bot
+* Incluir nomes dos personagens na batalha
+
+
+### Refatorização de código
+
 * Padronizar inicialização de arrays, pré alocando os índices com noone
 * Revisitar todos os TODO espalhados no código (mudanças pequenas)
 * Remover dependencia de obj_gestao_rodada
   * ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
 * Separar o obj_btn_avancar em diferentes objetos por room
-* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
 * reduzir os estado_turno = ESTADOS_TURNO.FINALIZANDO; espalhados pelo código
 * trocar var "jogador_atual" do controlador para instancia
 
-## 🆕 BUGS ENCONTRADOS
+## 🆕 A ser corrigido
 
 ### Gerais
 
-* Música só toca após reset do jogo
+* A confirmação de escolha de resposta do bot permanece enquanto usa habilidade
 * Se clicar rápido na opção de resposta após executar a animação, você pula o turno do inimigo
 
 ### Rapido
 
 > Nenhum bug relacionado a este modo de jogo
 
-### 🎨 SPRITES PARA DESENHAR
+## 🎨 A ser desenhado
 
-* Background para cada room
 * Tela e botões de fim de jogo (atualmente vivendo a base do draw)
-* Miniatura de exibição do personagem na seleção de jogador
-* Todos os objetos na pasta /Botões
 * Tela e botões de configurações (som, controles, créditos, easter egg)
 
-## ⚙ EM ANDAMENTO
+# ⚙ EM ANDAMENTO
 
 * Todas as animações dos personagens - prontos 4/12 (Kaue)
   * idle: 12/12
   * hab1: 9/12
   * hab2: 6/12
   * ult: 3/12
+* Miniatura de exibição do personagem na seleção de jogador (Kaue)
+* Todos os objetos na pasta /Botões (Kaue)
+* Background para cada room (Kaue)
