@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_xdh_spoiler_inst",
+  "%Name":"snd_musica_combate",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":189.61415,
+  "duration":117.68163,
   "exportDir":"",
-  "name":"snd_xdh_spoiler_inst",
+  "name":"snd_musica_combate",
   "parent":{
     "name":"Sons",
     "path":"folders/Sons.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_xdh_spoiler_inst.mp3",
+  "soundFile":"snd_musica_combate.mp3",
   "volume":1.0,
 }

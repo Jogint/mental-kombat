@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_vitoria",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.1461225,
+  "exportDir":"",
+  "name":"snd_vitoria",
+  "parent":{
+    "name":"Sons",
+    "path":"folders/Sons.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_vitoria.mp3",
+  "volume":1.0,
+}

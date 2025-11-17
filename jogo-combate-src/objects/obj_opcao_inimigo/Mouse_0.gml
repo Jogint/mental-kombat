@@ -1,6 +1,9 @@
 // ==================================================
 /// @description Escolhe oponente
 // ==================================================
+
+if (instance_exists(obj_jbl)) obj_jbl.toca_som_clicou();
+
 // ---------- Somente se não estiver bloqueado ----------
 if (!bloqueado) {
 	global.perso_atuais[1] = obj_relacionado;

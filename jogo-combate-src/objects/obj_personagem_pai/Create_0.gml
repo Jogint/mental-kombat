@@ -147,6 +147,8 @@ function bot_marcou_opcao(_acertou) {
 		return;
 	}
 	
+	// ----- DELETAR SESSÃO PÓS TESTES -----
+	// -------------------------------------
 	array_push(global.tempo_para_erro, (global.inst_perso_partida[1].tempo_turno - round((obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps)))));
 	//show_debug_message(global.tempo_para_erro);
 	var _soma = 0;

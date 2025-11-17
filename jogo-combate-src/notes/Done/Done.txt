@@ -185,3 +185,5 @@
 * IMPROVE: Balanceamento das variáveis de objeto dos personagens (Lyam - 14/11/2025)
 * IMPROVE: Organização de sprites por nomes dos personagens (Lyam - 14/11/2025)
 * FIX: Erro do bot ao responder perguntas de multiplicação (Lyam - 15/11/2025)
+* FEAT: Configuração de sons e efeitos sonoros (Lyam - 16/11/2025)
+* FIX: Correção de erro no final do modo história (Lyam - 17/11/2025)

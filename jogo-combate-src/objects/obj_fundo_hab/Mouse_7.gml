@@ -2,4 +2,5 @@
 /// @description Efeito da habilidade
 // ==================================================
 
+if (instance_exists(obj_jbl)) obj_jbl.toca_som_clicou();
 scr_player_usa_hab(false);

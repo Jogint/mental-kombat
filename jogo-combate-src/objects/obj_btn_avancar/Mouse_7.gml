@@ -2,6 +2,8 @@
 /// @description Ação por room
 // ==================================================
 
+if (instance_exists(obj_jbl)) obj_jbl.toca_som_clicou();
+
 switch (room) {
 	case rm_trilha:
 		// ---------- Verifica se selecionou e avança ----------
