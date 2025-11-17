@@ -7,8 +7,13 @@
 /// @param {bool} _is_bg Se o código será usado para fazer o fundo do card no draw
 /// @return {Array<Real>} [x, y, largura, altura]
 function scr_define_tamanho_hab(i, _is_rapido, _espaco_entre, _largura_desejada, _is_bg) {
-	var _altura_desejada = _largura_desejada;
-	if (_is_bg) _altura_desejada = _largura_desejada * 1.5;
+	var _altura_desejada;
+	if (_is_bg) {
+		_altura_desejada = _largura_desejada * 1.5;
+	} else {
+		_altura_desejada = _largura_desejada;
+	}
+	
 	var _total_instancias = 3;
 	var _y = 200; if (_is_bg) _y = 170;
 	var _largura_total_conjunto = (_largura_desejada * _total_instancias) + (_espaco_entre * (_total_instancias - 1));

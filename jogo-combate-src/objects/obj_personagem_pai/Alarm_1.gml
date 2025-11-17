@@ -1,4 +1,4 @@
-/// @description Exibir escolha bot
+/// @description Exibir escolha hab bot
 
 
 //var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
@@ -10,7 +10,6 @@
 //} else {
 
 	// TODO: Criar uma sprite de confirmação para o obj_fundo_hab
-	// ?: Usar o sprite_get_height/width dela para definir o fundo na global de tamanhos
 	
 //}
 

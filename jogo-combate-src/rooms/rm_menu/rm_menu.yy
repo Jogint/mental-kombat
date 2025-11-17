@@ -10,20 +10,20 @@
     {"name":"inst_24FCDD2E","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_5333E1C4","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_65D7037F","path":"rooms/rm_menu/rm_menu.yy",},
-    {"name":"inst_232ED6DE","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_troca_modo_d","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_troca_dif_d","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_troca_modo_e","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_troca_dif_e","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_42D33150","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_6064AD59","path":"rooms/rm_menu/rm_menu.yy",},
+    {"name":"inst_7C67EF2F","path":"rooms/rm_menu/rm_menu.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"CriarGlobais","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_6064AD59","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6064AD59","objectId":{"name":"obj_btn_reset","path":"objects/obj_btn_reset/obj_btn_reset.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":1296.0,"y":720.0,},
+        {"$GMRInstance":"v4","%Name":"inst_7C67EF2F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7C67EF2F","objectId":{"name":"obj_jbl","path":"objects/obj_jbl/obj_jbl.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":0.0,},
         {"$GMRInstance":"v4","%Name":"inst_223D18CF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_223D18CF","objectId":{"name":"obj_definir_globais","path":"objects/obj_definir_globais/obj_definir_globais.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
-        {"$GMRInstance":"v4","%Name":"inst_232ED6DE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_232ED6DE","objectId":{"name":"obj_jbl","path":"objects/obj_jbl/obj_jbl.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":0.0,},
       ],"layers":[],"name":"CriarGlobais","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"BotoesGerais","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_24FCDD2E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_24FCDD2E","objectId":{"name":"obj_btn_trocar_modo","path":"objects/obj_btn_trocar_modo/obj_btn_trocar_modo.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.3333334,"scaleY":1.0,"x":672.0,"y":448.0,},

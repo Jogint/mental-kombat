@@ -1,5 +1,9 @@
 // ==================================================
-// VARIÁVEIS DE USO GERAL DA PARTIDA
+/// @description Controladores de partida
+// ==================================================
+
+// ==================================================
+/// @description VARIÁVEIS DE USO GERAL DA PARTIDA
 // ==================================================
 
 // ---------- VARIAVEIS NUMÉRICAS ----------
@@ -38,3 +42,10 @@ player_pontuou = false;
 
 // ---------- PARA MODO RAPIDO ----------
 pop_ups_abertos = false;
+
+// ==================================================
+// FUNÇÕES DE USO EXTERNO
+// ==================================================
+function sorteio_em_andamento() {
+	return estado_sorteio != 0;
+}

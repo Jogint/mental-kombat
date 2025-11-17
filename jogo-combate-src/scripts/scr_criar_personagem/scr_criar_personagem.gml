@@ -22,20 +22,20 @@ function scr_criar_personagem(obj, aumento_energia, aumento_tempo, aumento_vida,
 function definir_vida(aumento){
 	if(is_undefined(aumento)) aumento = 1;
 		
-	if (aumento < 0.5 || aumento > 2) {
-		// mínimo 25 hp, máximo 100 hp
+	if (aumento < 0.5 || aumento > 1.5) {
+		// mínimo 50 hp, máximo 150 hp
         show_error("Valor de 'aumento' inválido em scr_definir_vida: " + string(aumento), true);
     }
 	
-	var hp_padrao = 50;
+	var hp_padrao = 100;
 	return round(hp_padrao * aumento);
 }
 
 function definir_energia_max(aumento){
 	if(is_undefined(aumento)) aumento = 1;
 		
-	if (aumento < 0.5 || aumento > 2) {
-		// mínimo 50 energia, máximo 200 energia
+	if (aumento < 0.5 || aumento > 1.5) {
+		// mínimo 50 energia, máximo 150 energia
         show_error("Valor de 'aumento' inválido em scr_definir_energia_max: " + string(aumento), true);
     }
 	
@@ -46,8 +46,8 @@ function definir_energia_max(aumento){
 function definir_energia(aumento){
 	if(is_undefined(aumento)) aumento = 1;
 		
-	if (aumento < 0.5 || aumento > 3) {
-		// mínimo 2 ponto, máximo 12 pontos
+	if (aumento < 0.5 || aumento > 1.5) {
+		// mínimo 2 ponto, máximo 6 pontos
         show_error("Valor de 'aumento' inválido em scr_definir_energia: " + string(aumento), true);
     }
 	

@@ -1,62 +1,57 @@
 # ✅ TODO
 
-## 🔧 Novas funcionalidades
+## 🔧 A ser criado/alterado
 
 ### Features
 
 * Criar global.apresentou_tutoriais = [false, false, false]:
-	* uma tela de tutorial para cada modo de jogo. Deve ser interativa
+  * uma tela de tutorial para cada modo de jogo. Deve ser interativa
 * Menu (pause) para voltar para tela inicial
 
 ### Melhorias
 
-* Reduzir tempo de resposta da subtração de 2 dígitos caso a unidade de n1 seja maior que n2
-* Melhorar opção de escolha de habilidade do bot
-	* chance maior de gastar energia se puder atacar
-	* não curar com vida cheia
-* Mudar taxa de erro do bot para algo semelhante ao tempo de resposta
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
-* Passar questão apenas após bot parar de mostrar a confirmação de escolha
-* Adicionar músicas e efeitos sonoros
-* Exibir quanto de energia vc tem em números
-* Filtro no personagem que não está atacando
-* Modo 2 personagens: review visual de que o personagem foi selecionado
+* Modos 2 personagens: review visual de que o personagem foi selecionado
 * Substituir "aperte x tecla" por um botão para clicar com mouse
 * Botão de personagem aleatório
-* Trocar nomes do sorteador e tela final pvp para o nome do personagem
-* Usar fontes diversas
+* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta
+* Aviso de "aguarde seu turno" ao tentar responder no turno do bot
+* Incluir nomes dos personagens na batalha
+
+
+### Refatorização de código
+
 * Padronizar inicialização de arrays, pré alocando os índices com noone
 * Revisitar todos os TODO espalhados no código (mudanças pequenas)
 * Remover dependencia de obj_gestao_rodada
-	* ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
+  * ex: tirar o verificador do turno do step e no obj_gestao_rodada chamar inst_player.ativa_turno();
 * Separar o obj_btn_avancar em diferentes objetos por room
+* reduzir os estado_turno = ESTADOS_TURNO.FINALIZANDO; espalhados pelo código
+* trocar var "jogador_atual" do controlador para instancia
 
-## 🆕 BUGS ENCONTRADOS
+## 🆕 A ser corrigido
 
 ### Gerais
 
-* efeito do energético é mantido se acaba o turno
-	* POSSIVELMENTE CORRIGIDO mas faltam testes
-* confirmação de habilidade não aparece no modo rápido
-* Desativar instâncias de resposta ao invés de somente ocultar a camada ao exibir habilidades
-	* Apertar essas opcoes, mesmo que invisivel, quebra o código das habilidades
-	* INFO: Mesmo assim, mantenha camada oculdada para o bem do código
+* A confirmação de escolha de resposta do bot permanece enquanto usa habilidade
+* Se clicar rápido na opção de resposta após executar a animação, você pula o turno do inimigo
 
-	
-### 🎨 SPRITES PARA DESENHAR
+### Rapido
 
-* Background para cada room
+> Nenhum bug relacionado a este modo de jogo
+
+## 🎨 A ser desenhado
+
 * Tela e botões de fim de jogo (atualmente vivendo a base do draw)
-* Miniatura de exibição do personagem na seleção de jogador
-* Todos os objetos na pasta /Botões
 * Tela e botões de configurações (som, controles, créditos, easter egg)
 
-## ⚙ EM ANDAMENTO
+# ⚙ EM ANDAMENTO
 
-* Todas as animações dos personagens - prontos 2/12 (Kaue)
-	* idle: 9/12
-	* hab1: 8/12
-	* hab2: 3/12
-	* ult: 2/12
-* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
-* Transformar todo numero que repete (tamanhos de sprites/pop ups) em global (Lyam)
+* Todas as animações dos personagens - prontos 4/12 (Kaue)
+  * idle: 12/12
+  * hab1: 9/12
+  * hab2: 6/12
+  * ult: 3/12
+* Miniatura de exibição do personagem na seleção de jogador (Kaue)
+* Todos os objetos na pasta /Botões (Kaue)
+* Background para cada room (Kaue)

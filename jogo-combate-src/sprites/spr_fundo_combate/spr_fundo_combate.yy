@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_fundo_combate",
   "bboxMode":0,
-  "bbox_bottom":489,
+  "bbox_bottom":767,
   "bbox_left":0,
-  "bbox_right":735,
+  "bbox_right":1343,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":490,
+  "height":768,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"96dc653b-d1f2-4b1c-aab7-68efe1925c49","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"96dc653b-d1f2-4b1c-aab7-68efe1925c49","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -93,5 +93,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":736,
+  "width":1344,
 }

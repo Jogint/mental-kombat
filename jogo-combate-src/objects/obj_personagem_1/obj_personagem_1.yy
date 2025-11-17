@@ -8,9 +8,10 @@
   "name":"obj_personagem_1",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_tempo","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.9",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_vida","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia_max","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_tempo","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_vida","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"aumento_energia_max","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1.2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_personagem_pai","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"propertyId":{"name":"nome_personagem","path":"objects/obj_personagem_pai/obj_personagem_pai.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Toya",},
   ],
   "parent":{
     "name":"Personagens",
@@ -38,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle_1",
-    "path":"sprites/spr_player_idle_1/spr_player_idle_1.yy",
+    "name":"spr_toya_idle",
+    "path":"sprites/spr_toya_idle/spr_toya_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

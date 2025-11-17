@@ -2,12 +2,10 @@
   "$GMNotes":"v1",
   "%Name":"TODO",
   "name":"TODO",
-  "openedOnFirstLoad":true,
   "parent":{
     "name":"Anotações",
     "path":"folders/Anotações.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",
-  "shouldOpenOnLoad":true,
 }

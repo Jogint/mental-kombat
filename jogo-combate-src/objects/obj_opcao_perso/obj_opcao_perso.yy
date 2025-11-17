@@ -31,6 +31,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":null,
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_lily_1hab",
+    "path":"sprites/spr_lily_1hab/spr_lily_1hab.yy",
+  },
   "visible":true,
 }

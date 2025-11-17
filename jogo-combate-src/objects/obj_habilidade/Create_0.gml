@@ -2,7 +2,10 @@
 /// @description Vars e Funções
 // ==================================================
 // ----------  ----------
+habilidade = {} // alterado no scr_toggle_hab
 alterou = false;
+trocou_padrao = false;
+sprite_padrao = object_get_sprite(object_index);
 image_alpha = 0.5;
 
 /// @function gera_descricao
@@ -22,7 +25,7 @@ function gera_descricao(_hab) {
 		case global.tipos_hab[HABS.ACELERA]:
 			return "Impeça seu oponente de encher a energia! Reduza o tempo de resposta dele";
 		case global.tipos_hab[HABS.ENERGETICO]:
-			return "Aumente a quantidade de energia ganha por acerto durante 10 segundos";
+			return "Aumente a quantidade de energia ganha por acerto durante um turno";
 		default:
 			return "A habilidade de tipo " + string(_hab.tipo) + " não tem uma descrição configurada.";
 	}

@@ -15,9 +15,9 @@ estado_turno = ESTADOS_TURNO.SETUP;
 controlador = noone; // alterado em scr_inserir_players. É bot, p1 ou p2 (global.tipos_jogadores)
 oponente = noone; // instancia do oponente
 meu_turno = false; // flag que define se o step pode ser executado
-bot_executou = false; // flag para a primeira chamada de alarm[0] do bot
-retornou_erro = false; // interrompe execução enquanto treme a opcao com erro
+treme_resposta_errada = false; // interrompe execução enquanto treme a opcao com erro
 tempo_rapido = 120; // 2 minutos de execução
+is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 
 // ---------- ESCALA DE SPRITE ----------
 inverteu_sprite = false; // flag para inverter p2 no inicio da partida
@@ -37,17 +37,20 @@ efeitos = { // controla os efeitos de longa duração das hab
 segs_por_habilidade = 10; // duração máxima dos buffs persistentes
 habilidades = []; // objetos filho definem as habilidades nos seus objetos
 ultima_hab_usada = {}; // definido em scr_bot_escolhe_hab para exibir seleção
-animacao_em_uso = noone; // guarda a habilidade que será usada ao fim da animação
+hab_em_uso = noone; // guarda a habilidade que será usada ao fim da animação
 sprite_padrao = object_get_sprite(object_index); // sprite idle do personagem para pós animação
 
 // ==================================================
-// FUNÇÕES CHAMADAS NO STEP DURANTE O TURNO
+// FUNÇÕES DE USO INTERNO
 // ==================================================
+
+// ---------- GESTÃO DE SPRITES ----------
+// ---------------------------------------
 
 /// @function calcular_escala_padrao_sprite()
 /// @description Padroniza o tamanho das sprites in game para efeitos de aumentar / diminuir
 function calcular_escala_padrao_sprite() {
-    // TODO: ADICIONA ESSE CARALHO DE global.tamanhos.personagem NUMA GLOBAL
+    // TODO: ADICIONA ESSE CARALHO DE global.tamanhos.perso_maior NUMA GLOBAL
     var _target_width = 65 * 5;
     var _target_height = 65 * 5;
 
@@ -58,34 +61,10 @@ function calcular_escala_padrao_sprite() {
     return [_target_width / _sprite_width, _target_height / _sprite_height];
 }
 
-/// @function aumentar_energia()
-/// @description Aumenta a energia atual do personagem com base em `energia_por_acerto`,
-/// limitando ao máximo `energia_total`.
-function aumentar_energia() {
-    energia_atual += round(energia_por_acerto * efeitos.mult_energia);
-    if (energia_atual >= energia_total) {
-        energia_atual = energia_total;
-    }
-}
-
-/// @function bot_ataca()
-/// @description Executa o ataque do bot iniciando um alarme que aguarda antes de responder.
-/// Só dispara se `bot_executou` ainda for false.
-function bot_ataca() {
-    if (!bot_executou &&
-	(controlador == global.tipos_jogadores[JOGADOR.BOT] ||
-	global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO])) {
-        bot_executou = true;
-        var _tempo_para_responder = scr_tempo_acerto_bot(); // segundos antes de responder
-		//show_debug_message("Bot irá responder em " + string(_tempo_para_responder));
-        alarm[0] = _tempo_para_responder * game_get_speed(gamespeed_fps);
-    }
-}
-
 /// @function altera_sprite_hab(sprite_mudada)
 /// @description Altera a sprite da habilidade que o bot escolheu (padrão > confirmação > padrão)
 /// @param {Asset.GMSprite} sprite_mudada A sprite que deseja colocar no lugar da atual
-function altera_sprite_hab(sprite_mudada) {
+function altera_sprite_hab(sprite_mudada = spr_hab_indisponivel) {
     var _inicio_escolha = 0; // começa em 0 pois vai percorrer todo o array
     var _tamanho = [300, 450]; // tamanho do obj_fundo_hab, definido em scr_toggle_hab
 	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
@@ -98,10 +77,12 @@ function altera_sprite_hab(sprite_mudada) {
     for (var i = _inicio_escolha; i < array_length(global.hab_visiveis); i++) {
         var _hab_atual = global.hab_visiveis[i];
 		
-		if (!is_string(ultima_hab_usada)) { // ignora se for pulo
+		if (is_struct(ultima_hab_usada)) { // ignora se for pulo
 			
 			if (_hab_atual.habilidade.nome == ultima_hab_usada.nome) {
 				// busca qual foi a habilidade que o bot escolheu
+				
+				if (sprite_mudada == spr_hab_indisponivel) sprite_mudada = _hab_atual.sprite_padrao;
 				
 				if (_is_rapido) { // confirma via obj_habilidade
 					scr_trocar_sprite(_hab_atual, _tamanho[0], _tamanho[1], sprite_mudada);
@@ -126,42 +107,83 @@ function altera_escala_sprite(_fator_escala) {
 	image_yscale = escala_padrao[1] * _fator_escala;
 }
 
-/// @function efeito_hab(obj, obj_inimigo, hab)
-/// @description Efetua o efeito da habilidade nos personagens
-/// @param {Asset.GMObject|Id.Instance} obj Objeto que está atacando
-/// @param {Asset.GMObject|Id.Instance} obj_inimigo Objeto que está sofrendo o ataque
-/// @param {Struct|String} hab Qual habilidade foi selecionada
-function efeito_hab(obj, obj_inimigo, hab){
-	animacao_em_uso = noone;
-	
-	if (!is_struct(hab)) {
-	    //show_debug_message("AVISO: Efeito de habilidade cancelado. Hab não é um struct." + string(hab));
-	    exit;
+// ---------- ENERGIA E HABILIDADES ----------
+// -------------------------------------------
+
+/// @function aumentar_energia()
+/// @description Aumenta a energia atual do personagem com base em `energia_por_acerto`,
+/// limitando ao máximo `energia_total`.
+function aumentar_energia() {
+    energia_atual += round(energia_por_acerto * efeitos.mult_energia);
+    if (energia_atual >= energia_total) {
+        energia_atual = energia_total;
+    }
+}
+
+// ---------- FUNCOES DO BOT ----------
+// ------------------------------------
+
+/// @function bot_marcou_opcao
+/// @description chama função de exibir um circulo na seleção
+function bot_marcou_opcao(_acertou) {
+	var _respostas_array = []; 
+	with (obj_opcao_resposta) {
+	    array_push(_respostas_array, id);
 	}
 	
-	switch (hab.tipo) {
-		case global.tipos_hab[HABS.ATAQUE]: // dano
-			efetua_dano(obj_inimigo, hab.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.CURA]: // cura
-			aumenta_vida(obj, hab.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.DRENA]: // dreno
-			efetua_dano(obj_inimigo, hab.valor_efeito);
-			if (obj_inimigo.hp_atual > 0) aumenta_vida(obj, hab.valor_efeito);
-			break;
-		case global.tipos_hab[HABS.PRORROGA]: // prorroga
-			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O tempo deve aumentar em até 2.0 e maior que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj.efeitos.mult_tempo = hab.valor_efeito;
-			break;
-		case global.tipos_hab[HABS.ACELERA]: // acelera
-		if (hab.valor_efeito >= 1 || hab.valor_efeito < 0.5) show_error("O tempo inimigo deve reduzir em até 0.5 e ser menor que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj_inimigo.efeitos.mult_tempo = hab.valor_efeito;
-			break;
-		case global.tipos_hab[HABS.ENERGETICO]: // energetico
-			if (hab.valor_efeito > 2 || hab.valor_efeito < 1.1) show_error("O ganho energético deve aumentar em até 2.0 e ser maior que 1. Recebeu " + string(hab.valor_efeito), true);
-			obj.efeitos.mult_energia = hab.valor_efeito;
-			break;
+	_respostas_array = array_shuffle(_respostas_array);
+
+	if (_acertou) {
+		for (var i = 0; i < array_length(_respostas_array); ++i) {
+			
+		    if (_respostas_array[i].is_certo) {
+				// show_debug_message("acertou: " + string(_respostas_array[i].numero));
+				_respostas_array[i].opcao_selecionada(true, _acertou);
+				
+				break;
+			}
+		}
+		
+		return;
+	}
+	
+	// ----- DELETAR SESSÃO PÓS TESTES -----
+	// -------------------------------------
+	array_push(global.tempo_para_erro, (global.inst_perso_partida[1].tempo_turno - round((obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps)))));
+	//show_debug_message(global.tempo_para_erro);
+	var _soma = 0;
+	for (var i = 0; i < array_length(global.tempo_para_erro); i++) {
+		_soma += global.tempo_para_erro[i];
+		if (i == array_length(global.tempo_para_erro) - 1) {
+			show_debug_message("Média do erro: " + string(_soma / array_length(global.tempo_para_erro)));
+		}
+	}
+	
+	var _opcao_aleatoria = _respostas_array[0];
+	if (_opcao_aleatoria.is_certo) _opcao_aleatoria = _respostas_array[1];
+	// show_debug_message("errou: " + string(_opcao_aleatoria.numero));
+	_opcao_aleatoria.opcao_selecionada(true, _acertou);
+}
+
+function set_bot_responde(_obj) {
+	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
+	
+	if (_obj.controlador != global.tipos_jogadores[JOGADOR.BOT]) return;
+	
+	// ---------- VERIFICA SE PODE RESPONDER MAIS UMA ----------
+	var _secs_restantes = round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps));
+	var _tempo_resp = scr_tempo_acerto_bot();
+	if (_is_rapido) _tempo_resp += 1; // 1 segundo extra pra evitar o spam absurdo
+		
+	if (_secs_restantes > _tempo_resp && _obj.alarm[0] <= 0) {
+	    // show_debug_message("O bot executará novamente em " + string(_tempo_resp));
+	    var _frames = _tempo_resp * game_get_speed(gamespeed_fps);
+	    _obj.alarm[0] = _frames;
+	}
+	
+	if (_is_rapido && _obj.alarm[3] <= 0) {
+		var _segundos_para_atacar = 10;
+		_obj.alarm[3] = _segundos_para_atacar * game_get_speed(gamespeed_fps);
 	}
 }
 
@@ -169,6 +191,8 @@ function efeito_hab(obj, obj_inimigo, hab){
 /// @param {Asset.GMObject|Id.Instance} _inimigo Objeto que está sofrendo o ataque
 /// @param {Real} _valor Quanto dano será recebido
 function efetua_dano(_inimigo, _valor) {
+	//var crit = irandom_range(0, 100) >= 90;
+	//_inimigo.hp_atual -= (_valor + (_valor * 0.2));
 	_inimigo.hp_atual -= _valor;
 	if (_inimigo.hp_atual <= 0) {
 		_inimigo.hp_atual = 0;
@@ -182,4 +206,10 @@ function efetua_dano(_inimigo, _valor) {
 function aumenta_vida(_obj, _valor) {
 	_obj.hp_atual += _valor;
 	if (_obj.hp_atual > _obj.hp_total) _obj.hp_atual = _obj.hp_total;
+}
+
+/// @function bot_encerrar_turno(_bot)
+function bot_encerrar_turno(_bot) {
+    _bot.alarm[0] = -1;
+    obj_gestao_rodada.errou_resposta = true;
 }

@@ -1,26 +1,23 @@
-/// @function scr_ativa_animacao(hab)
+/// @function scr_ativa_animacao
 /// @description Efetua o inicio da animação do personagem
 /// @param {Asset.GMObject|Id.Instance} obj Objeto que está atacando
-/// @param {Struct|String} hab Qual habilidade foi selecionada
-function scr_ativa_animacao(obj, hab){
-	var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
+/// @param {Struct|String} _hab Qual habilidade foi selecionada
+
+function scr_ativa_animacao(obj, _hab){
+	var _chaves = variable_struct_get_names(_hab);
 	
-	if (is_string(hab)) {
-	    if (!_is_rapido) {
-	        scr_toggle_hab([]);
-	    }
-		
-		obj.estado_turno = ESTADOS_TURNO.FINALIZANDO;
+    if (array_length(_chaves) == 0) { // struct vazio = pulo
+		obj.estado_turno = ESTADOS_TURNO.EXIBINDO_HAB;
 	    return;
 	}
 	
-	obj.energia_atual -= hab.custo;
-	
-	if (!_is_rapido) {
-		scr_toggle_hab([]);
+	with (obj) {
+		energia_atual -= _hab.custo;
+		sprite_index = _hab.sprite;
+		hab_em_uso = _hab;
+		estado_turno = ESTADOS_TURNO.EXIBINDO_HAB
 	}
 	
-	obj.sprite_index = hab.sprite;
-	obj.animacao_em_uso = hab;
-	obj.estado_turno = ESTADOS_TURNO.EXIBINDO_HAB
 }
+
+// REMOVE: Cheio de atribuições indevidas aqui

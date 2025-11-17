@@ -1,3 +1,7 @@
+// ==================================================
+/// @description Exibe pop ups
+// ==================================================
+
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 var _cor_principal = c_black;
 pop_up_aberto = true;
