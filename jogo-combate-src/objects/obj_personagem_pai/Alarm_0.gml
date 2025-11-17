@@ -82,13 +82,14 @@ is_rapido)) {
 	var _i_dif = array_get_index(global.niveis_dif, global.dif_atual);
 	var _min_para_acerto = 50;
 	var _reducao_base = 10;
-	_bonus -= clamp(((_reducao_base * 2) / (_i_dif + 1)), 0, 100); // Bonus: 60 - 0
+	_bonus -= clamp(((_reducao_base * 4) / (_i_dif + 1)), 0, 100); // Bonus: 60 - 0
 	_chance = clamp((_chance + _bonus), 0, 100);
 	var _corte = clamp(_min_para_acerto - (_reducao_base * _i_dif), 0, 100); // Corte: 50 - 10
     var _bot_acertou_chance = (_chance >= _corte);
 
 	// ---------- BOT ACERTOU ----------
     if (_bot_acertou_chance || is_rapido) {
+		if (instance_exists(obj_jbl)) obj_jbl.toca_som_acertou();
         aumentar_energia();
 		bot_marcou_opcao(true);
         

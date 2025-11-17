@@ -30,6 +30,7 @@ function atualizar_dados() {
 /// @function treme_opcao
 /// @description Treme a opção clicada num período de 1 segundo
 function treme_opcao() {
+	if (instance_exists(obj_jbl)) obj_jbl.toca_som_errou();
 	player_atual.treme_resposta_errada = true;
 	var _tempo_tremendo = 0.5; // em segs
     qtd_frames_tremendo = _tempo_tremendo * (game_get_speed(gamespeed_fps) / frames_por_mexida);

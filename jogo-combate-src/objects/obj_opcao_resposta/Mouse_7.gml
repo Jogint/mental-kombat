@@ -7,6 +7,7 @@ if (obj_gestao_rodada.jogador_atual != global.tipos_jogadores[JOGADOR.BOT] && //
 	
 	// ---------- Se o player acertou a resposta ----------
 	if (is_certo) {
+		if (instance_exists(obj_jbl)) obj_jbl.toca_som_acertou();
 		
 		// ---------- No modo rápido, não tem jogador atual, age na inst ----------
 		if (global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO]) {
