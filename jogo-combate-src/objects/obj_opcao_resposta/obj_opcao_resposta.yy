@@ -12,8 +12,8 @@
   "name":"obj_opcao_resposta",
   "overriddenProperties":[],
   "parent":{
-    "name":"Botoes",
-    "path":"folders/Objetos/Botoes.yy",
+    "name":"In-game",
+    "path":"folders/Objetos/Botoes/In-game.yy",
   },
   "parentObjectId":null,
   "persistent":false,

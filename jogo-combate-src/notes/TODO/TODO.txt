@@ -12,7 +12,6 @@
 
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Modos 2 personagens: review visual de que o personagem foi selecionado
-* Substituir "aperte x tecla" por um botão para clicar com mouse
 * Botão de personagem aleatório
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta
 * Aviso de "aguarde seu turno" ao tentar responder no turno do bot
