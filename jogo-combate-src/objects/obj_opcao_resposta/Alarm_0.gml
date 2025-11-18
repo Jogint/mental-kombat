@@ -1,6 +1,7 @@
 // ==================================================
 /// @description Treme resposta incorreta
 // ==================================================
+
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 qtd_frames_tremendo--;
 

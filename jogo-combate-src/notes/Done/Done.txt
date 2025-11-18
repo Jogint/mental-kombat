@@ -189,3 +189,4 @@
 * FIX: Correção de erro no final do modo história (Lyam - 17/11/2025)
 * FEAT: Substituir "aperte x tecla" por um botão para clicar com mouse (Lyam - 17/11/2025)
 * FIX: Interromper contagem do relógio após errar pergunta ou zerar (Lyam - 17/11/2025)
+* FEAT: Aviso de "aguarde seu turno" ao tentar responder no turno do bot (Lyam - 17/11/2025)

@@ -14,7 +14,6 @@
 * Modos 2 personagens: review visual de que o personagem foi selecionado
 * Botão de personagem aleatório
 * Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta
-* Aviso de "aguarde seu turno" ao tentar responder no turno do bot
 * Incluir nomes dos personagens na batalha
 
 

@@ -26,4 +26,7 @@ if (obj_gestao_rodada.jogador_atual != global.tipos_jogadores[JOGADOR.BOT] && //
 		treme_opcao();
 		obj_gestao_rodada.errou_resposta = true; // REMOVE: atribuição indevida
 	}
+} else {
+	alarm[1] = game_get_speed(gamespeed_fps);
+	pop_up_aberto = true;
 }
