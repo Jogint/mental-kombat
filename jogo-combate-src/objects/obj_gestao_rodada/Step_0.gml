@@ -68,7 +68,7 @@ if (partida_acabou && _is_pvp && !player_pontuou) {
 // ==================================================
 // CONTROLA O TIMER DO TURNO
 // ==================================================
-if (jogador_atual != noone) timer_turno--;
+if (jogador_atual != noone && timer_turno > 0) timer_turno--;
 
 // ==================================================
 // PERMITE O ATAQUE SIMULTÂNEO NO MODO RÁPIDO

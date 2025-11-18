@@ -61,6 +61,9 @@ switch (estado_turno) {
 		
 		scr_iniciar_timer_turno(tempo_turno * efeitos.mult_tempo);
 		efeitos.mult_tempo = 1;
+		
+		if (instance_exists(obj_relogio_turno)) obj_relogio_turno.retomar_contagem();
+		
 		scr_proxima_pergunta(); // TODO: tirar isso
 	
 		set_bot_responde(id);
@@ -95,6 +98,8 @@ switch (estado_turno) {
 	// ==================================================
 	case ESTADOS_TURNO.ESCOLHA_HAB:
 	
+		if (instance_exists(obj_relogio_turno)) obj_relogio_turno.interromper_contagem();
+		
 		if (instance_exists(obj_opcao_resposta)) instance_deactivate_object(obj_opcao_resposta);
 		
 		// ---------- EXIBE AS HABILIDADES ----------
