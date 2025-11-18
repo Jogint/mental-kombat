@@ -53,3 +53,4 @@
 * Miniatura de exibição do personagem na seleção de jogador (Kaue)
 * Todos os objetos na pasta /Botões (Kaue)
 * Background para cada room (Kaue)
+* Adição de habilidades dos personagens - prontos 6/12 (Lyam)

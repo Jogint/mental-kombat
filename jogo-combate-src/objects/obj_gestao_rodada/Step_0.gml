@@ -51,8 +51,8 @@ if (partida_acabou) {
 	
 	// ---------- Cria botões de fim de jogo ----------
 	var _camada_btns = "GUI";
-	instance_create_layer(570, 500, _camada_btns, obj_btn_play_again);
-	instance_create_layer(780, 500, _camada_btns, obj_btn_go_menu);
+	instance_create_layer(550, 500, _camada_btns, obj_btn_play_again);
+	instance_create_layer(800, 500, _camada_btns, obj_btn_go_menu);
     
     quem_iniciou = noone; 
 }

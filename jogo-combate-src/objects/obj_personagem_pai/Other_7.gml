@@ -28,11 +28,11 @@ sprite_index == habilidades[2].sprite) {
 		break;
 		
 		case global.tipos_hab[HABS.PRORROGA]:
-			efetua_dano(oponente, round(global.numeros_gerais.dano_p_mult * hab_em_uso.valor_efeito));
 			id.efeitos.mult_tempo = hab_em_uso.valor_efeito;
 		
 		break;
 		case global.tipos_hab[HABS.ACELERA]:
+			efetua_dano(oponente, round(global.numeros_gerais.dano_p_mult * hab_em_uso.valor_efeito));
 			oponente.efeitos.mult_tempo = hab_em_uso.valor_efeito;
 		break;
 		
