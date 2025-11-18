@@ -12,7 +12,6 @@
 ### Melhorias (pós gamejam)
 
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
-* Modos 2 personagens: review visual de que o personagem foi selecionado
 * Botão de personagem aleatório
 * Incluir nomes dos personagens na batalha
 
@@ -55,5 +54,8 @@
   * hab2: 11/12
   * ult: 10/12
 * Miniatura de exibição do personagem na seleção de jogador (Kaue)
-* Adição de habilidades dos personagens - prontos 6/12 (Lyam)
 * Trocar a sprite (ou cor) no obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
+* Inserir todas as animações - 9/12 (Lyam). FALTA:
+  * Acerola 2
+  * Kiki ult
+  * Tudo Umbros

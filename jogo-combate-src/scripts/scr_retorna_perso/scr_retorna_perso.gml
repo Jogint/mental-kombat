@@ -9,10 +9,10 @@ function scr_retorna_perso(_is_selecao_inimigo){
 		_is_selecao_inimigo = false;
 	}
 	
-	if (_vezes_chamado == array_length(global.arr_sprite_perso)) _vezes_chamado = 0;
+	if (_vezes_chamado == array_length(global.miniaturas_perso)) _vezes_chamado = 0;
 	if (_is_selecao_inimigo && _vezes_chamado == 0) _vezes_chamado = 2; // ignora os personagens iniciais 
 		
-	var _return_value = [global.arr_sprite_perso[_vezes_chamado], global.todos_perso[_vezes_chamado]];
+	var _return_value = [global.miniaturas_perso[_vezes_chamado], global.todos_perso[_vezes_chamado]];
 	
 	_vezes_chamado++;
 	

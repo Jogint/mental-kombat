@@ -69,7 +69,22 @@ global.inimigos_disponiveis = [
 	obj_personagem_2,
 ]; // inimigos derrotaveis na trilha
 
-global.arr_sprite_perso = [
+global.idles_perso = [
+	spr_lily_idle,
+	spr_toya_idle,
+	spr_acerola_idle,
+	spr_larry_idle,
+	spr_atomizer_idle,
+	spr_latte_idle,
+	spr_niara_idle,
+	spr_grumpy_idle,
+	spr_kiki_idle,
+	spr_emilio_idle,
+	spr_sr_kenzo_idle,
+	spr_umbros_idle,
+]; // Sprites dos botões de seleção de personagem
+
+global.miniaturas_perso = [
 	spr_lily_foto,
 	spr_toya_foto,
 	spr_acerola_foto,
@@ -82,12 +97,10 @@ global.arr_sprite_perso = [
 	spr_emilio_foto,
 	spr_sr_kenzo_foto,
 	spr_umbros_foto,
-]
+]; // Sprites dos botões de seleção de personagem
 
 // ==================================================
 // SCRIPTS INICIAIS
 // ==================================================
 scr_definir_globais_var(true);
 scr_cria_enum(); // OBS: TODA ALTERAÇÃO NOS ARRAYS DE STRING DEVE SER FEITA TAMBÉM AQUI
-// TODO: Tirar esse script ABAIXO e alterar as imagens na mão quando chegarem as artes de exibição
-//scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso {Array<GMSprite>}
