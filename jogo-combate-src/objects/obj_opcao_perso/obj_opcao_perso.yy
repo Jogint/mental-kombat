@@ -32,8 +32,8 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":{
-    "name":"spr_lily_1hab",
-    "path":"sprites/spr_lily_1hab/spr_lily_1hab.yy",
+    "name":"spr_lily_hab1",
+    "path":"sprites/spr_lily_hab1/spr_lily_hab1.yy",
   },
   "visible":true,
 }

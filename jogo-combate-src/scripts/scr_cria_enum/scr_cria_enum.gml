@@ -39,7 +39,7 @@ function scr_cria_enum(){
 	    CURA,
 	    DRENA,
 	    PRORROGA,
-	    ACELERA,
+	    CONGELA,
 	    ENERGETICO,
 	    COUNT
 	}

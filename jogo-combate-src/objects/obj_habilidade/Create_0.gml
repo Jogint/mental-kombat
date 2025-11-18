@@ -22,7 +22,7 @@ function gera_descricao(_hab) {
 			return "Atinja seu oponente ao mesmo tempo que recebe cura equivalente ao dano";
 		case global.tipos_hab[HABS.PRORROGA]:
 			return "Tenha mais tempo para juntar energia na próxima rodada e pense antes de responder!";
-		case global.tipos_hab[HABS.ACELERA]:
+		case global.tipos_hab[HABS.CONGELA]:
 			return "Reduza o tempo de resposta dele enquanto atinge " + string(round(global.numeros_gerais.dano_p_mult * _hab.valor_efeito)) + " de dano";
 		case global.tipos_hab[HABS.ENERGETICO]:
 			return "Aumente a quantidade de energia ganha por acerto durante um turno";
