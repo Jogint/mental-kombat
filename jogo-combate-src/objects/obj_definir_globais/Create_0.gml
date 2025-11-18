@@ -39,6 +39,20 @@ global.tipos_hab = [
 	"Redução tempo", 
 	"Energético",
 ]; // nomes das diferentes habilidades a serem usados pelos personagens
+global.nomes_perso = [ 
+	"Lily",
+	"Toya",
+	"Acerola",
+	"Larry",
+	"Atomizer",
+	"Latte",
+	"Niara",
+	"Grumpy",
+	"Kiki",
+	"Emilio M.Star",
+	"Sr. Kenzo",
+	"Umbros",
+]; // nomes das personagens
 global.dif_atual = global.niveis_dif[DIF.FACIL]; // define o nível de dif da partida
 global.modo_jogo_atual = global.modos_jogo[MODO.HIST]; // define o modo de jogo da partida
 

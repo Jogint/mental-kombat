@@ -25,6 +25,7 @@
 * Separar o obj_btn_avancar em diferentes objetos por room
 * reduzir os estado_turno = ESTADOS_TURNO.FINALIZANDO; espalhados pelo código
 * trocar var "jogador_atual" do controlador para instancia
+* tirar variavel nome do objeto e adicionar via scr_criar_perso e global.nomes_perso
 
 ## 🆕 A ser corrigido
 
