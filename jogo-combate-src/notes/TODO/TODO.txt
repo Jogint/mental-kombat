@@ -14,6 +14,8 @@
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
 * Botão de personagem aleatório
 * Incluir nomes dos personagens na batalha
+* Colocar som pós ataque
+* Alterar a chance do bot usar habilidade congela
 
 
 ### Refatoração de código (pós gamejam)
@@ -37,6 +39,7 @@
 * Se clicar rápido na opção de resposta invisivel após executar a animação, você pula o turno do inimigo
   * Não dá tempo de corrigir antes da gamejam, espero que nenhuma criança descubra isso
   * Média prioridade
+* Corrigir barra de energia e vida para desconsiderar o quadrado com o simbolo
 
 ### Rapido
 
@@ -49,14 +52,4 @@
 
 # ⚙ EM ANDAMENTO
 
-* Todas as animações dos personagens - prontos 9/12 (Kaue)
-  * idle: 12/12
-  * hab1: 12/12
-  * hab2: 11/12
-  * ult: 10/12
-* Miniatura de exibição do personagem na seleção de jogador (Kaue)
-* Trocar a sprite (ou cor) no obj_personagem_pai.alarm[1] ao confirmar resposta (Lyam)
-* Inserir todas as animações - 9/12 (Lyam). FALTA:
-  * Acerola 2
-  * Kiki ult
-  * Tudo Umbros
+

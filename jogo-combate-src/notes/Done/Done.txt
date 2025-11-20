@@ -198,5 +198,6 @@
 * IMPROVE: Implementação de animações dos personagens (Lyam - 18/11/2025)
 * IMPROVE: Miniaturas de cada personagem nas telas de seleção (Lyam - 18/11/2025)
 * FEAT: Nomes dos personagens aparecem na rm_trilha (Lyam - 18/11/2025)
+* IMPROVE: Todas as animações dos personagens (Kaue - 18/11/2025)
 
 > 19/11 Dia da GameJam !!!
