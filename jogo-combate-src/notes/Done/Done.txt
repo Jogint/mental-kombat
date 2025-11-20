@@ -155,7 +155,7 @@
 * FIX: Centralizar as habilidades na tela - estavam tortas (Lyam - 05/11/2025)
 * Retorno visual de erros de player e bot - botão tremendo (Lyam - 05/11/2025)
 
-> 06/11 Lançamento de versão alpha para avaliação entre participantes da gamejam
+> 06/11 Lançamento de versão alpha para avaliação entre participantes da gamejam (Nota 4,25/5)
 
 * IMPROVE: Troca do sistema de turno para máquina de estados (Lyam - 06/11/2025)
 * FEAT: Instruções na rm_trilha para selecionar o oponente (Lyam - 06/11/2025)
@@ -186,9 +186,17 @@
 * IMPROVE: Organização de sprites por nomes dos personagens (Lyam - 14/11/2025)
 * FIX: Erro do bot ao responder perguntas de multiplicação (Lyam - 15/11/2025)
 * FEAT: Configuração de sons e efeitos sonoros (Lyam - 16/11/2025)
+* IMPROVE: Todos os objetos na pasta /Botões (Kaue - 16/11/2025)
+* IMPROVE: Background para cada room (Kaue - 16/11/2025)
 * FIX: Correção de erro no final do modo história (Lyam - 17/11/2025)
 * FEAT: Substituir "aperte x tecla" por um botão para clicar com mouse (Lyam - 17/11/2025)
 * FIX: Interromper contagem do relógio após errar pergunta ou zerar (Lyam - 17/11/2025)
 * FEAT: Aviso de "aguarde seu turno" ao tentar responder no turno do bot (Lyam - 17/11/2025)
+* OTHER: 15 novas animações de personagens (Kaue - 13 a 18/11/2025)
+* IMPROVE: Adição de habilidades finais dos personagens (Lyam - 18/11/2025)
+* FEAT: Review visual de que o personagem foi selecionado (Lyam - 18/11/2025)
+* IMPROVE: Implementação de animações dos personagens (Lyam - 18/11/2025)
+* IMPROVE: Miniaturas de cada personagem nas telas de seleção (Lyam - 18/11/2025)
+* FEAT: Nomes dos personagens aparecem na rm_trilha (Lyam - 18/11/2025)
 
 > 19/11 Dia da GameJam !!!

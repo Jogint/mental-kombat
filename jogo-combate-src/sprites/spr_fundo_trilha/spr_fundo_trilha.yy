@@ -19,7 +19,7 @@
   "height":768,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"2893ba03-a4e5-46f7-b47c-793935cd9bbd","blendMode":0,"displayName":"default","isLocked":false,"name":"2893ba03-a4e5-46f7-b47c-793935cd9bbd","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"4abe9991-edc7-4e65-a3c0-6cbf11f3cf85","blendMode":0,"displayName":"default","isLocked":false,"name":"4abe9991-edc7-4e65-a3c0-6cbf11f3cf85","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_fundo_trilha",
   "nineSlice":null,

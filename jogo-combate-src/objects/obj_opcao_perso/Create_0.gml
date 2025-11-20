@@ -28,10 +28,14 @@ if (is_multiplayer) {
 /// @description Muda a sprite da instância de exibição de personagem e salva seu objeto
 /// @param {Real} _tamanho Tamanho da sprite
 function muda_img(_tamanho) {
+	var _sprite_i = array_get_index(global.miniaturas_perso, sprite_index);
+	var _sprite_idle = global.idles_perso[_sprite_i];
+	
 	if (global.perso_atuais[0] == noone) {
-		scr_trocar_sprite(inst_perso_selecionado_p1, _tamanho, _tamanho, sprite_index);
+		scr_trocar_sprite(inst_perso_selecionado_p1, _tamanho, _tamanho, _sprite_idle);
 	} else {
-		scr_trocar_sprite(inst_perso_selecionado_p2, _tamanho, _tamanho, sprite_index);
+		scr_trocar_sprite(inst_perso_selecionado_p2, _tamanho, _tamanho, _sprite_idle);
 	}
+	
 	global.ultimo_selecionado = obj_relacionado;
 }

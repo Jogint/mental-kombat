@@ -4,6 +4,7 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_opcao_perso",
@@ -32,8 +33,8 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":{
-    "name":"spr_lily_1hab",
-    "path":"sprites/spr_lily_1hab/spr_lily_1hab.yy",
+    "name":"spr_lily_hab1",
+    "path":"sprites/spr_lily_hab1/spr_lily_hab1.yy",
   },
   "visible":true,
 }

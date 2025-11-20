@@ -72,7 +72,7 @@ function atribui_sprite_hab(tipo) {
 			return spr_hab_dreno;
 		case global.tipos_hab[HABS.PRORROGA]: // prorroga
 			return spr_hab_prorroga;
-		case global.tipos_hab[HABS.ACELERA]: // acelera
+		case global.tipos_hab[HABS.CONGELA]: // acelera
 			return spr_hab_acelera;
 		case global.tipos_hab[HABS.ENERGETICO]: // energetico
 			return spr_hab_energetico;
