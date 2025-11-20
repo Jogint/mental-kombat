@@ -6,20 +6,19 @@
 
 * Criar global.apresentou_tutoriais = [false, false, false]:
   * uma tela de tutorial para cada modo de jogo. Deve ser interativa
+  * Pós gamejam. O jogo é intuitivo o suficiente no momento.
 * Menu (pause) para voltar para tela inicial
 
-### Melhorias
+### Melhorias (pós gamejam)
 
 * Voltar lógica de erro do bot no modo rápido (desativada pq n pensei nisso antes)
-* Modos 2 personagens: review visual de que o personagem foi selecionado
-* Substituir "aperte x tecla" por um botão para clicar com mouse
 * Botão de personagem aleatório
-* Trocar a sprite (ou cor) do obj_personagem_pai.alarm[1] ao confirmar resposta
-* Aviso de "aguarde seu turno" ao tentar responder no turno do bot
 * Incluir nomes dos personagens na batalha
+* Colocar som pós ataque
+* Alterar a chance do bot usar habilidade congela
 
 
-### Refatorização de código
+### Refatoração de código (pós gamejam)
 
 * Padronizar inicialização de arrays, pré alocando os índices com noone
 * Revisitar todos os TODO espalhados no código (mudanças pequenas)
@@ -28,13 +27,19 @@
 * Separar o obj_btn_avancar em diferentes objetos por room
 * reduzir os estado_turno = ESTADOS_TURNO.FINALIZANDO; espalhados pelo código
 * trocar var "jogador_atual" do controlador para instancia
+* tirar variavel nome do objeto e adicionar via scr_criar_perso e global.nomes_perso
 
 ## 🆕 A ser corrigido
 
 ### Gerais
 
-* A confirmação de escolha de resposta do bot permanece enquanto usa habilidade
-* Se clicar rápido na opção de resposta após executar a animação, você pula o turno do inimigo
+* Os draw "pausam" enquanto usa habilidade
+  * Resultando em milisegundos de exibição quando deveria estar desativado
+  * Baixa prioridade
+* Se clicar rápido na opção de resposta invisivel após executar a animação, você pula o turno do inimigo
+  * Não dá tempo de corrigir antes da gamejam, espero que nenhuma criança descubra isso
+  * Média prioridade
+* Corrigir barra de energia e vida para desconsiderar o quadrado com o simbolo
 
 ### Rapido
 
@@ -42,16 +47,9 @@
 
 ## 🎨 A ser desenhado
 
-* Tela e botões de fim de jogo (atualmente vivendo a base do draw)
+* Pop up de fim de jogo, se livrar do draw
 * Tela e botões de configurações (som, controles, créditos, easter egg)
 
 # ⚙ EM ANDAMENTO
 
-* Todas as animações dos personagens - prontos 4/12 (Kaue)
-  * idle: 12/12
-  * hab1: 9/12
-  * hab2: 6/12
-  * ult: 3/12
-* Miniatura de exibição do personagem na seleção de jogador (Kaue)
-* Todos os objetos na pasta /Botões (Kaue)
-* Background para cada room (Kaue)
+

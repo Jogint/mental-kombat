@@ -33,3 +33,19 @@ if (obj_gestao_rodada.jogador_atual != noone) {
 	
 	scr_reset_draw();
 }
+
+// ==================================================
+// Aviso de clique indevido
+// ==================================================
+
+var _customizacoes = {
+	cor_fundo: c_dkgrey,
+	largura: 400,
+	altura: 100,
+	espaco_linhas: 10,
+	deslocamento_y: 300,
+}
+
+valida_estetica_popup(_customizacoes);
+
+scr_desenha_pop_up(["Aguarde seu turno!", "Bot está jogando..."], _customizacoes);

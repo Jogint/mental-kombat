@@ -8,6 +8,7 @@ tempo_feedback_bot = 0; // Tempo de desenho do círculo
 pergunta = noone; // Qual a pergunta atual sendo exibida
 player_atual = noone; // Qual instância está jogando
 bot_acertou = true;
+pop_up_aberto = false; // Aviso de aguardar turno
 
 // ---------- Controle do review de erro (tremida) ----------
 qtd_frames_tremendo = 0; // Tempo de exibição de cada movimento
@@ -59,4 +60,11 @@ function opcao_selecionada(_exibe_bot = false, _acertou = true) {
     }
 	
 	if (!_acertou) {bot_acertou = false; treme_opcao();} // apenas caso o bot erre TODO: Mover pois não faz parte dessa função
+}
+
+/// @function fecha_aviso_turno
+/// @description Força o fechamento do aviso de clique fora do seu turno
+function fecha_aviso_turno() {
+	alarm[1] = -1;
+	pop_up_aberto = false;
 }

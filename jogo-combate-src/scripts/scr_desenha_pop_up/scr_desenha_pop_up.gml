@@ -2,7 +2,7 @@
 /// @description Cria um draw GUI na centralizado. Use 'noone' nos campos que não pretende alterar.
 /// @param {Array<String>} textos_arr Textos que serão exibidos, cada índice sendo uma quebra de linha
 /// @param {Struct} opcoes Todos os detalhes de estética: 
-/// fundo_cor (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real), espaco_linhas (Real), deslocamento_x (Real), deslocamento_y (Real).
+/// cor_fundo (cor), texto_cores (arr), fontes (arr), largura (Real), altura (Real), espaco_linhas (Real), deslocamento_x (Real), deslocamento_y (Real).
 
 function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 	var _cor_default_texto = c_black;
@@ -12,7 +12,7 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 		valida_estetica_popup(opcoes);
 		
 	    var _estetica = {
-	        fundo_cor: c_ltgray,
+	        cor_fundo: c_ltgray,
 	        texto_cores: [_cor_default_texto],
 	        fontes: [_fonte_default],
 	        largura: room_width / 2,
@@ -42,7 +42,7 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 		var pop_up_y = room_height / 2 - pop_up_height / 2 + _estetica.deslocamento_y;
 	
 		// cria pop-up
-		draw_set_color(_estetica.fundo_cor);
+		draw_set_color(_estetica.cor_fundo);
 		draw_rectangle(pop_up_x, pop_up_y, pop_up_x + pop_up_width, pop_up_y + pop_up_height, false);
 		
 		// cálculo da altura do texto
@@ -87,7 +87,7 @@ function scr_desenha_pop_up (textos_arr, opcoes = {}) {
 
 /// @function verifica_dados_struct (estetica, textos)
 /// @description Verifica a validade e o formato dos dados para o pop-up.
-/// @param {Struct} _estetica Struct contendo fundo_cor, texto_cores, fontes, etc.
+/// @param {Struct} _estetica Struct contendo cor_fundo, texto_cores, fontes, etc.
 /// @param {Array<String>} _textos Array de textos.
 function verifica_dados_struct(_estetica, _textos) {
     // ===================================
@@ -97,7 +97,7 @@ function verifica_dados_struct(_estetica, _textos) {
     if (!is_array(_textos)) show_error("pop up: textos_arr precisa ser um array.", true);
     if (!is_array(_estetica.texto_cores)) show_error("pop up: texto_cores precisa ser um array.", true);
     if (!is_array(_estetica.fontes)) show_error("pop up: fontes precisa ser um array.", true);
-    if (!is_numeric(_estetica.fundo_cor)) show_error("pop up: fundo_cor precisa ser Constant.color ou número.", true);
+    if (!is_numeric(_estetica.cor_fundo)) show_error("pop up: cor_fundo precisa ser Constant.color ou número.", true);
 	if (!is_numeric(_estetica.espaco_linhas)) show_error("pop up: espaco_linhas precisa ser um número.", true);
 	if (!is_numeric(_estetica.deslocamento_x)) show_error("pop up: deslocamento_x precisa ser um número.", true);
 	if (!is_numeric(_estetica.deslocamento_y)) show_error("pop up: deslocamento_y precisa ser um número.", true);
@@ -148,7 +148,7 @@ function valida_estetica_popup(_struct) {
 	if (!array_length(_propriedades)) return;
 	
     var _mapa_validos = {
-        fundo_cor: true, 
+        cor_fundo: true, 
         texto_cores: true, 
         fontes: true, 
         largura: true, 

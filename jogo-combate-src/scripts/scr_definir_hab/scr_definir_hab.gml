@@ -24,7 +24,7 @@ function scr_definir_hab(_nome_hab, _custo_hab, _tipo_hab, _valor_hab, _sprite_h
 			_valor_habilidade = _valor_hab;
 		break;
 		
-		case global.tipos_hab[HABS.ACELERA]:
+		case global.tipos_hab[HABS.CONGELA]:
 			if (_valor_hab >= 1 || _valor_hab < 0.5) show_error("O tempo inimigo deve reduzir em até 0.5 e ser menor que 1. Recebeu " + string(_valor_hab), true);
 			_valor_habilidade = _valor_hab;
 		break;

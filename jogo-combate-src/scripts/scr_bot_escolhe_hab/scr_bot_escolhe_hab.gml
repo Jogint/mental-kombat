@@ -111,7 +111,7 @@ function score_hab(_hab_atual, _bot, _oponente) {
 			if (global.dif_atual == global.niveis_dif[DIF.DIFICIL]) _score_atual += 3;
 		break;
 				
-		case global.tipos_hab[HABS.ACELERA]:
+		case global.tipos_hab[HABS.CONGELA]:
 			_score_atual = 4;
 		
 			if (_oponente.energia_atual >= _oponente.energia_total * 0.6) _score_atual += 3;

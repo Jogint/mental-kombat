@@ -4,6 +4,7 @@
 
 var _is_rapido = global.modo_jogo_atual == global.modos_jogo[MODO.RAPIDO];
 var _cor_principal = c_black;
+var _customizacoes;
 pop_up_aberto = true;
 
 if (estado_sorteio == 1 || estado_sorteio == 2) {
@@ -11,11 +12,12 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 // EXIBE O SORTEADOR DE QUEM COMEÇA
 // ==================================================
 	
-	var _customizacoes = {
+	_customizacoes = {
 		largura: 400,
 		altura: 100,
 		espaco_linhas: 10,
 	}
+	
 	valida_estetica_popup(_customizacoes);
 
 	scr_desenha_pop_up (["Escolhendo jogador a iniciar...", nome_sorteado_atual], _customizacoes);
@@ -24,37 +26,29 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 // ==================================================
 // EXIBE A TELA DE FIM DE JOGO
 // ==================================================
-	var _textos_fim = [];
+
+	_customizacoes = {
+		cor_fundo: quem_venceu == global.tipos_jogadores[JOGADOR.BOT] ? c_maroon : c_green,
+		largura: 400,
+		altura: 100,
+		espaco_linhas: 10,
+		//deslocamento_y: -100,
+	}
+	
+	valida_estetica_popup(_customizacoes);
+
+	var _textos_fim = ["Fim da partida!"];
 	
 	if (global.modo_jogo_atual == global.modos_jogo[MODO.PVP]) { // pvp
 		
 		// esse monstro abaixo é o placar do pvp
 		var _resultado_partida = string(global.tipos_jogadores[JOGADOR.P1]) + ": " + string(global.pontuacao_pvp[0]) + 
-        " | " + string(global.tipos_jogadores[JOGADOR.P2]) + ": " + string(global.pontuacao_pvp[1]);
+		" | " + string(global.tipos_jogadores[JOGADOR.P2]) + ": " + string(global.pontuacao_pvp[1]);
 
-		_textos_fim = [
-		    _resultado_partida,
-		    "",
-		    "Pressione 'R' para jogar novamente"
-		];
-		
-	} else if (global.modo_jogo_atual == global.modos_jogo[MODO.HIST]) { // historia
-		
-		_textos_fim = [
-			"", 
-			"Pressione 'R' para escolher o próximo oponente"
-		];
-	} else { // default (rapido)
-		
-		_textos_fim = [
-			"", 
-			"Pressione 'R' para jogar novamente"
-		];
+		array_push(_textos_fim,	_resultado_partida);
 	}
 	
-	array_insert(_textos_fim, 0, "Fim da partida!")
-	array_push(_textos_fim, "Pressione 'M' para voltar ao menu inicial")
-	scr_desenha_pop_up(_textos_fim);
+	scr_desenha_pop_up(_textos_fim, _customizacoes);
 	
 } else {
 // ==================================================
@@ -89,7 +83,7 @@ if (estado_sorteio == 1 || estado_sorteio == 2) {
 		_texto_pergunta += string(obj_gestao_rodada.pergunta_atual.n2);
 		
 		var _personalizacao = {
-			fundo_cor: c_dkgray,
+			cor_fundo: c_dkgray,
 			texto_cores: [c_white, c_white],
 			altura: 80,
 			largura: 350,

@@ -20,7 +20,6 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"b7f6b543-f1c8-4e14-bc1c-e8798cdcf10b","blendMode":0,"displayName":"Moldura","isLocked":false,"name":"b7f6b543-f1c8-4e14-bc1c-e8798cdcf10b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"5b1c86d1-e74f-49d3-9403-14a34e3a6a38","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"5b1c86d1-e74f-49d3-9403-14a34e3a6a38","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_barra_vida",
   "nineSlice":null,

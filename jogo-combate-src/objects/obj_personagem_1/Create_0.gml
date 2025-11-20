@@ -3,7 +3,7 @@ event_inherited(); // mantém o criar do obj pai
 habilidades = [
 	// scr_definir_hab(nome, custo, tipo da habilidade, valor do efeito, sprite da habilidade),
 	
-	scr_definir_hab("Dano Rápido", (round(energia_total * 0.15)), global.tipos_hab[HABS.ATAQUE], 300, spr_anim_teste), // Dano (Mais Barato)
-	scr_definir_hab("Ritmo Acelerado", (round(energia_total * 0.4)), global.tipos_hab[HABS.PRORROGA], 1.3, spr_anim_teste), // Prorroga
-	scr_definir_hab("Surto de Tempo", (energia_total), global.tipos_hab[HABS.ACELERA], 0.9, spr_anim_teste), // Acelerar (Custo Máx)
+	scr_definir_hab("Brincar de espada", (round(energia_total * 0.25)), global.tipos_hab[HABS.ATAQUE], 35, spr_toya_hab1),
+	scr_definir_hab("Cortes rápidos", (round(energia_total * 0.5)), global.tipos_hab[HABS.ATAQUE], 75, spr_toya_hab2),
+	scr_definir_hab("Espadada", (energia_total), global.tipos_hab[HABS.ATAQUE], 110, spr_toya_ult),
 ]

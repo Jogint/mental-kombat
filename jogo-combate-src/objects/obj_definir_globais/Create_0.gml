@@ -18,24 +18,41 @@ global.tamanhos = { // apenas um número para quadrados
 	logo_hab: 80,
 	inimigo_trilha: 96, // botao de seleção do personagem
 }
+global.numeros_gerais = {
+	dano_p_mult: 20, // valor usado para dar dano com base na % do efeito (tempo/energia)
+}
 global.tempo_para_erro = []; // USADO PARA TESTES, REMOVER DPS
 
 // ==================================================
 // GLOBAIS STRING
 // ==================================================
 global.operacoes = ["soma", "subtracao", "multiplicacao", "divisao"]; // tipos de operações válidas
-global.tipos_jogadores = ["bot", "player1", "player2"]; // tipos de jogadores válidos
-global.niveis_dif = ["facil", "medio", "dificil"]; // difs existentes no jogo
-global.modos_jogo = ["2 jogadores", "história", "rápido"]; // modos de jogo disponíveis
-global.tipos_hab = [ // nomes das diferentes habilidades a serem usados pelos personagens
+global.tipos_jogadores = ["Bot", "Jogador um", "Jogador dois"]; // tipos de jogadores válidos
+global.niveis_dif = ["Fácil", "Médio", "Difícil"]; // difs existentes no jogo
+global.modos_jogo = ["2 jogadores", "História", "Rápido"]; // modos de jogo disponíveis
+global.tipos_hab = [ 
 	"Pular", 
 	"Ataque", 
 	"Cura", 
 	"Drenar vida", 
 	"Prorroga tempo", 
-	"Acelera", 
+	"Redução tempo", 
 	"Energético",
-];
+]; // nomes das diferentes habilidades a serem usados pelos personagens
+global.nomes_perso = [ 
+	"Lily",
+	"Toya",
+	"Acerola",
+	"Larry",
+	"Atomizer",
+	"Latte",
+	"Niara",
+	"Grumpy",
+	"Kiki",
+	"Emilio M.Star",
+	"Sr. Kenzo",
+	"Umbros",
+]; // nomes das personagens
 global.dif_atual = global.niveis_dif[DIF.FACIL]; // define o nível de dif da partida
 global.modo_jogo_atual = global.modos_jogo[MODO.HIST]; // define o modo de jogo da partida
 
@@ -56,18 +73,48 @@ global.todos_perso = [
 	obj_personagem_10,
 	obj_personagem_11,
 ]; // referência de todos os objetos de personagem jogáveis
+
 global.perso_disponiveis = [
 	obj_personagem,
 	obj_personagem_1,
 ]; // personagens jogaveis na trilha ou rapido
+
 global.inimigos_disponiveis = [
 	obj_personagem_2,
 ]; // inimigos derrotaveis na trilha
+
+global.idles_perso = [
+	spr_lily_idle,
+	spr_toya_idle,
+	spr_acerola_idle,
+	spr_larry_idle,
+	spr_atomizer_idle,
+	spr_latte_idle,
+	spr_niara_idle,
+	spr_grumpy_idle,
+	spr_kiki_idle,
+	spr_emilio_idle,
+	spr_sr_kenzo_idle,
+	spr_umbros_idle,
+]; // Sprites dos botões de seleção de personagem
+
+global.miniaturas_perso = [
+	spr_lily_foto,
+	spr_toya_foto,
+	spr_acerola_foto,
+	spr_larry_foto,
+	spr_atomizer_foto,
+	spr_latte_foto,
+	spr_niara_foto,
+	spr_grumpy_foto,
+	spr_kiki_foto,
+	spr_emilio_foto,
+	spr_sr_kenzo_foto,
+	spr_umbros_foto,
+]; // Sprites dos botões de seleção de personagem
 
 // ==================================================
 // SCRIPTS INICIAIS
 // ==================================================
 scr_definir_globais_var(true);
 scr_cria_enum(); // OBS: TODA ALTERAÇÃO NOS ARRAYS DE STRING DEVE SER FEITA TAMBÉM AQUI
-// TODO: Tirar esse script ABAIXO e alterar as imagens na mão quando chegarem as artes de exibição
-scr_atualizar_arr_sprites(); //cria o global.arr_sprite_perso {Array<GMSprite>}

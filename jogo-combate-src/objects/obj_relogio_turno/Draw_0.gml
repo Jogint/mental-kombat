@@ -11,6 +11,8 @@ draw_set_valign(fa_center);
 var _tempo_restante = string(round(obj_gestao_rodada.timer_turno / game_get_speed(gamespeed_fps)));
 if (_tempo_restante < 0) _tempo_restante = 0;
 
+if (tempo_zerado) _tempo_restante = 0;
+
 if (_tempo_restante < 10) {
 	draw_set_colour(c_red);
 }

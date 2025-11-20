@@ -11,8 +11,8 @@
   "name":"obj_habilidade",
   "overriddenProperties":[],
   "parent":{
-    "name":"Botoes",
-    "path":"folders/Objetos/Botoes.yy",
+    "name":"In-game",
+    "path":"folders/Objetos/Botoes/In-game.yy",
   },
   "parentObjectId":null,
   "persistent":false,

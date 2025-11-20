@@ -48,6 +48,11 @@ if (partida_acabou) {
     } else {
         show_error("Ninguém venceu. HP de P1: " + string(_perso_p1.hp_atual) + " | HP do Adversário: " + string(_perso_outro.hp_atual), true);
     }
+	
+	// ---------- Cria botões de fim de jogo ----------
+	var _camada_btns = "GUI";
+	instance_create_layer(550, 500, _camada_btns, obj_btn_play_again);
+	instance_create_layer(800, 500, _camada_btns, obj_btn_go_menu);
     
     quem_iniciou = noone; 
 }
@@ -63,7 +68,7 @@ if (partida_acabou && _is_pvp && !player_pontuou) {
 // ==================================================
 // CONTROLA O TIMER DO TURNO
 // ==================================================
-if (jogador_atual != noone) timer_turno--;
+if (jogador_atual != noone && timer_turno > 0) timer_turno--;
 
 // ==================================================
 // PERMITE O ATAQUE SIMULTÂNEO NO MODO RÁPIDO
