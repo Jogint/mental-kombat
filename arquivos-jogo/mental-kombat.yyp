@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"jogo-combate",
+  "%Name":"mental-kombat",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -60,7 +60,7 @@
   "MetaData":{
     "IDEVersion":"2024.14.0.207",
   },
-  "name":"jogo-combate",
+  "name":"mental-kombat",
   "resources":[
     {"id":{"name":"fnt_destaque","path":"fonts/fnt_destaque/fnt_destaque.yy",},},
     {"id":{"name":"fnt_principal","path":"fonts/fnt_principal/fnt_principal.yy",},},
